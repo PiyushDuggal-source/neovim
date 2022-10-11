@@ -15,6 +15,7 @@ nvim_tree.setup {
     enable = true,
     update_cwd = true,
   },
+  hijack_cursor = true,
   renderer = {
     root_folder_modifier = ":t",
     icons = {

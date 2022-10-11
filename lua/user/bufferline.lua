@@ -9,6 +9,14 @@ bufferline.setup {
     right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
     offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
     separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
+     buffer_close_icon = "",
+    -- buffer_close_icon = '',
+    modified_icon = "●",
+    close_icon = "",
+    -- close_icon = '',
+    left_trunc_marker = "",
+    right_trunc_marker = "",
+    diagnostics = "nvim_lsp",
   },
 
   highlights = {
@@ -35,7 +43,6 @@ bufferline.setup {
       fg = { attribute = "fg", highlight = "TabLine" },
       bg = { attribute = "bg", highlight = "TabLine" },
     },
-   
     tab_selected = {
       fg = { attribute = "fg", highlight = "Normal" },
       bg = { attribute = "bg", highlight = "Normal" },

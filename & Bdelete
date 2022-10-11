@@ -40,7 +40,7 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-keymap("n", ":wq", "<cmd>:w | Bdelete!<CR>", opts)
+keymap("n", ":wq", "<cmd>:w && Bdelete!<CR>", opts)
 keymap("n", "<C-z>", "u", opts)
 
 -- Better paste
@@ -68,9 +68,20 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+--Quitin
+-- local a;
+-- function _QUIT()
+--   -- local a = vim.ui.input()
+--   -- if (a == "y") then
+--   --   os.exit()
+--   -- end
+--   io.write("continue")
+--   a = io.read()
+--   if(a == "y") then
+--     os.exit()
+--   end
+-- end
 
--- Old Files 
-keymap("n", "<leader>fo", ":Telescope oldfiles<cr>", opts)
 
 -- Plugins --
 
