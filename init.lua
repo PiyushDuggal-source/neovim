@@ -21,3 +21,5 @@ require "user.alpha"
 require "user.lsp"
 require "user.dap"
 require "user.whichKey"
+
+vim.cmd("autocmd TermClose * :wa")
