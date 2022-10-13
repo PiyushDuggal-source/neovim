@@ -55,10 +55,9 @@ return packer.startup(function(use)
   use { "kyazdani42/nvim-web-devicons"}
   use { "kyazdani42/nvim-tree.lua"}
   use { "akinsho/bufferline.nvim"}
-  use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }
-  use { "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" }
+  use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" } -- use { "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" }
   use { "akinsho/toggleterm.nvim", commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda" }
-  -- use { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6" }
+  use { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6" }
   use { "lewis6991/impatient.nvim", commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" }
   use { "lukas-reineke/indent-blankline.nvim", commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" }
   use { "goolord/alpha-nvim"}
@@ -68,12 +67,26 @@ return packer.startup(function(use)
   use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
 
   -- cmp plugins
-  use { "hrsh7th/nvim-cmp"} -- The completion plugin
-  use { "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" } -- buffer completions
-  use { "hrsh7th/cmp-path", commit = "447c87cdd6e6d6a1d2488b1d43108bfa217f56e1" } -- path completions
-  use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
-  use { "hrsh7th/cmp-nvim-lsp"}
-  use { "hrsh7th/cmp-nvim-lua"}
+  -- use { "hrsh7th/nvim-cmp"} -- The completion plugin
+  -- use { "hrsh7th/cmp-buffer"} -- buffer completions
+  -- use { "hrsh7th/cmp-path"} -- path completions
+  -- use { "hrsh7th/cmp-vsnip"}
+  -- use { "hrsh7th/vim-vsnip"}
+  -- use { "saadparwaiz1/cmp_luasnip"} -- snippet completions
+  -- use { "hrsh7th/cmp-nvim-lsp"}
+  -- use { "hrsh7th/cmp-nvim-lua"}
+
+  use "christianchiarulli/nvim-cmp"
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-emoji"
+  use "hrsh7th/cmp-nvim-lua"
+  -- use 'ms-jpq/coq_nvim'
+  -- use 'ms-jpq/coq.artifacts'
+  -- use 'ms-jpq/coq.thirdparty'
 
   -- snippets
   use { "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" } --snippet engine
@@ -115,9 +128,14 @@ use {
       end
   }
 
+  -- typescript 
+  use 'jose-elias-alvarez/typescript.nvim'
+
   -- Sessions
   use "mhinz/vim-startify"
 
+  -- Status Line 
+  use "christianchiarulli/lualine.nvim"
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
 
