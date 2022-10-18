@@ -11,11 +11,20 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
+  sort_by = "case_sensitive",
+  filters = {
+    dotfiles = false,
+  },
   update_focused_file = {
     enable = true,
     update_cwd = true,
   },
   hijack_cursor = true,
+  git = {
+    enable = true,
+    ignore = false,
+    timeout = 500
+  },
   renderer = {
     root_folder_modifier = ":t",
     icons = {
