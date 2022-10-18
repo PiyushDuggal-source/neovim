@@ -22,5 +22,6 @@ require "user.lsp"
 require "user.dap"
 require "user.whichKey"
 require "user.typescript"
+require "user.tabout"
 
 vim.cmd("autocmd TermClose * :wa")
