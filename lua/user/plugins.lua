@@ -51,20 +51,30 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope-media-files.nvim" }
   use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim" }
-  use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08" }
+  use { "JoosepAlviste/nvim-ts-context-commentstring"}
   use { "kyazdani42/nvim-web-devicons" }
   use { "kyazdani42/nvim-tree.lua" }
   use { "akinsho/bufferline.nvim" }
-  use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" } -- use { "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" }
-  use { "akinsho/toggleterm.nvim", commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda" }
-  use { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6" }
-  use { "lewis6991/impatient.nvim", commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" }
-  use { "lukas-reineke/indent-blankline.nvim", commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" }
+  use { "moll/vim-bbye"} -- use { "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" }
+  use { "akinsho/toggleterm.nvim"}
+  use { "ahmedkhalf/project.nvim"}
+  use { "lewis6991/impatient.nvim"}
+  use { "lukas-reineke/indent-blankline.nvim"}
   use { "goolord/alpha-nvim" }
 
   -- Colorschemesq
   -- use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
-  use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
+  -- use { "lunarvim/darkplus.nvim"}
+  use {
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = function()
+        require("catppuccin").setup {
+            flavour = "macchiato" -- mocha, macchiato, frappe, latte
+        }
+        vim.api.nvim_command "colorscheme catppuccin"
+    end
+}
 
   -- cmp plugins
   -- use { "hrsh7th/nvim-cmp"} -- The completion plugin
@@ -89,8 +99,8 @@ return packer.startup(function(use)
   -- use 'ms-jpq/coq.thirdparty'
 
   -- snippets
-  use { "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" } --snippet engine
-  use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
+  use { "L3MON4D3/LuaSnip"} --snippet engine
+  use { "rafamadriz/friendly-snippets"} -- a bunch of snippets to use
 
   -- LSP
   use { "williamboman/nvim-lsp-installer" } -- simple to use language server installer
@@ -98,7 +108,7 @@ return packer.startup(function(use)
   use { "williamboman/mason.nvim" }
   use { "williamboman/mason-lspconfig.nvim" }
   use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
-  use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
+  use { "RRethy/vim-illuminate"}
 
   -- Telescope
   use {
@@ -111,8 +121,8 @@ return packer.startup(function(use)
     run = ":TSUpdate"
   }
 
-  --TagBar
-  use 'preservim/tagbar'
+  -- --TagBar
+  -- use 'preservim/tagbar'
 
   --Terminal
   use "voldikss/vim-floaterm"
@@ -132,13 +142,16 @@ return packer.startup(function(use)
   -- typescript
   use 'jose-elias-alvarez/typescript.nvim'
 
-  -- Sessions
+  -- -- Sessions
   use "mhinz/vim-startify"
 
   -- Status Line
   use "christianchiarulli/lualine.nvim"
   -- Git
-  use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
+  use { "lewis6991/gitsigns.nvim"}
+
+  -- startup Time
+  use {"dstein64/vim-startuptime"}
 
   use { "abecodes/tabout.nvim",
     wants = { 'nvim-treesitter' }, -- or require if not used so far
