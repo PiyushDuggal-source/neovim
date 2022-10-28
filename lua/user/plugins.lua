@@ -51,15 +51,16 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope-media-files.nvim" }
   use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim" }
-  use { "JoosepAlviste/nvim-ts-context-commentstring"}
+  use { "JoosepAlviste/nvim-ts-context-commentstring" }
   use { "kyazdani42/nvim-web-devicons" }
   use { "kyazdani42/nvim-tree.lua" }
   use { "akinsho/bufferline.nvim" }
-  use { "moll/vim-bbye"} -- use { "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" }
-  use { "akinsho/toggleterm.nvim"}
-  use { "ahmedkhalf/project.nvim"}
-  use { "lewis6991/impatient.nvim"}
-  use { "lukas-reineke/indent-blankline.nvim"}
+  use { "moll/vim-bbye" }
+  use { "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" }
+  use { "akinsho/toggleterm.nvim" }
+  use { "ahmedkhalf/project.nvim" }
+  use { "lewis6991/impatient.nvim" }
+  use { "lukas-reineke/indent-blankline.nvim" }
   use { "goolord/alpha-nvim" }
 
   -- Colorschemesq
@@ -68,13 +69,7 @@ return packer.startup(function(use)
   use {
     "catppuccin/nvim",
     as = "catppuccin",
-    config = function()
-        require("catppuccin").setup {
-            flavour = "macchiato" -- mocha, macchiato, frappe, latte
-        }
-        vim.api.nvim_command "colorscheme catppuccin"
-    end
-}
+  }
 
   -- cmp plugins
   -- use { "hrsh7th/nvim-cmp"} -- The completion plugin
@@ -99,8 +94,8 @@ return packer.startup(function(use)
   -- use 'ms-jpq/coq.thirdparty'
 
   -- snippets
-  use { "L3MON4D3/LuaSnip"} --snippet engine
-  use { "rafamadriz/friendly-snippets"} -- a bunch of snippets to use
+  use { "L3MON4D3/LuaSnip" } --snippet engine
+  use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
 
   -- LSP
   use { "williamboman/nvim-lsp-installer" } -- simple to use language server installer
@@ -108,7 +103,7 @@ return packer.startup(function(use)
   use { "williamboman/mason.nvim" }
   use { "williamboman/mason-lspconfig.nvim" }
   use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
-  use { "RRethy/vim-illuminate"}
+  use { "RRethy/vim-illuminate" }
 
   -- Telescope
   use {
@@ -122,7 +117,7 @@ return packer.startup(function(use)
   }
 
   -- --TagBar
-  -- use 'preservim/tagbar'
+  use 'preservim/tagbar'
 
   --Terminal
   use "voldikss/vim-floaterm"
@@ -146,17 +141,20 @@ return packer.startup(function(use)
   use "mhinz/vim-startify"
 
   -- Status Line
-  use "christianchiarulli/lualine.nvim"
+  -- use "christianchiarulli/lualine.nvim"
   -- Git
-  use { "lewis6991/gitsigns.nvim"}
+  use { "lewis6991/gitsigns.nvim" }
 
   -- startup Time
-  use {"dstein64/vim-startuptime"}
+  use { "dstein64/vim-startuptime" }
 
   use { "abecodes/tabout.nvim",
     wants = { 'nvim-treesitter' }, -- or require if not used so far
     after = { 'nvim-cmp' } -- if a completion plugin is using tabs load it before
   }
+
+  -- -- Color Shower
+  use { "norcalli/nvim-colorizer.lua" }
 
   -- DAP
   use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }

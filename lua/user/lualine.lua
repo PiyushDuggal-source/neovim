@@ -2,11 +2,11 @@
 -- if not status_ok then
 --   return
 -- end
-
+--
 -- local hide_in_width = function()
 --   return vim.fn.winwidth(0) > 80
 -- end
-
+--
 -- local diagnostics = {
 --   "diagnostics",
 --   sources = { "nvim_diagnostic" },
@@ -15,28 +15,28 @@
 --   colored = false,
 --   always_visible = true,
 -- }
-
+--
 -- local diff = {
 --   "diff",
 --   colored = false,
 --   symbols = { added = "", modified = "", removed = "" }, -- changes diff symbols
 --   cond = hide_in_width,
 -- }
-
+--
 -- local filetype = {
 --   "filetype",
 --   icons_enabled = false,
 -- }
-
+--
 -- local location = {
 --   "location",
 --   padding = 0,
 -- }
-
+--
 -- local spaces = function()
 --   return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 -- end
-
+--
 -- lualine.setup {
 --   options = {
 --     globalstatus = true,
@@ -49,12 +49,14 @@
 --   },
 --   sections = {
 --     lualine_a = { "mode" },
---     lualine_b = {"branch"},
+--     lualine_b = { "branch" },
 --     lualine_c = { diagnostics },
 --     lualine_x = { diff, spaces, "encoding", filetype },
 --     lualine_y = { location },
 --     lualine_z = { "progress" },
-
+--
+--   }
+-- }
 
 M = {}
 local status_ok, lualine = pcall(require, "lualine")
@@ -62,7 +64,7 @@ if not status_ok then
   return
 end
 
-local lualine_scheme = "darkplus_dark"
+local lualine_scheme = "catppuccin"
 -- local lualine_scheme = "onedarker_alt"
 
 local status_theme_ok, theme = pcall(require, "lualine.themes." .. lualine_scheme)
@@ -81,19 +83,15 @@ local function contains(t, value)
 end
 
 local gray = "#32363e"
-local dark_gray = "#282C34"
-local dark_gray = "#282C34"
 local red = "#D16969"
 local blue = "#569CD6"
 local green = "#6A9955"
 local cyan = "#4EC9B0"
 local orange = "#CE9178"
 local indent = "#CE9178"
-local yellow = "#DCDCAA"
-local yellow_orange = "#D7BA7D"
 local purple = "#C586C0"
 
-if lualine_scheme == "darkplus_dark" then
+if lualine_scheme == "catppuccin" then
   -- gray = "#3e3e3e"
   gray = "#303030"
   dark_gray = "#303030"
@@ -131,15 +129,15 @@ local hl_str = function(str, hl)
 end
 
 local mode_color = {
-  n = blue,
+  n = gray,
   i = orange,
-  v = "#b668cd",
-  [""] = "#b668cd",
-  V = "#b668cd",
+  v = gray,
+  [""] = gray,
+  V = gray,
   -- c = '#B5CEA8',
   -- c = '#D7BA7D',
-  c = "#46a6b2",
-  no = "#D16D9E",
+  c = gray,
+  no = gray,
   s = green,
   S = orange,
   [""] = orange,
