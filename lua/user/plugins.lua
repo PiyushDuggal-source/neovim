@@ -88,7 +88,7 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
-  use "hrsh7th/cmp-nvim-lua"
+  use { "hrsh7th/cmp-nvim-lua", ft = { "lua" } }
   -- use 'ms-jpq/coq_nvim'
   -- use 'ms-jpq/coq.artifacts'
   -- use 'ms-jpq/coq.thirdparty'
@@ -107,7 +107,7 @@ return packer.startup(function(use)
 
   -- Telescope
   use {
-    'nvim-telescope/telescope.nvim'
+    'nvim-telescope/telescope.nvim', cmd = { "Telescope" }
   }
   -- Treesitter
   use { "sharkdp/fd" }
@@ -116,8 +116,8 @@ return packer.startup(function(use)
     run = ":TSUpdate"
   }
 
-  -- --TagBar
-  use 'preservim/tagbar'
+  --TagBar
+  -- use 'preservim/tagbar'
 
   --Terminal
   use "voldikss/vim-floaterm"
@@ -125,13 +125,6 @@ return packer.startup(function(use)
   -- WhichKey
   use {
     "folke/which-key.nvim",
-    config = function()
-      require("which-key").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
   }
 
   -- typescript
