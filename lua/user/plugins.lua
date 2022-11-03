@@ -107,7 +107,7 @@ return packer.startup(function(use)
 
   -- Telescope
   use {
-    'nvim-telescope/telescope.nvim', cmd = { "Telescope" }
+    'nvim-telescope/telescope.nvim'
   }
   -- Treesitter
   use { "sharkdp/fd" }
@@ -148,6 +148,14 @@ return packer.startup(function(use)
 
   -- -- Color Shower
   use { "norcalli/nvim-colorizer.lua" }
+
+  -- autoSave
+  use { "Pocco81/auto-save.nvim" , config = {
+    debounce_delay = 5000,
+  }}
+
+  -- code actions
+  use { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu' }
 
   -- DAP
   use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }

@@ -25,4 +25,3 @@ require "user.typescript"
 require "user.tabout"
 -- require "user.colorizer"
 
-vim.cmd("autocmd TermClose * :wa")
