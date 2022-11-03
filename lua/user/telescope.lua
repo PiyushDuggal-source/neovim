@@ -15,7 +15,7 @@ telescope.setup {
     file_ignore_patterns = { ".git/", "node_modules" },
 
     layout_config = {
-      preview_width = 70
+      preview_width = 0.7
     },
     mappings = {
       i = {
