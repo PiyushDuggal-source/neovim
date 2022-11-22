@@ -75,7 +75,7 @@ keymap("n", "<leader>fo", ":Telescope oldfiles<cr>", opts)
 -- Plugins --
 
 -- NvimTree
-keymap("n", "<leader>e", ":Lex 15<CR>", opts)
+keymap("n", "<leader>e", ":Lex 13<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)

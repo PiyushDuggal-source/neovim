@@ -16,6 +16,6 @@ bufferline.setup {
     -- close_icon = '',
     left_trunc_marker = "",
     right_trunc_marker = "",
-    -- diagnostics = "nvim_lsp",
+    diagnostics = "nvim_lsp",
   },
 }

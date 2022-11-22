@@ -59,6 +59,7 @@ return packer.startup(function(use)
   use { "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" }
   use { "akinsho/toggleterm.nvim" }
   use { "ahmedkhalf/project.nvim" }
+  -- use { 'nvim-telescope/telescope-project.nvim' }
   use { "lewis6991/impatient.nvim" }
   use { "lukas-reineke/indent-blankline.nvim" }
   use { "goolord/alpha-nvim" }
@@ -104,6 +105,26 @@ return packer.startup(function(use)
   use { "williamboman/mason-lspconfig.nvim" }
   use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
   use { "RRethy/vim-illuminate" }
+  -- use { "ojroques/nvim-lspfuzzy" }
+  -- use {
+  --   "ray-x/lsp_signature.nvim",
+  --   requires = {
+  --     {
+  --       "kosayoda/nvim-lightbulb",
+  --       config = function()
+  --         vim.api.nvim_command("highlight LightBulbVirtualText guifg=red")
+  --       end
+  --     },
+  --     "nvim-lua/lsp-status.nvim",
+  --     { "ojroques/nvim-lspfuzzy", config = require "lspfuzzy".setup {} },
+  --     {
+  --       "ray-x/lsp_signature.nvim",
+  --       config = function()
+  --         require "lsp_signature".on_attach()
+  --       end
+  --     }
+  --   }
+  -- }
 
   -- Telescope
   use {
@@ -150,12 +171,49 @@ return packer.startup(function(use)
   use { "norcalli/nvim-colorizer.lua" }
 
   -- autoSave
-  use { "Pocco81/auto-save.nvim" , config = {
-    debounce_delay = 5000,
-  }}
+  use { "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup({
+        debounce_delay = 5000
+      })
+    end
+  }
+
+  -- surrounding
+  use {
+    "kylechui/nvim-surround",
+    config = function ()
+      require("nvim-surround").setup()
+    end
+  }
+  -- use { 'tpope/vim-surround' }
+
+
+  -- jest tester
+  -- use { 'klen/nvim-test' }
+  -- use { 'David-Kunz/jester',
+  --   config = function()
+  --     require("jester").setup({
+  --       cmd = "jest -t '$result' -- $file",
+  --       dap = {
+  --         console = "externalTerminal"
+  --       }
+  --     })
+  --   end
+  -- }
+
 
   -- code actions
   use { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu' }
+
+  -- codi vim plugin - Like Quokkajs
+  use { 'metakirby5/codi.vim' }
+
+  -- scope for bufferline and Tabs
+  use {"tiagovla/scope.nvim", config = function ()
+   require("scope").setup() 
+  end}
+
 
   -- DAP
   use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
