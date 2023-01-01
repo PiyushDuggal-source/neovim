@@ -56,7 +56,7 @@ return packer.startup(function(use)
   use { "kyazdani42/nvim-tree.lua" }
   use { "akinsho/bufferline.nvim" }
   use { "moll/vim-bbye" }
-  use { "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" }
+  use { "nvim-lualine/lualine.nvim" }
   use { "akinsho/toggleterm.nvim" }
   use { "ahmedkhalf/project.nvim" }
   -- use { 'nvim-telescope/telescope-project.nvim' }
@@ -66,7 +66,7 @@ return packer.startup(function(use)
 
   -- Colorschemesq
   -- use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
-  -- use { "lunarvim/darkplus.nvim"}
+  use { "lunarvim/darkplus.nvim" }
   use {
     "catppuccin/nvim",
     as = "catppuccin",
@@ -105,7 +105,7 @@ return packer.startup(function(use)
   use { "williamboman/mason-lspconfig.nvim" }
   use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
   use { "RRethy/vim-illuminate" }
-  -- use { "ojroques/nvim-lspfuzzy" }
+  -- use { "ms-jpq/coq_nvim" }
   -- use {
   --   "ray-x/lsp_signature.nvim",
   --   requires = {
@@ -182,7 +182,7 @@ return packer.startup(function(use)
   -- surrounding
   use {
     "kylechui/nvim-surround",
-    config = function ()
+    config = function()
       require("nvim-surround").setup()
     end
   }
@@ -210,10 +210,13 @@ return packer.startup(function(use)
   use { 'metakirby5/codi.vim' }
 
   -- scope for bufferline and Tabs
-  use {"tiagovla/scope.nvim", config = function ()
-   require("scope").setup() 
-  end}
+  use { "tiagovla/scope.nvim" }
 
+  -- Import cost
+  -- use { 'yardnsm/vim-import-cost', run = 'npm install' }
+
+  -- Syntax highlighting
+  use 'David-Kunz/markid'
 
   -- DAP
   use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }

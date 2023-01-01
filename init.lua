@@ -23,5 +23,7 @@ require "user.dap"
 require "user.whichKey"
 require "user.typescript"
 require "user.tabout"
+require("scope").setup()
 -- require "user.colorizer"
-
+-- vim.cmd(":COQnow --shut-up")
+vim.lsp.set_log_level("debug")

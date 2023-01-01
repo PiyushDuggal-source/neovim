@@ -20,8 +20,8 @@ dashboard.section.buttons.val = {
   dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
   dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
   -- dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"),
-  dashboard.button("c", " " .. "Neovim Config", ":e ~/.config/nvim/init.lua <CR>"),
-  dashboard.button("t", " " .. "Alacritty Config", ":e ~/.alacritty.yml <CR>"),
+  dashboard.button("c", " " .. " Neovim Config", ":e ~/.config/nvim/init.lua <CR>"),
+  dashboard.button("t", " " .. " Kitty Config", ":e ~/.config/kitty/kitty.conf <CR>"),
   dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 }
 local function footer()
