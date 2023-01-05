@@ -8,7 +8,7 @@ local servers = {
 	"jsonls",
 	"yamlls",
 }
--- local coq = require "coq"
+local coq = require "coq"
 local settings = {
 	ui = {
 		border = "none",
@@ -46,6 +46,6 @@ for _, server in pairs(servers) do
 	if require_ok then
 		opts = vim.tbl_deep_extend("force", conf_opts, opts)
 	end
-	-- lspconfig[server].setup(coq.lsp_ensure_capabilities(opts))
-  lspconfig[server].setup(opts)
+	lspconfig[server].setup(coq.lsp_ensure_capabilities(opts))
+  -- lspconfig[server].setup(opts)
 end

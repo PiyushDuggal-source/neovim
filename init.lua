@@ -1,6 +1,5 @@
 require "user.options"
 require "user.keymaps"
-require "user.plugins"
 require "user.autocommands"
 require "user.colorscheme"
 require "user.cmp"
@@ -19,7 +18,7 @@ require "user.illuminate"
 require "user.indentline"
 require "user.alpha"
 require "user.lsp"
-require "user.dap"
+-- require "user.dap"
 require "user.whichKey"
 require "user.typescript"
 require "user.tabout"
@@ -27,3 +26,6 @@ require("scope").setup()
 -- require "user.colorizer"
 -- vim.cmd(":COQnow --shut-up")
 vim.lsp.set_log_level("debug")
+
+-- vim.cmd(":hi Comment guifg=#159e30")
+-- vim.cmd(":hi String guifg=#689c75")
