@@ -48,7 +48,7 @@ return packer.startup(function(use)
   use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
   use { "nvim-lua/popup.nvim" }
   use { "p00f/nvim-ts-rainbow" }
-  use { "nvim-telescope/telescope-media-files.nvim" }
+  -- use { "nvim-telescope/telescope-media-files.nvim" }
   use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim" }
   use { "JoosepAlviste/nvim-ts-context-commentstring" }
@@ -69,8 +69,7 @@ return packer.startup(function(use)
   use { "lunarvim/darkplus.nvim" }
   use {
     "catppuccin/nvim",
-    as = "catppuccin",
-  }
+    as = "catppuccin", }
 
   -- cmp plugins
   -- use { "hrsh7th/nvim-cmp"} -- The completion plugin
@@ -90,8 +89,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
   use { "hrsh7th/cmp-nvim-lua", ft = { "lua" } }
-  -- use 'ms-jpq/coq_nvim'
-  -- use 'ms-jpq/coq.artifacts'
+  use 'ms-jpq/coq_nvim'
+  use 'ms-jpq/coq.artifacts'
   -- use 'ms-jpq/coq.thirdparty'
 
   -- snippets
@@ -187,7 +186,17 @@ return packer.startup(function(use)
     end
   }
   -- use { 'tpope/vim-surround' }
+  --
+  -- COLOR SCHEMES
+  -- use ({ 'projekt0n/github-nvim-theme' })
+  -- --
+  --
+  -- use { "cocopon/iceberg.vim" }
 
+  -- use { 'Everblush/everblush.vim' }
+
+  --
+  -- use {'fcpg/vim-fahrenheit'}
 
   -- jest tester
   -- use { 'klen/nvim-test' }
@@ -202,6 +211,8 @@ return packer.startup(function(use)
   --   end
   -- }
 
+  -- tags auto-completion
+  use "windwp/nvim-ts-autotag"
 
   -- code actions
   use { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu' }
@@ -219,9 +230,9 @@ return packer.startup(function(use)
   use 'David-Kunz/markid'
 
   -- DAP
-  use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
-  use { "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
-  use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
+  -- use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
+  -- use { "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
+  -- use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
