@@ -1,14 +1,14 @@
 local servers = {
-	"sumneko_lua",
+	-- "sumneko_lua",
 	"cssls",
 	"html",
 	"tsserver",
 	"pyright",
 	"bashls",
 	"jsonls",
-	"yamlls",
+	-- "yamlls",
 }
--- local coq = require "coq"
+local coq = require "coq"
 local settings = {
 	ui = {
 		border = "none",
@@ -23,10 +23,10 @@ local settings = {
 }
 
 require("mason").setup(settings)
-require("mason-lspconfig").setup({
+require("mason-lspconfig").setup(coq.lsp_ensure_capabilities({
 	ensure_installed = servers,
 	automatic_installation = true,
-})
+}))
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
@@ -46,6 +46,6 @@ for _, server in pairs(servers) do
 	if require_ok then
 		opts = vim.tbl_deep_extend("force", conf_opts, opts)
 	end
-	-- lspconfig[server].setup(coq.lsp_ensure_capabilities(opts))
-  lspconfig[server].setup(opts)
+	lspconfig[server].setup(coq.lsp_ensure_capabilities(opts))
+  -- lspconfig[server].setup(opts)
 end
