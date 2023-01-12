@@ -27,19 +27,28 @@ local kind_icons = {
 }
 
 local servers = {
-	"sumneko_lua",
-	"cssls",
-	"html",
-	"tsserver",
-	"pyright",
-	"bashls",
-	"jsonls",
-	-- "yamlls",
+  "sumneko_lua",
+  "cssls",
+  "html",
+  "tsserver",
+  "pyright",
+  "bashls",
+  "jsonls",
+  -- "yamlls",
 }
 
 vim.g.coq_settings = {
   ['keymap.bigger_preview'] = "<c-0>",
   ['keymap.jump_to_mark'] = "<c-9>",
   ['display.icons.mappings'] = kind_icons,
-  ['clients.lsp.always_on_top'] = servers
+  ['clients.lsp.always_on_top'] = servers,
+  ['completion.skip_after'] = { "{", "}", "[", "]", ";" },
+  ['display.pum.fast_close'] = false
+}
+
+
+-- coq.thirdparty config
+require("coq_3p") {
+  { src = "nvimlua", short_name = "nLUA" },
+  { src = "figlet", short_name = "BIG", fonts = { "/usr/share/figlet/fonts/DeltaCorpsPriest1.flf" } }
 }
