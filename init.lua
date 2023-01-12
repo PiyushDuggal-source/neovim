@@ -3,7 +3,7 @@ require "user.keymaps"
 require "user.plugins"
 require "user.autocommands"
 require "user.colorscheme"
--- require "user.cmp"
+require "user.cmp"
 require "user.telescope"
 require "user.gitsigns"
 require "user.treesitter"
@@ -27,5 +27,5 @@ require "user.typescript"
 require "user.tabout"
 require("scope").setup()
 -- require "user.colorizer"
-vim.cmd(":COQnow --shut-up")
+-- vim.cmd(":COQnow --shut-up")
 vim.cmd(":set laststatus=3")
