@@ -72,7 +72,7 @@ return packer.startup(function(use)
     as = "catppuccin", }
 
   -- cmp plugins
-  -- use { "hrsh7th/nvim-cmp"} -- The completion plugin
+  use { "hrsh7th/nvim-cmp"} -- The completion plugin
   -- use { "hrsh7th/cmp-buffer"} -- buffer completions
   -- use { "hrsh7th/cmp-path"} -- path completions
   -- use { "hrsh7th/cmp-vsnip"}
@@ -81,17 +81,17 @@ return packer.startup(function(use)
   -- use { "hrsh7th/cmp-nvim-lsp"}
   -- use { "hrsh7th/cmp-nvim-lua"}
 
-  use "christianchiarulli/nvim-cmp"
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-emoji"
-  use { "hrsh7th/cmp-nvim-lua", ft = { "lua" } }
+  -- use "christianchiarulli/nvim-cmp"
+  -- use "hrsh7th/cmp-buffer" -- buffer completions
+  -- use "hrsh7th/cmp-path" -- path completions
+  -- use "hrsh7th/cmp-cmdline" -- cmdline completions
+  -- use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  -- use "hrsh7th/cmp-nvim-lsp"
+  -- use "hrsh7th/cmp-emoji"
+  -- use { "hrsh7th/cmp-nvim-lua", ft = { "lua" } }
   use 'ms-jpq/coq_nvim'
   use 'ms-jpq/coq.artifacts'
-  -- use 'ms-jpq/coq.thirdparty'
+  use 'ms-jpq/coq.thirdparty'
 
   -- snippets
   use { "L3MON4D3/LuaSnip" } --snippet engine
@@ -178,6 +178,7 @@ return packer.startup(function(use)
     end
   }
 
+
   -- surrounding
   use {
     "kylechui/nvim-surround",
@@ -217,13 +218,15 @@ return packer.startup(function(use)
   -- code actions
   use { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu' }
 
+
   -- codi vim plugin - Like Quokkajs
-  use { 'metakirby5/codi.vim' }
+  use { 'metakirby5/codi.vim', ft={ "javascript", "typescript" } }
 
   -- scope for bufferline and Tabs
   use { "tiagovla/scope.nvim" }
 
   -- Import cost
+  use { 'barrett-ruth/import-cost.nvim', run = "sh install.sh npm" }
   -- use { 'yardnsm/vim-import-cost', run = 'npm install' }
 
   -- Syntax highlighting
