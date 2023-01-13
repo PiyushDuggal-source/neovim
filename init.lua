@@ -29,3 +29,6 @@ require("scope").setup()
 -- require "user.colorizer"
 vim.cmd(":COQnow --shut-up")
 vim.cmd(":set laststatus=3")
+vim.g.UltiSnipsExpandTrigger="<alt>"
+vim.g.UltiSnipsJumpForwardTrigger="<c-b>"
+vim.g.UltiSnipsJumpBackwardTrigger="<c-z>"

@@ -40,9 +40,10 @@ local servers = {
 vim.g.coq_settings = {
   ['keymap.bigger_preview'] = "<c-0>",
   ['keymap.jump_to_mark'] = "<c-9>",
+  ['keymap.eval_snips'] = "<leader>j",
   ['display.icons.mappings'] = kind_icons,
   ['clients.lsp.always_on_top'] = servers,
-  ['completion.skip_after'] = { "{", "}", "[", "]", ";" },
+  ['completion.skip_after'] = { "{", "}", "[", "]", ";" , "(", ")"},
   -- ['display.pum.fast_close'] = false
   ['display.preview.border'] = { { "", "NormalFloat" }, { "", "NormalFloat" }, { "", "NormalFloat" },
     { " ", "NormalFloat" },
