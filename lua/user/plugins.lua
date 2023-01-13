@@ -95,7 +95,11 @@ return packer.startup(function(use)
 
   -- snippets
   use { "L3MON4D3/LuaSnip" } --snippet engine
-  use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
+
+  -- vim-react-snippets
+  use { 'SirVer/ultisnips'}
+  use { 'mlaursen/vim-react-snippets' }
+  -- use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
 
   -- LSP
   use { "williamboman/nvim-lsp-installer" } -- simple to use language server installer

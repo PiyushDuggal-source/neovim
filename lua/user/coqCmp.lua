@@ -43,9 +43,11 @@ vim.g.coq_settings = {
   ['display.icons.mappings'] = kind_icons,
   ['clients.lsp.always_on_top'] = servers,
   ['completion.skip_after'] = { "{", "}", "[", "]", ";" },
-  ['display.pum.fast_close'] = false
+  -- ['display.pum.fast_close'] = false
+  ['display.preview.border'] = { { "", "NormalFloat" }, { "", "NormalFloat" }, { "", "NormalFloat" },
+    { " ", "NormalFloat" },
+    { "", "NormalFloat" }, { "", "NormalFloat" }, { "", "NormalFloat" }, { " ", "NormalFloat" }, },
 }
-
 
 -- coq.thirdparty config
 require("coq_3p") {
