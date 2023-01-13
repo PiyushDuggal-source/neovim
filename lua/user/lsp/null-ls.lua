@@ -14,11 +14,10 @@ null_ls.setup {
   sources = {
     formatting.prettier.with {
       extra_filetypes = { "toml" },
-      extra_args = { "--double-quote", "--jsx-single-quote" },
+      extra_args = { "--double-quote", "--jsx-single-quote", "--tsx-single-quote" },
     },
     formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,
-    formatting.google_java_format,
     diagnostics.flake8,
   },
 }

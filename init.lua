@@ -3,7 +3,7 @@ require "user.keymaps"
 require "user.plugins"
 require "user.autocommands"
 require "user.colorscheme"
-require "user.cmp"
+-- require "user.cmp"
 require "user.telescope"
 require "user.gitsigns"
 require "user.treesitter"
@@ -19,11 +19,16 @@ require "user.illuminate"
 require "user.indentline"
 require "user.alpha"
 require "user.lsp"
+require 'user.import-cost'
 -- require "user.dap"
+require 'user.coqCmp'
 require "user.whichKey"
 require "user.typescript"
 require "user.tabout"
 require("scope").setup()
 -- require "user.colorizer"
--- vim.cmd(":COQnow --shut-up")
--- vim.lsp.set_log_level("debug")
+vim.cmd(":COQnow --shut-up")
+vim.cmd(":set laststatus=3")
+vim.g.UltiSnipsExpandTrigger="<alt>"
+vim.g.UltiSnipsJumpForwardTrigger="<c-b>"
+vim.g.UltiSnipsJumpBackwardTrigger="<c-z>"

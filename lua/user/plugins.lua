@@ -82,20 +82,59 @@ return packer.startup(function(use)
   -- use { "hrsh7th/cmp-nvim-lua"}
 
   use "christianchiarulli/nvim-cmp"
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-emoji"
-  use { "hrsh7th/cmp-nvim-lua", ft = { "lua" } }
+  -- use "hrsh7th/cmp-buffer" -- buffer completions
+  -- use "hrsh7th/cmp-path" -- path completions
+  -- use "hrsh7th/cmp-cmdline" -- cmdline completions
+  -- use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  -- use "hrsh7th/cmp-nvim-lsp"
+  -- use "hrsh7th/cmp-emoji"
+  -- use { "hrsh7th/cmp-nvim-lua", ft = { "lua" } }
   use 'ms-jpq/coq_nvim'
   use 'ms-jpq/coq.artifacts'
-  -- use 'ms-jpq/coq.thirdparty'
+  use 'ms-jpq/coq.thirdparty'
 
   -- snippets
   use { "L3MON4D3/LuaSnip" } --snippet engine
-  use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
+
+  -- vim-react-snippets
+  use { 'SirVer/ultisnips'}
+  use { 'epilande/vim-react-snippets' }
+  use {'honza/vim-snippets'}
+  -- use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
+
+  -- Pum popup
+  use { "Shougo/pum.vim" }
+
+  use {
+  "smjonas/snippet-converter.nvim",
+  -- SnippetConverter uses semantic versioning. Example: use version = "1.*" to avoid breaking changes on version 1.
+  -- Uncomment the next line to follow stable releases only.
+  -- tag = "*",
+  config = function()
+    local template = {
+      -- name = "t1", (optionally give your template a name to refer to it in the `ConvertSnippets` command)
+      sources = {
+        ultisnips = {
+          -- Add snippets from (plugin) folders or individual files on your runtimepath...
+          "./vim-snippets/UltiSnips",
+          -- ...or use absolute paths on your system.
+        },
+      },
+      output = {
+        -- Specify the output formats and paths
+        vscode_luasnip = {
+          vim.fn.stdpath("config") .. "/UltiSnips",
+        },
+      },
+    }
+
+    require("snippet_converter").setup {
+      templates = { template },
+      -- To change the default settings (see configuration section in the documentation)
+      -- settings = {},
+    }
+  end
+}
 
   -- LSP
   use { "williamboman/nvim-lsp-installer" } -- simple to use language server installer
@@ -161,11 +200,33 @@ return packer.startup(function(use)
   -- startup Time
   use { "dstein64/vim-startuptime" }
 
-  use { "abecodes/tabout.nvim",
-    wants = { 'nvim-treesitter' }, -- or require if not used so far
-    after = { 'nvim-cmp' } -- if a completion plugin is using tabs load it before
-  }
-
+use {
+  'abecodes/tabout.nvim',
+  config = function()
+    require('tabout').setup {
+    tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable
+    backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
+    act_as_tab = true, -- shift content if tab out is not possible
+    act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
+    default_tab = '<C-t>', -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
+    default_shift_tab = '<C-d>', -- reverse shift default action,
+    enable_backwards = true, -- well ...
+    completion = true, -- if the tabkey is used in a completion pum
+    tabouts = {
+      {open = "'", close = "'"},
+      {open = '"', close = '"'},
+      {open = '`', close = '`'},
+      {open = '(', close = ')'},
+      {open = '[', close = ']'},
+      {open = '{', close = '}'}
+    },
+    ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
+    exclude = {} -- tabout will ignore these filetypes
+}
+  end,
+	wants = {'nvim-treesitter'}, -- or require if not used so far
+	after = {'nvim-cmp'} -- if a completion plugin is using tabs load it before
+}
   -- -- Color Shower
   use { "norcalli/nvim-colorizer.lua" }
 
@@ -177,6 +238,7 @@ return packer.startup(function(use)
       })
     end
   }
+
 
   -- surrounding
   use {
@@ -217,13 +279,15 @@ return packer.startup(function(use)
   -- code actions
   use { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu' }
 
+
   -- codi vim plugin - Like Quokkajs
-  use { 'metakirby5/codi.vim' }
+  use { 'metakirby5/codi.vim', ft={ "javascript", "typescript" } }
 
   -- scope for bufferline and Tabs
   use { "tiagovla/scope.nvim" }
 
   -- Import cost
+  use { 'barrett-ruth/import-cost.nvim', run = "sh install.sh npm" }
   -- use { 'yardnsm/vim-import-cost', run = 'npm install' }
 
   -- Syntax highlighting

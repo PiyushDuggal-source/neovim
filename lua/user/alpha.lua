@@ -5,16 +5,20 @@ end
 
 local dashboard = require "alpha.themes.dashboard"
 dashboard.section.header.val = {
+  [[                                                 ]],
+  [[                                                 ]],
+  [[                                                 ]],
   [[                               __                ]],
   [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
   [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
   [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
   [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
   [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+  [[                                                 ]],
 }
 dashboard.section.buttons.val = {
   dashboard.button("b", ' ' .. " Sessions", ":SLoad<CR>"),
-  dashboard.button("T", ' ' .. " New Terminal", ":ToggleTerm size=40 dir=~/Piyush direction=horizontal<CR>"),
+  -- dashboard.button("T", ' ' .. " New Terminal", ":ToggleTerm size=40 dir=~/Piyush direction=horizontal<CR>"),
   dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
   dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
   dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
@@ -25,7 +29,7 @@ dashboard.section.buttons.val = {
   dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 }
 local function footer()
-    -- Number of plugins
+  -- Number of plugins
   -- local total_plugins = #vim.tbl_keys(packer_plugins)
   local datetime = os.date "%d-%m-%Y %H:%M:%S"
   -- local plugins_text = "   "
@@ -46,8 +50,6 @@ local function footer()
 
   return quote .. "\n\n                 " .. datetime
 end
-
-
 
 dashboard.section.footer.val = footer()
 
