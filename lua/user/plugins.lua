@@ -92,6 +92,8 @@ return packer.startup(function(use)
   -- use 'ms-jpq/coq_nvim'
   -- use 'ms-jpq/coq.artifacts'
   -- use 'ms-jpq/coq.thirdparty'
+use { 'epilande/vim-react-snippets' }
+  use {'honza/vim-snippets'}
 
   -- snippets
   use { "L3MON4D3/LuaSnip" } --snippet engine

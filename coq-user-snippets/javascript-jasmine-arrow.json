@@ -1,0 +1,68 @@
+{
+  "des": {
+    "prefix": "des",
+    "description": "Describe (js)",
+    "body": [
+      "describe('${1:description}', () => {",
+      "\t$0",
+      "\\});"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "it": {
+    "prefix": "it",
+    "description": "it (js)",
+    "body": [
+      "it('${1:description}', () => {",
+      "\t$0",
+      "\\});"
+    ]
+  },
+  "bef": {
+    "prefix": "bef",
+    "description": "before each (js)",
+    "body": [
+      "beforeEach(() => {",
+      "\t$0",
+      "\\});"
+    ]
+  },
+  "aft": {
+    "prefix": "aft",
+    "description": "after each (js)",
+    "body": [
+      "afterEach(() => {",
+      "\t$0",
+      "\\});"
+    ]
+  },
+  "befa": {
+    "prefix": "befa",
+    "description": "before all (js)",
+    "body": [
+      "beforeAll(() => {",
+      "\t$0",
+      "\\});"
+    ]
+  },
+  "afta": {
+    "prefix": "afta",
+    "description": "after all (js)",
+    "body": [
+      "afterAll(() => {",
+      "\t$0",
+      "\\});"
+    ]
+  },
+  "ru": {
+    "prefix": "ru",
+    "description": "runs (js)",
+    "body": [
+      "runs(() => {",
+      "\t$0",
+      "\\});"
+    ]
+  }
+}

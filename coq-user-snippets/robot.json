@@ -1,0 +1,429 @@
+{
+  "cat": {
+    "prefix": "cat",
+    "description": "Catenate",
+    "body": "\\${${1:name}\\}=    Catenate    SEPARATOR=${2:---}    ${3:Hello}    ${4:world}",
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "eval": {
+    "prefix": "eval",
+    "description": "Evaluate",
+    "body": "\\${${1:val}\\}=    Evaluate    ${2:\\${x\\} - 10}"
+  },
+  "for": {
+    "prefix": "for",
+    "description": "FOR loop",
+    "body": [
+      ":FOR    \\${${1:element}\\}    IN    ${2:@{ELEMENTS\\}}",
+      "\\    ${0:${TM_SELECTED_TEXT:Start Element}}    \\${$1\\}"
+    ]
+  },
+  "nop": {
+    "prefix": "nop",
+    "description": "No Operation",
+    "body": "No Operation"
+  },
+  "rfk": {
+    "prefix": "rfk",
+    "description": "Return From Keyword",
+    "body": "Return From Keyword    ${1:\\${optional return value\\}}"
+  },
+  "rfki": {
+    "prefix": "rfki",
+    "description": "Return From Keyword If",
+    "body": "Return From Keyword If    '\\${${1:rc}\\}' != '${2:abc}'    ${3:\\${optional return value\\}}"
+  },
+  "rk": {
+    "prefix": "rk",
+    "description": "Run Keyword",
+    "body": "Run Keyword    ${1:\\${kw\\}}    ${2:\\${args\\}}"
+  },
+  "rkacof": {
+    "prefix": "rkacof",
+    "description": "Run Keyword And Continue On Failure",
+    "body": "Run Keyword And Continue On Failure    ${1:\\${kw\\}}    ${2:\\${args\\}}"
+  },
+  "rkaee": {
+    "prefix": "rkaee",
+    "description": "Run Keyword And Expect Error",
+    "body": "Run Keyword And Expect Error    ${1:My error}    ${2:\\${kw\\}}    ${3:\\${args\\}}"
+  },
+  "rkaie": {
+    "prefix": "rkaie",
+    "description": "Run Keyword And Ignore Error",
+    "body": [
+      "Run Keyword And Ignore Error    ${1:\\${kw\\}}    ${2:\\${args\\}}",
+      "\\${${3:result}\\}    \\${${4:return_value}\\}=    Run Keyword And Ignore Error    ${1:\\${kw\\}}    ${2:\\${args\\}}"
+    ]
+  },
+  "rkar": {
+    "prefix": "rkar",
+    "description": "Run Keyword And Return",
+    "body": "Run Keyword And Return    ${1:\\${kw\\}}    ${2:\\${args\\}}"
+  },
+  "rkari": {
+    "prefix": "rkari",
+    "description": "Run Keyword And Return If",
+    "body": "Run Keyword And Return If    '\\${${1:rc}\\}' != '${2:abc}'    ${3:\\${kw\\}}    ${4:\\${args\\}}"
+  },
+  "rkars": {
+    "prefix": "rkars",
+    "description": "Run Keyword And Return Status",
+    "body": "\\${${3:result}\\}=    Run Keyword And Return Status    ${1:\\${kw\\}}    ${2:\\${args\\}}"
+  },
+  "rki": {
+    "prefix": "rki",
+    "description": "Run Keyword If",
+    "body": [
+      "Run Keyword If    '\\${${1:rc}\\}' != '${2:abc}'",
+      "...               ${3:${TM_SELECTED_TEXT:Some keyword returning a value}}",
+      "...    ELSE IF    '\\${${4:str}\\}' != '${5:def}'",
+      "...               ${6:Another keyword}",
+      "...    ELSE",
+      "...               ${7:Final keyword}"
+    ]
+  },
+  "rkiactf": {
+    "prefix": "rkiactf",
+    "description": "Run Keyword If Any Critical Tests Failed",
+    "body": "Run Keyword If Any Critical Tests Failed    ${1:\\${kw\\}}    ${2:\\${args\\}}"
+  },
+  "rkiactp": {
+    "prefix": "rkiactp",
+    "description": "Run Keyword If All Critical Tests Passed",
+    "body": "Run Keyword If All Critical Tests Passed    ${1:\\${kw\\}}    ${2:\\${args\\}}"
+  },
+  "rkiatf": {
+    "prefix": "rkiatf",
+    "description": "Run Keyword If Any Tests Failed",
+    "body": "Run Keyword If Any Tests Failed    ${1:\\${kw\\}}    ${2:\\${args\\}}"
+  },
+  "rkiatp": {
+    "prefix": "rkiatp",
+    "description": "Run Keyword If All Tests Passed",
+    "body": "Run Keyword If All Tests Passed    ${1:\\${kw\\}}    ${2:\\${args\\}}"
+  },
+  "rkitf": {
+    "prefix": "rkitf",
+    "description": "Run Keyword If Test Failed",
+    "body": "Run Keyword If Test Failed    ${1:\\${kw\\}}    ${2:\\${args\\}}"
+  },
+  "rkitp": {
+    "prefix": "rkitp",
+    "description": "Run Keyword If Test Passed",
+    "body": "Run Keyword If Test Passed    ${1:\\${kw\\}}    ${2:\\${args\\}}"
+  },
+  "rkito": {
+    "prefix": "rkito",
+    "description": "Run Keyword If Timeout Occurred",
+    "body": "Run Keyword If Timeout Occurred    ${1:\\${kw\\}}    ${2:\\${args\\}}"
+  },
+  "rks": {
+    "prefix": "rks",
+    "description": "Run Keywords",
+    "body": [
+      "Run Keywords",
+      "...    \\${1:${TM_SELECTED_TEXT:Initialize database    $\\{DB NAME}}\\}    AND",
+      "...    ${2:Clear logs}"
+    ]
+  },
+  "rku": {
+    "prefix": "rku",
+    "description": "Run Keyword Unless",
+    "body": "Run Keyword Unless    '\\${${1:rc}\\}' != '${2:abc}'    ${3:\\${kw\\}}    ${4:\\${args\\}}"
+  },
+  "sgv": {
+    "prefix": "sgv",
+    "description": "Set Global Variable",
+    "body": "Set Global Variable    \\${${1:name}\\}    ${2:\\${value\\}}"
+  },
+  "sbe": {
+    "prefix": "sbe",
+    "description": "Should Be Equal",
+    "body": "Should Be Equal    \"\\${${1:var}\\}\"    \"${2:expected value}\"    ${3:\"optional error msg\"}\t${4:ignore_case=True}"
+  },
+  "sleep": {
+    "prefix": "sleep",
+    "description": "Sleep",
+    "body": "Sleep    ${1:2 minutes 10 seconds}"
+  },
+  "ssv": {
+    "prefix": "ssv",
+    "description": "Set Suite Variable",
+    "body": "Set Suite Variable    \\${${1:name}\\}    ${2:\\${value\\}}"
+  },
+  "stv": {
+    "prefix": "stv",
+    "description": "Set Test Variable",
+    "body": "Set Test Variable    \\${${1:name}\\}    ${2:\\${value\\}}"
+  },
+  "sv": {
+    "prefix": "sv",
+    "description": "Set Variable",
+    "body": "\\${${1:name}\\}=    Set Variable    ${2:\\${value\\}}"
+  },
+  "wuks": {
+    "prefix": "wuks",
+    "description": "Wait Until Keyword Succeeds",
+    "body": "Wait Until Keyword Succeeds    ${1:10x}    ${2:2s}    ${3:${TM_SELECTED_TEXT:Some Keyword}}"
+  },
+  "pause": {
+    "prefix": "pause",
+    "description": "Pause test execution",
+    "body": [
+      "Import library    Dialogs",
+      "Pause execution"
+    ]
+  },
+  "tpause": {
+    "prefix": "tpause",
+    "description": "Teardown Pause - pause test execution only on failure",
+    "body": [
+      "[Teardown]    Run Keyword If Test Failed    Run Keywords",
+      "...    Import library    Dialogs    AND",
+      "...    Pause execution"
+    ]
+  },
+  "cps": {
+    "prefix": "cps",
+    "description": "Capture Page Screenshot",
+    "body": "Capture Page Screenshot    ${1:\\${optional filename\\}}"
+  },
+  "esbd": {
+    "prefix": "esbd",
+    "description": "Element Should Be Disabled",
+    "body": "Element Should Be Disabled    \\${${1:locator}\\}"
+  },
+  "esbe": {
+    "prefix": "esbe",
+    "description": "Element Should Be Enabled",
+    "body": "Element Should Be Enabled    \\${${1:locator}\\}"
+  },
+  "esbf": {
+    "prefix": "esbf",
+    "description": "Element Should Be Focused",
+    "body": "Element Should Be Focused    \\${${1:locator}\\}"
+  },
+  "esbv": {
+    "prefix": "esbv",
+    "description": "Element Should Be Visible",
+    "body": "Element Should Be Visible    \\${${1:locator}\\}    ${2:\\${optional message\\}}"
+  },
+  "esc": {
+    "prefix": "esc",
+    "description": "Element Should Contain",
+    "body": "Element Should Contain    \\${${1:locator}\\}    ${2:\\${expected\\}}    ${3:\\${optional message\\}}"
+  },
+  "esnbv": {
+    "prefix": "esnbv",
+    "description": "Element Should Not Be Visible",
+    "body": "Element Should Not Be Visible    \\${${1:locator}\\}    ${2:\\${optional message\\}}"
+  },
+  "esnc": {
+    "prefix": "esnc",
+    "description": "Element Should Not Contain",
+    "body": "Element Should Not Contain    \\${${1:locator}\\}    ${2:\\${expected\\}}    ${3:\\${optional message\\}}"
+  },
+  "etsb": {
+    "prefix": "etsb",
+    "description": "Element Text Should Be",
+    "body": "Element Text Should Be    \\${${1:locator}\\}    ${2:\\${expected\\}}    ${3:\\${optional message\\}}"
+  },
+  "eaj": {
+    "prefix": "eaj",
+    "description": "Execute Async Javascript",
+    "body": "Execute Async Javascript    ${1:\\${code line 1\\}}    ${2:\\${code line 2\\}}"
+  },
+  "ej": {
+    "prefix": "ej",
+    "description": "Execute Javascript",
+    "body": "Execute Javascript    ${1:\\${code line 1\\}}    ${2:\\${code line 2\\}}"
+  },
+  "gwp": {
+    "prefix": "gwp",
+    "description": "Get Window Position",
+    "body": "\\${${1:x}\\}    \\${${2:y}\\}=    Get Window Position"
+  },
+  "gws": {
+    "prefix": "gws",
+    "description": "Get Window Size",
+    "body": "\\${${1:width}\\}    \\${${2:height}\\}=    Get Window Size"
+  },
+  "mbw": {
+    "prefix": "mbw",
+    "description": "Maximize Browser Window",
+    "body": "Maximize Browser Window"
+  },
+  "md": {
+    "prefix": "md",
+    "description": "Mouse Down",
+    "body": "Mouse Down    \\${${1:locator}\\}"
+  },
+  "mdoi": {
+    "prefix": "mdoi",
+    "description": "Mouse Down On Image",
+    "body": "Mouse Down On Image    ${1:\\${locator\\}}"
+  },
+  "mdol": {
+    "prefix": "mdol",
+    "description": "Mouse Down On Link",
+    "body": "Mouse Down On Link    ${1:\\${locator\\}}"
+  },
+  "mout": {
+    "prefix": "mout",
+    "description": "Mouse Out",
+    "body": "Mouse Out    ${1:\\${locator\\}}"
+  },
+  "mover": {
+    "prefix": "mover",
+    "description": "Mouse Over",
+    "body": "Mouse Over    ${1:\\${locator\\}}"
+  },
+  "mu": {
+    "prefix": "mu",
+    "description": "Mouse Up",
+    "body": "Mouse Up    ${1:\\${locator\\}}"
+  },
+  "ob": {
+    "prefix": "ob",
+    "description": "Open Browser",
+    "body": "Open Browser    ${1:\\${url\\}}    ${2:\\${browser=firefox\\}}    ${3:\\${alias=None\\}}    ${4:\\${remote_url=False\\}}    ${5:\\${desired_capabilities=None\\}}    ${6:\\${ff_profile_dir=None\\}}"
+  },
+  "ocm": {
+    "prefix": "ocm",
+    "description": "Open Context Menu",
+    "body": "Open Context Menu    ${1:\\${locator\\}}"
+  },
+  "psc": {
+    "prefix": "psc",
+    "description": "Page Should Contain",
+    "body": "Page Should Contain    ${1:\\${text\\}}    ${2:loglevel=INFO}"
+  },
+  "pscb": {
+    "prefix": "pscb",
+    "description": "Page Should Contain Button",
+    "body": "Page Should Contain Button    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "pscc": {
+    "prefix": "pscc",
+    "description": "Page Should Contain Checkbox",
+    "body": "Page Should Contain Checkbox    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "psce": {
+    "prefix": "psce",
+    "description": "Page Should Contain Element",
+    "body": "Page Should Contain Element    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "psci": {
+    "prefix": "psci",
+    "description": "Page Should Contain Image",
+    "body": "Page Should Contain Image    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "pscl": {
+    "prefix": "pscl",
+    "description": "Page Should Contain Link",
+    "body": "Page Should Contain Link    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "pscrb": {
+    "prefix": "pscrb",
+    "description": "Page Should Contain Radio Button",
+    "body": "Page Should Contain Radio Button    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "psct": {
+    "prefix": "psct",
+    "description": "Page Should Contain Textfield",
+    "body": "Page Should Contain Textfield    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "psnc": {
+    "prefix": "psnc",
+    "description": "Page Should Not Contain",
+    "body": "Page Should Not Contain    ${1:\\${text\\}}    ${2:loglevel=INFO}"
+  },
+  "psncb": {
+    "prefix": "psncb",
+    "description": "Page Should Not Contain Button",
+    "body": "Page Should Not Contain Button    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "psncc": {
+    "prefix": "psncc",
+    "description": "Page Should Not Contain Checkbox",
+    "body": "Page Should Not Contain Checkbox    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "psnce": {
+    "prefix": "psnce",
+    "description": "Page Should Not Contain Element",
+    "body": "Page Should Not Contain Element    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "psnci": {
+    "prefix": "psnci",
+    "description": "Page Should Not Contain Image",
+    "body": "Page Should Not Contain Image    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "psncl": {
+    "prefix": "psncl",
+    "description": "Page Should Not Contain Link",
+    "body": "Page Should Not Contain Link    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "psncrb": {
+    "prefix": "psncrb",
+    "description": "Page Should Not Contain Radio Button",
+    "body": "Page Should Not Contain Radio Button    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "psnct": {
+    "prefix": "psnct",
+    "description": "Page Should Not Contain Textfield",
+    "body": "Page Should Not Contain Textfield    ${1:\\${locator\\}}    ${2:\\${message=\\}}    ${3:loglevel=INFO}"
+  },
+  "rktrof": {
+    "prefix": "rktrof",
+    "description": "Register Keyword To Run On Failure",
+    "body": "Register Keyword To Run On Failure    ${1:\\${kw\\}}"
+  },
+  "wuec": {
+    "prefix": "wuec",
+    "description": "Wait Until Element Contains",
+    "body": "Wait Until Element Contains    ${1:\\${locator\\}}    ${2:\\${text\\}}    ${3:\\${timeout=None\\}}    ${4:\\${error=None\\}}"
+  },
+  "wuednc": {
+    "prefix": "wuednc",
+    "description": "Wait Until Element Does Not Contain",
+    "body": "Wait Until Element Does Not Contain    ${1:\\${locator\\}}    ${2:\\${text\\}}    ${3:\\${timeout=None\\}}    ${4:\\${error=None\\}}"
+  },
+  "wueie": {
+    "prefix": "wueie",
+    "description": "Wait Until Element Is Enabled",
+    "body": "Wait Until Element Is Enabled    ${1:\\${locator\\}}    ${2:\\${timeout=None\\}}    ${3:\\${error=None\\}}"
+  },
+  "wueinv": {
+    "prefix": "wueinv",
+    "description": "Wait Until Element Is Not Visible",
+    "body": "Wait Until Element Is Not Visible    ${1:\\${locator\\}}    ${2:\\${timeout=None\\}}    ${3:\\${error=None\\}}"
+  },
+  "wueiv": {
+    "prefix": "wueiv",
+    "description": "Wait Until Element Is Visible",
+    "body": "Wait Until Element Is Visible    ${1:\\${locator\\}}    ${2:\\${timeout=None\\}}    ${3:\\${error=None\\}}"
+  },
+  "wupc": {
+    "prefix": "wupc",
+    "description": "Wait Until Page Contains",
+    "body": "Wait Until Page Contains    ${1:\\${text\\}}    ${2:\\${timeout=None\\}}    ${3:\\${error=None\\}}"
+  },
+  "wupce": {
+    "prefix": "wupce",
+    "description": "Wait Until Page Contains Element",
+    "body": "Wait Until Page Contains Element    ${1:\\${locator\\}}    ${2:\\${timeout=None\\}}    ${3:\\${error=None\\}}"
+  },
+  "wupdnc": {
+    "prefix": "wupdnc",
+    "description": "Wait Until Page Does Not Contain",
+    "body": "Wait Until Page Does Not Contain    ${1:\\${text\\}}    ${2:\\${timeout=None\\}}    ${3:\\${error=None\\}}"
+  },
+  "wupdnce": {
+    "prefix": "wupdnce",
+    "description": "Wait Until Page Does Not Contain Element",
+    "body": "Wait Until Page Does Not Contain Element    ${1:\\${locator\\}}    ${2:\\${timeout=None\\}}    ${3:\\${error=None\\}}"
+  }
+}

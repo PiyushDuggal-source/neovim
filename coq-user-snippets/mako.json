@@ -1,0 +1,116 @@
+{
+  "def": {
+    "prefix": "def",
+    "description": "definition",
+    "body": [
+      "<%def name=\"${1:name}\">",
+      "\t${2:}",
+      "</%def>"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "call": {
+    "prefix": "call",
+    "description": "call",
+    "body": [
+      "<%call expr=\"${1:name}\">",
+      "\t${2:}",
+      "</%call>"
+    ]
+  },
+  "doc": {
+    "prefix": "doc",
+    "description": "doc",
+    "body": [
+      "<%doc>",
+      "\t${1:}",
+      "</%doc>"
+    ]
+  },
+  "text": {
+    "prefix": "text",
+    "description": "text",
+    "body": [
+      "<%text>",
+      "\t${1:}",
+      "</%text>"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "for",
+    "body": [
+      "% for ${1:i} in ${2:iter}:",
+      "\t${3:}",
+      "% endfor"
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "description": "if/else",
+    "body": [
+      "% if ${1:condition}:",
+      "\t${2:}",
+      "% else:",
+      "\t${3:}",
+      "% endif"
+    ]
+  },
+  "try": {
+    "prefix": "try",
+    "description": "try",
+    "body": [
+      "% try:",
+      "\t${1:}",
+      "% except${2:}:",
+      "\t${3:pass}",
+      "% endtry"
+    ]
+  },
+  "wh": {
+    "prefix": "wh",
+    "description": "wh",
+    "body": [
+      "% while ${1:}:",
+      "\t${2:}",
+      "% endwhile"
+    ]
+  },
+  "$": {
+    "prefix": "$",
+    "description": "$",
+    "body": "\\${${1:}\\}"
+  },
+  "<%": {
+    "prefix": "<%",
+    "description": "<%",
+    "body": "<% ${1:} %>"
+  },
+  "<!%": {
+    "prefix": "<!%",
+    "description": "<!%",
+    "body": "<!% ${1:} %>"
+  },
+  "inherit": {
+    "prefix": "inherit",
+    "description": "inherit",
+    "body": "<%inherit file=\"${1:filename}\" />"
+  },
+  "include": {
+    "prefix": "include",
+    "description": "include",
+    "body": "<%include file=\"${1:filename}\" />"
+  },
+  "namespace": {
+    "prefix": "namespace",
+    "description": "namespace",
+    "body": "<%namespace file=\"${1:name}\" />"
+  },
+  "page": {
+    "prefix": "page",
+    "description": "page",
+    "body": "<%page args=\"${1:}\" />"
+  }
+}

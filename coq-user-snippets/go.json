@@ -1,0 +1,53 @@
+{
+  "struct": {
+    "prefix": "struct",
+    "description": "Struct declaration",
+    "body": [
+      "type ${1:Struct} struct {",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\}"
+    ]
+  },
+  "interface": {
+    "prefix": "interface",
+    "description": "Interface declaration",
+    "body": [
+      "type ${1:Interface} interface {",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\}"
+    ]
+  },
+  "funch": {
+    "prefix": "funch",
+    "description": "HTTP handler",
+    "body": [
+      "func ${1:handler}(${2:w} http.ResponseWriter, ${3:r} *http.Request) {",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\}"
+    ]
+  },
+  "map": {
+    "prefix": "map",
+    "description": "Map type",
+    "body": "map[${1:keytype}]${2:valtype}"
+  },
+  ":": {
+    "prefix": ":",
+    "description": "Variable declaration :=",
+    "body": "${1:name} := ${0:value}"
+  },
+  "json": {
+    "prefix": "json",
+    "description": "JSON field",
+    "body": "`json:\"${1:displayName}\"`"
+  },
+  "err": {
+    "prefix": "err",
+    "description": "Basic error handling",
+    "body": [
+      "if err != nil {",
+      "\tlog.${1:Fatal}(err)",
+      "\\}"
+    ]
+  }
+}

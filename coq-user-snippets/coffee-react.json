@@ -1,0 +1,115 @@
+{
+  "createClass": {
+    "prefix": "createClass",
+    "description": "React define Class",
+    "body": [
+      "${1:classname}Class = React.createClass",
+      "\tdisplayName: \"$1\"",
+      "\trender: ->",
+      "\t\t$2",
+      "$1 = React.createFactory($1)"
+    ],
+    "luasnip": {
+      "priority": -49
+    }
+  },
+  "PropTypes": {
+    "prefix": "PropTypes",
+    "description": "React define propTypes",
+    "body": [
+      "propTypes: ->",
+      "\t${1:myVar}: React.PropTypes.${2:type}${3:.isRequired}"
+    ]
+  },
+  "propType": {
+    "prefix": "propType",
+    "description": "React propType (key/value)",
+    "body": [
+      "${1:myVar}: React.PropTypes.${2:type}${3:.isRequired}",
+      "$4"
+    ]
+  },
+  "setState": {
+    "prefix": "setState",
+    "description": "React setState",
+    "body": [
+      "@setState",
+      "\t${1:myvar}: ${2:myvalue}",
+      "\t$3"
+    ]
+  },
+  "getInitialState": {
+    "prefix": "getInitialState",
+    "description": "React define getInitialState",
+    "body": [
+      "getInitialState: ->",
+      "\t${1:myvar}: ${2:myvalue}",
+      "\t$3"
+    ]
+  },
+  "getDefaultProps": {
+    "prefix": "getDefaultProps",
+    "description": "React define getDefaultProps",
+    "body": [
+      "getDefaultProps: ->",
+      "\t${1:myvar}: ${2:myvalue}",
+      "\t$3"
+    ]
+  },
+  "componentWillMount": {
+    "prefix": "componentWillMount",
+    "description": "React define componentWillMount",
+    "body": [
+      "componentWillMount: ->",
+      "\t$1"
+    ]
+  },
+  "componentDidMount": {
+    "prefix": "componentDidMount",
+    "description": "React define componentDidMount",
+    "body": [
+      "componentDidMount: ->",
+      "\t$1"
+    ]
+  },
+  "componentWillReceiveProps": {
+    "prefix": "componentWillReceiveProps",
+    "description": "React define componentWillReceiveProps",
+    "body": [
+      "componentWillReceiveProps: (nextProps) ->",
+      "\t$1"
+    ]
+  },
+  "shouldComponentUpdate": {
+    "prefix": "shouldComponentUpdate",
+    "description": "React define shouldComponentUpdate",
+    "body": [
+      "shouldComponentUpdate: (nextProps, nextState) ->",
+      "\t$1"
+    ]
+  },
+  "componentWillUpdate": {
+    "prefix": "componentWillUpdate",
+    "description": "React define componentWillUpdate",
+    "body": [
+      "componentWillUpdate: (nextProps, nextState) ->",
+      "\t$1"
+    ]
+  },
+  "componentDidUpdate": {
+    "prefix": "componentDidUpdate",
+    "description": "React define componentDidUpdate",
+    "body": [
+      "componentDidUpdate: (prevProps, prevState) ->",
+      "\t$1"
+    ]
+  },
+  "componentWillUnmount": {
+    "prefix": "componentWillUnmount",
+    "description": "React define componentWillUnmount",
+    "body": [
+      "componentWillUnmount: ->",
+      "\t$1"
+    ]
+  }
+}

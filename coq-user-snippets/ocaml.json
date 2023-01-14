@@ -1,0 +1,260 @@
+{
+  "rs": {
+    "prefix": "rs",
+    "description": "raise",
+    "body": "raise (${1:Not_found})",
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "open": {
+    "prefix": "open",
+    "description": "open",
+    "body": [
+      "let open ${1:module} in",
+      "${2:e}"
+    ]
+  },
+  "try": {
+    "prefix": "try",
+    "description": "try",
+    "body": [
+      "try ${1:e}",
+      "with ${2:Not_found} -> ${3:()}"
+    ]
+  },
+  "ref": {
+    "prefix": "ref",
+    "description": "ref",
+    "body": [
+      "let ${1:name} = ref ${2:val} in",
+      "${3:e}"
+    ]
+  },
+  "matchl": {
+    "prefix": "matchl",
+    "description": "pattern match on a list",
+    "body": [
+      "match ${1:list} with",
+      "| [] -> ${2:()}",
+      "| x::xs -> ${3:()}"
+    ]
+  },
+  "matcho": {
+    "prefix": "matcho",
+    "description": "pattern match on an option type",
+    "body": [
+      "match ${1:x} with",
+      "| Some(${2:y}) -> ${3:()}",
+      "| None -> ${4:()}"
+    ]
+  },
+  "fun": {
+    "prefix": "fun",
+    "description": "anonymous function",
+    "body": "(fun ${1:x} -> ${2:x})"
+  },
+  "cc": {
+    "prefix": "cc",
+    "description": "commment",
+    "body": "(* ${1:comment} *)"
+  },
+  "let": {
+    "prefix": "let",
+    "description": "let .. in binding",
+    "body": [
+      "let ${1:x} = ${2:v} in",
+      "${3:e}"
+    ]
+  },
+  "lr": {
+    "prefix": "lr",
+    "description": "let rec",
+    "body": [
+      "let rec ${1:f} =",
+      "\t${2:expr}"
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "description": "if",
+    "body": [
+      "if ${1:(* condition *)} then",
+      "\t${2:(* A *)}",
+      "else",
+      "\t${3:(* B *)}"
+    ]
+  },
+  "If": {
+    "prefix": "If",
+    "description": "If",
+    "body": [
+      "if ${1:(* condition *)} then",
+      "\t${2:(* A *)}"
+    ]
+  },
+  "while": {
+    "prefix": "while",
+    "description": "while",
+    "body": [
+      "while ${1:(* condition *)} do",
+      "\t${2:(* A *)}",
+      "done"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "for",
+    "body": [
+      "for ${1:i} = ${2:1} to ${3:10} do",
+      "\t${4:(* BODY *)}",
+      "done"
+    ]
+  },
+  "match": {
+    "prefix": "match",
+    "description": "match",
+    "body": [
+      "match ${1:(* e1 *)} with",
+      "| ${2:p} -> ${3:e2}"
+    ]
+  },
+  "Match": {
+    "prefix": "Match",
+    "description": "match",
+    "body": [
+      "match ${1:(* e1 *)} with",
+      "| ${2:p} -> ${3:e2}"
+    ]
+  },
+  "class": {
+    "prefix": "class",
+    "description": "class",
+    "body": [
+      "class ${1:name} = object",
+      "\t${2:methods}",
+      "end"
+    ]
+  },
+  "obj": {
+    "prefix": "obj",
+    "description": "obj",
+    "body": [
+      "object",
+      "\t${2:methods}",
+      "end"
+    ]
+  },
+  "Obj": {
+    "prefix": "Obj",
+    "description": "object",
+    "body": [
+      "object (self)",
+      "\t${2:methods}",
+      "end"
+    ]
+  },
+  "{{": {
+    "prefix": "{{",
+    "description": "object functional update",
+    "body": "{< ${1:x} = ${2:y} >\\}"
+  },
+  "beg": {
+    "prefix": "beg",
+    "description": "beg",
+    "body": [
+      "begin",
+      "\t${1:block}",
+      "end"
+    ]
+  },
+  "ml": {
+    "prefix": "ml",
+    "description": "module instantiantion with functor",
+    "body": "module ${1:Mod} = ${2:Functor}(${3:Arg})"
+  },
+  "mod": {
+    "prefix": "mod",
+    "description": "module - no signature",
+    "body": [
+      "module ${1:(* Name *)} = struct",
+      "\t${2:(* BODY *)}",
+      "end"
+    ]
+  },
+  "Mod": {
+    "prefix": "Mod",
+    "description": "module with signature",
+    "body": [
+      "module ${1:(* Name *)} : ${2:(* SIG *)} = struct",
+      "\t${3:(* BODY *)}",
+      "end"
+    ]
+  },
+  "sig": {
+    "prefix": "sig",
+    "description": "anonymous signature",
+    "body": [
+      "sig",
+      "\t${2:(* BODY *)}",
+      "end"
+    ]
+  },
+  "sigf": {
+    "prefix": "sigf",
+    "description": "functor signature or anonymous functor",
+    "body": "functor (${1:Arg} : ${2:ARG}) -> ${3:(* BODY *)}"
+  },
+  "func": {
+    "prefix": "func",
+    "description": "define functor - no signature",
+    "body": [
+      "module ${1:M} (${2:Arg} : ${3:ARG}) = struct",
+      "\t${4:(* BODY *)}",
+      "end"
+    ]
+  },
+  "Func": {
+    "prefix": "Func",
+    "description": "define functor - with signature",
+    "body": [
+      "module ${1:M} (${2:Arg} : ${3:ARG}) : ${4:SIG} = struct",
+      "\t${5:(* BODY *)}",
+      "end"
+    ]
+  },
+  "mot": {
+    "prefix": "mot",
+    "description": "Declare module signature",
+    "body": [
+      "module type ${1:(* Name *)} = sig",
+      "\t${2:(* BODY *)}",
+      "end"
+    ]
+  },
+  "module": {
+    "prefix": "module",
+    "description": "Module with anonymous signature",
+    "body": [
+      "module ${1:(* Name *)} : sig",
+      "\t${2:(* SIGNATURE *)}",
+      "end = struct",
+      "\t${3:(* BODY *)}",
+      "end"
+    ]
+  },
+  "oo": {
+    "prefix": "oo",
+    "description": "odoc",
+    "body": "(** ${1:odoc} *)"
+  },
+  "qt": {
+    "prefix": "qt",
+    "description": "inline qtest",
+    "body": [
+      "(*\\$T ${1:name}",
+      "\t${2:test}",
+      "*)"
+    ]
+  }
+}

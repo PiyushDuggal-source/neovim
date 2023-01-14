@@ -1,0 +1,65 @@
+{
+  "eqnn": {
+    "prefix": "eqnn",
+    "description": "Equation without a number",
+    "body": [
+      "\\begin{equation*\\}",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{equation*\\}"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "al": {
+    "prefix": "al",
+    "description": "Align",
+    "body": [
+      "\\begin{align\\}",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{align\\}"
+    ]
+  },
+  "alnn": {
+    "prefix": "alnn",
+    "description": "Align without a number",
+    "body": [
+      "\\begin{align*\\}",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{align*\\}"
+    ]
+  },
+  "eqa": {
+    "prefix": "eqa",
+    "description": "Equation array",
+    "body": [
+      "\\begin{eqnarray\\}",
+      "\t${1:$TM_SELECTED_TEXT} & ${2:$TM_SELECTED_TEXT} & ${0:$TM_SELECTED_TEXT}",
+      "\\end{eqnarray\\}"
+    ]
+  },
+  "eqann": {
+    "prefix": "eqann",
+    "description": "Equation array without a number",
+    "body": [
+      "\\begin{eqnarray*\\}",
+      "\t${1:$TM_SELECTED_TEXT} & ${2:$TM_SELECTED_TEXT} & ${0:$TM_SELECTED_TEXT}",
+      "\\end{eqnarray*\\}"
+    ]
+  },
+  "dv": {
+    "prefix": "dv",
+    "description": "Derivative",
+    "body": "\\dv[${1:$TM_SELECTED_TEXT}]{$2\\}{$3\\}"
+  },
+  "pdv": {
+    "prefix": "pdv",
+    "description": "Partial Derivative",
+    "body": "\\pdv[${1:$TM_SELECTED_TEXT}]{$2\\}{$3\\}"
+  },
+  "SI": {
+    "prefix": "SI",
+    "description": "SI-Unit",
+    "body": "\\SI{${1:$TM_SELECTED_TEXT}\\}{$2\\}"
+  }
+}

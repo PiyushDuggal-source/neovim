@@ -1,0 +1,457 @@
+{
+  "form": {
+    "prefix": "form",
+    "description": "Form",
+    "body": [
+      "class ${1:FORMNAME}(forms.Form):",
+      "",
+      "\t${2:# TODO: Define form fields here}"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "modelform": {
+    "prefix": "modelform",
+    "description": "ModelForm",
+    "body": [
+      "class ${1:MODELNAME}Form(forms.ModelForm):",
+      "",
+      "\tclass Meta:",
+      "\t\tmodel = $1"
+    ]
+  },
+  "fbool": {
+    "prefix": "fbool",
+    "description": "BooleanField",
+    "body": "${1:FIELDNAME} = forms.BooleanField($2)"
+  },
+  "fchar": {
+    "prefix": "fchar",
+    "description": "CharField",
+    "body": "${1:FIELDNAME} = forms.CharField($2)"
+  },
+  "fchoice": {
+    "prefix": "fchoice",
+    "description": "ChoiceField",
+    "body": "${1:FIELDNAME} = forms.ChoiceField($2)"
+  },
+  "fcombo": {
+    "prefix": "fcombo",
+    "description": "ComboField",
+    "body": "${1:FIELDNAME} = forms.ComboField($2)"
+  },
+  "fdate": {
+    "prefix": "fdate",
+    "description": "DateField",
+    "body": "${1:FIELDNAME} = forms.DateField($2)"
+  },
+  "fdatetime": {
+    "prefix": "fdatetime",
+    "description": "DateTimeField",
+    "body": "${1:FIELDNAME} = forms.DateTimeField($2)"
+  },
+  "fdecimal": {
+    "prefix": "fdecimal",
+    "description": "DecimalField",
+    "body": "${1:FIELDNAME} = forms.DecimalField($2)"
+  },
+  "fmail": {
+    "prefix": "fmail",
+    "description": "EmailField",
+    "body": "${1:FIELDNAME} = forms.EmailField($2)"
+  },
+  "ffile": {
+    "prefix": "ffile",
+    "description": "FileField",
+    "body": "${1:FIELDNAME} = forms.FileField($2)"
+  },
+  "ffilepath": {
+    "prefix": "ffilepath",
+    "description": "FilePathField",
+    "body": "${1:FIELDNAME} = forms.FilePathField($2)"
+  },
+  "ffloat": {
+    "prefix": "ffloat",
+    "description": "FloatField",
+    "body": "${1:FIELDNAME} = forms.FloatField($2)"
+  },
+  "fip": {
+    "prefix": "fip",
+    "description": "IPAddressField",
+    "body": "${1:FIELDNAME} = forms.IPAddressField($2)"
+  },
+  "fimg": {
+    "prefix": "fimg",
+    "description": "ImageField",
+    "body": "${1:FIELDNAME} = forms.ImageField($2)"
+  },
+  "fint": {
+    "prefix": "fint",
+    "description": "IntegerField",
+    "body": "${1:FIELDNAME} = forms.IntegerField($2)"
+  },
+  "fmochoice": {
+    "prefix": "fmochoice",
+    "description": "ModelChoiceField",
+    "body": "${1:FIELDNAME} = forms.ModelChoiceField($2)"
+  },
+  "fmomuchoice": {
+    "prefix": "fmomuchoice",
+    "description": "ModelMultipleChoiceField",
+    "body": "${1:FIELDNAME} = forms.ModelMultipleChoiceField($2)"
+  },
+  "fmuval": {
+    "prefix": "fmuval",
+    "description": "MultiValueField",
+    "body": "${1:FIELDNAME} = forms.MultiValueField($2)"
+  },
+  "fmuchoice": {
+    "prefix": "fmuchoice",
+    "description": "MultipleChoiceField",
+    "body": "${1:FIELDNAME} = forms.MultipleChoiceField($2)"
+  },
+  "fnullbool": {
+    "prefix": "fnullbool",
+    "description": "NullBooleanField",
+    "body": "${1:FIELDNAME} = forms.NullBooleanField($2)"
+  },
+  "freg": {
+    "prefix": "freg",
+    "description": "RegexField",
+    "body": "${1:FIELDNAME} = forms.RegexField($2)"
+  },
+  "fslug": {
+    "prefix": "fslug",
+    "description": "SlugField",
+    "body": "${1:FIELDNAME} = forms.SlugField($2)"
+  },
+  "fsdatetime": {
+    "prefix": "fsdatetime",
+    "description": "SplitDateTimeField",
+    "body": "${1:FIELDNAME} = forms.SplitDateTimeField($2)"
+  },
+  "ftime": {
+    "prefix": "ftime",
+    "description": "TimeField",
+    "body": "${1:FIELDNAME} = forms.TimeField($2)"
+  },
+  "ftchoice": {
+    "prefix": "ftchoice",
+    "description": "TypedChoiceField",
+    "body": "${1:FIELDNAME} = forms.TypedChoiceField($2)"
+  },
+  "ftmuchoice": {
+    "prefix": "ftmuchoice",
+    "description": "TypedMultipleChoiceField",
+    "body": "${1:FIELDNAME} = forms.TypedMultipleChoiceField($2)"
+  },
+  "furl": {
+    "prefix": "furl",
+    "description": "URLField",
+    "body": "${1:FIELDNAME} = forms.URLField($2)"
+  },
+  "model": {
+    "prefix": "model",
+    "description": "Model",
+    "body": [
+      "class ${1:MODELNAME}(models.Model):",
+      "\t$0",
+      "\tclass Meta:",
+      "\t\tverbose_name = \"$1\"",
+      "\t\tverbose_name_plural = \"$1s\"",
+      "",
+      "\tdef __str__(self):",
+      "\t\treturn super($1, self).__str__()",
+      ""
+    ]
+  },
+  "modelfull": {
+    "prefix": "modelfull",
+    "description": "Model",
+    "body": [
+      "class ${1:MODELNAME}(models.Model):",
+      "\t${2:# TODO: Define fields here}",
+      "",
+      "\tclass Meta:",
+      "\t\tverbose_name = \"$1\"",
+      "\t\tverbose_name_plural = \"$1s\"",
+      "",
+      "\tdef __str__(self):",
+      "\t\treturn super($1, self).__str__()",
+      "",
+      "\tdef save(self):",
+      "\t\treturn super($1, self).save()",
+      "",
+      "\tdef get_absolute_url(self):",
+      "\t\treturn ('')",
+      "",
+      "\t${3:# TODO: Define custom methods here}",
+      ""
+    ]
+  },
+  "mauto": {
+    "prefix": "mauto",
+    "description": "AutoField",
+    "body": "${1:FIELDNAME} = models.AutoField($2)"
+  },
+  "mbigint": {
+    "prefix": "mbigint",
+    "description": "BigIntegerField",
+    "body": "${1:FIELDNAME} = models.BigIntegerField($2)"
+  },
+  "mbool": {
+    "prefix": "mbool",
+    "description": "BooleanField",
+    "body": "${1:FIELDNAME} = models.BooleanField($2)"
+  },
+  "mchar": {
+    "prefix": "mchar",
+    "description": "CharField",
+    "body": "${1:FIELDNAME} = models.CharField($2, max_length=${3:50})"
+  },
+  "mcoseint": {
+    "prefix": "mcoseint",
+    "description": "CommaSeparatedIntegerField",
+    "body": "${1:FIELDNAME} = models.CommaSeparatedIntegerField($2)"
+  },
+  "mdate": {
+    "prefix": "mdate",
+    "description": "DateField",
+    "body": "${1:FIELDNAME} = models.DateField($2)"
+  },
+  "mdatetime": {
+    "prefix": "mdatetime",
+    "description": "DateTimeField",
+    "body": "${1:FIELDNAME} = models.DateTimeField($2)"
+  },
+  "mdecimal": {
+    "prefix": "mdecimal",
+    "description": "DecimalField",
+    "body": "${1:FIELDNAME} = models.DecimalField(max_digits=${2:10}, decimal_places=${3:2})"
+  },
+  "memail": {
+    "prefix": "memail",
+    "description": "EmailField",
+    "body": "${1:FIELDNAME} = models.EmailField($2)"
+  },
+  "mfile": {
+    "prefix": "mfile",
+    "description": "FileField",
+    "body": "${1:FIELDNAME} = models.FileField($2)"
+  },
+  "mfilepath": {
+    "prefix": "mfilepath",
+    "description": "FilePathField",
+    "body": "${1:FIELDNAME} = models.FilePathField($2)"
+  },
+  "mfloat": {
+    "prefix": "mfloat",
+    "description": "FloatField",
+    "body": "${1:FIELDNAME} = models.FloatField($2)"
+  },
+  "fk": {
+    "prefix": "fk",
+    "description": "ForeignKey",
+    "body": "${1:FIELDNAME} = models.ForeignKey($2)"
+  },
+  "mip": {
+    "prefix": "mip",
+    "description": "IPAddressField",
+    "body": "${1:FIELDNAME} = models.IPAddressField($2)"
+  },
+  "mimg": {
+    "prefix": "mimg",
+    "description": "ImageField",
+    "body": "${1:FIELDNAME} = models.ImageField($2)"
+  },
+  "mint": {
+    "prefix": "mint",
+    "description": "IntegerField",
+    "body": "${1:FIELDNAME} = models.IntegerField($2)"
+  },
+  "m2m": {
+    "prefix": "m2m",
+    "description": "ManyToManyField",
+    "body": "${1:FIELDNAME} = models.ManyToManyField($2)"
+  },
+  "mnullbool": {
+    "prefix": "mnullbool",
+    "description": "NullBooleanField",
+    "body": "${1:FIELDNAME} = models.NullBooleanField($2)"
+  },
+  "o2o": {
+    "prefix": "o2o",
+    "description": "OneToOneField",
+    "body": "${1:FIELDNAME} = models.OneToOneField($2)"
+  },
+  "mphone": {
+    "prefix": "mphone",
+    "description": "PhoneNumberField",
+    "body": "${1:FIELDNAME} = models.PhoneNumberField($2)"
+  },
+  "mposint": {
+    "prefix": "mposint",
+    "description": "PositiveIntegerField",
+    "body": "${1:FIELDNAME} = models.PositiveIntegerField($2)"
+  },
+  "mpossmallint": {
+    "prefix": "mpossmallint",
+    "description": "PositiveSmallIntegerField",
+    "body": "${1:FIELDNAME} = models.PositiveSmallIntegerField($2)"
+  },
+  "mslug": {
+    "prefix": "mslug",
+    "description": "SlugField",
+    "body": "${1:FIELDNAME} = models.SlugField($2)"
+  },
+  "msmallint": {
+    "prefix": "msmallint",
+    "description": "SmallIntegerField",
+    "body": "${1:FIELDNAME} = models.SmallIntegerField($2)"
+  },
+  "mtext": {
+    "prefix": "mtext",
+    "description": "TextField",
+    "body": "${1:FIELDNAME} = models.TextField($2)"
+  },
+  "mtime": {
+    "prefix": "mtime",
+    "description": "TimeField",
+    "body": "${1:FIELDNAME} = models.TimeField($2)"
+  },
+  "murl": {
+    "prefix": "murl",
+    "description": "URLField",
+    "body": "${1:FIELDNAME} = models.URLField($2)"
+  },
+  "musstate": {
+    "prefix": "musstate",
+    "description": "USStateField",
+    "body": "${1:FIELDNAME} = models.USStateField($2)"
+  },
+  "mxml": {
+    "prefix": "mxml",
+    "description": "XMLField",
+    "body": "${1:FIELDNAME} = models.XMLField($2)"
+  },
+  "adminview": {
+    "prefix": "adminview",
+    "description": "Model Admin View",
+    "body": [
+      "class $1Admin(admin.ModelAdmin):",
+      "\t'''",
+      "\t\tAdmin View for $1",
+      "\t'''",
+      "\tlist_display = ('$2',)",
+      "\tlist_filter = ('$3',)",
+      "\tinlines = [",
+      "\t\t$4Inline,",
+      "\t]",
+      "\traw_id_fields = ('$5',)",
+      "\treadonly_fields = ('$6',)",
+      "\tsearch_fields = ['$7']",
+      "admin.site.register($1, $1Admin)"
+    ]
+  },
+  "createview": {
+    "prefix": "createview",
+    "description": "Generic Create View",
+    "body": [
+      "class ${1:MODEL_NAME}CreateView(CreateView):",
+      "\tmodel = $1",
+      "\ttemplate_name = \"${2:TEMPLATE_NAME}\""
+    ]
+  },
+  "deleteview": {
+    "prefix": "deleteview",
+    "description": "Generic Delete View",
+    "body": [
+      "class ${1:MODEL_NAME}DeleteView(DeleteView):",
+      "\tmodel = $1",
+      "\ttemplate_name = \"${2:TEMPLATE_NAME}\""
+    ]
+  },
+  "detailview": {
+    "prefix": "detailview",
+    "description": "Generic Detail View",
+    "body": [
+      "class ${1:MODEL_NAME}DetailView(DetailView):",
+      "\tmodel = $1",
+      "\ttemplate_name = \"${2:TEMPLATE_NAME}\""
+    ]
+  },
+  "listview": {
+    "prefix": "listview",
+    "description": "Generic List View",
+    "body": [
+      "class ${1:MODEL_NAME}ListView(ListView):",
+      "\tmodel = $1",
+      "\ttemplate_name = \"${2:TEMPLATE_NAME}\""
+    ]
+  },
+  "stackedinline": {
+    "prefix": "stackedinline",
+    "description": "Stacked Inline",
+    "body": [
+      "class $1Inline(admin.StackedInline):",
+      "\t'''",
+      "\tStacked Inline View for $1",
+      "\t'''",
+      "\tmodel = ${2:$1}",
+      "\tmin_num = ${3:3}",
+      "\tmax_num = ${4:20}",
+      "\textra = ${5:1}",
+      "\traw_id_fields = ($6,)"
+    ]
+  },
+  "tabularinline": {
+    "prefix": "tabularinline",
+    "description": "Tabular Inline",
+    "body": [
+      "class $1Inline(admin.TabularInline):",
+      "\t'''",
+      "\tTabular Inline View for $1",
+      "\t'''",
+      "\tmodel = ${2:$1}",
+      "\tmin_num = ${3:3}",
+      "\tmax_num = ${4:20}",
+      "\textra = ${5:1}",
+      "\traw_id_fields = ($6,)"
+    ]
+  },
+  "templateview": {
+    "prefix": "templateview",
+    "description": "Generic Template View",
+    "body": [
+      "class ${1:CLASS_NAME}(TemplateView):",
+      "\ttemplate_name = \"${2:TEMPLATE_NAME}\""
+    ]
+  },
+  "updateview": {
+    "prefix": "updateview",
+    "description": "Generic Update View",
+    "body": [
+      "class ${1:MODEL_NAME}UpdateView(UpdateView):",
+      "\tmodel = $1",
+      "\ttemplate_name = \"${2:TEMPLATE_NAME}\""
+    ]
+  },
+  "dispatch": {
+    "prefix": "dispatch",
+    "description": "Dispatch View method",
+    "body": [
+      "def dispatch(self, request, *args, **kwargs):",
+      "\treturn super(${1:CLASS_NAME}, self).dispatch(request, *args, **kwargs)"
+    ]
+  },
+  "context": {
+    "prefix": "context",
+    "description": "get_context_data view method",
+    "body": [
+      "def get_context_data(self, **kwargs):",
+      "\tkwargs['extra_context'] = ${1:'New Value'}",
+      "\treturn super(${2:CLASS_NAME}, self).get_context_data(**kwargs)"
+    ]
+  }
+}

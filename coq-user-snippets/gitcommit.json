@@ -1,0 +1,112 @@
+{
+  "fix": {
+    "prefix": "fix",
+    "description": "fix conventional commit",
+    "body": [
+      "fix(${1:scope}): ${2:title}",
+      "",
+      "${0:$TM_SELECTED_TEXT}"
+    ]
+  },
+  "feat": {
+    "prefix": "feat",
+    "description": "feat conventional commit",
+    "body": [
+      "feat(${1:scope}): ${2:title}",
+      "",
+      "${0:$TM_SELECTED_TEXT}"
+    ]
+  },
+  "chore": {
+    "prefix": "chore",
+    "description": "chore conventional commit",
+    "body": [
+      "chore(${1:scope}): ${2:title}",
+      "",
+      "${0:$TM_SELECTED_TEXT}"
+    ]
+  },
+  "docs": {
+    "prefix": "docs",
+    "description": "docs conventional commit",
+    "body": [
+      "docs(${1:scope}): ${2:title}",
+      "",
+      "${0:$TM_SELECTED_TEXT}"
+    ]
+  },
+  "improvement": {
+    "prefix": "improvement",
+    "description": "improvement conventional commit",
+    "body": [
+      "improvement(${1:scope}): ${2:title}",
+      "",
+      "${0:$TM_SELECTED_TEXT}"
+    ]
+  },
+  "perf": {
+    "prefix": "perf",
+    "description": "perf conventional commit",
+    "body": [
+      "perf(${1:scope}): ${2:title}",
+      "",
+      "${0:$TM_SELECTED_TEXT}"
+    ]
+  },
+  "refactor": {
+    "prefix": "refactor",
+    "description": "refactor conventional commit",
+    "body": [
+      "refactor(${1:scope}): ${2:title}",
+      "",
+      "${0:$TM_SELECTED_TEXT}"
+    ]
+  },
+  "test": {
+    "prefix": "test",
+    "description": "test conventional commit",
+    "body": [
+      "test(${1:scope}): ${2:title}",
+      "",
+      "${0:$TM_SELECTED_TEXT}"
+    ]
+  },
+  "ci": {
+    "prefix": "ci",
+    "description": "ci conventional commit",
+    "body": [
+      "ci(${1:scope}): ${2:title}",
+      "",
+      "${0:$TM_SELECTED_TEXT}"
+    ]
+  },
+  "build": {
+    "prefix": "build",
+    "description": "build conventional commit",
+    "body": [
+      "build(${1:scope}): ${2:title}",
+      "",
+      "${0:$TM_SELECTED_TEXT}"
+    ]
+  },
+  "sign": {
+    "prefix": "sign",
+    "description": "Signature",
+    "body": [
+      "-------------------------------------------------------------------------------",
+      "${1:Company Name}",
+      "",
+      "${2:Author Name}",
+      "",
+      "${3:Streetname 21}",
+      "${4:City and Area}",
+      "",
+      "${5:Tel: \t\t\t\t\t\t+44 (0)987 / 888 8888}",
+      "${6:Fax: \t\t\t\t\t\t+44 (0)987 / 888 8882}",
+      "${7:Mail: \t\t\t\t\tEmail}",
+      "${8:Web: \t\t\t\t\t\thttps://}",
+      "-------------------------------------------------------------------------------",
+      "$0"
+    ]
+  }
+}

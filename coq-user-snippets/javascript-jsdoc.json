@@ -1,0 +1,63 @@
+{
+  "/*": {
+    "prefix": "/*",
+    "description": "A JSDoc comment",
+    "body": [
+      "/**",
+      " * ${1:$TM_SELECTED_TEXT}$0",
+      " */"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "@li": {
+    "prefix": "@li",
+    "description": "@license Description",
+    "body": "@license ${1:MIT}$0"
+  },
+  "@ver": {
+    "prefix": "@ver",
+    "description": "@version Semantic version",
+    "body": "@version ${1:0.1.0}$0"
+  },
+  "@fileo": {
+    "prefix": "@fileo",
+    "description": "@fileoverview Description",
+    "body": [
+      "/**",
+      " * @fileoverview ${1:${TM_SELECTED_TEXT:A description of the file}}$0",
+      " */"
+    ]
+  },
+  "@constr": {
+    "prefix": "@constr",
+    "description": "@constructor",
+    "body": "@constructor"
+  },
+  "@p": {
+    "prefix": "@p",
+    "description": "@param {Type} varname Description",
+    "body": "@param {${1:Type}\\} ${2:varname} ${3:Description}"
+  },
+  "@ret": {
+    "prefix": "@ret",
+    "description": "@return {Type} Description",
+    "body": "@return {${1:Type}\\} ${2:Description}"
+  },
+  "@pri": {
+    "prefix": "@pri",
+    "description": "@private",
+    "body": "@private"
+  },
+  "@over": {
+    "prefix": "@over",
+    "description": "@override",
+    "body": "@override"
+  },
+  "@pro": {
+    "prefix": "@pro",
+    "description": "@protected",
+    "body": "@protected"
+  }
+}

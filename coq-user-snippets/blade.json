@@ -1,0 +1,188 @@
+{
+  "break": {
+    "prefix": "break",
+    "description": "@break",
+    "body": "@break",
+    "luasnip": {
+      "priority": -49
+    }
+  },
+  "component": {
+    "prefix": "component",
+    "description": "@component directive",
+    "body": [
+      "@component('$1')",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "@endcomponent"
+    ]
+  },
+  "each": {
+    "prefix": "each",
+    "description": "@each directive",
+    "body": "@each('$1', \\$$2, '$3')"
+  },
+  "else": {
+    "prefix": "else",
+    "description": "@else directive",
+    "body": "@else"
+  },
+  "eif": {
+    "prefix": "eif",
+    "description": "@else if directive",
+    "body": [
+      "@else if ($1)",
+      "\t${2:$TM_SELECTED_TEXT}"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "@for directive",
+    "body": [
+      "@for ($1)",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "@endfor"
+    ]
+  },
+  "foreach": {
+    "prefix": "foreach",
+    "description": "@foreach directive",
+    "body": [
+      "@foreach (\\$$1 as \\$$2)",
+      "\t${3:$TM_SELECTED_TEXT}",
+      "@endforeach"
+    ]
+  },
+  "extends": {
+    "prefix": "extends",
+    "description": "@extends directive",
+    "body": "@extends('$1')"
+  },
+  "if": {
+    "prefix": "if",
+    "description": "@if directive",
+    "body": [
+      "@if ($1)",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "@endif"
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "@if @else structure",
+    "body": [
+      "@if ($1)",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "@else",
+      "\t${3:$TM_SELECTED_TEXT}",
+      "@endif"
+    ]
+  },
+  "include": {
+    "prefix": "include",
+    "description": "@include directive",
+    "body": "@include('$1')"
+  },
+  "includeIf": {
+    "prefix": "includeIf",
+    "description": "@includeIf directive",
+    "body": "@includeIf('$1')"
+  },
+  "isset": {
+    "prefix": "isset",
+    "description": "@isset directive",
+    "body": [
+      "@isset",
+      "\t${1:$TM_SELECTED_TEXT}",
+      "@endisset"
+    ]
+  },
+  "inject": {
+    "prefix": "inject",
+    "description": "@inject directive",
+    "body": "@inject('$1', '$2')"
+  },
+  "lang": {
+    "prefix": "lang",
+    "description": "@lang directive",
+    "body": "@lang('$1')"
+  },
+  "php": {
+    "prefix": "php",
+    "description": "@php directive",
+    "body": [
+      "@php",
+      "\t${1:$TM_SELECTED_TEXT}",
+      "@endphp"
+    ]
+  },
+  "push": {
+    "prefix": "push",
+    "description": "@push directive",
+    "body": [
+      "@push('$1')",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "@endpush"
+    ]
+  },
+  "section": {
+    "prefix": "section",
+    "description": "@section directive",
+    "body": "@section('$1')"
+  },
+  "show": {
+    "prefix": "show",
+    "description": "@show directive",
+    "body": "@show"
+  },
+  "slot": {
+    "prefix": "slot",
+    "description": "@slot directive",
+    "body": [
+      "@slot('$1')",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "@endslot"
+    ]
+  },
+  "unless": {
+    "prefix": "unless",
+    "description": "@unless directive",
+    "body": [
+      "@unless",
+      "\t${1:$TM_SELECTED_TEXT}",
+      "@endunless"
+    ]
+  },
+  "verbatim": {
+    "prefix": "verbatim",
+    "description": "@verbatim directive",
+    "body": [
+      "@verbatim",
+      "\t${0:\\$VISUAL}",
+      "@endverbatim"
+    ]
+  },
+  "wh": {
+    "prefix": "wh",
+    "description": "@while directive",
+    "body": [
+      "@while ($1)",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "@endwhile"
+    ]
+  },
+  "yield": {
+    "prefix": "yield",
+    "description": "@yield directive",
+    "body": "@yield('$1')"
+  },
+  "{": {
+    "prefix": "{",
+    "description": "{{ }} statement.",
+    "body": "{{ $1 \\}\\}"
+  },
+  "{!": {
+    "prefix": "{!",
+    "description": "{!! !!} statement",
+    "body": "{!! $1 !!\\}"
+  }
+}

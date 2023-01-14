@@ -1,0 +1,13 @@
+{
+  "xml": {
+    "prefix": "xml",
+    "description": "XML declaration",
+    "body": [
+      "<?xml version=\"1.0\"?>",
+      ""
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  }
+}

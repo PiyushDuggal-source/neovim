@@ -1,0 +1,382 @@
+{
+  "%": {
+    "prefix": "%",
+    "description": "",
+    "body": "{% $1 %\\}$2",
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "%%": {
+    "prefix": "%%",
+    "description": "",
+    "body": [
+      "{% ${1:tag_name} %\\}",
+      "\t$2",
+      "{% end$1 %\\}"
+    ]
+  },
+  "{": {
+    "prefix": "{",
+    "description": "",
+    "body": "{{ $1 \\}\\}$2"
+  },
+  "autoescape": {
+    "prefix": "autoescape",
+    "description": "",
+    "body": [
+      "{% autoescape ${1:off} %\\}",
+      "\t$2",
+      "{% endautoescape %\\}"
+    ]
+  },
+  "block": {
+    "prefix": "block",
+    "description": "",
+    "body": [
+      "{% block $1 %\\}",
+      "\t$2",
+      "{% endblock $1 %\\}"
+    ]
+  },
+  "#": {
+    "prefix": "#",
+    "description": "",
+    "body": "{# ${1:comment} #\\}"
+  },
+  "comment": {
+    "prefix": "comment",
+    "description": "",
+    "body": [
+      "{% comment %\\}",
+      "\t$1",
+      "{% endcomment %\\}"
+    ]
+  },
+  "cycle": {
+    "prefix": "cycle",
+    "description": "",
+    "body": "{% cycle ${1:val1} ${2:val2} ${3:as $4} %\\}"
+  },
+  "debug": {
+    "prefix": "debug",
+    "description": "",
+    "body": "{% debug %\\}"
+  },
+  "extends": {
+    "prefix": "extends",
+    "description": "",
+    "body": "{% extends \"${1:base.html}\" %\\}"
+  },
+  "filter": {
+    "prefix": "filter",
+    "description": "",
+    "body": [
+      "{% filter $1 %\\}",
+      "\t$2",
+      "{% endfilter %\\}"
+    ]
+  },
+  "firstof": {
+    "prefix": "firstof",
+    "description": "",
+    "body": "{% firstof $1 %\\}"
+  },
+  "for": {
+    "prefix": "for",
+    "description": "",
+    "body": [
+      "{% for $1 in $2 %\\}",
+      "\t$3",
+      "{% endfor %\\}"
+    ]
+  },
+  "empty": {
+    "prefix": "empty",
+    "description": "",
+    "body": [
+      "{% empty %\\}",
+      "\t$1"
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "description": "",
+    "body": [
+      "{% if $1 %\\}",
+      "\t$2",
+      "{% endif %\\}"
+    ]
+  },
+  "iif": {
+    "prefix": "iif",
+    "description": "",
+    "body": "{% if $1 %\\}$2{% endif %\\}"
+  },
+  "ielse": {
+    "prefix": "ielse",
+    "description": "",
+    "body": "{% else %\\}$1"
+  },
+  "else": {
+    "prefix": "else",
+    "description": "",
+    "body": [
+      "{% else %\\}",
+      "\t$1"
+    ]
+  },
+  "ielif": {
+    "prefix": "ielif",
+    "description": "",
+    "body": "{% elif %\\}$1"
+  },
+  "elif": {
+    "prefix": "elif",
+    "description": "",
+    "body": [
+      "{% elif %\\}",
+      "\t$1"
+    ]
+  },
+  "ifchanged": {
+    "prefix": "ifchanged",
+    "description": "",
+    "body": "{% ifchanged %\\}$1{% endifchanged %\\}"
+  },
+  "ifequal": {
+    "prefix": "ifequal",
+    "description": "",
+    "body": [
+      "{% ifequal $1 $2 %\\}",
+      "\t$3",
+      "{% endifequal %\\}"
+    ]
+  },
+  "ifnotequal": {
+    "prefix": "ifnotequal",
+    "description": "",
+    "body": [
+      "{% ifnotequal $1 $2 %\\}",
+      "\t$3",
+      "{% endifnotequal %\\}"
+    ]
+  },
+  "include": {
+    "prefix": "include",
+    "description": "",
+    "body": "{% include \"$1\" %\\}"
+  },
+  "load": {
+    "prefix": "load",
+    "description": "",
+    "body": "{% load $1 %\\}"
+  },
+  "now": {
+    "prefix": "now",
+    "description": "",
+    "body": "{% now \"${1:jS F Y H:i}\" %\\}"
+  },
+  "regroup": {
+    "prefix": "regroup",
+    "description": "",
+    "body": "{% regroup $1 by $2 as $3 %\\}"
+  },
+  "spaceless": {
+    "prefix": "spaceless",
+    "description": "",
+    "body": "{% spaceless %\\}$1{% endspaceless %\\}"
+  },
+  "ssi": {
+    "prefix": "ssi",
+    "description": "",
+    "body": "{% ssi $1 %\\}"
+  },
+  "trans": {
+    "prefix": "trans",
+    "description": "",
+    "body": "{% trans \"${1:string}\" %\\}"
+  },
+  "url": {
+    "prefix": "url",
+    "description": "",
+    "body": "{% url $1 as $2 %\\}"
+  },
+  "widthratio": {
+    "prefix": "widthratio",
+    "description": "",
+    "body": "{% widthratio ${1:this_value} ${2:max_value} ${3:100} %\\}"
+  },
+  "with": {
+    "prefix": "with",
+    "description": "",
+    "body": [
+      "{% with $1 as $2 %\\}",
+      "\t$TM_SELECTED_TEXT",
+      "{% endwith %\\}"
+    ]
+  },
+  "verbatim": {
+    "prefix": "verbatim",
+    "description": "",
+    "body": [
+      "{% verbatim %\\}",
+      "\t$TM_SELECTED_TEXT",
+      "{% endverbatim %\\}"
+    ]
+  },
+  "super": {
+    "prefix": "super",
+    "description": "",
+    "body": "{{ block.super \\}\\}"
+  },
+  "staticu": {
+    "prefix": "staticu",
+    "description": "",
+    "body": "{{ STATIC_URL \\}\\}"
+  },
+  "static": {
+    "prefix": "static",
+    "description": "",
+    "body": "{% static \"$TM_SELECTED_TEXT\" %\\}"
+  },
+  "mediau": {
+    "prefix": "mediau",
+    "description": "",
+    "body": "{{ MEDIA_URL \\}\\}"
+  },
+  "iblock": {
+    "prefix": "iblock",
+    "description": "",
+    "body": "{% block ${1:blockname} %\\}$TM_SELECTED_TEXT{% endblock $1 %\\}"
+  },
+  "csrf": {
+    "prefix": "csrf",
+    "description": "",
+    "body": "{% csrf_token %\\}"
+  },
+  "blocktrans": {
+    "prefix": "blocktrans",
+    "description": "",
+    "body": [
+      "{% blocktrans %\\}",
+      "    $TM_SELECTED_TEXT",
+      "{% endblocktrans %\\}"
+    ]
+  },
+  "lorem": {
+    "prefix": "lorem",
+    "description": "",
+    "body": "{% lorem $1 %\\}"
+  },
+  "add": {
+    "prefix": "add",
+    "description": "",
+    "body": "add:\"$1\""
+  },
+  "center": {
+    "prefix": "center",
+    "description": "",
+    "body": "center:\"$1\""
+  },
+  "cut": {
+    "prefix": "cut",
+    "description": "",
+    "body": "cut:\"$1\""
+  },
+  "date": {
+    "prefix": "date",
+    "description": "",
+    "body": "date:\"$1\""
+  },
+  "default": {
+    "prefix": "default",
+    "description": "",
+    "body": "default:\"$1\""
+  },
+  "defaultifnone": {
+    "prefix": "defaultifnone",
+    "description": "",
+    "body": "default_if_none:\"$1\""
+  },
+  "dictsort": {
+    "prefix": "dictsort",
+    "description": "",
+    "body": "dictsort:\"$1\""
+  },
+  "dictsortrev": {
+    "prefix": "dictsortrev",
+    "description": "",
+    "body": "dictsortreversed:\"$1\""
+  },
+  "divisibleby": {
+    "prefix": "divisibleby",
+    "description": "",
+    "body": "divisibleby:\"$1\""
+  },
+  "floatformat": {
+    "prefix": "floatformat",
+    "description": "",
+    "body": "floatformat:\"$1\""
+  },
+  "getdigit": {
+    "prefix": "getdigit",
+    "description": "",
+    "body": "get_digit:\"$1\""
+  },
+  "join": {
+    "prefix": "join",
+    "description": "",
+    "body": "join:\"$1\""
+  },
+  "lengthis": {
+    "prefix": "lengthis",
+    "description": "",
+    "body": "length_is:\"$1\""
+  },
+  "pluralize": {
+    "prefix": "pluralize",
+    "description": "",
+    "body": "pluralize:\"$1\""
+  },
+  "removetags": {
+    "prefix": "removetags",
+    "description": "",
+    "body": "removetags:\"$1\""
+  },
+  "slice": {
+    "prefix": "slice",
+    "description": "",
+    "body": "slice:\"$1\""
+  },
+  "stringformat": {
+    "prefix": "stringformat",
+    "description": "",
+    "body": "stringformat:\"$1\""
+  },
+  "time": {
+    "prefix": "time",
+    "description": "",
+    "body": "time:\"$1\""
+  },
+  "truncatewords": {
+    "prefix": "truncatewords",
+    "description": "",
+    "body": "truncatewords:$1"
+  },
+  "truncatewordshtml": {
+    "prefix": "truncatewordshtml",
+    "description": "",
+    "body": "truncatewords_html:$1"
+  },
+  "urlizetrunc": {
+    "prefix": "urlizetrunc",
+    "description": "",
+    "body": "urlizetrunc:$1"
+  },
+  "wordwrap": {
+    "prefix": "wordwrap",
+    "description": "",
+    "body": "wordwrap:$1"
+  }
+}

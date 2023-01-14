@@ -1,0 +1,54 @@
+{
+  "useE": {
+    "prefix": "useE",
+    "description": "useEffect Hook",
+    "body": [
+      "useEffect(() => {",
+      "\t${1:$0}",
+      "\t\t\\}$2)"
+    ]
+  },
+  "useC": {
+    "prefix": "useC",
+    "description": "useContext Hook",
+    "body": "const ${1:context} = useContext($2)"
+  },
+  "useRe": {
+    "prefix": "useRe",
+    "description": "useReducer Hook",
+    "body": "const [${3:state}, ${4:dispatch}] = useReducer(${5:reducer}, ${2:initial_value})"
+  },
+  "useCB": {
+    "prefix": "useCB",
+    "description": "useCallback(fn, inputs)",
+    "body": [
+      "const ${1:callback} = useCallback(($2)) => ${3:{",
+      "\t$4",
+      "\\}}, [$5])"
+    ]
+  },
+  "useM": {
+    "prefix": "useM",
+    "description": "useMemo(fn, inputs)",
+    "body": [
+      "const ${1:memorized} = useMemo(() => ${2:{",
+      "\t$3",
+      "\\}}, [$4])"
+    ]
+  },
+  "useR": {
+    "prefix": "useR",
+    "description": "useRef(defaultValue)",
+    "body": "const ${1:ref} = useRef(${2:null})"
+  },
+  "ir": {
+    "prefix": "ir",
+    "description": "import React",
+    "body": "import React from \"react\""
+  },
+  "irc": {
+    "prefix": "irc",
+    "description": "import React and Component",
+    "body": "import React, { Component \\} from \"react\""
+  }
+}

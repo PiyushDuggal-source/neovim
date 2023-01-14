@@ -1,0 +1,540 @@
+{
+  "beg": {
+    "prefix": "beg",
+    "description": "begin{} / end{}",
+    "body": [
+      "\\begin{$1\\}",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{$1\\}"
+    ]
+  },
+  "cnt": {
+    "prefix": "cnt",
+    "description": "Center",
+    "body": [
+      "\\begin{center\\}",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{center\\}"
+    ]
+  },
+  "desc": {
+    "prefix": "desc",
+    "description": "Description",
+    "body": [
+      "\\begin{description\\}",
+      "\t\\item[${1:$TM_SELECTED_TEXT}] $0",
+      "\\end{description\\}"
+    ]
+  },
+  "lemma": {
+    "prefix": "lemma",
+    "description": "Lemma",
+    "body": [
+      "\\begin{lemma\\}",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{lemma\\}"
+    ]
+  },
+  "prop": {
+    "prefix": "prop",
+    "description": "Proposition",
+    "body": [
+      "\\begin{prop\\}[$1]",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{prop\\}"
+    ]
+  },
+  "thrm": {
+    "prefix": "thrm",
+    "description": "Theorem",
+    "body": [
+      "\\begin{theorem\\}[$1]",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{theorem\\}"
+    ]
+  },
+  "post": {
+    "prefix": "post",
+    "description": "postulate",
+    "body": [
+      "\\begin{postulate\\}[$1]",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{postulate\\}"
+    ]
+  },
+  "prf": {
+    "prefix": "prf",
+    "description": "Proof",
+    "body": [
+      "\\begin{myproof\\}[$1]",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{myproof\\}"
+    ]
+  },
+  "def": {
+    "prefix": "def",
+    "description": "Definition",
+    "body": [
+      "\\begin{definition\\}[$1]",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{definition\\}"
+    ]
+  },
+  "nte": {
+    "prefix": "nte",
+    "description": "Note",
+    "body": [
+      "\\begin{note\\}[$1]",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{note\\}"
+    ]
+  },
+  "prob": {
+    "prefix": "prob",
+    "description": "Problem",
+    "body": [
+      "\\begin{problem\\}[$1]",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{problem\\}"
+    ]
+  },
+  "corl": {
+    "prefix": "corl",
+    "description": "Corollary",
+    "body": [
+      "\\begin{corollary\\}[$1]",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{corollary\\}"
+    ]
+  },
+  "example": {
+    "prefix": "example",
+    "description": "Example",
+    "body": [
+      "\\begin{example\\}[$1]",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{example\\}"
+    ]
+  },
+  "notion": {
+    "prefix": "notion",
+    "description": "Notation",
+    "body": [
+      "\\begin{notation\\}[$1]",
+      "\t$0$TM_SELECTED_TEXT",
+      "\\end{notation\\}"
+    ]
+  },
+  "conc": {
+    "prefix": "conc",
+    "description": "Conclusion",
+    "body": [
+      "\\begin{conclusion\\}[$1]",
+      "\t$0$TM_SELECTED_TEXT",
+      "\\end{conclusion\\}"
+    ]
+  },
+  "enum": {
+    "prefix": "enum",
+    "description": "Enumerate",
+    "body": [
+      "\\begin{enumerate\\}",
+      "\t\\item ${0:$TM_SELECTED_TEXT}",
+      "\\end{enumerate\\}"
+    ]
+  },
+  "item": {
+    "prefix": "item",
+    "description": "Itemize",
+    "body": [
+      "\\begin{itemize\\}",
+      "\t\\item ${0:$TM_SELECTED_TEXT}",
+      "\\end{itemize\\}"
+    ]
+  },
+  "case": {
+    "prefix": "case",
+    "description": "cases",
+    "body": [
+      "\\begin{cases\\}",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\end{cases\\}"
+    ]
+  },
+  "abs": {
+    "prefix": "abs",
+    "description": "abstract environment",
+    "body": [
+      "\\begin{abstract\\}",
+      "\t${0:$TM_SELECTED_TEXT}",
+      ".\\end{abstract\\}"
+    ]
+  },
+  "cc": {
+    "prefix": "cc",
+    "description": "subset",
+    "body": "\\subset "
+  },
+  "inn": {
+    "prefix": "inn",
+    "description": "in ",
+    "body": "\\in "
+  },
+  "Nn": {
+    "prefix": "Nn",
+    "description": "cap",
+    "body": "\\cap "
+  },
+  "UU": {
+    "prefix": "UU",
+    "description": "cup",
+    "body": "\\cup "
+  },
+  "uuu": {
+    "prefix": "uuu",
+    "description": "bigcup",
+    "body": "\\bigcup_{${1:i \\in ${2: I}}\\} $0"
+  },
+  "nnn": {
+    "prefix": "nnn",
+    "description": "bigcap",
+    "body": "\\bigcap_{${1:i \\in ${2: I}}\\} $0"
+  },
+  "HH": {
+    "prefix": "HH",
+    "description": "H",
+    "body": "\\mathbb{H\\}"
+  },
+  "DD": {
+    "prefix": "DD",
+    "description": "D",
+    "body": "\\mathbb{D\\}"
+  },
+  "inmath": {
+    "prefix": "inmath",
+    "description": "Inline Math",
+    "body": "\\($1\\) $0"
+  },
+  "dm": {
+    "prefix": "dm",
+    "description": "Display Math",
+    "body": [
+      "\\[",
+      "\t${1:$TM_SELECTED_TEXT}",
+      "\\]$0"
+    ]
+  },
+  "frac": {
+    "prefix": "frac",
+    "description": "Fraction",
+    "body": "\\frac{$1\\}{$2\\}$0"
+  },
+  "compl": {
+    "prefix": "compl",
+    "description": "Complement",
+    "body": "^{c\\}"
+  },
+  "ss": {
+    "prefix": "ss",
+    "description": "Super Script",
+    "body": "^{$1\\}$0"
+  },
+  "__": {
+    "prefix": "__",
+    "description": "subscript",
+    "body": "_{$1\\}$0",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "srt": {
+    "prefix": "srt",
+    "description": "Square Root",
+    "body": "\\sqrt{${1:$TM_SELECTED_TEXT}\\}$0"
+  },
+  "srto": {
+    "prefix": "srto",
+    "description": "... Root",
+    "body": "\\sqrt[$1]{${2:$TM_SELECTED_TEXT}\\}$0"
+  },
+  "bf": {
+    "prefix": "bf",
+    "description": "Bold",
+    "body": "\\bf{${1:$TM_SELECTED_TEXT}\\}$0"
+  },
+  "it": {
+    "prefix": "it",
+    "description": "Italic",
+    "body": "\\it{${1:$TM_SELECTED_TEXT}\\}$0"
+  },
+  "un": {
+    "prefix": "un",
+    "description": "Underline",
+    "body": "\\un{${1:$TM_SELECTED_TEXT}\\}$0"
+  },
+  "rm": {
+    "prefix": "rm",
+    "description": "Text",
+    "body": "\\rm{${1:$TM_SELECTED_TEXT}\\}$0"
+  },
+  "itm": {
+    "prefix": "itm",
+    "description": "Item",
+    "body": "\\item ${0:$TM_SELECTED_TEXT}"
+  },
+  "ceil": {
+    "prefix": "ceil",
+    "description": "Ceil",
+    "body": "\\left\\lceil $1 \\right\\rceil $0"
+  },
+  "floor": {
+    "prefix": "floor",
+    "description": "Floor",
+    "body": "\\left\\lfloor $1 \\right\\rfloor$0"
+  },
+  "pmat": {
+    "prefix": "pmat",
+    "description": "Pmat",
+    "body": "\\begin{pmatrix\\} $1 \\end{pmatrix\\} $0"
+  },
+  "bmat": {
+    "prefix": "bmat",
+    "description": "Bmat",
+    "body": "\\begin{bmatrix\\} $1 \\end{bmatrix\\} $0"
+  },
+  "()": {
+    "prefix": "()",
+    "description": "Left( right)",
+    "body": "\\left( ${1:$TM_SELECTED_TEXT} \\right) $0"
+  },
+  "lr": {
+    "prefix": "lr",
+    "description": "left( right)",
+    "body": "\\left( ${1:$TM_SELECTED_TEXT} \\right) $0"
+  },
+  "lr(": {
+    "prefix": "lr(",
+    "description": "left( right)",
+    "body": "\\left( ${1:$TM_SELECTED_TEXT} \\right) $0"
+  },
+  "lr|": {
+    "prefix": "lr|",
+    "description": "left| right|",
+    "body": "\\left| ${1:$TM_SELECTED_TEXT} \\right| $0"
+  },
+  "lr{": {
+    "prefix": "lr{",
+    "description": "left\\{ right\\}",
+    "body": "\\left\\{ ${1:$TM_SELECTED_TEXT} \\right\\\\} $0"
+  },
+  "lrb": {
+    "prefix": "lrb",
+    "description": "left\\{ right\\}",
+    "body": "\\left\\{ ${1:$TM_SELECTED_TEXT} \\right\\\\} $0"
+  },
+  "lr[": {
+    "prefix": "lr[",
+    "description": "left[ right]",
+    "body": "\\left[ ${1:$TM_SELECTED_TEXT} \\right] $0"
+  },
+  "lra": {
+    "prefix": "lra",
+    "description": "leftangle rightangle",
+    "body": "\\left<${1:$TM_SELECTED_TEXT} \\right>$0"
+  },
+  "conj": {
+    "prefix": "conj",
+    "description": "conjugate",
+    "body": "\\overline{$1\\}$0"
+  },
+  "sum": {
+    "prefix": "sum",
+    "description": "sum",
+    "body": "\\sum_{n=${1:1}\\}^{${2:\\infty}\\} ${3:a_n z^n}"
+  },
+  "taylor": {
+    "prefix": "taylor",
+    "description": "taylor",
+    "body": "\\sum_{${1:k}=${2:0}\\}^{${3:\\infty}\\} ${4:c_$1} (x-a)^$1 $0"
+  },
+  "lim": {
+    "prefix": "lim",
+    "description": "limit",
+    "body": "\\lim_{${1:n} \\to ${2:\\infty}\\} "
+  },
+  "limsup": {
+    "prefix": "limsup",
+    "description": "limsup",
+    "body": "\\limsup_{${1:n} \\to ${2:\\infty}\\} "
+  },
+  "prod": {
+    "prefix": "prod",
+    "description": "product",
+    "body": "\\prod_{${1:n=${2:1}}\\}^{${3:\\infty}\\} ${4:$TM_SELECTED_TEXT} $0"
+  },
+  "part": {
+    "prefix": "part",
+    "description": "d/dx",
+    "body": "\\frac{\\partial ${1:V}\\}{\\partial ${2:x}\\} $0"
+  },
+  "ooo": {
+    "prefix": "ooo",
+    "description": "\\infty",
+    "body": "\\infty"
+  },
+  "rij": {
+    "prefix": "rij",
+    "description": "mrij",
+    "body": "(${1:x}_${2:n})_{${3:$2}\\in${4:\\N}\\}$0"
+  },
+  "=>": {
+    "prefix": "=>",
+    "description": "Implies",
+    "body": "\\implies"
+  },
+  "=<": {
+    "prefix": "=<",
+    "description": "Implied by",
+    "body": "\\impliedby"
+  },
+  "iff": {
+    "prefix": "iff",
+    "description": "iff",
+    "body": "\\iff"
+  },
+  "==": {
+    "prefix": "==",
+    "description": "Equals",
+    "body": "&= $1 \\\\"
+  },
+  "!=": {
+    "prefix": "!=",
+    "description": "Not Equal",
+    "body": "\\neq "
+  },
+  "<=": {
+    "prefix": "<=",
+    "description": "leq",
+    "body": "\\le "
+  },
+  ">=": {
+    "prefix": ">=",
+    "description": "geq",
+    "body": "\\ge "
+  },
+  "lll": {
+    "prefix": "lll",
+    "description": "l",
+    "body": "\\ell",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "xx": {
+    "prefix": "xx",
+    "description": "cross",
+    "body": "\\times ",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "<!": {
+    "prefix": "<!",
+    "description": "normal",
+    "body": "\\triangleleft ",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "!>": {
+    "prefix": "!>",
+    "description": "mapsto",
+    "body": "\\mapsto ",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "bar": {
+    "prefix": "bar",
+    "description": "bar",
+    "body": "\\bar{${1:$TM_SELECTED_TEXT}\\}$0"
+  },
+  "docls": {
+    "prefix": "docls",
+    "description": "Document Class",
+    "body": "\\documentclass{$1\\}$0",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "acl": {
+    "prefix": "acl",
+    "description": "Acroynm expanded",
+    "body": "\\acl{${1:acronym}\\}"
+  },
+  "ac": {
+    "prefix": "ac",
+    "description": "Acroynm normal",
+    "body": "\\ac{${1:acronym}\\}"
+  },
+  "ni": {
+    "prefix": "ni",
+    "description": "Non-indented paragraph",
+    "body": "\\noindent"
+  },
+  "chap": {
+    "prefix": "chap",
+    "description": "Chapter",
+    "body": "\\chapter{$1$TM_SELECTED_TEXT\\}"
+  },
+  "sec": {
+    "prefix": "sec",
+    "description": "Section",
+    "body": "\\section{$1$TM_SELECTED_TEXT\\}"
+  },
+  "sec*": {
+    "prefix": "sec*",
+    "description": "Section*",
+    "body": "\\section*{$1$TM_SELECTED_TEXT\\}"
+  },
+  "sub": {
+    "prefix": "sub",
+    "description": "Subsection",
+    "body": "\\subsection{$1$TM_SELECTED_TEXT\\}"
+  },
+  "sub*": {
+    "prefix": "sub*",
+    "description": "Subsection*",
+    "body": "\\subsection*{$1$TM_SELECTED_TEXT\\}"
+  },
+  "subsub": {
+    "prefix": "subsub",
+    "description": "Subsection",
+    "body": "\\subsubsection{$1$TM_SELECTED_TEXT\\}"
+  },
+  "subsub*": {
+    "prefix": "subsub*",
+    "description": "Subsubsection",
+    "body": "\\subsubsection*{$1$TM_SELECTED_TEXT\\}"
+  },
+  "par": {
+    "prefix": "par",
+    "description": "Paragraph",
+    "body": "\\paragraph{$1$TM_SELECTED_TEXT\\}"
+  },
+  "par*": {
+    "prefix": "par*",
+    "description": "Paragraph*",
+    "body": "\\paragraph*{$1$TM_SELECTED_TEXT\\}"
+  },
+  "subpar": {
+    "prefix": "subpar",
+    "description": "Sub Paragraph",
+    "body": "\\subparagraph{$1$TM_SELECTED_TEXT\\}"
+  },
+  "subpar*": {
+    "prefix": "subpar*",
+    "description": "Sub Paragraph*",
+    "body": "\\subparagraph*{$1$TM_SELECTED_TEXT\\}"
+  }
+}

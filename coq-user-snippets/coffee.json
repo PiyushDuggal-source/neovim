@@ -1,0 +1,90 @@
+{
+  "if": {
+    "prefix": "if",
+    "description": "If",
+    "body": [
+      "if ${1:condition}",
+      "\t${0:# body...}"
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "If .. Else",
+    "body": [
+      "if ${1:condition}",
+      "\t${2:# body...}",
+      "else",
+      "\t${3:# body...}"
+    ]
+  },
+  "elif": {
+    "prefix": "elif",
+    "description": "Else if",
+    "body": [
+      "else if ${1:condition}",
+      "\t${0:# body...}"
+    ]
+  },
+  "ifte": {
+    "prefix": "ifte",
+    "description": "Ternary if",
+    "body": "if ${1:condition} then ${2:value} else ${3:other}"
+  },
+  "unl": {
+    "prefix": "unl",
+    "description": "Unless",
+    "body": "${1:action} unless ${2:condition}"
+  },
+  "fora": {
+    "prefix": "fora",
+    "description": "Array Comprehension",
+    "body": [
+      "for ${1:name} in ${2:array}",
+      "\t${0:# body...}"
+    ]
+  },
+  "foro": {
+    "prefix": "foro",
+    "description": "Object Comprehension",
+    "body": [
+      "for ${1:key}, ${2:value} of ${3:Object}",
+      "\t${0:# body...}"
+    ]
+  },
+  "swi": {
+    "prefix": "swi",
+    "description": "Switch",
+    "body": [
+      "switch ${1:object}",
+      "\twhen ${2:value}",
+      "\t\t${3:# body...}",
+      "\telse",
+      "\t\t$0"
+    ]
+  },
+  "try": {
+    "prefix": "try",
+    "description": "Try .. Catch",
+    "body": [
+      "try",
+      "\t$1",
+      "catch ${2:error}",
+      "\t$3"
+    ]
+  },
+  "#": {
+    "prefix": "#",
+    "description": "Interpolated Code",
+    "body": "#{$1\\}$0"
+  },
+  "log": {
+    "prefix": "log",
+    "description": "Log",
+    "body": "console.log ${1:\"${2:msg}\"}"
+  },
+  "kv": {
+    "prefix": "kv",
+    "description": "Key:value for object",
+    "body": "${1:key}:${2:value}"
+  }
+}

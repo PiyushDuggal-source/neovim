@@ -1,0 +1,111 @@
+{
+  "#!": {
+    "prefix": "#!",
+    "description": "#!/usr/bin/env ruby",
+    "body": [
+      "#!/usr/bin/env ruby",
+      "$0"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "defr": {
+    "prefix": "defr",
+    "description": "def <name> ... rescue ...",
+    "body": [
+      "def ${1:function_name}${2:(${3:*args})}",
+      "\t$4",
+      "rescue",
+      "\t$0",
+      "end"
+    ]
+  },
+  "For": {
+    "prefix": "For",
+    "description": "(<from>..<to>).each { |<i>| <block> }",
+    "body": "(${1:from}..${2:to}).each { |${3:i}| $0 \\}"
+  },
+  "until": {
+    "prefix": "until",
+    "description": "until <expression> ... end",
+    "body": [
+      "until ${1:expression}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "Until": {
+    "prefix": "Until",
+    "description": "begin ... end until <expression>",
+    "body": [
+      "begin",
+      "\t$0",
+      "end until ${1:expression}"
+    ]
+  },
+  "while": {
+    "prefix": "while",
+    "description": "while <expression> ... end",
+    "body": [
+      "while ${1:expression}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "While": {
+    "prefix": "While",
+    "description": "begin ... end while <expression>",
+    "body": [
+      "begin",
+      "\t$0",
+      "end while ${1:expression}"
+    ]
+  },
+  "begin": {
+    "prefix": "begin",
+    "description": "begin ... rescue ... end",
+    "body": [
+      "begin",
+      "\t$1",
+      "rescue",
+      "\t$0",
+      "end"
+    ]
+  },
+  "rescue": {
+    "prefix": "rescue",
+    "body": [
+      "rescue Exception => e",
+      "\tputs e.message",
+      "\tputs e.backtrace.inspect",
+      "\t${0:# Rescue}"
+    ]
+  },
+  "###": {
+    "prefix": "###",
+    "body": [
+      "=begin",
+      "\t$0",
+      "=end"
+    ]
+  },
+  "priv": {
+    "prefix": "priv",
+    "description": "private ",
+    "body": [
+      "private",
+      "",
+      "$0"
+    ]
+  },
+  "prot": {
+    "prefix": "prot",
+    "description": "protected",
+    "body": [
+      "protected",
+      "",
+      "$0"
+    ]
+  }
+}

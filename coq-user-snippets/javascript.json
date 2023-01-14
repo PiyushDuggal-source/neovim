@@ -1,0 +1,17 @@
+{
+  ":,": {
+    "prefix": ":,",
+    "description": "Object Value JS",
+    "body": "${1:value_name}: ${0:value},"
+  },
+  ":": {
+    "prefix": ":",
+    "description": "Object key key: 'value'",
+    "body": "${1:key}: ${2:\"${3:value}\"}${4:, }"
+  },
+  "imp": {
+    "prefix": "imp",
+    "description": "import",
+    "body": "import $2 from $1"
+  }
+}

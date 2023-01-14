@@ -1,0 +1,129 @@
+{
+  "#!": {
+    "prefix": "#!",
+    "description": "#!/usr/bin/env lua",
+    "body": [
+      "#!/usr/bin/env lua",
+      "$0"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "forp": {
+    "prefix": "forp",
+    "description": "pair for loop",
+    "body": [
+      "for ${1:name},${2:val} in pairs(${3:table_name}) do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "fori": {
+    "prefix": "fori",
+    "description": "ipair for foop",
+    "body": [
+      "for ${1:idx},${2:val} in ipairs(${3:table_name}) do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "do": {
+    "prefix": "do",
+    "description": "do block",
+    "body": [
+      "do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "repeat": {
+    "prefix": "repeat",
+    "description": "repeat loop",
+    "body": [
+      "repeat",
+      "\t$1",
+      "until $0"
+    ]
+  },
+  "while": {
+    "prefix": "while",
+    "description": "while loop",
+    "body": [
+      "while $1 do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "description": "if statement",
+    "body": [
+      "if $1 then",
+      "\t$0",
+      "end"
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "if/else statement",
+    "body": [
+      "if $1 then",
+      "\t$2",
+      "else",
+      "\t$0",
+      "end"
+    ]
+  },
+  "eif": {
+    "prefix": "eif",
+    "description": "if/elseif statement",
+    "body": [
+      "if $1 then",
+      "\t$2",
+      "elseif $3 then",
+      "\t$0",
+      "end"
+    ]
+  },
+  "eife": {
+    "prefix": "eife",
+    "description": "if/elseif/else statement",
+    "body": [
+      "if $1 then",
+      "\t$2",
+      "elseif $3 then",
+      "\t$4",
+      "else",
+      "\t$0",
+      "end"
+    ]
+  },
+  "pcall": {
+    "prefix": "pcall",
+    "description": "pcall statement",
+    "body": [
+      "local ok, err = pcall(${1:your_function})",
+      "if not ok then",
+      "\thandler(${2:ok, err})",
+      "${3:else",
+      "\tsuccess(${4:ok, err})",
+      "}end"
+    ]
+  },
+  "local": {
+    "prefix": "local",
+    "description": "local x = 1",
+    "body": "local ${1:x} = ${0:1}"
+  },
+  "use": {
+    "prefix": "use",
+    "description": "Use",
+    "body": "use { '$1' \\}"
+  },
+  "req": {
+    "prefix": "req",
+    "description": "Require",
+    "body": "require('$1')"
+  }
+}

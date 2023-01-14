@@ -1,0 +1,213 @@
+{
+  "sleep": {
+    "prefix": "sleep",
+    "description": "try sleep catch",
+    "body": [
+      "try {",
+      "\tThread.sleep(${1:1000});",
+      "\\} catch (InterruptedException e){",
+      "\te.printStackTrace();",
+      "\\}"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "ab": {
+    "prefix": "ab",
+    "description": "abstract",
+    "body": "abstract $0"
+  },
+  "at": {
+    "prefix": "at",
+    "description": "assert true",
+    "body": "assertTrue(${1:actual});"
+  },
+  "af": {
+    "prefix": "af",
+    "description": "assert false",
+    "body": "assertFalse(${1:actual});"
+  },
+  "ae": {
+    "prefix": "ae",
+    "description": "assert equals",
+    "body": "assertEquals(${1:expected}, ${2:actual});"
+  },
+  "br": {
+    "prefix": "br",
+    "description": "break",
+    "body": [
+      "break;",
+      ""
+    ]
+  },
+  "cs": {
+    "prefix": "cs",
+    "description": "case",
+    "body": [
+      "case $1:",
+      "\t$2",
+      "$0"
+    ]
+  },
+  "cos": {
+    "prefix": "cos",
+    "description": "constant string",
+    "body": "public static final String ${1:var} = \"$2\";$0"
+  },
+  "co": {
+    "prefix": "co",
+    "description": "constant",
+    "body": "public static final ${1:String} ${2:var} = $3;$0"
+  },
+  "de": {
+    "prefix": "de",
+    "description": "default",
+    "body": [
+      "default:",
+      "\t$0"
+    ]
+  },
+  "fi": {
+    "prefix": "fi",
+    "description": "final",
+    "body": "final $0"
+  },
+  "imt": {
+    "prefix": "imt",
+    "description": "import junit_framework_TestCase;",
+    "body": [
+      "import junit.framework.TestCase;",
+      "$0"
+    ]
+  },
+  "im": {
+    "prefix": "im",
+    "description": "import",
+    "body": "import ${1:java}.${2:util}.$0;"
+  },
+  "cc": {
+    "prefix": "cc",
+    "description": "constructor call or setter body",
+    "body": "this.${1:var} = $1;"
+  },
+  "list": {
+    "prefix": "list",
+    "description": "Collections List",
+    "body": "List<${1:String}> ${2:list} = new ${3:Array}List<$1>();"
+  },
+  "map": {
+    "prefix": "map",
+    "description": "Collections Map",
+    "body": "Map<${1:String}, ${2:String}> ${3:map} = new ${4:Hash}Map<$1, $2>();"
+  },
+  "set": {
+    "prefix": "set",
+    "description": "Collections Set",
+    "body": "Set<${1:String}> ${2:set} = new ${3:Hash}Set<$1>();"
+  },
+  "j.b": {
+    "prefix": "j.b",
+    "description": "java_beans_",
+    "body": "java.beans."
+  },
+  "j.i": {
+    "prefix": "j.i",
+    "description": "java_io",
+    "body": "java.io."
+  },
+  "j.m": {
+    "prefix": "j.m",
+    "description": "java_math",
+    "body": "java.math."
+  },
+  "j.n": {
+    "prefix": "j.n",
+    "description": "java_net_",
+    "body": "java.net."
+  },
+  "j.u": {
+    "prefix": "j.u",
+    "description": "java_util_",
+    "body": "java.util."
+  },
+  "try": {
+    "prefix": "try",
+    "description": "try/catch",
+    "body": [
+      "try {",
+      "\t$1$TM_SELECTED_TEXT",
+      "\\} catch(${2:Exception} ${3:e}){",
+      "\t${4:e.printStackTrace();}",
+      "\\}"
+    ]
+  },
+  "mt": {
+    "prefix": "mt",
+    "description": "method throws",
+    "body": [
+      "${1:private} ${2:void} ${3:method}($4) ${5:throws $6 }{",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "m": {
+    "prefix": "m",
+    "description": "method",
+    "body": [
+      "${1:private} ${2:void} ${3:method}($4) {",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "pa": {
+    "prefix": "pa",
+    "description": "package",
+    "body": "package $0"
+  },
+  "p": {
+    "prefix": "p",
+    "description": "print",
+    "body": "System.out.print($1);$0"
+  },
+  "pl": {
+    "prefix": "pl",
+    "description": "println",
+    "body": "System.out.println($1);$0"
+  },
+  "pr": {
+    "prefix": "pr",
+    "description": "private",
+    "body": "private $0"
+  },
+  "po": {
+    "prefix": "po",
+    "description": "protected",
+    "body": "protected $0"
+  },
+  "pu": {
+    "prefix": "pu",
+    "description": "public",
+    "body": "public $0"
+  },
+  "re": {
+    "prefix": "re",
+    "description": "return",
+    "body": "return $0"
+  },
+  "st": {
+    "prefix": "st",
+    "description": "static",
+    "body": "static $0"
+  },
+  "sy": {
+    "prefix": "sy",
+    "description": "synchronized",
+    "body": "synchronized $0"
+  },
+  "th": {
+    "prefix": "th",
+    "description": "throw",
+    "body": "throw new $0"
+  }
+}

@@ -1,0 +1,387 @@
+{
+  "namespace": {
+    "prefix": "namespace",
+    "description": "namespace",
+    "body": [
+      "namespace ${1:MyNamespace}",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "enum": {
+    "prefix": "enum",
+    "description": "enumeration",
+    "body": "enum ${1:MyEnum} { ${2:Item} \\};"
+  },
+  "sim": {
+    "prefix": "sim",
+    "description": "static int main",
+    "body": [
+      "static int Main(string[] args)",
+      "{",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "svm": {
+    "prefix": "svm",
+    "description": "static void main",
+    "body": [
+      "static void Main(string[] args)",
+      "{",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "prop": {
+    "prefix": "prop",
+    "description": "Simple property declaration",
+    "body": "public ${1:int} ${2:MyProperty} { get; set; \\}"
+  },
+  "propfull": {
+    "prefix": "propfull",
+    "description": "Full property declaration",
+    "body": [
+      "private ${1:int} ${2:_myProperty};",
+      "",
+      "public $1 ${3:MyProperty}",
+      "{",
+      "\tget { return $2; \\}",
+      "\tset { $2 = value; \\}",
+      "\\}"
+    ]
+  },
+  "propg": {
+    "prefix": "propg",
+    "description": "Property with a private setter",
+    "body": "public ${1:int} ${2:MyProperty} { get; private set; \\}"
+  },
+  "#if": {
+    "prefix": "#if",
+    "description": "#if #endif",
+    "body": [
+      "#if ${1:DEBUG}",
+      "$TM_SELECTED_TEXT$0",
+      "#endif"
+    ]
+  },
+  "#region": {
+    "prefix": "#region",
+    "description": "#region #endregion",
+    "body": [
+      "#region ${1:Region}",
+      "$TM_SELECTED_TEXT$0",
+      "#endregion"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "for loop",
+    "body": [
+      "for (int ${1:i} = 0; $1 < ${2:10}; $1++)",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "forr": {
+    "prefix": "forr",
+    "description": "for loop (reverse)",
+    "body": [
+      "for (int ${1:i} = ${2:10}; $1 >= 0; $1--)",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "foreach": {
+    "prefix": "foreach",
+    "description": "foreach loop",
+    "body": [
+      "foreach (${3:var} ${2:item} in ${1:items})",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "while": {
+    "prefix": "while",
+    "description": "while loop",
+    "body": [
+      "while (${1:true})",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "do": {
+    "prefix": "do",
+    "description": "do loop",
+    "body": [
+      "do",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\} while (${1:true});"
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "description": "if statement",
+    "body": [
+      "if ($1)",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "if else statement",
+    "body": [
+      "if ($1)",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}",
+      "else",
+      "{",
+      "\\}"
+    ]
+  },
+  "elif": {
+    "prefix": "elif",
+    "description": "else if",
+    "body": [
+      "else if ($1)",
+      "{",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "elseif": {
+    "prefix": "elseif",
+    "description": "else if",
+    "body": [
+      "else if ($1)",
+      "{",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "ifnn": {
+    "prefix": "ifnn",
+    "description": "if not null",
+    "body": [
+      "if ($1 != null)",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "switch": {
+    "prefix": "switch",
+    "description": "switch statement",
+    "body": [
+      "switch (${1:statement})",
+      "{",
+      "\tcase ${2:value}:",
+      "\t\tbreak;",
+      "",
+      "\tdefault:",
+      "\t\t$0break;",
+      "\\}"
+    ]
+  },
+  "case": {
+    "prefix": "case",
+    "description": "case",
+    "body": [
+      "case ${1:value}:",
+      "\t$2",
+      "\tbreak;"
+    ]
+  },
+  "using": {
+    "prefix": "using",
+    "description": "using statement",
+    "body": [
+      "using (${1:resource})",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "unchecked": {
+    "prefix": "unchecked",
+    "description": "unchecked block",
+    "body": [
+      "unchecked",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "checked": {
+    "prefix": "checked",
+    "description": "checked block",
+    "body": [
+      "checked",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "unsafe": {
+    "prefix": "unsafe",
+    "description": "unsafe",
+    "body": [
+      "unsafe",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "try": {
+    "prefix": "try",
+    "description": "try catch block",
+    "body": [
+      "try",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}",
+      "catch (${1:Exception} ${2:e})",
+      "{",
+      "\tthrow;",
+      "\\}"
+    ]
+  },
+  "tryf": {
+    "prefix": "tryf",
+    "description": "try finally block",
+    "body": [
+      "try",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}",
+      "finally",
+      "{",
+      "\\}"
+    ]
+  },
+  "throw": {
+    "prefix": "throw",
+    "description": "throw",
+    "body": "throw new $1Exception(\"$2\");"
+  },
+  "from": {
+    "prefix": "from",
+    "description": "LINQ syntax",
+    "body": [
+      "var ${1:seq} =",
+      "\tfrom ${2:item1} in ${3:items1}",
+      "\tjoin ${4:item2} in ${5:items2} on $2.${6:prop1} equals $4.${7:prop2}",
+      "\tselect ${8:$2.prop3}",
+      "\twhere ${9:clause}"
+    ]
+  },
+  "da": {
+    "prefix": "da",
+    "description": "Debug.Assert",
+    "body": "Debug.Assert(${1:true});"
+  },
+  "cw": {
+    "prefix": "cw",
+    "description": "Console.WriteLine",
+    "body": "Console.WriteLine(\"$1\");"
+  },
+  "cr": {
+    "prefix": "cr",
+    "description": "Console.ReadLine",
+    "body": "Console.ReadLine();"
+  },
+  "mbox": {
+    "prefix": "mbox",
+    "description": "Message box",
+    "body": "MessageBox.Show(\"${1:message}\");"
+  },
+  "equals": {
+    "prefix": "equals",
+    "description": "Equality for a type",
+    "body": [
+      "public override bool Equals(object obj) => Equals(obj as ${1:TYPE});",
+      "",
+      "public bool Equals($1 other)  // IEquatable<$1>",
+      "{",
+      "\tif (object.ReferenceEquals(other, null))",
+      "\t\treturn false;",
+      "\tif (object.ReferenceEquals(this, other))",
+      "\t\treturn true;",
+      "\tif (this.GetType() != other.GetType())",
+      "\t\treturn false;",
+      "\t$0",
+      "\treturn base.Equals(other);",
+      "\\}",
+      "",
+      "public override int GetHashCode() => base.GetHashCode();",
+      "",
+      "public static bool operator ==($1 x, $1 y) =>",
+      "\t(object.ReferenceEquals(x, null) && object.ReferenceEquals(y, null))",
+      "\t|| (!object.ReferenceEquals(x, null) && x.Equals(y));",
+      "",
+      "public static bool operator !=($1 x, $1 y) => !(x == y);",
+      ""
+    ]
+  },
+  "mth": {
+    "prefix": "mth",
+    "description": "Method",
+    "body": [
+      "${1:public} ${2:void} ${3:MyMethod}($4)",
+      "{",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "mths": {
+    "prefix": "mths",
+    "description": "Static method",
+    "body": [
+      "${1:public} static ${2:void} ${3:MyMethod}($4)",
+      "{",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "///": {
+    "prefix": "///",
+    "description": "XML summary comment",
+    "body": [
+      "/// <summary>",
+      "/// $0",
+      "/// </summary>"
+    ]
+  },
+  "<p": {
+    "prefix": "<p",
+    "description": "XML pramameter comment",
+    "body": "<param name=\"$1\">$2</param>"
+  },
+  "<ex": {
+    "prefix": "<ex",
+    "description": "XML exception comment",
+    "body": "<exception cref=\"${1:System.Exception}\">$2</exception>"
+  },
+  "<r": {
+    "prefix": "<r",
+    "description": "XML returns comment",
+    "body": "<returns>$0</returns>"
+  },
+  "<c": {
+    "prefix": "<c",
+    "description": "XML code comment",
+    "body": "<code>$0</code>"
+  }
+}

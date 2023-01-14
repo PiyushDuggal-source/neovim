@@ -1,0 +1,172 @@
+{
+  "ife": {
+    "prefix": "ife",
+    "description": "Conditional if..else (ife)",
+    "body": [
+      "if ($1) {",
+      "\t${2:# body...}",
+      "\\}",
+      "else {",
+      "\t${3:# else...}",
+      "\\}",
+      ""
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "ifee": {
+    "prefix": "ifee",
+    "description": "Conditional if..elsif..else (ifee)",
+    "body": [
+      "if ($1) {",
+      "\t${2:# body...}",
+      "\\}",
+      "elsif ($3) {",
+      "\t${4:# elsif...}",
+      "\\}",
+      "else {",
+      "\t${5:# else...}",
+      "\\}",
+      ""
+    ]
+  },
+  "xunless": {
+    "prefix": "xunless",
+    "description": "Conditional one-line (unless)",
+    "body": [
+      "${1:expression} unless ${2:condition};",
+      ""
+    ]
+  },
+  "xif": {
+    "prefix": "xif",
+    "description": "Conditional one-line (xif)",
+    "body": [
+      "${1:expression} if ${2:condition};",
+      ""
+    ]
+  },
+  "sub": {
+    "prefix": "sub",
+    "description": "Function (sub)",
+    "body": [
+      "sub ${1:function_name} {",
+      "\t${2:# body...}",
+      "\\}",
+      ""
+    ]
+  },
+  "xfore": {
+    "prefix": "xfore",
+    "description": "Loop one-line (xforeach)",
+    "body": [
+      "${1:expression} foreach @${2:array};",
+      ""
+    ]
+  },
+  "xwhile": {
+    "prefix": "xwhile",
+    "description": "Loop one-line (xwhile)",
+    "body": [
+      "${1:expression} while ${2:condition};",
+      ""
+    ]
+  },
+  "test": {
+    "prefix": "test",
+    "description": "Test",
+    "body": [
+      "#!/usr/bin/env perl -w",
+      "",
+      "use strict;",
+      "use Test::More tests => ${1:1};",
+      "use ${2:ModuleName};",
+      "",
+      "ok(${3:assertion});",
+      ""
+    ]
+  },
+  "eval": {
+    "prefix": "eval",
+    "description": "eval",
+    "body": [
+      "local \\$@;",
+      "eval {",
+      "\t${1:# do something risky...}",
+      "\\};",
+      "if (my \\$${2:exception} = \\$@) {",
+      "\t${3:# handle failure...}",
+      "\\}",
+      ""
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "for",
+    "body": [
+      "for (my \\$${1:var} = 0; \\$$1 < ${2:expression}; \\$$1++) {",
+      "\t${3:# body...}",
+      "\\}",
+      ""
+    ]
+  },
+  "fore": {
+    "prefix": "fore",
+    "description": "foreach",
+    "body": [
+      "foreach ${1:my \\$${2:x}} (@${3:array}) {",
+      "\t${4:# body...}",
+      "\\}",
+      ""
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "description": "if",
+    "body": [
+      "if ($1) {",
+      "\t${2:# body...}",
+      "\\}",
+      ""
+    ]
+  },
+  "slurp": {
+    "prefix": "slurp",
+    "description": "slurp",
+    "body": [
+      "my \\$${1:var} = do { local \\$/ = undef; open my \\$fh, '<', ${2:\\$file}; <\\$fh> \\};",
+      ""
+    ]
+  },
+  "unless": {
+    "prefix": "unless",
+    "description": "unless",
+    "body": [
+      "unless ($1) {",
+      "\t${2:# body...}",
+      "\\}",
+      ""
+    ]
+  },
+  "while": {
+    "prefix": "while",
+    "description": "while",
+    "body": [
+      "while ($1) {",
+      "\t${2:# body...}",
+      "\\}",
+      ""
+    ]
+  },
+  "until": {
+    "prefix": "until",
+    "description": "until",
+    "body": [
+      "until ($1) {",
+      "\t${2:# body...}",
+      "\\}",
+      ""
+    ]
+  }
+}

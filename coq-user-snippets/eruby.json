@@ -1,0 +1,75 @@
+{
+  "layout": {
+    "prefix": "layout",
+    "description": "layout",
+    "body": "layout \"${1:template_name}\"${2:${3:, :only => ${4:[:${5:action}, :${6:action}]}}${7:, :except => ${8:[:${9:action}, :${10:action}]}}}"
+  },
+  "hide": {
+    "prefix": "hide",
+    "description": "page.hide (*ids)",
+    "body": "page.hide ${1:\"${2:id(s)}\"}"
+  },
+  "ins": {
+    "prefix": "ins",
+    "description": "page.insert_html (position, id, partial)",
+    "body": "page.insert_html :${1:top}, ${2:\"${3:id}\"}, :${4:partial => \"${5:template}\"}"
+  },
+  "rep": {
+    "prefix": "rep",
+    "description": "page.replace (id, partial)",
+    "body": "page.replace ${1:\"${2:id}\"}, :${3:partial => \"${4:template}\"}"
+  },
+  "reph": {
+    "prefix": "reph",
+    "description": "page.replace_html (id, partial)",
+    "body": "page.replace_html ${1:\"${2:id}\"}, :${3:partial => \"${4:template}\"}"
+  },
+  "show": {
+    "prefix": "show",
+    "description": "page.show (*ids)",
+    "body": "page.show ${1:\"${2:id(s)}\"}"
+  },
+  "tog": {
+    "prefix": "tog",
+    "description": "page.toggle (*ids)",
+    "body": "page.toggle ${1:\"${2:id(s)}\"}"
+  },
+  "vis": {
+    "prefix": "vis",
+    "description": "page.visual_effect (effect, id)",
+    "body": "page.visual_effect :${1:toggle_slide}, ${2:\"${3:DOM ID}\"}"
+  },
+  "rp": {
+    "prefix": "rp",
+    "description": "render (partial) (rp)",
+    "body": "render :partial => \"${1:item}\""
+  },
+  "rpc": {
+    "prefix": "rpc",
+    "description": "render (partial,collection) (rpc)",
+    "body": "render :partial => \"${1:item}\", :collection => ${2:@$1s}"
+  },
+  "rpl": {
+    "prefix": "rpl",
+    "description": "render (partial,locals) (rpl)",
+    "body": "render :partial => \"${1:item}\", :locals => { :${2:$1} => ${3:@$1}$0 \\}"
+  },
+  "rpo": {
+    "prefix": "rpo",
+    "description": "render (partial,object) (rpo)",
+    "body": "render :partial => \"${1:item}\", :object => ${2:@$1}"
+  },
+  "rps": {
+    "prefix": "rps",
+    "description": "render (partial,status) (rps)",
+    "body": "render :partial => \"${1:item}\", :status => ${2:500}"
+  },
+  "else": {
+    "prefix": "else",
+    "description": "else (ERB)",
+    "body": [
+      "<% else %>",
+      "\t$0"
+    ]
+  }
+}
