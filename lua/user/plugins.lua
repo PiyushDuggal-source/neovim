@@ -28,8 +28,8 @@ local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   return
 end
-
--- Have packer use a popup window
+--
+-- -- Have packer use a popup window
 packer.init {
   display = {
     open_fn = function()
@@ -40,8 +40,8 @@ packer.init {
     clone_timeout = 300, -- Timeout, in seconds, for git clones
   },
 }
-
 -- Install your plugins here
+
 return packer.startup(function(use)
   -- My plugins here
   use { "wbthomason/packer.nvim" } -- Have packer manage itself
@@ -53,6 +53,7 @@ return packer.startup(function(use)
   use { "numToStr/Comment.nvim" }
   use { "JoosepAlviste/nvim-ts-context-commentstring" }
   use { "kyazdani42/nvim-web-devicons" }
+  use { 'onsails/lspkind.nvim' }
   use { "kyazdani42/nvim-tree.lua" }
   use { "akinsho/bufferline.nvim" }
   use { "moll/vim-bbye" }
@@ -69,63 +70,71 @@ return packer.startup(function(use)
   use { "lunarvim/darkplus.nvim" }
   use {
     "catppuccin/nvim",
-    as = "catppuccin", }
+    as = "catppuccin",
+  }
 
   -- cmp plugins
-  -- use { "hrsh7th/nvim-cmp"} -- The completion plugin
-  -- use { "hrsh7th/cmp-buffer"} -- buffer completions
-  -- use { "hrsh7th/cmp-path"} -- path completions
+  use { "hrsh7th/nvim-cmp" } -- The completion plugin
+  use { "hrsh7th/cmp-buffer" } -- buffer completions
+  use { "hrsh7th/cmp-path" } -- path completions
   -- use { "hrsh7th/cmp-vsnip"}
   -- use { "hrsh7th/vim-vsnip"}
   -- use { "saadparwaiz1/cmp_luasnip"} -- snippet completions
-  -- use { "hrsh7th/cmp-nvim-lsp"}
   -- use { "hrsh7th/cmp-nvim-lua"}
 
-  use "christianchiarulli/nvim-cmp"
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
+  -- use "christianchiarulli/nvim-cmp"
+  -- use "hrsh7th/cmp-buffer" -- buffer completions
+  -- use "hrsh7th/cmp-path" -- path completions
+  use "David-Kunz/cmp-npm"
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-emoji"
+  -- use "hrsh7th/cmp-emoji"
   use { "hrsh7th/cmp-nvim-lua", ft = { "lua" } }
   -- use 'ms-jpq/coq_nvim'
   -- use 'ms-jpq/coq.artifacts'
   -- use 'ms-jpq/coq.thirdparty'
-use { 'epilande/vim-react-snippets' }
-  use {'honza/vim-snippets'}
+  use { 'epilande/vim-react-snippets' }
+  use { 'honza/vim-snippets' }
 
   -- snippets
   use { "L3MON4D3/LuaSnip" } --snippet engine
   use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
 
   -- LSP
-  use { "williamboman/nvim-lsp-installer" } -- simple to use language server installer
   use { "neovim/nvim-lspconfig" } -- enable LSP
+  use { "williamboman/nvim-lsp-installer" } -- simple to use language server installer
   use { "williamboman/mason.nvim" }
   use { "williamboman/mason-lspconfig.nvim" }
   use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
   use { "RRethy/vim-illuminate" }
   -- use { "ms-jpq/coq_nvim" }
-  -- use {
-  --   "ray-x/lsp_signature.nvim",
+  -- use({
+  --   'ray-x/navigator.lua',
   --   requires = {
-  --     {
-  --       "kosayoda/nvim-lightbulb",
-  --       config = function()
-  --         vim.api.nvim_command("highlight LightBulbVirtualText guifg=red")
-  --       end
-  --     },
-  --     "nvim-lua/lsp-status.nvim",
-  --     { "ojroques/nvim-lspfuzzy", config = require "lspfuzzy".setup {} },
-  --     {
-  --       "ray-x/lsp_signature.nvim",
-  --       config = function()
-  --         require "lsp_signature".on_attach()
-  --       end
-  --     }
-  --   }
-  -- }
+  --     { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+  --     { 'neovim/nvim-lspconfig' },
+  --   },
+  -- })
+  --  use {
+  --   "ray-x/lsp_signature.nvim",
+  --  requires = {
+  --   {
+  --    "kosayoda/nvim-lightbulb",
+  --   config = function()
+  --    vim.api.nvim_command("highlight LightBulbVirtualText guifg=red")
+  -- end
+  --},
+  --"nvim-lua/lsp-status.nvim",
+  --{ "ojroques/nvim-lspfuzzy", config = require "lspfuzzy".setup {} },
+  --{
+  --"ray-x/lsp_signature.nvim",
+  --config = function()
+  --require "lsp_signature".on_attach()
+  --end
+  --}
+  --}
+  --}
 
   -- Telescope
   use {
@@ -140,7 +149,10 @@ use { 'epilande/vim-react-snippets' }
 
   --TagBar
   -- use 'preservim/tagbar'
-
+use {
+      'stevearc/aerial.nvim',
+      config = function() require('aerial').setup() end
+    }
   --Terminal
   use "voldikss/vim-floaterm"
 
@@ -156,6 +168,12 @@ use { 'epilande/vim-react-snippets' }
   use "mhinz/vim-startify"
 
   -- Status Line
+  use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig"
+}
+
+  -- use { 'glepnir/galaxyline.nvim', after = "nvim-gps" }
   -- use "christianchiarulli/lualine.nvim"
   -- Git
   use { "lewis6991/gitsigns.nvim" }
@@ -163,13 +181,18 @@ use { 'epilande/vim-react-snippets' }
   -- startup Time
   use { "dstein64/vim-startuptime" }
 
-  use { "abecodes/tabout.nvim",
-    wants = { 'nvim-treesitter' }, -- or require if not used so far
-    after = { 'nvim-cmp' } -- if a completion plugin is using tabs load it before
-  }
+  -- use { "abecodes/tabout.nvim",
+  --   wants = { 'nvim-treesitter' }, -- or require if not used so far
+  --   after = { 'nvim-cmp' } -- if a completion plugin is using tabs load it before
+  -- }
 
   -- -- Color Shower
   use { "norcalli/nvim-colorizer.lua" }
+
+-- use {
+-- 	"SmiteshP/nvim-gps",
+-- 	requires = "nvim-treesitter/nvim-treesitter"
+-- }
 
   -- autoSave
   use { "Pocco81/auto-save.nvim",
@@ -222,7 +245,7 @@ use { 'epilande/vim-react-snippets' }
 
 
   -- codi vim plugin - Like Quokkajs
-  use { 'metakirby5/codi.vim', ft={ "javascript", "typescript" } }
+  use { 'metakirby5/codi.vim', ft = { "javascript", "typescript" } }
 
   -- scope for bufferline and Tabs
   use { "tiagovla/scope.nvim" }
@@ -239,6 +262,7 @@ use { 'epilande/vim-react-snippets' }
   -- use { "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
   -- use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
 
+  use { "mbbill/undotree" }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

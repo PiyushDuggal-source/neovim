@@ -21,10 +21,10 @@ require "user.alpha"
 require "user.lsp"
 require 'user.import-cost'
 -- require "user.dap"
-require 'user.coqCmp'
+-- require 'user.coqCmp'
 require "user.whichKey"
 require "user.typescript"
-require "user.tabout"
+-- require "user.tabout"
 require("scope").setup()
 -- require "user.colorizer"
 -- vim.cmd(":COQnow --shut-up")
