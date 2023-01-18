@@ -90,7 +90,7 @@ local mappings = {
   ["/"] = { "<cmd>lua require('Comment').toggle()<CR>", "Comment" },
   ["c"] = { "<cmd>:CodeActionMenu<CR>", "Code Action" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+  ["P"] = { ":lua require('telescope').extensions.projects.projects()<CR>", "Projects" },
   -- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({}))<cr>",
@@ -210,18 +210,18 @@ v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 --   }
 }
 
-local vopts = {
-  mode = "v", -- VISUAL mode
-  prefix = "<leader>",
-  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true, -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = true, -- use `nowait` when creating keymaps
-}
-local vmappings = {
-  ["/"] = { "<ESC><CMD>lua require('Comment.api').gc(vim.fn.visualmode())<CR>", "Comment" },
-}
+--local vopts = {
+  --mode = "v", -- VISUAL mode
+  --prefix = "<leader>",
+  --buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  --silent = true, -- use `silent` when creating keymaps
+  --noremap = true, -- use `noremap` when creating keymaps
+  --nowait = true, -- use `nowait` when creating keymaps
+--}
+--local vmappings = {
+  --["/"] = { "<ESC><CMD>lua require('Comment.api').gc(vim.fn.visualmode())<CR>", "Comment" },
+--}
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
-which_key.register(vmappings, vopts)
+--which_key.register(vmappings, vopts)

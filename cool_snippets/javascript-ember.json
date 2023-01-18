@@ -1,0 +1,120 @@
+{
+  "eapp": {
+    "prefix": "eapp",
+    "description": "App.Name = Ember.Application.create({});",
+    "body": [
+      "import Application from '@ember/application';",
+      "",
+      "export default Application.extend({",
+      "\t${0://Properties here...}",
+      "\\});"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "emod": {
+    "prefix": "emod",
+    "description": "import DS from 'ember-data';",
+    "body": [
+      "import DS from 'ember-data';",
+      "",
+      "export default DS.Model.extend({",
+      "\t${0://Properties here...}",
+      "\\});"
+    ]
+  },
+  "econtroller": {
+    "prefix": "econtroller",
+    "description": "import Controller from '@ember/controller';",
+    "body": [
+      "import Controller from '@ember/controller';",
+      "",
+      "export default Controller.extend({",
+      "\t${0://Properties here...}",
+      "\\});"
+    ]
+  },
+  "eroute": {
+    "prefix": "eroute",
+    "description": "import Route from '@ember/routing/route';",
+    "body": [
+      "import Route from '@ember/routing/route';",
+      "",
+      "export default Route.extend({",
+      "\t${0://Properties here...}",
+      "\\});"
+    ]
+  },
+  "ecomponent": {
+    "prefix": "ecomponent",
+    "description": "import Component from '@ember/component';",
+    "body": [
+      "import Component from '@ember/component';",
+      "",
+      "export default Component.extend({",
+      "\t${0://Properties here...}",
+      "\\});"
+    ]
+  },
+  "eobj": {
+    "prefix": "eobj",
+    "description": "import EmberObject from '@ember/object';",
+    "body": [
+      "import EmberObject from '@ember/object';",
+      "",
+      "export default EmberObject.extend({",
+      "\t${0://Properties here...}",
+      "\\});"
+    ]
+  },
+  "emix": {
+    "prefix": "emix",
+    "description": "App.MixinName = Ember.Model.extend({...});",
+    "body": [
+      "import Mixin from '@ember/object/mixin';",
+      "",
+      "export default Mixin.create({",
+      "\t${0://Properties here...}",
+      "\\});"
+    ]
+  },
+  "eget": {
+    "prefix": "eget",
+    "description": "this.get('property');",
+    "body": "${1:this}.get('${2:property}');"
+  },
+  "eset": {
+    "prefix": "eset",
+    "description": "this.set('property', value);",
+    "body": "${1:this}.set('${2:property}', ${3:value});"
+  },
+  "cproimport": {
+    "prefix": "cproimport",
+    "description": "import { computed } from '@ember/object';",
+    "body": "import { computed \\} from '@ember/object';"
+  },
+  "cpro": {
+    "prefix": "cpro",
+    "description": "property_name: computed('...', function() {...}),",
+    "body": [
+      "${1:property_name}: computed('${3:argument}', function() {",
+      "\t${0://body...}",
+      "\\}),"
+    ]
+  },
+  "prooimport": {
+    "prefix": "prooimport",
+    "description": "import { observer } from '@ember/object';",
+    "body": "import { observer \\} from '@ember/object';"
+  },
+  "proo": {
+    "prefix": "proo",
+    "description": "property_name: observer('...', function() {...}),",
+    "body": [
+      "${1:property_name}: observer('${3:argument}', function() {",
+      "\t${0://body...}",
+      "\\}),"
+    ]
+  }
+}

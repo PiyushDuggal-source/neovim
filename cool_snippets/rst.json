@@ -1,0 +1,20 @@
+{
+  "fnt": {
+    "prefix": "fnt",
+    "description": "Footnote or Citation",
+    "body": [
+      "[${1:Label}]_ $0",
+      "",
+      ".. [$1] ${2:Reference}"
+    ]
+  },
+  "sid": {
+    "prefix": "sid",
+    "description": "SideBar",
+    "body": [
+      ".. sidebar:: ${1:SideBar Title}",
+      "",
+      "\t${2:${TM_SELECTED_TEXT:SideBar Content}}"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "imp": {
+    "prefix": "imp",
+    "description": "Simple import",
+    "body": "import ${1:${2:Data}.${0:Text}}",
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "imp2": {
+    "prefix": "imp2",
+    "description": "Selective import",
+    "body": "import ${1:${2:Data}.${3:Text}} ($4)$0"
+  }
+}

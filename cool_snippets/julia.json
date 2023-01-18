@@ -1,0 +1,54 @@
+{
+  "docf": {
+    "prefix": "docf",
+    "description": "function documentation",
+    "body": [
+      "#' @description",
+      "#'",
+      "#' ${1:function description}",
+      "#'",
+      "#' ${2:@param ${3:name}::${4:Type} ${5:Description}}",
+      "#'",
+      "#' ${6:@returns ${7:name}::${8:Type} ${9:Description}}",
+      "#'",
+      "#' @examples",
+      "#'",
+      "#' ${10: function call examples}"
+    ]
+  },
+  "doct": {
+    "prefix": "doct",
+    "description": "type definition",
+    "body": [
+      "#' @description",
+      "#'",
+      "#' ${1:type description}",
+      "#'",
+      "#' ${2:@field ${3:name}::${4:Type} ${5:Description}}",
+      "#'",
+      "#' @examples",
+      "#'",
+      "#' ${10: constructor examples}"
+    ]
+  },
+  "par": {
+    "prefix": "par",
+    "description": "function parameter documentation",
+    "body": "#' @param ${1:name}::${2:Type} ${0:Description}"
+  },
+  "fld": {
+    "prefix": "fld",
+    "description": "type field documentation",
+    "body": "#' @field ${1:name}::${2:Type} ${0:Description}"
+  },
+  "deb": {
+    "prefix": "deb",
+    "description": "Debugger breakpoint",
+    "body": "Main.@bp"
+  },
+  "inf": {
+    "prefix": "inf",
+    "description": "Infiltrator breakpoint",
+    "body": "Main.@infiltrate"
+  }
+}

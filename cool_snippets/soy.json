@@ -1,0 +1,79 @@
+{
+  "ns": {
+    "prefix": "ns",
+    "description": "Namespace",
+    "body": "{namespace ${1:name}\\}",
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "msg": {
+    "prefix": "msg",
+    "description": "Message",
+    "body": [
+      "{msg desc=\"${1:description}\"\\}",
+      "\t$0",
+      "{/msg\\}"
+    ]
+  },
+  "let": {
+    "prefix": "let",
+    "description": "let command",
+    "body": "{let \\$${1:identifier}: ${2:expression} /\\}"
+  },
+  "if": {
+    "prefix": "if",
+    "description": "if .. (if)",
+    "body": [
+      "{if ${1:expression}\\}",
+      "\t$0",
+      "{/if\\}"
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "if .. else (ife)",
+    "body": [
+      "{if ${1:expression}\\}",
+      "\t$2",
+      "{else\\}",
+      "\t$0",
+      "{/if\\}"
+    ]
+  },
+  "eli": {
+    "prefix": "eli",
+    "description": "else if .. (eli)",
+    "body": [
+      "{elif ${1:expression}\\}",
+      "\t$0"
+    ]
+  },
+  "fore": {
+    "prefix": "fore",
+    "description": "foreach command",
+    "body": [
+      "{foreach \\$${1:var} in ${2:ref}\\}",
+      "\t$0",
+      "{/foreach\\}"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "for command",
+    "body": [
+      "{for \\$${1:var} in range(${2:rangeexpr})\\}",
+      "\t$0",
+      "{/for\\}"
+    ]
+  },
+  "call": {
+    "prefix": "call",
+    "description": "template call",
+    "body": [
+      "{call ${1:tmpl}\\}",
+      "\t$0",
+      "{/call\\}"
+    ]
+  }
+}

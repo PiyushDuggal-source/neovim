@@ -1,0 +1,23 @@
+{
+  "gvar": {
+    "prefix": "gvar",
+    "description": "Global / configuration variable",
+    "body": [
+      "if !exists(\"g:${1:MyUltraImportantVar}\")",
+      "\tlet g:$1 = ${2:\"${3:<tab>}\"}",
+      "endif"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "f": {
+    "prefix": "f",
+    "description": "function",
+    "body": [
+      "fun ${1:function_name}($2)",
+      "\t${3:\" code}",
+      "endf"
+    ]
+  }
+}

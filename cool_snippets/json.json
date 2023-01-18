@@ -1,0 +1,56 @@
+{
+  "s": {
+    "prefix": "s",
+    "description": "String",
+    "body": "\"${1:key}\": \"${0:value}\",",
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "n": {
+    "prefix": "n",
+    "description": "Number",
+    "body": "\"${1:key}\": ${0:value},"
+  },
+  "a": {
+    "prefix": "a",
+    "description": "Array",
+    "body": [
+      "[",
+      "\t$TM_SELECTED_TEXT$0",
+      "],"
+    ]
+  },
+  "na": {
+    "prefix": "na",
+    "description": "Named array",
+    "body": [
+      "\"${1:key}\": [",
+      "\t$TM_SELECTED_TEXT$0",
+      "],"
+    ]
+  },
+  "o": {
+    "prefix": "o",
+    "description": "Object",
+    "body": [
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\},"
+    ]
+  },
+  "no": {
+    "prefix": "no",
+    "description": "Named object",
+    "body": [
+      "\"${1:key}\": {",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\},"
+    ]
+  },
+  "null": {
+    "prefix": "null",
+    "description": "Null",
+    "body": "\"${0:key}\": null,"
+  }
+}

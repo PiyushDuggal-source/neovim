@@ -1,0 +1,16 @@
+{
+  ".it": {
+    "prefix": ".it",
+    "description": ".iter()",
+    "body": ".iter()$0"
+  },
+  "impl": {
+    "prefix": "impl",
+    "description": "Struct/Trait implementation",
+    "body": [
+      "impl$4 ${1:Type/Trait}${2: for ${3:Type}}${4:<${5:T}>} {",
+      "\t$0",
+      "\\}"
+    ]
+  }
+}

@@ -1,0 +1,511 @@
+{
+  "doc": {
+    "prefix": "doc",
+    "description": "Document comment",
+    "body": [
+      "\t/*",
+      "\t *\t${0: comment ...}",
+      "\t */"
+    ]
+  },
+  "pkggbl": {
+    "prefix": "pkggbl",
+    "description": "Package Global variables",
+    "body": [
+      "   -- Declare Global Variables",
+      "   g_sysdate\t\t\t\t\t\t\t\t\tDATE := SYSDATE;",
+      "   g_delimiter\t\t\t\t\t\t\t\t\tVARCHAR2( 30 ) := '\t  ';",
+      "   g_err_length_limit\t\t\t\t\t\tNUMBER := 1500;",
+      "   g_package_name\t\t\t\t\t   CONSTANT VARCHAR2(30) := '$0';",
+      "   g_proc_name VARCHAR2(100)\t\t\t\t\t:= NULL;",
+      "   excp_custom\t\t\t\t\t\t\t\t\tEXCEPTION;",
+      "",
+      "   -- Declare User Global Types",
+      ""
+    ]
+  },
+  "flushca": {
+    "prefix": "flushca",
+    "description": "Flush Cache",
+    "body": "ALTER SYSTEM FLUSH BUFFER_CACHE;"
+  },
+  "flushsp": {
+    "prefix": "flushsp",
+    "description": "Flush Shared Pool",
+    "body": "ALTER SYSTEM FLUSH SHARED_POOL;"
+  },
+  "err": {
+    "prefix": "err",
+    "body": "\tshow errors;"
+  },
+  "sel": {
+    "prefix": "sel",
+    "description": "Select statement",
+    "body": "SELECT ${0:*} FROM $1 WHERE 1 = 1;"
+  },
+  "selc": {
+    "prefix": "selc",
+    "description": "Select statement",
+    "body": "SELECT COUNT(1) FROM $1 WHERE $0;"
+  },
+  "wrn": {
+    "prefix": "wrn",
+    "description": "Where ROWNNUM",
+    "body": "WHERE ROWNUM <= 10 ${0:AND}"
+  },
+  "arn": {
+    "prefix": "arn",
+    "description": "AND ROWNNUM",
+    "body": "AND ROWNUM <= 10 ${0:;}"
+  },
+  "dbo": {
+    "prefix": "dbo",
+    "description": "Show output ",
+    "body": "\tDBMS_OUTPUT.put_line('$0');"
+  },
+  "dbl": {
+    "prefix": "dbl",
+    "description": "Log message in Log Table, Change procedure as defined by you",
+    "body": "\tDEBUG_LOG_PKG.WRITE_LOG(${1:'Test'},${2:$1} ,$0 );"
+  },
+  "dut": {
+    "prefix": "dut",
+    "description": "DBMS_OUTPUT.put_line",
+    "body": "\tDBMS_UTILITY.get_time;"
+  },
+  "bc": {
+    "prefix": "bc",
+    "description": "Bulk collect into",
+    "body": "\tbulk collect into $0"
+  },
+  "ei": {
+    "prefix": "ei",
+    "description": "Execute Immediate",
+    "body": "\tEXECUTE IMMEDIATE '${0:statement}' ;"
+  },
+  "eitt": {
+    "prefix": "eitt",
+    "description": "Execute Immediate TRUNCATE Table",
+    "body": "\tEXECUTE IMMEDIATE( 'TRUNCATE TABLE ${0:table}');"
+  },
+  "eitp": {
+    "prefix": "eitp",
+    "description": "Execute Immediate ALTER Table Truncate partition",
+    "body": "\tEXECUTE IMMEDIATE( 'ALTER TABLE ${1:table} TRUNCATE PARTITION ${0:partition}');"
+  },
+  "prmpt": {
+    "prefix": "prmpt",
+    "description": "Prompt message",
+    "body": "PROMPT ${1:Creating }..."
+  },
+  "crseq": {
+    "prefix": "crseq",
+    "description": "Create Sequence",
+    "body": [
+      "DROP SEQUENCE ${1:schema}.${2:name}_s;",
+      "",
+      "CREATE SEQUENCE $1.$2_s",
+      "   START WITH ${3:1}",
+      "   MAXVALUE 999999999999999999999999999",
+      "   MINVALUE 1",
+      "   NOCYCLE",
+      "   NOCACHE",
+      "   NOORDER;"
+    ]
+  },
+  "crsyn": {
+    "prefix": "crsyn",
+    "description": "Create Synonym",
+    "body": [
+      "",
+      "CREATE OR REPLACE SYNONYM ${1:schema}.${2:name} FOR ${3:target}.$0;",
+      ""
+    ]
+  },
+  "crind": {
+    "prefix": "crind",
+    "description": "Create Index",
+    "body": [
+      "DROP INDEX $1.$4;",
+      "",
+      "CREATE INDEX $1.${4:$2_$5}",
+      "ON ${1:schema}.${2:table}($3) ${6:TABLESPACE $0 };"
+    ]
+  },
+  "drtab": {
+    "prefix": "drtab",
+    "description": "Drop Table",
+    "body": [
+      "DROP TABLE ${1:schema}.${2:name} CASCADE CONSTRAINTS ${3:PURGE};",
+      ""
+    ]
+  },
+  "crtab": {
+    "prefix": "crtab",
+    "description": "Create Table",
+    "body": [
+      "",
+      "DROP TABLE ${1:schema}.${2:name} CASCADE CONSTRAINTS PURGE;",
+      "",
+      "CREATE TABLE $1.$2",
+      "(",
+      "   $0",
+      ")",
+      "${3:TABLESPACE $4}",
+      ";"
+    ]
+  },
+  "ccol": {
+    "prefix": "ccol",
+    "description": "Add VARCHAR2 column to table",
+    "body": "\t${1:,} ${2:name}\tVARCHAR2(${0:100})"
+  },
+  "dcol": {
+    "prefix": "dcol",
+    "description": "Add DATE column to table",
+    "body": "\t${1:,} ${0:name}\tDATE"
+  },
+  "ncol": {
+    "prefix": "ncol",
+    "description": "Add NUMBER column to table",
+    "body": "\t${1:,} ${0:name}\tNUMBER"
+  },
+  "at": {
+    "prefix": "at",
+    "description": "Alter Table",
+    "body": "\tALTER TABLE ${1:table} $0"
+  },
+  "tr": {
+    "prefix": "tr",
+    "description": "Type record",
+    "body": "\tTYPE t_${1:rec} IS RECORD (${0:/* columns */} );"
+  },
+  "tt": {
+    "prefix": "tt",
+    "description": "Type Table",
+    "body": "\tTYPE t_${1:tbl} IS TABLE OF ${0:table_name}%ROWTYPE INDEX BY BINARY_INTEGER;"
+  },
+  "tc": {
+    "prefix": "tc",
+    "description": "Type Cursor",
+    "body": "\tTYPE t_${1:tbl} IS TABLE OF ${0:cur}%ROWTYPE INDEX BY BINARY_INTEGER;"
+  },
+  "pn": {
+    "prefix": "pn",
+    "body": "\tp_$1\t\t${2:IN}\t\tNUMBER ${3:DEFAULT ${0:NULL}}"
+  },
+  "pd": {
+    "prefix": "pd",
+    "body": "\tp_$1\t\t${2:IN}\t\tDATE ${3:DEFAULT ${0:SYSDATE}}"
+  },
+  "pc": {
+    "prefix": "pc",
+    "body": "\tP_$1\t\t${2:IN}\t\tVARCHAR2 ${3:DEFAULT ${0:NULL}}"
+  },
+  "ln": {
+    "prefix": "ln",
+    "body": "\tl_$1\t\tNUMBER ${2: := $3 };"
+  },
+  "ld": {
+    "prefix": "ld",
+    "body": "\tl_$1\t\tDATE ${2: := $3 };"
+  },
+  "lc": {
+    "prefix": "lc",
+    "body": "\tl_$1\t\tVARCHAR2(${2:100}) ${3: := $4 };"
+  },
+  "gn": {
+    "prefix": "gn",
+    "body": "\tg_$1\t\tNUMBER ${2: := ${3:10} };"
+  },
+  "gd": {
+    "prefix": "gd",
+    "body": "\tg_$1\t\tDATE ${2: := ${3:SYSDATE} };"
+  },
+  "gc": {
+    "prefix": "gc",
+    "body": "\tg_$1\t\tVARCHAR2(${2:100}) ${3: := $4 };"
+  },
+  "ltbl": {
+    "prefix": "ltbl",
+    "body": "\tl_tbl_$1\t\t$0;"
+  },
+  "lrec": {
+    "prefix": "lrec",
+    "body": "\tl_rec_$1\t\t$0;"
+  },
+  "if": {
+    "prefix": "if",
+    "description": "If Condition",
+    "body": [
+      "\tIF($1) THEN",
+      "\t\t$0;",
+      "\tEND IF;"
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "IF-Else Condition",
+    "body": [
+      "\tIF($1) THEN",
+      "\t\t$2;",
+      "\tELSIF",
+      "\t\t$0;",
+      "\tEND IF;"
+    ]
+  },
+  "els": {
+    "prefix": "els",
+    "description": "Else Condition",
+    "body": [
+      "\tELSIF ${1:condition} THEN",
+      "\t\t$0;"
+    ]
+  },
+  "case": {
+    "prefix": "case",
+    "description": "Case statement",
+    "body": [
+      "\tCASE WHEN ($1) THEN",
+      "\t\t$2",
+      "\tWHEN ($3) THEN",
+      "\t\t$4",
+      "\t${0:ELSE}",
+      "\tEND "
+    ]
+  },
+  "while": {
+    "prefix": "while",
+    "description": "While Loop",
+    "body": [
+      "\tWHILE ${1:a} ${2:condition} ${3:b}\tLOOP",
+      "\t\t$0;",
+      "\tEND LOOP;"
+    ]
+  },
+  "fori": {
+    "prefix": "fori",
+    "description": "For Loop",
+    "body": [
+      "\tFOR ${1:indx} in ${2:1}..${3:10}  LOOP",
+      "\t\t$4;",
+      "\tEND LOOP;"
+    ]
+  },
+  "fort": {
+    "prefix": "fort",
+    "description": "Table For Loop",
+    "body": [
+      "\tFOR ${1:indx} in 1..${2:ttb}.count LOOP",
+      "\t\t$0;",
+      "\tEND LOOP;"
+    ]
+  },
+  "loop": {
+    "prefix": "loop",
+    "description": "Loop statement",
+    "body": [
+      "\tLOOP",
+      "\t\t$0;",
+      "\tEND LOOP;"
+    ]
+  },
+  "fora": {
+    "prefix": "fora",
+    "description": "For All Loop",
+    "body": [
+      "\t  IF ( ${1:ttbl}.COUNT > 0 ) THEN",
+      "\t\t BEGIN",
+      "\t\t\tFORALL ${2:indx} IN 1 .. $1.COUNT",
+      "\t\t\t\t-- Insert/Update",
+      "\t\t\t\t$0",
+      "\t\t EXCEPTION --Exception Block",
+      "\t\t\tWHEN OTHERS THEN",
+      "\t\t\t   l_errmsg\t  := 'Error while Bulk updating, Error : ' || SQLERRM;",
+      "\t\t\t   RAISE excp_custom;",
+      "\t\t END;",
+      "\t  END IF;"
+    ]
+  },
+  "forc": {
+    "prefix": "forc",
+    "description": "For Cursor Loop",
+    "body": [
+      "\tFOR $1_rec IN ${1:cur} ${2:(${3:param})}",
+      "\tLOOP",
+      "\t\t$0",
+      "\tEND LOOP; -- End $1"
+    ]
+  },
+  "dcur": {
+    "prefix": "dcur",
+    "description": "Cursor declaration",
+    "body": [
+      "\tCURSOR ${1:cur} IS",
+      "\tSELECT $0",
+      "\t\tFROM $1",
+      "\t\tWHERE 1 = 1;"
+    ]
+  },
+  "copen": {
+    "prefix": "copen",
+    "description": "Open Cursor",
+    "body": [
+      "\tOPEN ${1:cursor} ${2:( ${3:param} )};",
+      "\tFETCH $1",
+      "\tINTO ${4:record};",
+      "\t$0",
+      "\tIF ( $1 %NOTFOUND ) THEN",
+      "\t\tCLOSE $1;",
+      "\t\tl_errmsg := 'No records fetched in cursor : $1.';",
+      "\t\tRAISE excp_custom;",
+      "\tEND IF;",
+      "\tCLOSE $1;"
+    ]
+  },
+  "copenbc": {
+    "prefix": "copenbc",
+    "description": "Open Cursor Bulk collect",
+    "body": [
+      "\tOPEN ${1:cursor} ${2:( ${3:param} )};",
+      "\tFETCH $1",
+      "\tBULK COLLECT INTO ${4:ttbl};",
+      "\tCLOSE $1;",
+      "",
+      "\tIF ( $4.count = 0 ) THEN",
+      "\t\tl_errmsg := 'No records fetched in cursor : $1.';",
+      "\t\tRAISE excp_custom;{0\\}",
+      "\tEND IF;"
+    ]
+  },
+  "decl": {
+    "prefix": "decl",
+    "description": "Declare Begin block",
+    "body": [
+      "DECLARE",
+      "\t$1",
+      "BEGIN\t   ",
+      "\t${0:null}",
+      "EXCEPTION --Exception Block\t  ",
+      "   WHEN NO_DATA_FOUND THEN",
+      "\t\tdbms_output.put_line('No Data Found');",
+      "   WHEN OTHERS THEN",
+      "\t  dbms_output.put_line('Error while . Error : '||sqlerrm);",
+      "END;"
+    ]
+  },
+  "begin": {
+    "prefix": "begin",
+    "description": "Begin block",
+    "body": [
+      "BEGIN\t   ",
+      "   $0",
+      "EXCEPTION --Exception Block\t  ",
+      "   WHEN NO_DATA_FOUND THEN",
+      "\t  printlog('No Data Found');",
+      "   WHEN OTHERS THEN",
+      "\t  printlog('Error while . Error : '||sqlerrm);",
+      "END;"
+    ]
+  },
+  "excp": {
+    "prefix": "excp",
+    "description": "Exception Block",
+    "body": [
+      "\tEXCEPTION --Exception Block",
+      "\t$0",
+      "\t\tWHEN OTHERS THEN",
+      "\t\t$1;",
+      "\tEND;"
+    ]
+  },
+  "rae": {
+    "prefix": "rae",
+    "description": "Raise Application Error",
+    "body": "RAISE_APPLICATION_ERROR(${1:-20000},${0:''});"
+  },
+  "crjob": {
+    "prefix": "crjob",
+    "description": "Submit DBMS Job",
+    "body": [
+      "-- Submit the job to get the output",
+      "BEGIN",
+      "\tDECLARE",
+      "\t\tvjob\t\t  INTEGER;",
+      "\tBEGIN",
+      "\t\tDBMS_JOB.submit( vjob, '${1:procedure}${0:('''')};', SYSDATE );",
+      "\t\tDBMS_OUTPUT.put_line( 'Job id : ' || vjob );",
+      "\t\tCOMMIT;",
+      "\tEND;",
+      "END;"
+    ]
+  },
+  "whilejob": {
+    "prefix": "whilejob",
+    "description": "Submit DBMS Job with While Loop",
+    "body": [
+      "-- Submit the job to get the output",
+      "",
+      "BEGIN",
+      "\tDECLARE",
+      "\t\tvjob\t\t  INTEGER;",
+      "\tBEGIN",
+      "\t\tDBMS_JOB.submit ( vjob , '",
+      "DECLARE",
+      "\tl_start_date\t\t  DATE := ''${1:01-Jan-2017}'';",
+      "BEGIN",
+      "\tWHILE l_start_date < ''${2:01-Jan-2017}''",
+      "\tLOOP",
+      "\t\t${3:Procedure}${0:( to_char(l_start_date,''YYYYMMDD'') )};",
+      "\t\tl_start_date\t\t  := TRUNC( l_start_date + 1 );",
+      "\tEND LOOP;",
+      "EXCEPTION --Exception Block",
+      "\tWHEN OTHERS THEN",
+      "\t\tDBMS_OUTPUT.put_line( ''Error while . Error : '' || SQLERRM );",
+      "END;",
+      "\t\t\t'",
+      "\t\t  , SYSDATE",
+      "\t\t);",
+      "\t\tDBMS_OUTPUT.put_line( 'Job id : ' || vjob );",
+      "\t\tCOMMIT;",
+      "\tEND;",
+      "END;"
+    ]
+  },
+  "crprintlog": {
+    "prefix": "crprintlog",
+    "description": "Create Printlog Procedure",
+    "body": [
+      "\t------------------------------------------------------------------------------------------------",
+      "\t-- PROCEDURE\t: PRINTLOG",
+      "\t-- Description\t: This procedure is used to print log messages in Log file, Table and Console",
+      "\t------------------------------------------------------------------------------------------------",
+      "\tPROCEDURE printlog (p_message IN VARCHAR2)",
+      "\tIS",
+      "\t\tl_errmsg\t\t\t\t\t\t\t\t\t VARCHAR2 (10000);",
+      "\tBEGIN",
+      "\t\tl_errmsg := SUBSTR ( p_message, 1, g_err_length_limit);",
+      "\t\tfnd_file.put_line ( fnd_file.LOG, l_errmsg); -- Debug log file",
+      "\t\tDBMS_OUTPUT.put_line (l_errmsg); -- Console output",
+      "\t\tDEBUG_LOG_PKG.WRITE_LOG(g_package_name,g_proc_name,p_message); -- Debug table",
+      "\tEND printlog;"
+    ]
+  },
+  "crgeterr": {
+    "prefix": "crgeterr",
+    "description": "Create get_errmsg function",
+    "body": [
+      "   -- Form the error message for when others",
+      "   FUNCTION get_errmsg( p_message IN VARCHAR2 DEFAULT NULL )",
+      "\t  RETURN VARCHAR2",
+      "   IS",
+      "   BEGIN",
+      "\t  RETURN 'Error occured in ' || g_package_name || '.' || g_proc_name || '. ' || NVL( p_message, '' ) || ' Error : ' || SQLERRM;",
+      "   EXCEPTION --Exception Block",
+      "\t  WHEN OTHERS THEN",
+      "\t\t printlog( 'Error while forming messgage. Error : ' || SQLERRM );",
+      "\t\t RETURN NULL;",
+      "   END;"
+    ]
+  }
+}

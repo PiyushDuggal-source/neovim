@@ -1,0 +1,36 @@
+{
+  "id": {
+    "prefix": "id",
+    "body": "id=\"$1\"$2",
+    "luasnip": {
+      "priority": -49
+    }
+  },
+  "idn": {
+    "prefix": "idn",
+    "body": "id=\"$1\" name=\"${2:$1}\""
+  },
+  "label_and_input": {
+    "prefix": "label_and_input",
+    "body": [
+      "<label for=\"${2:$1}\">$1</label>",
+      "<input type=\"${3:text}\" name=\"${4:$2}\"${5: id=\"${6:$2}\"} value=\"$7\" />$8"
+    ]
+  },
+  "input": {
+    "prefix": "input",
+    "body": "<input type=\"${1:text}\" value=\"$2\" name=\"$3\"${4: id=\"${5:$3}\"}/>$7"
+  },
+  "submit": {
+    "prefix": "submit",
+    "body": "<input type=\"submit\" value=\"$2\" $3/>$7"
+  },
+  "textarea": {
+    "prefix": "textarea",
+    "body": "<textarea name=\"$2\"${3: id=\"$4\"}>$5</textarea>"
+  },
+  "img": {
+    "prefix": "img",
+    "body": "<img src=\"$1\"${2: alt=\"$3\"}/>"
+  }
+}

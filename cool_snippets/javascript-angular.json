@@ -1,0 +1,32 @@
+{
+  "iti": {
+    "prefix": "iti",
+    "description": "it (js, inject)",
+    "body": [
+      "it('${1:description}', inject(function($2) {",
+      "\t$0",
+      "\\}));"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "befi": {
+    "prefix": "befi",
+    "description": "before each (js, inject)",
+    "body": [
+      "beforeEach(inject(function($1) {",
+      "\t$0",
+      "\\}));"
+    ]
+  },
+  "aconf": {
+    "prefix": "aconf",
+    "description": "angular config",
+    "body": [
+      "config(function($1) {",
+      "\t$0",
+      "\\});"
+    ]
+  }
+}

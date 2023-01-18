@@ -1,0 +1,74 @@
+{
+  "#!": {
+    "prefix": "#!",
+    "description": "#!/usr/bin/env node",
+    "body": "#!/usr/bin/env node",
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "ex": {
+    "prefix": "ex",
+    "description": "module.exports",
+    "body": "module.exports = $1;"
+  },
+  "hcs": {
+    "prefix": "hcs",
+    "description": "http.createServer",
+    "body": "http.createServer($1).listen($2);"
+  },
+  "ncs": {
+    "prefix": "ncs",
+    "description": "net.createServer",
+    "body": [
+      "net.createServer(function(${1:socket}){",
+      "\t$1.on('data', function(${3:data}){",
+      "\t\t$4",
+      "\t\\});",
+      "\t$1.on('end', function(){",
+      "\t\t$5",
+      "\t\\});",
+      "\\}).listen(${6:8124});"
+    ]
+  },
+  "pipe": {
+    "prefix": "pipe",
+    "description": "pipe",
+    "body": "pipe(${1:stream})$2"
+  },
+  "eget": {
+    "prefix": "eget",
+    "description": "express GET",
+    "body": "${1:app}.get('$2', $3);"
+  },
+  "epost": {
+    "prefix": "epost",
+    "description": "express POST",
+    "body": "${1:app}.post('$2', $3);"
+  },
+  "eput": {
+    "prefix": "eput",
+    "description": "express PUT",
+    "body": "${1:app}.put('$2', $3);"
+  },
+  "edelete": {
+    "prefix": "edelete",
+    "description": "express DELETE",
+    "body": "${1:app}.delete('$2', $3);"
+  },
+  "stdout": {
+    "prefix": "stdout",
+    "description": "stdout",
+    "body": "process.stdout"
+  },
+  "stdin": {
+    "prefix": "stdin",
+    "description": "stdin",
+    "body": "process.stdin"
+  },
+  "stderr": {
+    "prefix": "stderr",
+    "description": "stderr",
+    "body": "process.stderr"
+  }
+}

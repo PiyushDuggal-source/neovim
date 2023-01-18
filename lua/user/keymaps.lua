@@ -55,6 +55,10 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+keymap("v", "V", ":m '>+1<CR>gv=gv", opts);
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts);
+
+
 -- Visual Block Move text Up down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
@@ -69,26 +73,41 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- Old Files 
-keymap("n", "<leader>fo", ":Telescope oldfiles<cr>", opts)
+-- Old Files
+keymap("n", "<leader>Fo", ":Telescope oldfiles<cr>", opts)
 
 -- Plugins --
 
 -- NvimTree
-keymap("n", "<leader>e", ":Lex 13<CR>", opts)
+--keymap("n", "<leader>e", ":Lex 15<CR>", opts)
+
+-- UndoTree
+keymap("n", "<leader>u", vim.cmd.UndotreeToggle);
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+--keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+--keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+--keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
+--keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
+-- Search
+keymap("n", "n", "nzzzv")
+keymap("n", "N", "Nzzzv")
+
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+
+-- Go to preview Keymaps
+keymap("n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", {noremap=true})
+keymap("n", "gpt", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", opts)
+keymap("n", "gpi", "lua require('goto-preview').goto_preview_implementation()", opts)
+keymap("n", "gP", "lua require('goto-preview').close_all_win()", opts)
+keymap("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()", opts)
+
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
