@@ -1,27 +1,27 @@
 local fn = vim.fn
 
 -- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {
+  PACKER_BOOTSTRAP = fn.system({
     "git",
     "clone",
     "--depth",
     "1",
     "https://github.com/wbthomason/packer.nvim",
     install_path,
-  }
-  print "Installing packer close and reopen Neovim..."
-  vim.cmd [[packadd packer.nvim]]
+  })
+  print("Installing packer close and reopen Neovim...")
+  vim.cmd([[packadd packer.nvim]])
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
+vim.cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup end
-]]
+]])
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -30,53 +30,53 @@ if not status_ok then
 end
 --
 -- -- Have packer use a popup window
-packer.init {
+packer.init({
   display = {
     open_fn = function()
-      return require("packer.util").float { border = "rounded" }
+      return require("packer.util").float({ border = "rounded" })
     end,
   },
   git = {
     clone_timeout = 300, -- Timeout, in seconds, for git clones
   },
-}
+})
 -- Install your plugins here
 
 return packer.startup(function(use)
   -- My plugins here
-  use { "wbthomason/packer.nvim" } -- Have packer manage itself
-  use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
-  use { "nvim-lua/popup.nvim" }
-  use { "p00f/nvim-ts-rainbow" }
+  use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
+  use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
+  use({ "nvim-lua/popup.nvim" })
+  use({ "p00f/nvim-ts-rainbow" })
   -- use { "nvim-telescope/telescope-media-files.nvim" }
-  use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
-  use { "numToStr/Comment.nvim" }
-  use { "JoosepAlviste/nvim-ts-context-commentstring" }
-  use { "kyazdani42/nvim-web-devicons" }
-  use { 'onsails/lspkind.nvim' }
-  use { "kyazdani42/nvim-tree.lua" }
-  use { "akinsho/bufferline.nvim" }
-  use { "moll/vim-bbye" }
-  use { "nvim-lualine/lualine.nvim" }
-  use { "akinsho/toggleterm.nvim" }
-  use { "ahmedkhalf/project.nvim" }
+  use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
+  use({ "numToStr/Comment.nvim" })
+  use({ "JoosepAlviste/nvim-ts-context-commentstring" })
+  use({ "kyazdani42/nvim-web-devicons" })
+  use({ "onsails/lspkind.nvim" })
+  use({ "kyazdani42/nvim-tree.lua" })
+  use({ "akinsho/bufferline.nvim" })
+  use({ "moll/vim-bbye" })
+  use({ "nvim-lualine/lualine.nvim" })
+  use({ "akinsho/toggleterm.nvim" })
+  use({ "ahmedkhalf/project.nvim" })
   -- use { 'nvim-telescope/telescope-project.nvim' }
-  use { "lewis6991/impatient.nvim" }
-  use { "lukas-reineke/indent-blankline.nvim" }
-  use { "goolord/alpha-nvim" }
+  use({ "lewis6991/impatient.nvim" })
+  use({ "lukas-reineke/indent-blankline.nvim" })
+  use("goolord/alpha-nvim")
 
   -- Colorschemesq
   -- use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
-  use { "lunarvim/darkplus.nvim" }
-  use {
+  use({ "lunarvim/darkplus.nvim" })
+  use({
     "catppuccin/nvim",
     as = "catppuccin",
-  }
+  })
 
   -- cmp plugins
-  use { "hrsh7th/nvim-cmp" } -- The completion plugin
-  use { "hrsh7th/cmp-buffer" } -- buffer completions
-  use { "hrsh7th/cmp-path" } -- path completions
+  use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
+  use({ "hrsh7th/cmp-buffer" }) -- buffer completions
+  use({ "hrsh7th/cmp-path" }) -- path completions
   -- use { "hrsh7th/cmp-vsnip"}
   -- use { "hrsh7th/vim-vsnip"}
   -- use { "saadparwaiz1/cmp_luasnip"} -- snippet completions
@@ -85,29 +85,33 @@ return packer.startup(function(use)
   -- use "christianchiarulli/nvim-cmp"
   -- use "hrsh7th/cmp-buffer" -- buffer completions
   -- use "hrsh7th/cmp-path" -- path completions
-  use "David-Kunz/cmp-npm"
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
+  use("David-Kunz/cmp-npm")
+  use("hrsh7th/cmp-cmdline") -- cmdline completions
+  use("saadparwaiz1/cmp_luasnip") -- snippet completions
+  use("hrsh7th/cmp-nvim-lsp")
   -- use "hrsh7th/cmp-emoji"
-  use { "hrsh7th/cmp-nvim-lua", ft = { "lua" } }
+  use({ "hrsh7th/cmp-nvim-lua", ft = { "lua" } })
   -- use 'ms-jpq/coq_nvim'
   -- use 'ms-jpq/coq.artifacts'
   -- use 'ms-jpq/coq.thirdparty'
-  use { 'epilande/vim-react-snippets' }
-  use { 'honza/vim-snippets' }
+  use({ "epilande/vim-react-snippets" })
+  use({ "honza/vim-snippets" })
 
   -- snippets
-  use { "L3MON4D3/LuaSnip" } --snippet engine
-  use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
+  use({ "L3MON4D3/LuaSnip" }) --snippet engine
+  use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
   -- LSP
-  use { "neovim/nvim-lspconfig" } -- enable LSP
-  use { "williamboman/nvim-lsp-installer" } -- simple to use language server installer
-  use { "williamboman/mason.nvim" }
-  use { "williamboman/mason-lspconfig.nvim" }
-  use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
-  use { "RRethy/vim-illuminate" }
+  use({ "neovim/nvim-lspconfig" }) -- enable LSP
+  use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
+  use { "williamboman/mason.nvim",
+    config = function()
+      require "user.lsp.mason"
+    end }
+  use({ "williamboman/mason-lspconfig.nvim" })
+  use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
+  use({ "RRethy/vim-illuminate" })
+  use "lvimuser/lsp-inlayhints.nvim"
   -- use { "ms-jpq/coq_nvim" }
   -- use({
   --   'ray-x/navigator.lua',
@@ -137,80 +141,106 @@ return packer.startup(function(use)
   --}
 
   -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim'
-  }
+  use({
+    "nvim-telescope/telescope.nvim",
+  })
   -- Treesitter
-  use { "sharkdp/fd" }
-  use {
+  use({ "sharkdp/fd" })
+  use({
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate"
-  }
+    run = ":TSUpdate",
+  })
 
   --TagBar
   -- use 'preservim/tagbar'
-use {
-      'stevearc/aerial.nvim',
-      config = function() require('aerial').setup() end
-    }
+  use({
+    "stevearc/aerial.nvim",
+    config = function()
+      require("aerial").setup()
+    end,
+  })
   --Terminal
-  use "voldikss/vim-floaterm"
+  use("voldikss/vim-floaterm")
 
   -- WhichKey
-  use {
+  use({
     "folke/which-key.nvim",
-  }
+  })
 
   -- typescript
-  use 'jose-elias-alvarez/typescript.nvim'
+  use("jose-elias-alvarez/typescript.nvim")
 
   -- -- Sessions
-  use "mhinz/vim-startify"
+  use("mhinz/vim-startify")
 
   -- Status Line
-  use {
+  use({
     "SmiteshP/nvim-navic",
-    requires = "neovim/nvim-lspconfig"
-}
+    requires = "neovim/nvim-lspconfig",
+  })
 
   -- use { 'glepnir/galaxyline.nvim', after = "nvim-gps" }
   -- use "christianchiarulli/lualine.nvim"
   -- Git
-  use { "lewis6991/gitsigns.nvim" }
+  use({ "lewis6991/gitsigns.nvim" })
 
   -- startup Time
-  use { "dstein64/vim-startuptime" }
+  use({ "dstein64/vim-startuptime" })
 
-  -- use { "abecodes/tabout.nvim",
-  --   wants = { 'nvim-treesitter' }, -- or require if not used so far
-  --   after = { 'nvim-cmp' } -- if a completion plugin is using tabs load it before
-  -- }
-
-  -- -- Color Shower
-  use { "norcalli/nvim-colorizer.lua" }
-
--- use {
--- 	"SmiteshP/nvim-gps",
--- 	requires = "nvim-treesitter/nvim-treesitter"
--- }
-
-  -- autoSave
-  use { "Pocco81/auto-save.nvim",
+  use { "abecodes/tabout.nvim",
     config = function()
-      require("auto-save").setup({
-        debounce_delay = 5000
-      })
-    end
+      require('tabout').setup {
+        tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable
+        backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
+        act_as_tab = true, -- shift content if tab out is not possible
+        act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
+        default_tab = '<C-t>', -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
+        default_shift_tab = '<C-d>', -- reverse shift default action,
+        enable_backwards = true, -- well ...
+        completion = true, -- if the tabkey is used in a completion pum
+        tabouts = {
+          { open = "'", close = "'" },
+          { open = '"', close = '"' },
+          { open = '`', close = '`' },
+          { open = '(', close = ')' },
+          { open = '[', close = ']' },
+          { open = '{', close = '}' }
+        },
+        ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
+        exclude = {} -- tabout will ignore these filetypes
+      }
+    end,
+    wants = { 'nvim-treesitter' }, -- or require if not used so far
+    after = { 'nvim-cmp' } -- if a completion plugin is using tabs load it before
   }
 
+  -- -- Color Shower
+  use({ "norcalli/nvim-colorizer.lua" })
+
+  -- use {
+  -- 	"SmiteshP/nvim-gps",
+  -- 	requires = "nvim-treesitter/nvim-treesitter"
+  -- }
+
+  -- autoSave
+  use({
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup({
+        debounce_delay = 5000,
+      })
+    end,
+  })
+
+  use("mawkler/modicator.nvim")
 
   -- surrounding
-  use {
+  use({
     "kylechui/nvim-surround",
     config = function()
       require("nvim-surround").setup()
-    end
-  }
+    end,
+  })
   -- use { 'tpope/vim-surround' }
   --
   -- COLOR SCHEMES
@@ -238,31 +268,62 @@ use {
   -- }
 
   -- tags auto-completion
-  use "windwp/nvim-ts-autotag"
+  use("windwp/nvim-ts-autotag")
 
   -- code actions
-  use { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu' }
-
+  use({ "weilbith/nvim-code-action-menu", cmd = "CodeActionMenu" })
 
   -- codi vim plugin - Like Quokkajs
-  use { 'metakirby5/codi.vim', ft = { "javascript", "typescript" } }
+  use({ "metakirby5/codi.vim", ft = { "javascript", "typescript" } })
 
   -- scope for bufferline and Tabs
-  use { "tiagovla/scope.nvim" }
+  use({ "tiagovla/scope.nvim" })
 
   -- Import cost
-  use { 'barrett-ruth/import-cost.nvim', run = "sh install.sh npm" }
+  use({ "barrett-ruth/import-cost.nvim", run = "sh install.sh npm" })
   -- use { 'yardnsm/vim-import-cost', run = 'npm install' }
 
   -- Syntax highlighting
-  use 'David-Kunz/markid'
+  use("David-Kunz/markid")
 
+  -- use("SmiteshP/nvim-navic")
+
+  use("rcarriga/nvim-notify")
+
+  use("MunifTanjim/nui.nvim")
+
+  use("rmagatti/goto-preview")
+
+  use("sunjon/Shade.nvim")
+  use({
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+  })
+
+  use({
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  })
+
+  use("fgheng/winbar.nvim")
+
+  use({
+    "folke/noice.nvim",
+    requires = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    },
+  })
   -- DAP
   -- use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
   -- use { "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
   -- use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
 
-  use { "mbbill/undotree" }
+  use({ "mbbill/undotree" })
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

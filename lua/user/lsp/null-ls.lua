@@ -1,26 +1,94 @@
-local null_ls_status_ok, null_ls = pcall(require, "null-ls")
-if not null_ls_status_ok then
+-- local null_ls_status_ok, null_ls = pcall(require, "null-ls")
+-- if not null_ls_status_ok then
+--   return
+-- end
+--
+-- -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
+-- local formatting = null_ls.builtins.formatting
+-- -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+-- local diagnostics = null_ls.builtins.diagnostics
+--
+-- -- https://github.com/prettier-solidity/prettier-plugin-solidity
+-- null_ls.setup {
+--   debug = false,
+--   sources = {
+--     formatting.prettier.with {
+--       extra_filetypes = { "toml" },
+--       extra_args = { "--double-quote", "--jsx-single-quote", "--single-quote" },
+--     },
+--     formatting.black.with { extra_args = { "--fast" } },
+--     formatting.stylua,
+--     formatting.clang_format,
+--     -- formatting.google_java_format, diagnostics.flake8,
+--
+--   },
+-- }
+
+local present, null_ls = pcall(require, "null-ls")
+
+if not present then
   return
 end
 
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-local formatting = null_ls.builtins.formatting
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-local diagnostics = null_ls.builtins.diagnostics
+local b = null_ls.builtins
 
--- https://github.com/prettier-solidity/prettier-plugin-solidity
-null_ls.setup {
-  debug = false,
-  sources = {
-    formatting.prettier.with {
-      extra_filetypes = { "toml" },
-      extra_args = { "--double-quote", "--jsx-single-quote", "--single-quote" },
+local sources = {
+  -- Spell
+  b.completion.spell,
+  --b.diagnostics.misspell,
+  -- webdev stuff
+  b.formatting.prettier.with({
+    filetypes = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      --			"vue",
+      "css",
+      --			"scss",
+      "less",
+      "html",
+      "json",
+      "jsonc",
+      --			"yaml",
+      "markdown",
+      --			"graphql",
+      --			"php",
     },
-    formatting.black.with { extra_args = { "--fast" } },
-    formatting.stylua,
-    formatting.clang_format,
-    -- formatting.google_java_format,
-    diagnostics.flake8,
+  }),
+  -- Lua
+  b.formatting.stylua,
+  -- b.diagnostics.luacheck,
 
-  },
+  -- Shell
+  b.formatting.shfmt,
+  b.diagnostics.shellcheck.with({ diagnostics_format = "#{m} [#{c}]" }),
+
+  -- cpp
+  b.formatting.clang_format,
+
+  -- docker
+  --b.diagnostics.hadolint,
+
+  -- php
+  -- b.formatting.phpcsfixer,
 }
+
+null_ls.setup({
+  debug = true,
+  sources = sources,
+  on_attach = function(client)
+    if vim.version().major > 7 then
+      if client.server_capabilities.documentFormattingProvider then
+        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
+        vim.o.laststatus = 3
+      end
+    else
+      if client.server_capabilities.document_formatting then
+        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
+
+        vim.o.laststatus = 3
+      end
+    end
+  end,
+})
