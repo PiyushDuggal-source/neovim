@@ -10,7 +10,7 @@ sudo make install
 
 ## Install the config
 
-Make sure to remove or move your current `nvim` directory
+Make sure to remove or move your current `nvim` directories: ```~/.config/nvim``` ```~/.local/share/nvim```
 
 ```sh
 git clone https://github.com/PiyushDuggal-source/neovim ~/.config/nvim
@@ -27,6 +27,8 @@ Open `nvim` and enter the following:
 ```
 :checkhealth
 ```
+check the report and download required packages.
+
 
 You'll probably notice you don't have support for copy/paste also that python and node haven't been setup
 
@@ -95,14 +97,6 @@ Next you will need to add the server to this list: [servers](https://github.com/
 
 Make sure the formatter or linter is installed and add it to this setup function: [null-ls](https://github.com/LunarVim/nvim-basic-ide/blob/8b9ec3bffe8c8577042baf07c75408532a733fea/lua/user/lsp/null-ls.lua#L13)
 
-**NOTE** Some are already setup as examples, remove them if you want
-
-### Plugins
-
-You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-basic-ide/blob/8b9ec3bffe8c8577042baf07c75408532a733fea/lua/user/plugins.lua#L42)
-
----
-
 ## Plugins
 
 - [packer](https://github.com/wbthomason/packer.nvim)
@@ -141,9 +135,9 @@ You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-bas
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim)
-
+- etc.
 ---
 
-> The computing scientist's main challenge is not to get confused by the complexities of his own making.
+> If debugging is the process of removing bug, then programming must be the process of putting them in.
 
 \- Edsger W. Dijkstra
