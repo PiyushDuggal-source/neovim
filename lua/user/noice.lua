@@ -5,17 +5,6 @@ if not present then
 end
 
 noice.setup({
-  --cmdline = {
-  --	enabled = false, -- disable if you use native command line UI
-  --	view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
-  --	--opts = { buf_options = { filetype = "lua" } }, -- enable syntax highlighting in the cmdline
-  --  opts = {},
-  --	icons = {
-  --		["/"] = { icon = " ", hl_group = "DiagnosticWarn" },
-  --		["?"] = { icon = " ", hl_group = "DiagnosticWarn" },
-  --		[":"] = { icon = " ", hl_group = "DiagnosticInfo", firstc = false },
-  --	},
-  --},
   enabled = true, -- enables the Noice cmdline UI
   view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
   opts = { buf_options = { filetype = "lua" } }, -- enable syntax highlighting in the cmdline

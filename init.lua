@@ -18,22 +18,18 @@ require("user.impatient")
 require("user.illuminate")
 require("user.indentline")
 require("user.alpha")
------------------------------
 require('user.luasnip_setup')
 require("user.commands")
 require("user.lsp")
--- require("core.lspconfig-core")
 require("user.modicator")
 require("user.navic")
 require("user.noice")
 --require("user.notify")
--- require("user.lsp.null-ls")
 require("user.research")
 require("user.todo-comments")
 require("user.trouble")
 require("user.winbar")
 -- require("user.shade")
----------------------------------
 -- require "user.dap"
 -- require 'user.coqCmp'
 require("user.whichKey")
@@ -45,4 +41,3 @@ require("scope").setup()
 -- require "user.colorizer"
 -- vim.cmd(":COQnow --shut-up")
 vim.cmd(":set laststatus=3")
-print(vim.bo.filetype)

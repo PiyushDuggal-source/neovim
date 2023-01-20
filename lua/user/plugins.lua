@@ -48,7 +48,6 @@ return packer.startup(function(use)
   use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
   use({ "nvim-lua/popup.nvim" })
   use({ "p00f/nvim-ts-rainbow" })
-  -- use { "nvim-telescope/telescope-media-files.nvim" }
   use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
   use({ "numToStr/Comment.nvim" })
   use({ "JoosepAlviste/nvim-ts-context-commentstring" })
@@ -60,13 +59,11 @@ return packer.startup(function(use)
   use({ "nvim-lualine/lualine.nvim" })
   use({ "akinsho/toggleterm.nvim" })
   use({ "ahmedkhalf/project.nvim" })
-  -- use { 'nvim-telescope/telescope-project.nvim' }
   use({ "lewis6991/impatient.nvim" })
   use({ "lukas-reineke/indent-blankline.nvim" })
   use("goolord/alpha-nvim")
 
   -- Colorschemesq
-  -- use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
   use({ "lunarvim/darkplus.nvim" })
   use({
     "catppuccin/nvim",
@@ -77,19 +74,10 @@ return packer.startup(function(use)
   use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
   use({ "hrsh7th/cmp-buffer" }) -- buffer completions
   use({ "hrsh7th/cmp-path" }) -- path completions
-  -- use { "hrsh7th/cmp-vsnip"}
-  -- use { "hrsh7th/vim-vsnip"}
-  -- use { "saadparwaiz1/cmp_luasnip"} -- snippet completions
-  -- use { "hrsh7th/cmp-nvim-lua"}
-
-  -- use "christianchiarulli/nvim-cmp"
-  -- use "hrsh7th/cmp-buffer" -- buffer completions
-  -- use "hrsh7th/cmp-path" -- path completions
   use("David-Kunz/cmp-npm")
   use("hrsh7th/cmp-cmdline") -- cmdline completions
   use("saadparwaiz1/cmp_luasnip") -- snippet completions
   use("hrsh7th/cmp-nvim-lsp")
-  -- use "hrsh7th/cmp-emoji"
   use({ "hrsh7th/cmp-nvim-lua", ft = { "lua" } })
   -- use 'ms-jpq/coq_nvim'
   -- use 'ms-jpq/coq.artifacts'
@@ -112,33 +100,6 @@ return packer.startup(function(use)
   use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
   use({ "RRethy/vim-illuminate" })
   use "lvimuser/lsp-inlayhints.nvim"
-  -- use { "ms-jpq/coq_nvim" }
-  -- use({
-  --   'ray-x/navigator.lua',
-  --   requires = {
-  --     { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-  --     { 'neovim/nvim-lspconfig' },
-  --   },
-  -- })
-  --  use {
-  --   "ray-x/lsp_signature.nvim",
-  --  requires = {
-  --   {
-  --    "kosayoda/nvim-lightbulb",
-  --   config = function()
-  --    vim.api.nvim_command("highlight LightBulbVirtualText guifg=red")
-  -- end
-  --},
-  --"nvim-lua/lsp-status.nvim",
-  --{ "ojroques/nvim-lspfuzzy", config = require "lspfuzzy".setup {} },
-  --{
-  --"ray-x/lsp_signature.nvim",
-  --config = function()
-  --require "lsp_signature".on_attach()
-  --end
-  --}
-  --}
-  --}
 
   -- Telescope
   use({
@@ -179,8 +140,6 @@ return packer.startup(function(use)
     requires = "neovim/nvim-lspconfig",
   })
 
-  -- use { 'glepnir/galaxyline.nvim', after = "nvim-gps" }
-  -- use "christianchiarulli/lualine.nvim"
   -- Git
   use({ "lewis6991/gitsigns.nvim" })
 
@@ -217,11 +176,6 @@ return packer.startup(function(use)
   -- -- Color Shower
   use({ "norcalli/nvim-colorizer.lua" })
 
-  -- use {
-  -- 	"SmiteshP/nvim-gps",
-  -- 	requires = "nvim-treesitter/nvim-treesitter"
-  -- }
-
   -- autoSave
   use({
     "Pocco81/auto-save.nvim",
@@ -243,18 +197,15 @@ return packer.startup(function(use)
   })
   -- use { 'tpope/vim-surround' }
   --
-  -- COLOR SCHEMES
+  -- NOTE: COLOR SCHEMES
+
   -- use ({ 'projekt0n/github-nvim-theme' })
-  -- --
-  --
   -- use { "cocopon/iceberg.vim" }
-
   -- use { 'Everblush/everblush.vim' }
-
-  --
   -- use {'fcpg/vim-fahrenheit'}
 
-  -- jest tester
+  -- NOTE: jest tester
+
   -- use { 'klen/nvim-test' }
   -- use { 'David-Kunz/jester',
   --   config = function()
@@ -281,12 +232,9 @@ return packer.startup(function(use)
 
   -- Import cost
   use({ "barrett-ruth/import-cost.nvim", run = "sh install.sh npm" })
-  -- use { 'yardnsm/vim-import-cost', run = 'npm install' }
 
   -- Syntax highlighting
   use("David-Kunz/markid")
-
-  -- use("SmiteshP/nvim-navic")
 
   use("rcarriga/nvim-notify")
 
