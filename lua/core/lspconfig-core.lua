@@ -8,7 +8,7 @@ local servers = {
 	"cssls",
 	--"emmet_ls",
 	"clangd",
-	"eslint",
+	-- "eslint",
 	"html",
 	"jsonls",
 	"tsserver",

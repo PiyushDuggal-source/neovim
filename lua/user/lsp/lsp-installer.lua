@@ -43,10 +43,10 @@ require("user.lsp.handlers").setup()
 local lspconfig = require("lspconfig")
 local servers = {
 	"cssls",
-	"emmet_ls",
+	-- "emmet_ls",
 	"clangd",
 	"tailwindcss",
-	"eslint",
+	-- "eslint",
 	"html",
 	"jsonls",
 	"yamlls",

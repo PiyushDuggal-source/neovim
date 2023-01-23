@@ -40,7 +40,7 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-keymap("n", ":wq", "<cmd>:w | Bdelete!<CR>", opts)
+-- keymap("n", ":wq", "<cmd>:w | Bdelete!<CR>", opts)
 keymap("n", "<C-z>", "u", opts)
 
 -- Better paste

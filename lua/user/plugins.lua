@@ -9,8 +9,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     "--depth",
     "1",
     "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  })
+    install_path, })
   print("Installing packer close and reopen Neovim...")
   vim.cmd([[packadd packer.nvim]])
 end
@@ -306,6 +305,11 @@ return packer.startup(function(use)
   })
 
   use("fgheng/winbar.nvim")
+
+  -- Markdown
+  -- install without yarn or npm
+
+use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
   use({
     "folke/noice.nvim",
