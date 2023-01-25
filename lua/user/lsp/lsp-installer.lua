@@ -39,19 +39,23 @@ local on_attach = require("user.lsp.handlers").on_attach
 local capabilities = require("user.lsp.handlers").capabilities
 
 require("user.lsp.handlers").setup()
+local typescript_setup, typescript = pcall(require, "typescript")
+if not typescript_setup then
+  return
+end
 
 local lspconfig = require("lspconfig")
 local servers = {
 	"cssls",
-	"emmet_ls",
+	-- "emmet_ls",
 	"clangd",
-	"tailwindcss",
+	-- "tailwindcss",
 	"eslint",
 	"html",
 	"jsonls",
 	"yamlls",
-	"intelephense",
-	"dockerls",
+	-- "intelephense",
+	-- "dockerls",
 	"tsserver",
 }
 local lspInlays = { "tsserver" }
@@ -122,3 +126,16 @@ for _, lsp in ipairs(lspInlays) do
 	})
 end
 
+
+typescript.setup({
+  server = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+  },
+})
+
+-- lspconfig["emmet_ls"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+-- })
