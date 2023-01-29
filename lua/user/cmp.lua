@@ -151,6 +151,7 @@ if not present then
   return
 end
 
+require("luasnip/loaders/from_vscode").lazy_load({ path = { "./cool_snippets" } })
 vim.opt.completeopt = "menuone,noselect"
 
 local function border(hl_name)
