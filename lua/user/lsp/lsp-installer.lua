@@ -51,12 +51,16 @@ local servers = {
 	"clangd",
 	-- "tailwindcss",
 	"eslint",
+  "pyright",
 	"html",
+  "bashls",
+  "cssmodules_ls",
 	"jsonls",
+  "sumneko_lua",
 	"yamlls",
+  "tailwindcss",
 	-- "intelephense",
 	-- "dockerls",
-	"tsserver",
 }
 local lspInlays = { "tsserver" }
 capabilities.textDocument.foldingRange = {

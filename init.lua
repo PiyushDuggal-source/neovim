@@ -21,7 +21,7 @@ require("user.alpha")
 require('user.luasnip_setup')
 require("user.commands")
 require("user.lsp")
-require("user.modicator")
+-- require("user.modicator")
 require("user.navic")
 require("user.noice")
 --require("user.notify")
@@ -33,7 +33,7 @@ require("user.winbar")
 -- require "user.dap"
 -- require 'user.coqCmp'
 require("user.whichKey")
-require("user.import-cost")
+-- require("user.import-cost")
 require("user.typescript")
 require('Comment').setup()
 -- require "user.tabout"

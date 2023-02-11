@@ -221,6 +221,9 @@ return packer.startup(function(use)
   -- tags auto-completion
   use("windwp/nvim-ts-autotag")
 
+  -- Transparent
+  -- use("xiyaowong/nvim-transparent")
+
   -- code actions
   use({ "weilbith/nvim-code-action-menu", cmd = "CodeActionMenu" })
 
