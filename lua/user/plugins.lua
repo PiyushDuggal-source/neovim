@@ -175,6 +175,7 @@ return packer.startup(function(use)
 
   -- -- Color Shower
   use({ "norcalli/nvim-colorizer.lua" })
+  use 'folke/tokyonight.nvim'
 
   -- autoSave
   use({
@@ -269,6 +270,27 @@ return packer.startup(function(use)
       "rcarriga/nvim-notify",
     },
   })
+
+  -- Markdown
+  -- install without yarn or npm
+-- use({
+--     "iamcco/markdown-preview.nvim",
+--     run = function() vim.fn["mkdp#util#install"]() end,
+-- })
+
+
+
+  -- Pets
+  use({
+  "giusgad/pets.nvim",
+  requires = {
+    "edluffy/hologram.nvim",
+    "MunifTanjim/nui.nvim",
+  }
+})
+
+use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
   -- DAP
   -- use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
   -- use { "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
