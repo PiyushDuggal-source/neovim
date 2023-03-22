@@ -52,6 +52,7 @@ dashboard.section.buttons.val = {
   dashboard.button("b", ' ' .. " Sessions", ":SLoad<CR>"),
   -- dashboard.button("T", ' ' .. " New Terminal", ":ToggleTerm size=40 dir=~/Piyush direction=horizontal<CR>"),
   dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
+  dashboard.button("T", ' ' .. " New Terminal", ":!kitty<CR>"),
   dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
   dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
   dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
