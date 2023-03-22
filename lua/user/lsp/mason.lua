@@ -1,7 +1,7 @@
  local servers = {
-   "sumneko_lua",
    "cssls",
    "html",
+   "lua_ls",
    "tsserver",
    "pyright",
    "bashls",
@@ -86,7 +86,7 @@ local options = {
 --require("mason").setup(settings)
 -- require("mason-lspconfig").setup(coq.lsp_ensure_capabilities({
 require("mason-lspconfig").setup({
-  ensure_installed = servers,
+  ensure_installed ={},
   automatic_installation = true,
 })
 

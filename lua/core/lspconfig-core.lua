@@ -25,7 +25,7 @@ for _, lsp in ipairs(servers) do
     opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
   end
 
-  if lsp == "sumneko_lua" then
+  if lsp == "lua_ls" then
     local sumneko_opts = require("user.lsp.settings.sumneko_lua")
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
