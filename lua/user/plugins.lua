@@ -278,8 +278,6 @@ return packer.startup(function(use)
 --     run = function() vim.fn["mkdp#util#install"]() end,
 -- })
 
-
-
   -- Pets
   use({
   "giusgad/pets.nvim",
@@ -289,6 +287,14 @@ return packer.startup(function(use)
   }
 })
 
+  use {
+  'Exafunction/codeium.vim',
+    config = function ()
+    -- Change '<C-g>' here to any keycode you like.
+    -- vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+  end
+}
+
 use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
   -- DAP
@@ -296,10 +302,11 @@ use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = fun
   -- use { "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
   -- use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
 
+
   use({ "mbbill/undotree" })
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
+  -- if PACKER_BOOTSTRAP then
+  --   require("packer").sync()
+  -- end
 end)

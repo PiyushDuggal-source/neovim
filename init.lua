@@ -42,4 +42,4 @@ require("scope").setup()
 -- vim.cmd(":COQnow --shut-up")
 require("pets").setup({})
 vim.cmd(":set laststatus=3")
-vim.cmd[[colorscheme tokyonight-night]]
+-- vim.cmd[[colorscheme tokyonight-night]]

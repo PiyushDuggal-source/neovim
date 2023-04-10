@@ -78,7 +78,7 @@ local function footer()
 
   -- Quote
   local fortune = require "alpha.fortune"
-  local quote = table.concat(fortune(), "\n")
+  local quote = table.concat(fortune(), "\n\n")
 
   local line = "                 ───══───══───══────"
  local plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
