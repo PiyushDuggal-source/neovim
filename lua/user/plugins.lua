@@ -235,7 +235,7 @@ return packer.startup(function(use)
   use({ "tiagovla/scope.nvim" })
 
   -- Import cost
-  use({ "barrett-ruth/import-cost.nvim", run = "sh install.sh npm" })
+  -- use({ "barrett-ruth/import-cost.nvim", run = "sh install.sh npm" })
 
   -- Syntax highlighting
   use("David-Kunz/markid")
@@ -252,10 +252,10 @@ return packer.startup(function(use)
     requires = "nvim-lua/plenary.nvim",
   })
 
-  use({
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-  })
+  -- use({
+  --   "folke/trouble.nvim",
+  --   requires = "kyazdani42/nvim-web-devicons",
+  -- })
 
   use("fgheng/winbar.nvim")
 
@@ -301,6 +301,8 @@ use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = fun
   -- use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
   -- use { "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
   -- use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
+
+  use { 'tamton-aquib/flirt.nvim' }
 
 
   use({ "mbbill/undotree" })

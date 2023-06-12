@@ -10,7 +10,7 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
-nvim_tree.setup {
+nvim_tree.setup({
   sort_by = "case_sensitive",
   filters = {
     dotfiles = false,
@@ -18,13 +18,13 @@ nvim_tree.setup {
   update_focused_file = {
     enable = true,
     update_cwd = true,
-    ignore_list = { "toggleterm", "term" }
+    ignore_list = { "toggleterm", "term" },
   },
   hijack_cursor = true,
   git = {
     enable = true,
     ignore = false,
-    timeout = 500
+    timeout = 500,
   },
   renderer = {
     root_folder_modifier = ":t",
@@ -69,10 +69,10 @@ nvim_tree.setup {
     side = "left",
     mappings = {
       list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h",                  cb = tree_cb "close_node" },
-        { key = "v",                  cb = tree_cb "vsplit" },
+        { key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
+        { key = "h",                  cb = tree_cb("close_node") },
+        { key = "v",                  cb = tree_cb("vsplit") },
       },
     },
   },
-}
+})

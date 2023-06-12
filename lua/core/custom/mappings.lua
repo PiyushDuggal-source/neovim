@@ -91,11 +91,11 @@ M.NvimTree = {
 	},
 }
 
-M.Trouble = {
-	n = {
-		["<A-m>"] = { ":TroubleToggle<cr>", "Open trouble window" },
-	},
-}
+-- M.Trouble = {
+-- 	n = {
+-- 		["<A-m>"] = { ":TroubleToggle<cr>", "Open trouble window" },
+-- 	},
+-- }
 M.Telescope = {
 	n = {
 		["<leader>ft"] = { ":TodoTelescope<cr>", "   Open Todo Telescope" },
