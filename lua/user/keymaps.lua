@@ -3,8 +3,6 @@ local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { noremap = true, silent = true }
 
-local ls = require('luasnip')
-
 local term_opts = { silent = true }
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -26,27 +24,6 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 
 --Spliting window
 keymap("n", "<C-s>", ":vsplit<CR>gd", opts)
-
--- lua snip
-keymap({ "i", "s" }, "<C-k>", function()
-  if ls.expand_or_jumpable() then
-    ls.expand_or_jump()
-  end
-end, { silent = true })
-
-keymap({ "i", "s" }, "<C-j>", function()
-  if ls.jumpable(-1) then
-    ls.jump(-1)
-  end
-end, { silent = true })
-
-keymap("i", "<C-l>", function()
-  if ls.choice_active() then
-    ls.change_choice(1)
-  end
-end, { silent = true })
-
-keymap("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/user/luasnip_setup.lua<CR>")
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -78,9 +55,8 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
-keymap("v", "V", ":m '>+1<CR>gv=gv", opts);
-keymap("v", "K", ":m '<-2<CR>gv=gv", opts);
-
+keymap("v", "V", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 -- Visual Block Move text Up down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
@@ -103,7 +79,7 @@ keymap("n", "<leader>Fo", ":Telescope oldfiles<cr>", opts)
 -- Plugins --
 
 -- UndoTree
-keymap("n", "<leader>u", vim.cmd.UndotreeToggle);
+keymap("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 -- Telescope
 --keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
@@ -130,7 +106,9 @@ keymap("n", "gP", "lua require('goto-preview').close_all_win()", opts)
 keymap("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()", opts)
 
 -- Codeium Insert suggestion
-keymap("i", "<M-i>", function() return vim.fn['codeium#Accept']() end, { expr = true })
+keymap("i", "<M-i>", function()
+	return vim.fn["codeium#Accept"]()
+end, { expr = true })
 
 -- DAP
 -- keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)

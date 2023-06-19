@@ -83,3 +83,26 @@ ls.add_snippets("typescript", {
 	-- 	{}
 	-- ),
 })
+
+-- Shorten function name
+local keymap = vim.keymap.set
+-- lua snip Keymaps
+keymap({ "i", "s" }, "<C-k>", function()
+  if ls.expand_or_jumpable() then
+    ls.expand_or_jump()
+  end
+end, { silent = true })
+
+keymap({ "i", "s" }, "<C-j>", function()
+  if ls.jumpable(-1) then
+    ls.jump(-1)
+  end
+end, { silent = true })
+
+keymap("i", "<C-l>", function()
+  if ls.choice_active() then
+    ls.change_choice(1)
+  end
+end, { silent = true })
+
+keymap("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/user/luasnip_setup.lua<CR>")
