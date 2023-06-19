@@ -40,7 +40,7 @@ require("Comment").setup()
 require("scope").setup()
 -- require "user.colorizer"
 -- vim.cmd(":COQnow --shut-up")
-require("pets").setup({})
+-- require("pets").setup({})
 vim.cmd(":set laststatus=3")
 -- vim.cmd[[colorscheme tokyonight-night]]
 -- require("flirt").setup()
