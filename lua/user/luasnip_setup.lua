@@ -50,14 +50,14 @@ ls.add_snippets("typescript", {
 	s(
 		"cfun",
 		fmt(
-			"const {} = ({}) => {{\n console.log('Entering {}')\n {}\n console.log('Leaving {}')\n}}",
+			"const {} = ({}) => {{\n console.log('\\nEntering {}')\n {}\n console.log('Leaving {}\\n')\n}}",
 			{ i(1, "functionName"), i(2), rep(1), i(3), rep(1) }
 		)
 	),
 	s(
 		"expfun",
 		fmt(
-			"export const {} = ({}) => {{\n console.log('Entering {}')\n {}\n console.log('Leaving {}')\n}}",
+			"export const {} = ({}) => {{\n console.log('\\nEntering {}')\n {}\n console.log('Leaving {}\\n')\n}}",
 			{ i(1, "functionName"), i(2), rep(1), i(3), rep(1) }
 		)
 	),
