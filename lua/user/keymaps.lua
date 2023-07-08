@@ -106,9 +106,9 @@ keymap("n", "gP", "lua require('goto-preview').close_all_win()", opts)
 keymap("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()", opts)
 
 -- Codeium Insert suggestion
-keymap("i", "<M-i>", function()
-	return vim.fn["codeium#Accept"]()
-end, { expr = true })
+-- keymap("i", "<M-i>", function()
+-- 	return vim.fn["codeium#Accept"]()
+-- end, { expr = true })
 
 -- DAP
 -- keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)

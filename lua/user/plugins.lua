@@ -287,13 +287,16 @@ return packer.startup(function(use)
   }
 })
 
-  use {
-  'Exafunction/codeium.vim',
-    config = function ()
-    -- Change '<C-g>' here to any keycode you like.
-    -- vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
-  end
-}
+--   use {
+--   'Exafunction/codeium.vim',
+--     config = function ()
+--     -- Change '<C-g>' here to any keycode you like.
+--     -- vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+--   end
+-- }
+
+
+  use("github/copilot.vim")
 
 use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
