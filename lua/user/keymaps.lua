@@ -90,6 +90,21 @@ keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
 
+<<<<<<< Updated upstream
+=======
+-- Go to preview Keymaps
+keymap("n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
+keymap("n", "gpt", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", opts)
+keymap("n", "gpi", "lua require('goto-preview').goto_preview_implementation()", opts)
+keymap("n", "gP", "lua require('goto-preview').close_all_win()", opts)
+keymap("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()", opts)
+
+-- Codeium Insert suggestion
+keymap("i", "<M-i>", function()
+	return vim.fn["codeium#Accept"]()
+end, { expr = true })
+
+>>>>>>> Stashed changes
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)

@@ -1,6 +1,10 @@
+<<<<<<< Updated upstream
 local servers = {
 	-- "sumneko_lua",
 	"cssls",
+=======
+local servers = { "cssls",
+>>>>>>> Stashed changes
 	"html",
 	"tsserver",
 	"pyright",
