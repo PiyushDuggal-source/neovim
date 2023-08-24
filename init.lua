@@ -36,7 +36,7 @@ require("user.winbar")
 -- require 'user.coqCmp'
 require("user.whichKey")
 -- require("user.import-cost")
-require("user.typescript")
+-- require("user.typescript")
 require("Comment").setup()
 -- require "user.tabout"
 require("scope").setup()
