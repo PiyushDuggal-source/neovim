@@ -1,9 +1,4 @@
-<<<<<<< Updated upstream
-local servers = {
-	"cssls",
-=======
 local servers = { "cssls",
->>>>>>> Stashed changes
 	"html",
 	"lua_ls",
 	"tsserver",
