@@ -1,0 +1,376 @@
+{
+  "#!": {
+    "prefix": "#!",
+    "description": "#!/usr/bin/env python",
+    "body": [
+      "#!/usr/bin/env python",
+      "$0"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "#!2": {
+    "prefix": "#!2",
+    "description": "#!/usr/bin/env python2",
+    "body": [
+      "#!/usr/bin/env python2",
+      "# -*- coding: utf-8 -*-",
+      "$0"
+    ]
+  },
+  "#!3": {
+    "prefix": "#!3",
+    "description": "#!/usr/bin/env python3",
+    "body": [
+      "#!/usr/bin/env python3",
+      "$0"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "for loop",
+    "body": [
+      "for ${1:item} in ${2:iterable}:",
+      "\t${3:${TM_SELECTED_TEXT:pass}}"
+    ]
+  },
+  "contain": {
+    "prefix": "contain",
+    "description": "methods for emulating a container type",
+    "body": [
+      "def __len__(self):",
+      "\t${1:pass}",
+      "",
+      "def __getitem__(self, key):",
+      "\t${2:pass}",
+      "",
+      "def __setitem__(self, key, value):",
+      "\t${3:pass}",
+      "",
+      "def __delitem__(self, key):",
+      "\t${4:pass}",
+      "",
+      "def __iter__(self):",
+      "\t${5:pass}",
+      "",
+      "def __reversed__(self):",
+      "\t${6:pass}",
+      "",
+      "def __contains__(self, item):",
+      "\t${7:pass}"
+    ]
+  },
+  "context": {
+    "prefix": "context",
+    "description": "context manager methods",
+    "body": [
+      "def __enter__(self):",
+      "\t${1:pass}",
+      "",
+      "def __exit__(self, exc_type, exc_value, traceback):",
+      "\t${2:pass}"
+    ]
+  },
+  "attr": {
+    "prefix": "attr",
+    "description": "methods for customizing attribute access",
+    "body": [
+      "def __getattr__(self, name):",
+      "\t${1:pass}",
+      "",
+      "def __setattr__(self, name, value):",
+      "\t${2:pass}",
+      "",
+      "def __delattr__(self, name):",
+      "\t${3:pass}"
+    ]
+  },
+  "desc": {
+    "prefix": "desc",
+    "description": "methods implementing descriptors",
+    "body": [
+      "def __get__(self, instance, owner):",
+      "\t${1:pass}",
+      "",
+      "def __set__(self, instance, value):",
+      "\t${2:pass}",
+      "",
+      "def __delete__(self, instance):",
+      "\t${3:pass}"
+    ]
+  },
+  "cmp": {
+    "prefix": "cmp",
+    "description": "methods implementing rich comparison",
+    "body": [
+      "def __eq__(self, other):",
+      "\t${1:pass}",
+      "",
+      "def __ne__(self, other):",
+      "\t${2:pass}",
+      "",
+      "def __lt__(self, other):",
+      "\t${3:pass}",
+      "",
+      "def __le__(self, other):",
+      "\t${4:pass}",
+      "",
+      "def __gt__(self, other):",
+      "\t${5:pass}",
+      "",
+      "def __ge__(self, other):",
+      "\t${6:pass}",
+      "",
+      "def __cmp__(self, other):",
+      "\t${7:pass}"
+    ]
+  },
+  "repr": {
+    "prefix": "repr",
+    "description": "methods implementing string representation",
+    "body": [
+      "def __repr__(self):",
+      "\t${1:pass}",
+      "",
+      "def __str__(self):",
+      "\t${2:pass}",
+      "",
+      "def __unicode__(self):",
+      "\t${3:pass}"
+    ]
+  },
+  "numeric": {
+    "prefix": "numeric",
+    "description": "methods for emulating a numeric type",
+    "body": [
+      "def __add__(self, other):",
+      "\t${1:pass}",
+      "",
+      "def __sub__(self, other):",
+      "\t${2:pass}",
+      "",
+      "def __mul__(self, other):",
+      "\t${3:pass}",
+      "",
+      "def __div__(self, other):",
+      "\t${4:pass}",
+      "",
+      "def __truediv__(self, other):",
+      "\t${5:pass}",
+      "",
+      "def __floordiv__(self, other):",
+      "\t${6:pass}",
+      "",
+      "",
+      "def __mod__(self, other):",
+      "\t${7:pass}",
+      "",
+      "def __divmod__(self, other):",
+      "\t${8:pass}",
+      "",
+      "def __pow__(self, other):",
+      "\t${9:pass}",
+      "",
+      "",
+      "def __lshift__(self, other):",
+      "\t${10:pass}",
+      "",
+      "def __rshift__(self, other):",
+      "\t${11:pass}",
+      "",
+      "def __and__(self, other):",
+      "\t${12:pass}",
+      "",
+      "def __xor__(self, other):",
+      "\t${13:pass}",
+      "",
+      "def __or__(self, other):",
+      "\t${14:pass}",
+      "",
+      "",
+      "def __neg__(self):",
+      "\t${15:pass}",
+      "",
+      "def __pos__(self):",
+      "\t${16:pass}",
+      "",
+      "def __abs__(self):",
+      "\t${17:pass}",
+      "",
+      "def __invert__(self):",
+      "\t${18:pass}",
+      "",
+      "",
+      "def __complex__(self):",
+      "\t${19:pass}",
+      "",
+      "def __int__(self):",
+      "\t${20:pass}",
+      "",
+      "def __long__(self):",
+      "\t${21:pass}",
+      "",
+      "def __float__(self):",
+      "\t${22:pass}",
+      "",
+      "",
+      "def __oct__(self):",
+      "\t${22:pass}",
+      "",
+      "def __hex__(self):",
+      "\t${23:pass}",
+      "",
+      "",
+      "def __index__(self):",
+      "\t${24:pass}",
+      "",
+      "def __coerce__(self, other):",
+      "\t${25:pass}"
+    ]
+  },
+  "from": {
+    "prefix": "from",
+    "description": "from module import name",
+    "body": "from ${1:module} import ${2:Stuff}"
+  },
+  "roprop": {
+    "prefix": "roprop",
+    "description": "Read Only Property",
+    "body": [
+      "@property",
+      "def ${1:name}(self):",
+      "\t${2:return self._$1}$0"
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "description": "If",
+    "body": [
+      "if ${1:condition}:",
+      "\t${2:${TM_SELECTED_TEXT:pass}}"
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "If / Else",
+    "body": [
+      "if ${1:condition}:",
+      "\t${2:${TM_SELECTED_TEXT:pass}}",
+      "else:",
+      "\t${3:pass}"
+    ]
+  },
+  "ifee": {
+    "prefix": "ifee",
+    "description": "If / Elif / Else",
+    "body": [
+      "if ${1:condition}:",
+      "\t${2:${TM_SELECTED_TEXT:pass}}",
+      "elif ${3:condition}:",
+      "\t${4:pass}",
+      "else:",
+      "\t${5:pass}"
+    ]
+  },
+  "match": {
+    "prefix": "match",
+    "description": "Structural pattern matching",
+    "body": [
+      "match ${1:expression}:",
+      "\tcase ${2:pattern_1}:",
+      "\t\t${3:pass}",
+      "\tcase ${4:pattern_2}:",
+      "\t\t${0:pass}"
+    ]
+  },
+  "matchw": {
+    "prefix": "matchw",
+    "description": "Pattern matching with wildcard",
+    "body": [
+      "match ${1:expression}:",
+      "\tcase ${2:pattern_1}:",
+      "\t\t${3:pass}",
+      "\tcase _:",
+      "\t\t${0:pass}"
+    ]
+  },
+  "try": {
+    "prefix": "try",
+    "description": "Try / Except",
+    "body": [
+      "try:",
+      "\t${1:${TM_SELECTED_TEXT:pass}}",
+      "except ${2:Exception} as ${3:e}:",
+      "\t${4:raise $3}"
+    ]
+  },
+  "trye": {
+    "prefix": "trye",
+    "description": "Try / Except / Else",
+    "body": [
+      "try:",
+      "\t${1:${TM_SELECTED_TEXT:pass}}",
+      "except ${2:Exception} as ${3:e}:",
+      "\t${4:raise $3}",
+      "else:",
+      "\t${5:pass}"
+    ]
+  },
+  "tryf": {
+    "prefix": "tryf",
+    "description": "Try / Except / Finally",
+    "body": [
+      "try:",
+      "\t${1:${TM_SELECTED_TEXT:pass}}",
+      "except ${2:Exception} as ${3:e}:",
+      "\t${4:raise $3}",
+      "finally:",
+      "\t${5:pass}"
+    ]
+  },
+  "tryef": {
+    "prefix": "tryef",
+    "description": "Try / Except / Else / Finally",
+    "body": [
+      "try:",
+      "\t${1:${TM_SELECTED_TEXT:pass}}",
+      "except${2: ${3:Exception} as ${4:e}}:",
+      "\t${5:raise}",
+      "else:",
+      "\t${6:pass}",
+      "finally:",
+      "\t${7:pass}"
+    ]
+  },
+  "ae": {
+    "prefix": "ae",
+    "description": "Assert equal",
+    "body": "self.assertEqual(${1:${TM_SELECTED_TEXT:first}}, ${2:second})"
+  },
+  "at": {
+    "prefix": "at",
+    "description": "Assert True",
+    "body": "self.assertTrue(${1:${TM_SELECTED_TEXT:expression}})"
+  },
+  "af": {
+    "prefix": "af",
+    "description": "Assert False",
+    "body": "self.assertFalse(${1:${TM_SELECTED_TEXT:expression}})"
+  },
+  "aae": {
+    "prefix": "aae",
+    "description": "Assert almost equal",
+    "body": "self.assertAlmostEqual(${1:${TM_SELECTED_TEXT:first}}, ${2:second})"
+  },
+  "an": {
+    "prefix": "an",
+    "description": "Assert is None",
+    "body": "self.assertIsNone(${1:${TM_SELECTED_TEXT:expression}})"
+  },
+  "ann": {
+    "prefix": "ann",
+    "description": "Assert is not None",
+    "body": "self.assertIsNotNone(${1:${TM_SELECTED_TEXT:expression}})"
+  }
+}

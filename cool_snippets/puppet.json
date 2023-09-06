@@ -1,0 +1,215 @@
+{
+  "lambda": {
+    "prefix": "lambda",
+    "description": "Lambda function chain-called on a variable",
+    "body": [
+      "\\$${1:varname}.${2:each} |${3:Type} \\$${4:param}| {",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "cron": {
+    "prefix": "cron",
+    "description": "Cron resource type",
+    "body": [
+      "cron { '${1:name}':",
+      "\tuser    => ${2:user},",
+      "\tcommand => '${3:command}',",
+      "\tminute  => ${3:minute},",
+      "\thour    => ${4:hour},",
+      "\\}"
+    ]
+  },
+  "exec": {
+    "prefix": "exec",
+    "description": "Exec resource type",
+    "body": [
+      "exec { '${1:command}':",
+      "\tcommand => \"${2:$1}\",",
+      "\tuser    => \"${3:root}\",",
+      "\\}"
+    ]
+  },
+  "file": {
+    "prefix": "file",
+    "description": "File resource type",
+    "body": [
+      "file { '${1:name}':",
+      "\tsource => \"puppet://${2:path}\",",
+      "\tmode   => ${3:mode},",
+      "\\}"
+    ]
+  },
+  "File": {
+    "prefix": "File",
+    "description": "Defaults for file",
+    "body": [
+      "File {",
+      "\towner => ${1:username},",
+      "\tgroup => ${2:groupname},",
+      "\\}"
+    ]
+  },
+  "group": {
+    "prefix": "group",
+    "description": "Group resource type",
+    "body": [
+      "group { '${1:groupname}':",
+      "\tensure => ${3:present},",
+      "\tgid    => ${2:gid},",
+      "\\}"
+    ]
+  },
+  "mount": {
+    "prefix": "mount",
+    "description": "Mount resource type",
+    "body": [
+      "mount { '${1:path}':",
+      "\tdevice  => '${2:/dev}',",
+      "\tfstype  => '${3:filesystem}',",
+      "\tensure  => mounted,",
+      "\toptions => 'rw,errors=remount-ro',",
+      "\\}"
+    ]
+  },
+  "package": {
+    "prefix": "package",
+    "description": "Package resource type",
+    "body": [
+      "package { '${1:name}':",
+      "\tensure => ${2:installed},",
+      "\\}"
+    ]
+  },
+  "user": {
+    "prefix": "user",
+    "description": "user resource type",
+    "body": [
+      "user { '${1:username}':",
+      "\tensure     => ${2:present},",
+      "\tuid        => ${3:uid},",
+      "\tgid        => ${4:gid},",
+      "\tcomment    => ${5:gecos},",
+      "\thome       => ${6:homedirectory},",
+      "\tmanagehome => false,",
+      "\trequire    => Group['${7:group'}],",
+      "\\}"
+    ]
+  },
+  "service": {
+    "prefix": "service",
+    "description": "Service resource type",
+    "body": [
+      "service { '${1:name}':",
+      "\thasstatus => true,",
+      "\tenable    => true,",
+      "\tensure    => running,",
+      "\\}"
+    ]
+  },
+  "alert": {
+    "prefix": "alert",
+    "description": "Alert Function",
+    "body": "alert(\"${1:message}\")$0"
+  },
+  "crit": {
+    "prefix": "crit",
+    "description": "Crit Function",
+    "body": "crit(\"${1:message}\")$0"
+  },
+  "debug": {
+    "prefix": "debug",
+    "description": "Debug Function",
+    "body": "debug(\"${1:message}\")$0"
+  },
+  "defined": {
+    "prefix": "defined",
+    "description": "Defined Function",
+    "body": "defined(${1:Resource}[\"${2:name}\"])$0"
+  },
+  "emerg": {
+    "prefix": "emerg",
+    "description": "Emerg Function",
+    "body": "emerg(\"${1:message}\")$0"
+  },
+  "extlookup": {
+    "prefix": "extlookup",
+    "description": "Extlookup with defaults and custom data file",
+    "body": "\\$${1:Variable} = extlookup(\"${2:Lookup}\", ${3:Default}, ${4:Data Source})$0"
+  },
+  "fail": {
+    "prefix": "fail",
+    "description": "Fail Function",
+    "body": "fail(\"${1:message}\")$0"
+  },
+  "hiera": {
+    "prefix": "hiera",
+    "description": "Hiera with defaults and override",
+    "body": "\\$${1:Variable} = hiera(\"${2:Lookup}\", ${3:Default}, ${4:Override})$0"
+  },
+  "hiera_hash": {
+    "prefix": "hiera_hash",
+    "description": "Hiera Hash with defaults and override",
+    "body": "\\$${1:Variable} = hiera_hash(\"${2:Lookup}\", ${3:Default}, ${4:Override})$0"
+  },
+  "hiera_include": {
+    "prefix": "hiera_include",
+    "description": "Hiera Include Function",
+    "body": "hiera_include(\"${1:Lookup}\")$0"
+  },
+  "lookup": {
+    "prefix": "lookup",
+    "description": "Lookup data from hiera",
+    "body": "\\$${1:varname} = lookup('${2:hiera::key}')$0"
+  },
+  "trocla": {
+    "prefix": "trocla",
+    "description": "Lookup or generate sensitive information",
+    "body": "trocla('${1:lookup_key}', '${2:plain}', ${3:'length: 32'})$0"
+  },
+  "include": {
+    "prefix": "include",
+    "description": "Include Function",
+    "body": "include ${1:classname}$0"
+  },
+  "info": {
+    "prefix": "info",
+    "description": "Info Function",
+    "body": "info(\"${1:message}\")$0"
+  },
+  "inline_template": {
+    "prefix": "inline_template",
+    "description": "Inline Template Function",
+    "body": "inline_template(\"<%= ${1:template} %>\")$0"
+  },
+  "notice": {
+    "prefix": "notice",
+    "description": "Notice Function",
+    "body": "notice(\"${1:message}\")$0"
+  },
+  "realize": {
+    "prefix": "realize",
+    "description": "Realize Function",
+    "body": "realize(${1:Resource}[\"${2:name}\"])$0"
+  },
+  "regsubst": {
+    "prefix": "regsubst",
+    "description": "Regsubst Function",
+    "body": "regsubst(\\$${1:Target}, '${2:regexp}', '${3:replacement}')$0"
+  },
+  "split": {
+    "prefix": "split",
+    "description": "Split Function",
+    "body": "\\$${1:Variable} = split(\\$${1:Target}, '${2:regexp}')$0"
+  },
+  "versioncmp": {
+    "prefix": "versioncmp",
+    "description": "Version Compare Function",
+    "body": "\\$${1:Variable} = versioncmp('${1:version}', '${2:version}')$0"
+  },
+  "warning": {
+    "prefix": "warning",
+    "description": "Warning Function",
+    "body": "warning(\"${1:message}\")$0"
+  }
+}

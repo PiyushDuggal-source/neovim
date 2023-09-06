@@ -10,25 +10,40 @@ make CMAKE_BUILD_TYPE=Release
 sudo make install
 ```
 
-## Install the config
+## ⚠️ ⚠️  Run these commands first ⚠️ ⚠️
 
-Make sure to remove or move your current `nvim` directory
+#### For Ubuntu
+
+```sh
+sudo apt update && sudo apt upgrade && sudo apt install git xsel wl-clipboard cargo clang-format pip ripgrep npm lazygit
+sudo npm install -g neovim && sudo pip install black pynvim && sudo cargo install stylua
+
+```
+##### Nodejs for specific distros
+
+- [Here](https://github.com/nodesource/distributions)
+
+
+Make sure to remove or move your current `nvim` directories: ```~/.config/nvim``` ```~/.local/share/nvim```
 
 ```sh
 git clone https://github.com/PiyushDuggal-source/neovim ~/.config/nvim
 ```
 
+
 Run `nvim` and wait for the plugins to be installed
 
 **NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim)
 
-## Get healthy
+## Get health
 
 Open `nvim` and enter the following:
 
 ```
 :checkhealth
 ```
+
+check the report and download required packages.
 
 You'll probably notice you don't have support for copy/paste also that python and node haven't been setup
 
@@ -37,35 +52,6 @@ So let's fix that
 First we'll fix copy/paste
 
 - On mac `pbcopy` should be builtin
-
-- On Ubuntu
-
-  ```sh
-  sudo apt install xsel # for X11
-  sudo apt install wl-clipboard # for wayland
-  ```
-
-Next we need to install python support (node is optional)
-
-- Neovim python support
-
-  ```sh
-  pip install pynvim
-  ```
-
-- Neovim node support
-
-  ```sh
-  npm i -g neovim
-  ```
-
-We will also need `ripgrep` for Telescope to work:
-
-- Ripgrep
-
-  ```sh
-  sudo apt install ripgrep
-  ```
 
 ---
 
@@ -96,14 +82,6 @@ Next you will need to add the server to this list: [servers](https://github.com/
 ### Formatters and linters
 
 Make sure the formatter or linter is installed and add it to this setup function: [null-ls](https://github.com/LunarVim/nvim-basic-ide/blob/8b9ec3bffe8c8577042baf07c75408532a733fea/lua/user/lsp/null-ls.lua#L13)
-
-**NOTE** Some are already setup as examples, remove them if you want
-
-### Plugins
-
-You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-basic-ide/blob/8b9ec3bffe8c8577042baf07c75408532a733fea/lua/user/plugins.lua#L42)
-
----
 
 ## Plugins
 
@@ -143,9 +121,10 @@ You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-bas
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim)
+- etc.
 
 ---
 
-> The computing scientist's main challenge is not to get confused by the complexities of his own making.
+> If debugging is the process of removing bug, then programming must be the process of putting them in.
 
 \- Edsger W. Dijkstra

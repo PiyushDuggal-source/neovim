@@ -1,0 +1,13 @@
+{
+  "#!": {
+    "prefix": "#!",
+    "description": "#!/usr/bin/env zsh",
+    "body": [
+      "#!/usr/bin/env zsh",
+      "$0"
+    ],
+    "luasnip": {
+      "priority": -49
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "sec": {
+    "prefix": "sec",
+    "description": "Section",
+    "body": [
+      "# ${1:Section Name} #",
+      "$0"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "ssec": {
+    "prefix": "ssec",
+    "description": "Sub Section",
+    "body": [
+      "## ${1:Section Name} ##",
+      "$0"
+    ]
+  },
+  "sssec": {
+    "prefix": "sssec",
+    "description": "SubSub Section",
+    "body": [
+      "### ${1:Section Name} ###",
+      "$0"
+    ]
+  },
+  "par": {
+    "prefix": "par",
+    "description": "Paragraph",
+    "body": [
+      "#### ${1:Paragraph Name} ####",
+      "$0"
+    ]
+  },
+  "spar": {
+    "prefix": "spar",
+    "description": "Paragraph",
+    "body": [
+      "##### ${1:Paragraph Name} #####",
+      "$0"
+    ]
+  },
+  "*": {
+    "prefix": "*",
+    "description": "italics",
+    "body": "*${1:$TM_SELECTED_TEXT}*$0"
+  },
+  "**": {
+    "prefix": "**",
+    "description": "bold",
+    "body": "**${1:$TM_SELECTED_TEXT}**$0"
+  },
+  "***": {
+    "prefix": "***",
+    "description": "bold italics",
+    "body": "***${1:$TM_SELECTED_TEXT}***$0"
+  },
+  "/*": {
+    "prefix": "/*",
+    "description": "Comment",
+    "body": "<!-- ${1:$TM_SELECTED_TEXT} -->$0"
+  },
+  "link": {
+    "prefix": "link",
+    "description": "Link to something",
+    "body": "[${1:${TM_SELECTED_TEXT:Text}}](${3:https://${2:www.url.com}})$0"
+  },
+  "ilc": {
+    "prefix": "ilc",
+    "description": "Inline Code",
+    "body": "`${1:$TM_SELECTED_TEXT}`$0"
+  },
+  "cbl": {
+    "prefix": "cbl",
+    "description": "Codeblock",
+    "body": [
+      "```$1",
+      "${2:$TM_SELECTED_TEXT}",
+      "```",
+      "$0"
+    ]
+  },
+  "refl": {
+    "prefix": "refl",
+    "description": "Reference Link",
+    "body": [
+      "[${1:${TM_SELECTED_TEXT:Text}}][${2:id}]$0",
+      "",
+      "[$2]:${4:https://${3:www.url.com}} \"${5:$4}\""
+    ]
+  },
+  "fnt": {
+    "prefix": "fnt",
+    "description": "Footnote",
+    "body": [
+      "[^${1:${TM_SELECTED_TEXT:Footnote}}]$0",
+      "",
+      "[^$1]:${2:Text}"
+    ]
+  },
+  "detail": {
+    "prefix": "detail",
+    "description": "Disclosure",
+    "body": [
+      "<details${3: open=\"\"}>",
+      "  ${1:<summary>$2</summary>}$0",
+      "</details>"
+    ]
+  }
+}

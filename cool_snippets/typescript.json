@@ -1,0 +1,33 @@
+{
+  "int": {
+    "prefix": "int",
+    "description": "interface",
+    "body": [
+      "interface $1 {",
+      "\\}"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "nspc": {
+    "prefix": "nspc",
+    "description": "namespace",
+    "body": [
+      "namespace $1 {",
+      "\\}"
+    ]
+  },
+  "fun": {
+    "prefix": "fun",
+    "description": "function (named)",
+    "body": [
+      "function ${1:function_name} (${2:argument}: ${3:argument_type}) {",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ],
+    "luasnip": {
+      "priority": -49
+    }
+  }
+}

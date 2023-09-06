@@ -1,0 +1,20 @@
+{
+  "for": {
+    "prefix": "for",
+    "description": "ejs for loop",
+    "body": [
+      "<% for (let ${1:i = 0}; ${2:i<arr.length}; ${3:i++}) { %>",
+      "\t${0:body}",
+      "<% \\} %>"
+    ]
+  },
+  "forE": {
+    "prefix": "forE",
+    "description": "ejs for Each loop",
+    "body": [
+      "<% ${1:array}.forEach((${2:single var}) => { %>",
+      "\t${0:body}",
+      "<% \\}) %>"
+    ]
+  }
+}

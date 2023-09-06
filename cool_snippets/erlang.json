@@ -1,0 +1,23 @@
+{
+  "pat": {
+    "prefix": "pat",
+    "description": "Case:Receive:Try Clause",
+    "body": [
+      "${1:pattern}${2: when ${3:guard}} ->",
+      "\t${4:body}"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "||": {
+    "prefix": "||",
+    "description": "List Comprehension",
+    "body": "[${1:X} || ${2:X} <- ${3:List}${4:, gen}]"
+  },
+  "gen": {
+    "prefix": "gen",
+    "description": "Generator Expression",
+    "body": "${1:X} <- ${2:List}${3:, gen}"
+  }
+}

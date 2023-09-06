@@ -70,7 +70,7 @@ local diagnostics = {
     -- warn = "%#SLWarning#" .. icons.diagnostics.Warning .. "%*" .. " ",
   },
   colored = false,
-  update_in_insert = false,
+  update_in_insert = true,
   always_visible = true,
   padding = 1,
 }

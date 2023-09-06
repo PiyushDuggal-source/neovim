@@ -3,23 +3,56 @@ if not status_ok then
   return
 end
 
+local thingy = io.popen('echo "$(date +%a) $(date +%d) $(date +%b)" | tr -d "\n"')
+if thingy == nil then return end
+local date = thingy:read("*a")
+thingy:close()
+
+local datetime = os.date " %H:%M"
+
+local hi_top_section = {
+  type = "text",
+  val = "┌────────────   Today is " .. date .. " ────────────┐",
+  opts = {
+    position = "center",
+    hl = "Include"
+  }
+}
+
+local hi_middle_section = {
+  type = "text",
+  val = "│                                                │",
+  opts = {
+    position = "center",
+    hl = "Include"
+  }
+}
+local hi_bottom_section = {
+  type = "text",
+  val = "└───══───══───══───  " .. datetime .. "  ───══───══───══────┘",
+  opts = {
+    position = "center",
+    hl = "Include"
+  }
+}
 local dashboard = require "alpha.themes.dashboard"
+
 dashboard.section.header.val = {
-<<<<<<< Updated upstream
-=======
-  -- [[                                                 ]],
->>>>>>> Stashed changes
+  [[                                                 ]],
   [[                               __                ]],
   [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
   [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
   [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
   [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
   [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+  [[                                                 ]],
 }
+
 dashboard.section.buttons.val = {
   dashboard.button("b", ' ' .. " Sessions", ":SLoad<CR>"),
-  dashboard.button("T", ' ' .. " New Terminal", ":ToggleTerm size=40 dir=~/Piyush direction=horizontal<CR>"),
+  -- dashboard.button("T", ' ' .. " New Terminal", ":ToggleTerm size=40 dir=~/Piyush direction=horizontal<CR>"),
   dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
+  dashboard.button("T", ' ' .. " New Terminal", ":!kitty<CR>"),
   dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
   dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
   dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
@@ -29,9 +62,8 @@ dashboard.section.buttons.val = {
   dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 }
 local function footer()
-    -- Number of plugins
+  -- Number of plugins
   -- local total_plugins = #vim.tbl_keys(packer_plugins)
-  local datetime = os.date "%d-%m-%Y %H:%M:%S"
   -- local plugins_text = "   "
   --   .. total_plugins
   --   .. " plugins"
@@ -46,18 +78,64 @@ local function footer()
 
   -- Quote
   local fortune = require "alpha.fortune"
-  local quote = table.concat(fortune(), "\n")
+  local quote = table.concat(fortune(), "\n\n")
 
-  return quote .. "\n\n                 " .. datetime
+  local line = "                 ───══───══───══────"
+ local plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
+  -- local total_plugins = #vim.tbl_keys(packer_plugins)
+  local plugins_text = "\n\n         Loaded "
+    .. "`"
+    .. plugins_count
+    .. "`"
+    .. " plugins"
+    .. "   v"
+    .. vim.version().major
+    .. "."
+    .. vim.version().minor
+    .. "."
+    .. vim.version().patch
+    .. "  "
+
+  return line .. "\n" .. quote .. plugins_text
 end
 
-
-
 dashboard.section.footer.val = footer()
-
 dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"
 dashboard.section.buttons.opts.hl = "Keyword"
+dashboard.section.footer.opts = {
+  position = "center",
+  hl = "Include"
+}
+
+local section = {
+  header = dashboard.section.header,
+  hi_top_section = hi_top_section,
+  hi_middle_section = hi_middle_section,
+  hi_bottom_section = hi_bottom_section,
+  buttons = dashboard.section.buttons,
+  footer = dashboard.section.footer,
+}
+local opts = {
+  layout = {
+    { type = "padding", val = 3 },
+    section.header,
+    { type = "padding", val = 1 },
+    section.hi_top_section,
+    section.hi_middle_section,
+    section.hi_bottom_section,
+    { type = "padding", val = 2 },
+    section.buttons,
+    section.footer,
+  },
+  opts = {
+    margin = 5
+  },
+}
+
+-- dashboard.section.header.hi_top_section = hi_top_section
+-- dashboard.section.header.hi_middle_section = hi_middle_section
+-- dashboard.section.header.hi_bottom_section = hi_bottom_section
 
 dashboard.opts.opts.noautocmd = true
-alpha.setup(dashboard.opts)
+alpha.setup(opts)

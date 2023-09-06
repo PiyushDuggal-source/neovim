@@ -1,0 +1,97 @@
+{
+  "sfa": {
+    "prefix": "sfa",
+    "description": "Symfony 2 Controller action",
+    "body": [
+      "/**",
+      "* @Route(\"/${1:route_name}\", name=\"$1\")",
+      "* @Template()",
+      "*/",
+      "public function $1Action($2)",
+      "{",
+      "\t$3",
+      "\treturn ${4:[];}$0",
+      "\\}"
+    ]
+  },
+  "act": {
+    "prefix": "act",
+    "description": "Symfony2 action",
+    "body": [
+      "/**",
+      " * @Route(\"$3\", name=\"$4\")",
+      " * @Method({${5:\"POST\"}\\})",
+      " * @Template()",
+      " */",
+      "public function $1Action($2)",
+      "{",
+      "\t$6",
+      "\\}"
+    ]
+  },
+  "redir": {
+    "prefix": "redir",
+    "description": "Symfony2 redirect",
+    "body": "\\$this->redirect(\\$this->generateUrl('$1', $2));"
+  },
+  "usecontroller": {
+    "prefix": "usecontroller",
+    "description": "Symfony2 use Symfony\\..\\Controller",
+    "body": "use Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller;$1"
+  },
+  "usereauest": {
+    "prefix": "usereauest",
+    "description": "Symfony2 use Symfony\\..\\Request",
+    "body": "use Symfony\\Component\\HttpFoundation\\Request;$1"
+  },
+  "useroute": {
+    "prefix": "useroute",
+    "description": "Symfony2 use Sensio\\..\\Route",
+    "body": "use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Route;$1"
+  },
+  "useresponse": {
+    "prefix": "useresponse",
+    "description": "Symfony2 use Symfony\\..\\Response",
+    "body": "use Symfony\\Component\\HttpFoundation\\Response;$1"
+  },
+  "usefile": {
+    "prefix": "usefile",
+    "description": "Symfony2 use Symfony\\..\\File",
+    "body": "use Symfony\\Component\\HttpFoundation\\File\\UploadedFile;$1"
+  },
+  "useassert": {
+    "prefix": "useassert",
+    "description": "Symfony2 use Symfony\\..\\Constraints as Assert",
+    "body": "use Symfony\\Component\\Validator\\Constraints as Assert;$1"
+  },
+  "usetemplate": {
+    "prefix": "usetemplate",
+    "description": "Symfony2 use Sensio\\..\\Template",
+    "body": "use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Template;$1"
+  },
+  "usecache": {
+    "prefix": "usecache",
+    "description": "Symfony2 use Sensio\\..\\Cache",
+    "body": "use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Cache;$1"
+  },
+  "usemethod": {
+    "prefix": "usemethod",
+    "description": "Symfony2 use Sensio\\..\\Method",
+    "body": "use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Method;$1"
+  },
+  "usearray": {
+    "prefix": "usearray",
+    "description": "Symfony2 use Doctrine\\..\\ArrayCollection",
+    "body": "use Doctrine\\Common\\Collections\\ArrayCollection;$1"
+  },
+  "useorm": {
+    "prefix": "useorm",
+    "description": "Symfony2 use Doctrine\\..\\Mapping as ORM",
+    "body": "use Doctrine\\ORM\\Mapping as ORM;$1"
+  },
+  "usesecure": {
+    "prefix": "usesecure",
+    "description": "Symfony2 use JMS\\..\\Secure",
+    "body": "use JMS\\SecurityExtraBundle\\Annotation\\Secure;$1"
+  }
+}

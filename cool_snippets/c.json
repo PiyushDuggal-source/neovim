@@ -1,0 +1,84 @@
+{
+  "def": {
+    "prefix": "def",
+    "description": "#define ...",
+    "body": "#define $1",
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "#if": {
+    "prefix": "#if",
+    "description": "#if #endif",
+    "body": [
+      "#if ${1:0}",
+      "$TM_SELECTED_TEXT$0",
+      "#endif"
+    ]
+  },
+  "mark": {
+    "prefix": "mark",
+    "description": "#pragma mark (mark)",
+    "body": [
+      "#if 0",
+      "${1:#pragma mark -",
+      "}#pragma mark $2",
+      "#endif",
+      "",
+      "$0"
+    ]
+  },
+  "main": {
+    "prefix": "main",
+    "description": "main() (main)",
+    "body": [
+      "int main(int argc, char *argv[])",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\treturn 0;",
+      "\\}"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "for loop (for)",
+    "body": [
+      "for (${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "fori": {
+    "prefix": "fori",
+    "description": "for int loop (fori)",
+    "body": [
+      "for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "eli": {
+    "prefix": "eli",
+    "description": "else if .. (eli)",
+    "body": [
+      "else if (${1:/* condition */}) {",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "fun": {
+    "prefix": "fun",
+    "description": "function",
+    "body": [
+      "${1:void} ${2:function_name}($3)",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "fund": {
+    "prefix": "fund",
+    "description": "function declaration",
+    "body": "${1:void} ${2:function_name}($3);"
+  }
+}

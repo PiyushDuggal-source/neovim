@@ -1,0 +1,202 @@
+{
+  "#!": {
+    "prefix": "#!",
+    "description": "#!/usr/bin/env Rscript",
+    "body": [
+      "#!/usr/bin/env Rscript",
+      "$0"
+    ],
+    "luasnip": {
+      "priority": -20
+    }
+  },
+  "lib": {
+    "prefix": "lib",
+    "description": "Import a library",
+    "body": "library('${0:${TM_SELECTED_TEXT:package}}')"
+  },
+  "req": {
+    "prefix": "req",
+    "description": "Require a file",
+    "body": "require('${0:${TM_SELECTED_TEXT:package}}')"
+  },
+  "source": {
+    "prefix": "source",
+    "description": "Source a file",
+    "body": "source('${0:${TM_SELECTED_TEXT:file}}')"
+  },
+  "if": {
+    "prefix": "if",
+    "description": "If statement",
+    "body": [
+      "if ($1) {",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\}"
+    ]
+  },
+  "eif": {
+    "prefix": "eif",
+    "description": "Else-If statement",
+    "body": [
+      "else if ($1) {",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\}"
+    ]
+  },
+  "el": {
+    "prefix": "el",
+    "description": "Else statement",
+    "body": [
+      "else {",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\}"
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "if .. else",
+    "body": [
+      "if ($1) {",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "\\} else {",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "wh": {
+    "prefix": "wh",
+    "description": "while loop",
+    "body": [
+      "while($1) {",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\}"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "for loop",
+    "body": [
+      "for (${1:item} in ${2:list}) {",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\}"
+    ]
+  },
+  "fun": {
+    "prefix": "fun",
+    "description": "Function definition",
+    "body": [
+      "${1:name} <- function ($2) {",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\}"
+    ]
+  },
+  "ret": {
+    "prefix": "ret",
+    "description": "Return call",
+    "body": "return(${0:$TM_SELECTED_TEXT})"
+  },
+  "df": {
+    "prefix": "df",
+    "description": "Data frame",
+    "body": "${1:name}[${2:rows}, ${0:cols}]"
+  },
+  "c": {
+    "prefix": "c",
+    "description": "c function",
+    "body": "c(${0:${TM_SELECTED_TEXT:items}})"
+  },
+  "li": {
+    "prefix": "li",
+    "description": "list function",
+    "body": "list(${0:${TM_SELECTED_TEXT:items}})"
+  },
+  "mat": {
+    "prefix": "mat",
+    "description": "matrix function",
+    "body": "matrix(${1:${TM_SELECTED_TEXT:data}}, nrow = ${2:rows}, ncol = ${0:cols})"
+  },
+  "apply": {
+    "prefix": "apply",
+    "description": "apply function",
+    "body": "apply(${1:${TM_SELECTED_TEXT:array}}, ${2:margin}, ${0:function})"
+  },
+  "lapply": {
+    "prefix": "lapply",
+    "description": "lapply function",
+    "body": "lapply(${1:${TM_SELECTED_TEXT:list}}, ${0:function})"
+  },
+  "sapply": {
+    "prefix": "sapply",
+    "description": "sapply function",
+    "body": "sapply(${1:${TM_SELECTED_TEXT:list}}, ${0:function})"
+  },
+  "vapply": {
+    "prefix": "vapply",
+    "description": "vapply function",
+    "body": "vapply(${1:${TM_SELECTED_TEXT:list}}, ${2:function}, ${0:type})"
+  },
+  "mapply": {
+    "prefix": "mapply",
+    "description": "mapply function",
+    "body": "mapply(${1:${TM_SELECTED_TEXT:function}}, ${0:...})"
+  },
+  "tapply": {
+    "prefix": "tapply",
+    "description": "tapply function",
+    "body": "tapply(${1:${TM_SELECTED_TEXT:vector}}, ${2:index}, ${0:function})"
+  },
+  "rapply": {
+    "prefix": "rapply",
+    "description": "rapply function",
+    "body": "rapply(${1:${TM_SELECTED_TEXT:list}}, ${0:function})"
+  },
+  "pl": {
+    "prefix": "pl",
+    "description": "Plot function",
+    "body": "plot(${1:${TM_SELECTED_TEXT:x}}, ${0:y})"
+  },
+  "ggp": {
+    "prefix": "ggp",
+    "description": "ggplot2 plot",
+    "body": "ggplot(${1:${TM_SELECTED_TEXT:data}}, aes(${0:aesthetics}))"
+  },
+  "fis": {
+    "prefix": "fis",
+    "description": "Fisher test",
+    "body": "fisher.test(${1:x}, ${0:y})"
+  },
+  "chi": {
+    "prefix": "chi",
+    "description": "Chi Squared test",
+    "body": "chisq.test(${1:x}, ${0:y})"
+  },
+  "tt": {
+    "prefix": "tt",
+    "description": "t-test",
+    "body": "t.test(${1:x}, ${0:y})"
+  },
+  "wil": {
+    "prefix": "wil",
+    "description": "Wilcox test",
+    "body": "wilcox.test(${1:x}, ${0:y})"
+  },
+  "cor": {
+    "prefix": "cor",
+    "description": "Correlation test",
+    "body": "cor.test(${1:x}, ${0:y})"
+  },
+  "fte": {
+    "prefix": "fte",
+    "description": "FTE test",
+    "body": "var.test(${1:x}, ${0:y})"
+  },
+  "kvt": {
+    "prefix": "kvt",
+    "description": "KV test",
+    "body": "kv.test(${1:x}, ${0:y})"
+  },
+  "vec": {
+    "prefix": "vec",
+    "body": "${1:var} <- c(\"${0:\\${VISUAL:/ /\",\"/g\\}}\")"
+  }
+}

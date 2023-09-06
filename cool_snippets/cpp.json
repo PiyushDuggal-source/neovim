@@ -1,0 +1,133 @@
+{
+  "ponce": {
+    "prefix": "ponce",
+    "description": "#pragma once include guard",
+    "body": [
+      "#pragma once",
+      ""
+    ],
+    "luasnip": {
+      "priority": -49
+    }
+  },
+  "main": {
+    "prefix": "main",
+    "body": [
+      "int main(int argc, char *argv[])",
+      "{",
+      "\t$0",
+      "\treturn 0;",
+      "\\}"
+    ]
+  },
+  "nsa": {
+    "prefix": "nsa",
+    "description": "namespace alias",
+    "body": "namespace ${1:alias} = ${2:namespace};"
+  },
+  "readfile": {
+    "prefix": "readfile",
+    "description": "read file (readF)",
+    "body": [
+      "std::vector<char> v;",
+      "if (FILE *fp = fopen(${1:\"filename\"}, \"r\"))",
+      "{",
+      "\tchar buf[1024];",
+      "\twhile(size_t len = fread(buf, 1, sizeof(buf), fp))",
+      "\t\tv.insert(v.end(), buf, buf + len);",
+      "\tfclose(fp);",
+      "\\}"
+    ]
+  },
+  "map": {
+    "prefix": "map",
+    "description": "std::map (map)",
+    "body": "std::map<${1:key}, ${2:value}> map$0;"
+  },
+  "vector": {
+    "prefix": "vector",
+    "description": "std::vector (v)",
+    "body": "std::vector<${1:char}> v$0;"
+  },
+  "tp": {
+    "prefix": "tp",
+    "description": "template <typename ..> (template)",
+    "body": "template <typename ${1:_InputIter}>"
+  },
+  "boost_test": {
+    "prefix": "boost_test",
+    "description": "Boost test module",
+    "body": [
+      "#define BOOST_TEST_MODULE ${1:TestModuleName}",
+      "#include <boost/test/included/unit_test.hpp>",
+      "",
+      "BOOST_AUTO_TEST_CASE(${2:TestCaseName})",
+      "{",
+      "\t${0:TestDefinition}",
+      "\\}",
+      ""
+    ]
+  },
+  "boost_suite": {
+    "prefix": "boost_suite",
+    "description": "Boost test suite module",
+    "body": [
+      "#define BOOST_TEST_MODULE ${1:TestModuleName}",
+      "#include <boost/test/included/unit_test.hpp>",
+      "",
+      "BOOST_AUTO_TEST_SUITE(${2:SuiteName})",
+      "",
+      "BOOST_AUTO_TEST_CASE(${3:TestCaseName})",
+      "{",
+      "\t${0:TestDefinition}",
+      "\\}",
+      "",
+      "BOOST_AUTO_TEST_SUITE_END()",
+      ""
+    ]
+  },
+  "boost_test_fixture": {
+    "prefix": "boost_test_fixture",
+    "description": "Boost test module with fixture",
+    "body": [
+      "#define BOOST_TEST_MODULE ${1:TestModuleName}",
+      "#include <boost/test/included/unit_test.hpp>",
+      "",
+      "struct ${2:FixtureName} {",
+      "\t$2() {\\}",
+      "\tvirtual ~$2() {\\}",
+      "\t/* define members here */",
+      "\\};",
+      "",
+      "BOOST_FIXTURE_TEST_CASE(${3:SuiteName}, $2)",
+      "{",
+      "\t${0:TestDefinition}",
+      "\\}",
+      ""
+    ]
+  },
+  "boost_suite_fixture": {
+    "prefix": "boost_suite_fixture",
+    "description": "Boost test suite with fixture",
+    "body": [
+      "#define BOOST_TEST_MODULE ${1:TestModuleName}",
+      "#include <boost/test/included/unit_test.hpp>",
+      "",
+      "struct ${2:FixtureName} {",
+      "\t$2() {\\}",
+      "\tvirtual ~$2() {\\}",
+      "\t/* define members here */",
+      "\\};",
+      "",
+      "BOOST_FIXTURE_TEST_SUITE(${3:SuiteName}, $2)",
+      "",
+      "BOOST_AUTO_TEST_CASE(${4:TestCaseName})",
+      "{",
+      "\t${0:TestDefinition}",
+      "\\}",
+      "",
+      "BOOST_AUTO_TEST_SUITE_END()",
+      ""
+    ]
+  }
+}

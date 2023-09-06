@@ -1,0 +1,232 @@
+{
+  "it": {
+    "prefix": "it",
+    "description": "function it_does_something() { ... }",
+    "body": [
+      "function it_$1()",
+      "{",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\}"
+    ]
+  },
+  "let": {
+    "prefix": "let",
+    "description": "function let() { ... }",
+    "body": [
+      "function let()",
+      "{",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\}"
+    ]
+  },
+  "letgo": {
+    "prefix": "letgo",
+    "description": "function letgo() { ... }",
+    "body": [
+      "function letgo()",
+      "{",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\}"
+    ]
+  },
+  "cw": {
+    "prefix": "cw",
+    "description": "$this->beConstructedWith($arg)",
+    "body": "\\$this->beConstructedWith($1);"
+  },
+  "ct": {
+    "prefix": "ct",
+    "description": "$this->beConstructedThrough($methodName, [$arg])",
+    "body": "\\$this->beConstructedThrough(${1:'methodName'}, [${2:'\\$arg'}]);"
+  },
+  "sreturn": {
+    "prefix": "sreturn",
+    "description": "$this->XYZ()->shouldReturn('value')",
+    "body": "\\$this->${1:method}()->shouldReturn(${2:'value'});"
+  },
+  "snreturn": {
+    "prefix": "snreturn",
+    "description": "$this->XYZ()->shouldNotReturn('value')",
+    "body": "\\$this->${1:method}()->shouldNotReturn(${2:'value'});"
+  },
+  "sbe": {
+    "prefix": "sbe",
+    "description": "$this->XYZ()->shouldBe('value')",
+    "body": "\\$this->${1:method}()->shouldBe(${2:'value'});"
+  },
+  "snbe": {
+    "prefix": "snbe",
+    "description": "$this->XYZ()->shouldNotBe('value')",
+    "body": "\\$this->${1:method}()->shouldNotBe(${2:'value'});"
+  },
+  "sequal": {
+    "prefix": "sequal",
+    "description": "$this->XYZ()->shouldEqual('value')",
+    "body": "\\$this->${1:method}()->shouldEqual(${2:'value'});"
+  },
+  "snequal": {
+    "prefix": "snequal",
+    "description": "$this->XYZ()->shouldNotEqual('value')",
+    "body": "\\$this->${1:method}()->shouldNotEqual(${2:'value'});"
+  },
+  "sbequalto": {
+    "prefix": "sbequalto",
+    "description": "$this->XYZ()->shouldBeEqualTo('value')",
+    "body": "\\$this->${1:method}()->shouldBeEqualTo(${2:'value'});"
+  },
+  "snbequalto": {
+    "prefix": "snbequalto",
+    "description": "$this->XYZ()->shouldNotBeEqualTo('value')",
+    "body": "\\$this->${1:method}()->shouldNotBeEqualTo(${2:'value'});"
+  },
+  "sblike": {
+    "prefix": "sblike",
+    "description": "$this->XYZ()->shouldBeLike('value')",
+    "body": "\\$this->${1:method}()->shouldBeLike(${2:'value'});"
+  },
+  "snblike": {
+    "prefix": "snblike",
+    "description": "$this->XYZ()->shouldNotBeLike('value')",
+    "body": "\\$this->${1:method}()->shouldNotBeLike(${2:'value'});"
+  },
+  "sthrowm": {
+    "prefix": "sthrowm",
+    "description": "$this->shouldThrow('\\Exception')->duringXYZ($arg)",
+    "body": "\\$this->shouldThrow(${1:'\\Exception'})->during${2:Method}(${3:'\\$arg'});"
+  },
+  "sthrowi": {
+    "prefix": "sthrowi",
+    "description": "$this->shouldThrow('\\Exception')->duringInstantiation()",
+    "body": "\\$this->shouldThrow(${1:'\\Exception'})->duringInstantiation();"
+  },
+  "stype": {
+    "prefix": "stype",
+    "description": "$this->shouldHaveType('Type')",
+    "body": "\\$this->shouldHaveType($1);"
+  },
+  "sntype": {
+    "prefix": "sntype",
+    "description": "$this->shouldNotHaveType('Type')",
+    "body": "\\$this->shouldNotHaveType($1);"
+  },
+  "srinstance": {
+    "prefix": "srinstance",
+    "description": "$this->shouldReturnAnInstanceOf('Type')",
+    "body": "\\$this->shouldReturnAnInstanceOf($1);"
+  },
+  "snrinstance": {
+    "prefix": "snrinstance",
+    "description": "$this->shouldNotReturnAnInstanceOf('Type')",
+    "body": "\\$this->shouldNotReturnAnInstanceOf($1);"
+  },
+  "sbinstance": {
+    "prefix": "sbinstance",
+    "description": "$this->shouldBeAnInstanceOf('Type')",
+    "body": "\\$this->shouldBeAnInstanceOf($1);"
+  },
+  "snbinstance": {
+    "prefix": "snbinstance",
+    "description": "$this->shouldNotBeAnInstanceOf('Type')",
+    "body": "\\$this->shouldNotBeAnInstanceOf($1);"
+  },
+  "simplement": {
+    "prefix": "simplement",
+    "description": "$this->shouldImplement('Type')",
+    "body": "\\$this->shouldImplement($1);"
+  },
+  "snimplement": {
+    "prefix": "snimplement",
+    "description": "$this->shouldNotImplement('Type')",
+    "body": "\\$this->shouldNotImplement($1);"
+  },
+  "sbstate": {
+    "prefix": "sbstate",
+    "description": "$this->shouldBeXYZ()",
+    "body": "\\$this->shouldBe$1();"
+  },
+  "snbstate": {
+    "prefix": "snbstate",
+    "description": "$this->shouldNotBeXYZ()",
+    "body": "\\$this->shouldNotBe$1();"
+  },
+  "scount": {
+    "prefix": "scount",
+    "description": "$this->XYZ()->shouldHaveCount(7)",
+    "body": "\\$this->${1:method}()->shouldHaveCount(${2:7});"
+  },
+  "sncount": {
+    "prefix": "sncount",
+    "description": "$this->XYZ()->shouldNotHaveCount(7)",
+    "body": "\\$this->${1:method}()->shouldNotHaveCount(${2:7});"
+  },
+  "sbscalar": {
+    "prefix": "sbscalar",
+    "description": "$this->XYZ()->shouldBeString|Array|Bool()",
+    "body": "\\$this->${1:method}()->shouldBe${2:String|Array|Bool}();"
+  },
+  "snbscalar": {
+    "prefix": "snbscalar",
+    "description": "$this->XYZ()->shouldNotBeString|Array|Bool()",
+    "body": "\\$this->${1:method}()->shouldNotBe${2:String|Array|Bool}();"
+  },
+  "scontain": {
+    "prefix": "scontain",
+    "description": "$this->XYZ()->shouldContain('value')",
+    "body": "\\$this->${1:method}()->shouldContain(${2:'value'});"
+  },
+  "sncontain": {
+    "prefix": "sncontain",
+    "description": "$this->XYZ()->shouldNotContain('value')",
+    "body": "\\$this->${1:method}()->shouldNotContain(${2:'value'});"
+  },
+  "skey": {
+    "prefix": "skey",
+    "description": "$this->XYZ()->shouldHaveKey('key')",
+    "body": "\\$this->${1:method}()->shouldHaveKey(${2:'key'});"
+  },
+  "snkey": {
+    "prefix": "snkey",
+    "description": "$this->XYZ()->shouldNotHaveKey('key')",
+    "body": "\\$this->${1:method}()->shouldNotHaveKey(${2:'key'});"
+  },
+  "skeyvalue": {
+    "prefix": "skeyvalue",
+    "description": "$this->XYZ()->shouldHaveKeyWithValue('key', 'value')",
+    "body": "\\$this->${1:method}()->shouldHaveKeyWithValue(${2:'key'}, ${3:'value'});"
+  },
+  "snkeyvalue": {
+    "prefix": "snkeyvalue",
+    "description": "$this->XYZ()->shouldNotHaveKeyWithValue('key', 'value')",
+    "body": "\\$this->${1:method}()->shouldNotHaveKeyWithValue(${2:'key'}, ${3:'value'});"
+  },
+  "sstart": {
+    "prefix": "sstart",
+    "description": "$this->XYZ()->shouldStartWith('string')",
+    "body": "\\$this->${1:method}()->shouldStartWith(${2:'string'});"
+  },
+  "snstart": {
+    "prefix": "snstart",
+    "description": "$this->XYZ()->shouldNotStartWith('string')",
+    "body": "\\$this->${1:method}()->shouldNotStartWith(${2:'string'});"
+  },
+  "send": {
+    "prefix": "send",
+    "description": "$this->XYZ()->shouldEndWith('string')",
+    "body": "\\$this->${1:method}()->shouldEndWith(${2:'string'});"
+  },
+  "snend": {
+    "prefix": "snend",
+    "description": "$this->XYZ()->shouldNotEndWith('string')",
+    "body": "\\$this->${1:method}()->shouldNotEndWith(${2:'string'});"
+  },
+  "smatch": {
+    "prefix": "smatch",
+    "description": "$this->XYZ()->shouldMatch('/wizard/i')",
+    "body": "\\$this->${1:method}()->shouldMatch(${2:'/wizard/i'});"
+  },
+  "snmatch": {
+    "prefix": "snmatch",
+    "description": "$this->XYZ()->shouldNotMatch('/wizard/i')",
+    "body": "\\$this->${1:method}()->shouldNotMatch(${2:'/wizard/i'});"
+  }
+}

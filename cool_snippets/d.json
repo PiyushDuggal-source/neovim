@@ -1,0 +1,618 @@
+{
+  "imp": {
+    "prefix": "imp",
+    "description": "import (imp)",
+    "body": "import ${1:std.stdio};",
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "pimp": {
+    "prefix": "pimp",
+    "description": "public import (pimp)",
+    "body": "public import ${1:/*module*/};"
+  },
+  "over": {
+    "prefix": "over",
+    "description": "override (over)",
+    "body": "override ${1:/*function*/}"
+  },
+  "al": {
+    "prefix": "al",
+    "description": "alias (al)",
+    "body": "alias ${1:/*orig*/} ${2:/*alias*/};"
+  },
+  "mixin": {
+    "prefix": "mixin",
+    "description": "mixin (mixin)",
+    "body": "mixin ${1:/*mixed_in*/} ${2:/*name*/};"
+  },
+  "new": {
+    "prefix": "new",
+    "description": "new (new)",
+    "body": "new $1($2);"
+  },
+  "scpn": {
+    "prefix": "scpn",
+    "description": "@safe const pure nothrow (scpn)",
+    "body": "@safe const pure nothrow"
+  },
+  "spn": {
+    "prefix": "spn",
+    "description": "@safe pure nothrow (spn)",
+    "body": "@safe pure nothrow"
+  },
+  "cont": {
+    "prefix": "cont",
+    "description": "continue (cont)",
+    "body": "continue;"
+  },
+  "dis": {
+    "prefix": "dis",
+    "description": "@disable (dis)",
+    "body": "@disable ${1:/*method*/};"
+  },
+  "pub": {
+    "prefix": "pub",
+    "description": "public (pub)",
+    "body": [
+      "public:",
+      "\t${1:/*members*/}"
+    ]
+  },
+  "priv": {
+    "prefix": "priv",
+    "description": "private (priv)",
+    "body": [
+      "private:",
+      "\t${1:/*members*/}"
+    ]
+  },
+  "prot": {
+    "prefix": "prot",
+    "description": "protected (prot)",
+    "body": [
+      "protected:",
+      "\t${1:/*members*/}"
+    ]
+  },
+  "pack": {
+    "prefix": "pack",
+    "description": "package (pack)",
+    "body": [
+      "package:",
+      "\t${1:/*members*/}"
+    ]
+  },
+  "ret": {
+    "prefix": "ret",
+    "description": "return (ret)",
+    "body": "return ${1:/*value to return*/};"
+  },
+  "auto": {
+    "prefix": "auto",
+    "description": "auto (auto)",
+    "body": "auto ${1:/*variable*/} = ${2:/*value*/};"
+  },
+  "con": {
+    "prefix": "con",
+    "description": "const (con)",
+    "body": "const ${1:/*variable*/} = ${2:/*value*/};"
+  },
+  "siz": {
+    "prefix": "siz",
+    "description": "size_t (siz)",
+    "body": "size_t ${1:/*variable*/} = ${2:/*value*/};"
+  },
+  "sup": {
+    "prefix": "sup",
+    "description": "super (sup)",
+    "body": "super(${1:/*args*/});"
+  },
+  "tup": {
+    "prefix": "tup",
+    "description": "tuple (tup)",
+    "body": "tuple(${1:/*args*/})"
+  },
+  "wr": {
+    "prefix": "wr",
+    "description": "writeln (wr)",
+    "body": "writeln(${1:/*args*/});"
+  },
+  "to": {
+    "prefix": "to",
+    "description": "to (to)",
+    "body": "to!(${1:/*type*/})(${2:/*arg*/})"
+  },
+  "enf": {
+    "prefix": "enf",
+    "description": "enforce (enf)",
+    "body": [
+      "enforce(${1:/*condition*/},",
+      "\tnew $2Exception(${3:/*args*/}));"
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "description": "if .. (if)",
+    "body": [
+      "if(${1:/*condition*/})",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "if .. else (ife)",
+    "body": [
+      "if(${1:/*condition*/})",
+      "{",
+      "\t$2",
+      "\\}",
+      "else",
+      "{",
+      "\t${3:/*else*/}",
+      "\\}"
+    ]
+  },
+  "el": {
+    "prefix": "el",
+    "description": "else (el)",
+    "body": [
+      "else",
+      "{",
+      "\t$TM_SELECTED_TEXT$1",
+      "\\}"
+    ]
+  },
+  "elif": {
+    "prefix": "elif",
+    "description": "else if (elif)",
+    "body": [
+      "else if(${1:/*condition*/})",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "sw": {
+    "prefix": "sw",
+    "description": "switch (sw)",
+    "body": [
+      "switch(${1:/*var*/})",
+      "{",
+      "\tcase ${2:/*value*/}:",
+      "\t\t$3",
+      "\t\tbreak;",
+      "\tcase ${4:/*value*/}:",
+      "\t\t$5",
+      "\t\tbreak;",
+      "\t${7:/*more cases*/}",
+      "\tdefault:",
+      "\t\t${6:assert(false);}",
+      "\\}"
+    ]
+  },
+  "fsw": {
+    "prefix": "fsw",
+    "description": "final switch (fsw)",
+    "body": [
+      "final switch(${1:/*var*/})",
+      "{",
+      "\tcase ${2:/*value*/}:",
+      "\t\t$3",
+      "\t\tbreak;",
+      "\tcase ${4:/*value*/}:",
+      "\t\t$5",
+      "\t\tbreak;",
+      "\t${7:/*more cases*/}",
+      "\\}"
+    ]
+  },
+  "case": {
+    "prefix": "case",
+    "description": "case (case)",
+    "body": [
+      "case ${1:/*value*/}:",
+      "\t$2",
+      "\tbreak;"
+    ]
+  },
+  "?:": {
+    "prefix": "?:",
+    "description": "ternary operator (?:)",
+    "body": "${1:/*condition*/} ? ${2:/*then*/} : ${3:/*else*/}$4"
+  },
+  "do": {
+    "prefix": "do",
+    "description": "do while (do)",
+    "body": [
+      "do",
+      "{",
+      "\t$TM_SELECTED_TEXT$2",
+      "\\} while(${1:/*condition*/});"
+    ]
+  },
+  "wh": {
+    "prefix": "wh",
+    "description": "while (wh)",
+    "body": [
+      "while(${1:/*condition*/})",
+      "{",
+      "\t$TM_SELECTED_TEXT$2",
+      "\\}"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "for (for)",
+    "body": [
+      "for (${4:size_t} ${2:i} = 0; $2 < ${1:count}; ${3:++$2})",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "forever": {
+    "prefix": "forever",
+    "description": "forever (forever)",
+    "body": [
+      "for(;;)",
+      "{",
+      "\t$TM_SELECTED_TEXT$0",
+      "\\}"
+    ]
+  },
+  "fore": {
+    "prefix": "fore",
+    "description": "foreach (fore)",
+    "body": [
+      "foreach(${1:/*elem*/}; ${2:/*range*/})",
+      "{",
+      "\t$TM_SELECTED_TEXT$3",
+      "\\}"
+    ]
+  },
+  "forif": {
+    "prefix": "forif",
+    "description": "foreach if (forif)",
+    "body": [
+      "foreach(${1:/*elem*/}; ${2:/*range*/}) if(${3:/*condition*/})",
+      "{",
+      "\t$TM_SELECTED_TEXT$4",
+      "\\}"
+    ]
+  },
+  "in": {
+    "prefix": "in",
+    "description": "in contract (in)",
+    "body": [
+      "in",
+      "{",
+      "\tassert(${1:/*condition*/}, \"${2:error message}\");",
+      "\t$3",
+      "\\}",
+      "body"
+    ]
+  },
+  "out": {
+    "prefix": "out",
+    "description": "out contract (out)",
+    "body": [
+      "out${1:(result)}",
+      "{",
+      "\tassert(${2:/*condition*/}, \"${3:error message}\");",
+      "\t$4",
+      "\\}",
+      "body"
+    ]
+  },
+  "inv": {
+    "prefix": "inv",
+    "description": "invariant (inv)",
+    "body": [
+      "invariant()",
+      "{",
+      "\tassert(${1:/*condition*/}, \"${2:error message}\");",
+      "\t$3",
+      "\\}"
+    ]
+  },
+  "fun": {
+    "prefix": "fun",
+    "description": "function definition (fun)",
+    "body": [
+      "${1:void} ${2:/*function name*/}(${3:/*args*/}) ${4:@safe pure nothrow}",
+      "{",
+      "\t$TM_SELECTED_TEXT$5",
+      "\\}"
+    ]
+  },
+  "void": {
+    "prefix": "void",
+    "description": "void function definition (void)",
+    "body": [
+      "void ${1:/*function name*/}(${2:/*args*/}) ${3:@safe pure nothrow}",
+      "{",
+      "\t$TM_SELECTED_TEXT$4",
+      "\\}"
+    ]
+  },
+  "this": {
+    "prefix": "this",
+    "description": "ctor (this)",
+    "body": [
+      "this(${1:/*args*/})",
+      "{",
+      "\t$TM_SELECTED_TEXT$2",
+      "\\}"
+    ]
+  },
+  "get": {
+    "prefix": "get",
+    "description": "getter property (get)",
+    "body": "@property ${1:/*type*/} ${2:/*member_name*/}() const pure nothrow {return ${3:$2_};\\}"
+  },
+  "set": {
+    "prefix": "set",
+    "description": "setter property (set)",
+    "body": "@property void ${1:/*member_name*/}(${2:/*type*/} rhs) pure nothrow {${3:$1_} = rhs;\\}"
+  },
+  "main": {
+    "prefix": "main",
+    "description": "Main",
+    "body": [
+      "void main(string[] args)",
+      "{",
+      "\t$TM_SELECTED_TEXT${0: /*code*/}",
+      "\\}"
+    ]
+  },
+  "signal": {
+    "prefix": "signal",
+    "description": "signal (signal)",
+    "body": "mixin Signal!(${1:/*args*/}) ${2:/*name*/};"
+  },
+  "scope": {
+    "prefix": "scope",
+    "description": "scope (scope)",
+    "body": [
+      "scope(${1:exit})",
+      "{",
+      "\t$TM_SELECTED_TEXT$2",
+      "\\}"
+    ]
+  },
+  "with": {
+    "prefix": "with",
+    "description": "with (with)",
+    "body": [
+      "with($1)",
+      "{",
+      "\t$TM_SELECTED_TEXT$2",
+      "\\}"
+    ]
+  },
+  "try": {
+    "prefix": "try",
+    "description": "try/catch (try)",
+    "body": [
+      "try",
+      "{",
+      "\t$TM_SELECTED_TEXT${1:/*code to try*/}",
+      "\\}",
+      "catch($2Exception e)",
+      "{",
+      "\t${3:/*handle exception*/}",
+      "\\}"
+    ]
+  },
+  "tryf": {
+    "prefix": "tryf",
+    "description": "try/catch/finally (tryf)",
+    "body": [
+      "try",
+      "{",
+      "\t$TM_SELECTED_TEXT${1:/*code to try*/}",
+      "\\}",
+      "catch($2Exception e)",
+      "{",
+      "\t${3:/*handle exception*/}",
+      "\\}",
+      "finally",
+      "{",
+      "\t${4:/*cleanup*/}",
+      "\\}"
+    ]
+  },
+  "catch": {
+    "prefix": "catch",
+    "description": "catch (catch)",
+    "body": [
+      "catch($1Exception e)",
+      "{",
+      "\t${2:/*handle exception*/}",
+      "\\}"
+    ]
+  },
+  "thr": {
+    "prefix": "thr",
+    "description": "throw (thr)",
+    "body": "throw new $1Exception(\"$2\");"
+  },
+  "exc": {
+    "prefix": "exc",
+    "description": "exception declaration (exc)",
+    "body": [
+      "/// ${3:/*documentation*/}",
+      "class $1Exception : $2Exception",
+      "{",
+      "\tpublic this(string msg, string file = __FILE__, int line = __LINE__)",
+      "\t{",
+      "\t\tsuper(msg, file, line);",
+      "\t\\}",
+      "\\}"
+    ]
+  },
+  "version": {
+    "prefix": "version",
+    "description": "version (version)",
+    "body": [
+      "version(${1:/*version name*/})",
+      "{",
+      "\t$TM_SELECTED_TEXT$2",
+      "\\}"
+    ]
+  },
+  "debug": {
+    "prefix": "debug",
+    "description": "debug",
+    "body": [
+      "debug",
+      "{",
+      "\t$TM_SELECTED_TEXT$1",
+      "\\}"
+    ]
+  },
+  "temp": {
+    "prefix": "temp",
+    "description": "template (temp)",
+    "body": [
+      "template ${2:/*name*/}(${1:/*args*/})",
+      "{",
+      "\t$3",
+      "\\}"
+    ]
+  },
+  "ass": {
+    "prefix": "ass",
+    "description": "assert (ass)",
+    "body": [
+      "assert(${1:false}, \"${2:TODO}\");",
+      ""
+    ]
+  },
+  "unittest": {
+    "prefix": "unittest",
+    "description": "unittest (unittest)",
+    "body": [
+      "unittest",
+      "{",
+      "\t$1",
+      "\\}"
+    ]
+  },
+  "opDis": {
+    "prefix": "opDis",
+    "description": "opDispatch (opDis)",
+    "body": [
+      "${1:/*return type*/} opDispatch(string s)()",
+      "{",
+      "\t$2;",
+      "\\}"
+    ]
+  },
+  "op=": {
+    "prefix": "op=",
+    "description": "opAssign (op=)",
+    "body": [
+      "void opAssign($1 rhs) ${2:@safe pure nothrow}",
+      "{",
+      "\t$2",
+      "\\}"
+    ]
+  },
+  "opCmp": {
+    "prefix": "opCmp",
+    "description": "opCmp (opCmp)",
+    "body": [
+      "int opCmp($1 rhs) @safe const pure nothrow",
+      "{",
+      "\t$2",
+      "\\}"
+    ]
+  },
+  "opApply": {
+    "prefix": "opApply",
+    "description": "opApply (opApply)",
+    "body": [
+      "int opApply(int delegate(ref ${1:/*iterated type/s*/}) dg)",
+      "{",
+      "\tint result = 0;",
+      "\t${2:/*loop*/}",
+      "\t{",
+      "\t\tresult = dg(${3:/*arg/s*/});",
+      "\t\tif(result){break;\\}",
+      "\t\\}",
+      "\treturn result;",
+      "\\}"
+    ]
+  },
+  "toString": {
+    "prefix": "toString",
+    "description": "toString (toString)",
+    "body": [
+      "string toString() @safe const pure nothrow",
+      "{",
+      "\t$1",
+      "\\}"
+    ]
+  },
+  "todo": {
+    "prefix": "todo",
+    "description": "TODO (todo)",
+    "body": "// TODO: $1"
+  },
+  "doc": {
+    "prefix": "doc",
+    "description": "generic ddoc block (doc)",
+    "body": [
+      "/// ${1:description}",
+      "///",
+      "/// ${2:details}"
+    ]
+  },
+  "fdoc": {
+    "prefix": "fdoc",
+    "description": "function ddoc block (fdoc)",
+    "body": [
+      "/// ${1:description}",
+      "///",
+      "/// ${2:Params:  ${3:param} = ${4:param description}",
+      "///\t\t\t $5}",
+      "///",
+      "/// ${6:Returns: ${7:return value}}",
+      "///",
+      "/// ${8:Throws:  $9Exception $10}"
+    ]
+  },
+  "Par": {
+    "prefix": "Par",
+    "description": "Params (Par)",
+    "body": [
+      "Params:  ${1:param} = ${2:param description}",
+      "///\t\t\t$3"
+    ]
+  },
+  "Ret": {
+    "prefix": "Ret",
+    "description": "Returns (Ret)",
+    "body": "Returns:  ${1:return value/s}"
+  },
+  "Thr": {
+    "prefix": "Thr",
+    "description": "Throws (Thr)",
+    "body": "Throws:  $1Exception $2"
+  },
+  "Example": {
+    "prefix": "Example",
+    "description": "Examples (Example)",
+    "body": [
+      "Examples:",
+      "/// --------------------",
+      "/// ${1:example code}",
+      "/// --------------------"
+    ]
+  }
+}

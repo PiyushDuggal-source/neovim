@@ -1,0 +1,22 @@
+{
+  "append": {
+    "prefix": "append",
+    "description": "{append} is used for creating or appending template variable arrays during the execution of a template.",
+    "body": "{append var='$1' value='$2'${3: index='${4|first,last|}'}${5: scope='${6|parent,root,global|}'}\\}"
+  },
+  "assign": {
+    "prefix": "assign",
+    "description": "{assign} is used for assigning template variables during the execution of a template.",
+    "body": "{assign var='$1' value='$2'${3: scope='${4|parent,root,global|}'}\\}"
+  },
+  "config_load": {
+    "prefix": "config_load",
+    "description": "config_load",
+    "body": "{config_load file='$1'${2: section='$3'}${4: scope='${5|local,parent,global|}'}\\}"
+  },
+  "include": {
+    "prefix": "include",
+    "description": "{include} tags are used for including other templates in the current template. Any variables available in the current template are also available within the included template.",
+    "body": "{include file='$1'${2: assign='$3'}${4: cache_lifetime=$5}${6: compile_id='$7'}${8: cache_id='$9'}${10: scope='${11|parent,root,global|}'}${12: variables}\\}"
+  }
+}

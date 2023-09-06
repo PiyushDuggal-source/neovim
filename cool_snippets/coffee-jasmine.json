@@ -1,0 +1,210 @@
+{
+  "des": {
+    "prefix": "des",
+    "description": "Describe (coffee)",
+    "body": [
+      "describe '${1:description}', ->",
+      "\t$0"
+    ],
+    "luasnip": {
+      "priority": -49
+    }
+  },
+  "it": {
+    "prefix": "it",
+    "description": "it (coffee)",
+    "body": [
+      "it '${1:description}', ->",
+      "\t$0"
+    ]
+  },
+  "bef": {
+    "prefix": "bef",
+    "description": "before each (coffee)",
+    "body": [
+      "beforeEach ->",
+      "\t$0"
+    ]
+  },
+  "aft": {
+    "prefix": "aft",
+    "description": "after each (coffee)",
+    "body": [
+      "afterEach ->",
+      "\t$0"
+    ]
+  },
+  "any": {
+    "prefix": "any",
+    "description": "any (coffee)",
+    "body": "jasmine.any($1)"
+  },
+  "ru": {
+    "prefix": "ru",
+    "description": "runs (coffee)",
+    "body": [
+      "runs ->",
+      "\t$0"
+    ]
+  },
+  "wa": {
+    "prefix": "wa",
+    "description": "waits (coffee)",
+    "body": "waits($1)"
+  },
+  "ex": {
+    "prefix": "ex",
+    "description": "expect (coffee)",
+    "body": "expect(${1:target})$0"
+  },
+  "ee": {
+    "prefix": "ee",
+    "description": "expect to equal (coffee)",
+    "body": "expect(${1:target}).toEqual(${2:value})"
+  },
+  "em": {
+    "prefix": "em",
+    "description": "expect to match (coffee)",
+    "body": "expect(${1:target}).toMatch(${2:pattern})"
+  },
+  "eha": {
+    "prefix": "eha",
+    "description": "expect to have attribute (coffee)",
+    "body": "expect(${1:target}).toHaveAttr('${2:attr}'${3:, '${4:value}'})"
+  },
+  "et": {
+    "prefix": "et",
+    "description": "expect to be truthy (coffee)",
+    "body": "expect(${1:target}).toBeTruthy()"
+  },
+  "ef": {
+    "prefix": "ef",
+    "description": "expect to be falsy (coffee)",
+    "body": "expect(${1:target}).toBeFalsy()"
+  },
+  "ed": {
+    "prefix": "ed",
+    "description": "expect to be defined (coffee)",
+    "body": "expect(${1:target}).toBeDefined()"
+  },
+  "en": {
+    "prefix": "en",
+    "description": "expect to be null (coffee)",
+    "body": "expect(${1:target}).toBeNull()"
+  },
+  "ec": {
+    "prefix": "ec",
+    "description": "expect to contain (coffee)",
+    "body": "expect(${1:target}).toContain(${2:value})"
+  },
+  "ev": {
+    "prefix": "ev",
+    "description": "expect to be visible (coffee)",
+    "body": "expect(${1:target}).toBeVisible()"
+  },
+  "eh": {
+    "prefix": "eh",
+    "description": "expect to be hidden (coffee)",
+    "body": "expect(${1:target}).toBeHidden()"
+  },
+  "notx": {
+    "prefix": "notx",
+    "description": "expect not (coffee)",
+    "body": "expect(${1:target}).not$0"
+  },
+  "note": {
+    "prefix": "note",
+    "description": "expect not to equal (coffee)",
+    "body": "expect(${1:target}).not.toEqual(${2:value})"
+  },
+  "notm": {
+    "prefix": "notm",
+    "description": "expect not to match (coffee)",
+    "body": "expect(${1:target}).not.toMatch(${2:pattern})"
+  },
+  "notha": {
+    "prefix": "notha",
+    "description": "expect to not have attribute (coffee)",
+    "body": "expect(${1:target}).not.toHaveAttr('${2:attr}'${3:, '${4:value}'})"
+  },
+  "nott": {
+    "prefix": "nott",
+    "description": "expect not to be truthy (coffee)",
+    "body": "expect(${1:target}).not.toBeTruthy()"
+  },
+  "notf": {
+    "prefix": "notf",
+    "description": "expect not to be falsy (coffee)",
+    "body": "expect(${1:target}).not.toBeFalsy()"
+  },
+  "notd": {
+    "prefix": "notd",
+    "description": "expect not to be defined (coffee)",
+    "body": "expect(${1:target}).not.toBeDefined()"
+  },
+  "notn": {
+    "prefix": "notn",
+    "description": "expect not to be null (coffee)",
+    "body": "expect(${1:target}).not.toBeNull()"
+  },
+  "notc": {
+    "prefix": "notc",
+    "description": "expect not to contain (coffee)",
+    "body": "expect(${1:target}).not.toContain(${2:value})"
+  },
+  "notv": {
+    "prefix": "notv",
+    "description": "expect not to be visible (coffee)",
+    "body": "expect(${1:target}).not.toBeVisible()"
+  },
+  "noth": {
+    "prefix": "noth",
+    "description": "expect not to be hidden (coffee)",
+    "body": "expect(${1:target}).not.toBeHidden()"
+  },
+  "s": {
+    "prefix": "s",
+    "description": "spy on (coffee)",
+    "body": "spyOn(${1:object}, \"${2:method}\")$0"
+  },
+  "sr": {
+    "prefix": "sr",
+    "description": "spy on and return (coffee)",
+    "body": "spyOn(${1:object}, \"${2:method}\").andReturn(${3:arguments})"
+  },
+  "st": {
+    "prefix": "st",
+    "description": "spy on and throw (coffee)",
+    "body": "spyOn(${1:object}, \"${2:method}\").andThrow(${3:exception})"
+  },
+  "sct": {
+    "prefix": "sct",
+    "description": "spy on and call through (coffee)",
+    "body": "spyOn(${1:object}, \"${2:method}\").andCallThrough()"
+  },
+  "scf": {
+    "prefix": "scf",
+    "description": "spy on and call fake (coffee)",
+    "body": "spyOn(${1:object}, \"${2:method}\").andCallFake(${3:function})"
+  },
+  "esc": {
+    "prefix": "esc",
+    "description": "expect was called (coffee)",
+    "body": "expect(${1:target}).wasCalled()"
+  },
+  "escw": {
+    "prefix": "escw",
+    "description": "expect was called with (coffee)",
+    "body": "expect(${1:target}).wasCalledWith(${2:arguments})"
+  },
+  "notsc": {
+    "prefix": "notsc",
+    "description": "expect was not called (coffee)",
+    "body": "expect(${1:target}).wasNotCalled()"
+  },
+  "noscw": {
+    "prefix": "noscw",
+    "description": "expect was not called with (coffee)",
+    "body": "expect(${1:target}).wasNotCalledWith(${2:arguments})"
+  }
+}

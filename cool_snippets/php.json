@@ -1,0 +1,109 @@
+{
+  "pub": {
+    "prefix": "pub",
+    "description": "Public function",
+    "body": [
+      "/**",
+      " * ${3:undocumented function}",
+      " *",
+      " * @return ${4:void}",
+      " */",
+      "public function ${1:name}(${2:\\$param})",
+      "{",
+      "\t$TM_SELECTED_TEXT${5:return null;}",
+      "\\}",
+      "$0"
+    ]
+  },
+  "pro": {
+    "prefix": "pro",
+    "description": "Protected function",
+    "body": [
+      "/**",
+      " * ${3:undocumented function}",
+      " *",
+      " * @return ${4:void}",
+      " */",
+      "protected function ${1:name}(${2:\\$param})",
+      "{",
+      "\t$TM_SELECTED_TEXT${5:return null;}",
+      "\\}",
+      "$0"
+    ]
+  },
+  "pri": {
+    "prefix": "pri",
+    "description": "Private function",
+    "body": [
+      "/**",
+      " * ${3:undocumented function}",
+      " *",
+      " * @return ${4:void}",
+      " */",
+      "private function ${1:name}(${2:\\$param})",
+      "{",
+      "\t$TM_SELECTED_TEXT${5:return null;}",
+      "\\}",
+      "$0"
+    ]
+  },
+  "pubs": {
+    "prefix": "pubs",
+    "description": "Public static function",
+    "body": [
+      "/**",
+      " * ${3:undocumented function}",
+      " *",
+      " * @return ${4:void}",
+      " */",
+      "public static function ${1:name}(${2:\\$param})",
+      "{",
+      "\t$TM_SELECTED_TEXT${5:return null;}",
+      "\\}",
+      "$0"
+    ]
+  },
+  "pros": {
+    "prefix": "pros",
+    "description": "Protected static function",
+    "body": [
+      "/**",
+      " * ${3:undocumented function}",
+      " *",
+      " * @return ${4:void}",
+      " */",
+      "protected static function ${1:name}(${2:\\$param})",
+      "{",
+      "\t$TM_SELECTED_TEXT${5:return null;}",
+      "\\}",
+      "$0"
+    ]
+  },
+  "pris": {
+    "prefix": "pris",
+    "description": "Private static function",
+    "body": [
+      "/**",
+      " * ${3:undocumented function}",
+      " *",
+      " * @return ${4:void}",
+      " */",
+      "private static function ${1:name}(${2:\\$param})",
+      "{",
+      "\t$TM_SELECTED_TEXT${5:return null;}",
+      "\\}",
+      "$0"
+    ]
+  },
+  "fu": {
+    "prefix": "fu",
+    "description": "Function snip",
+    "body": [
+      "function ${1:name}(${2:\\$param})",
+      "{",
+      "\t$TM_SELECTED_TEXT${3:return null;}",
+      "\\}",
+      "$0"
+    ]
+  }
+}

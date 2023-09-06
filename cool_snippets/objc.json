@@ -1,0 +1,120 @@
+{
+  "Imp": {
+    "prefix": "Imp",
+    "description": "#import <> (Imp)",
+    "body": "#import <${1:Cocoa/Cocoa.h}>"
+  },
+  "array": {
+    "prefix": "array",
+    "description": "NSArray (array)",
+    "body": "NSMutableArray *${1:array} = [NSMutableArray array];"
+  },
+  "dict": {
+    "prefix": "dict",
+    "description": "NSDictionary (dict)",
+    "body": "NSMutableDictionary *${1:dict} = [NSMutableDictionary dictionary];"
+  },
+  "forarray": {
+    "prefix": "forarray",
+    "description": "for NSArray loop (forarray)",
+    "body": [
+      "unsigned int\t${1:object}Count = [${2:array} count];",
+      "",
+      "for(unsigned int index = 0; index < $1Count; index += 1)",
+      "{",
+      "\t${3:id}\t$1 = [$2 objectAtIndex:index];",
+      "\t$0",
+      "\\}"
+    ]
+  },
+  "sel": {
+    "prefix": "sel",
+    "description": "@selector",
+    "body": "@selector(${1:method}:)"
+  },
+  "thread": {
+    "prefix": "thread",
+    "description": "Detach New NSThread",
+    "body": "[NSThread detachNewThreadSelector:@selector(${1:method}:) toTarget:${2:aTarget} withObject:${3:anArgument}]"
+  },
+  "I": {
+    "prefix": "I",
+    "description": "Initialize Implementation (I)",
+    "body": [
+      "+ (void)initialize",
+      "{",
+      "\t[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:",
+      "\t\t$0@\"value\", @\"key\",",
+      "\t\tnil]];",
+      "\\}"
+    ]
+  },
+  "bind": {
+    "prefix": "bind",
+    "description": "Key:value binding (bind)",
+    "body": "bind:@\"${1:binding}\" toObject:${2:observableController} withKeyPath:@\"${3:keyPath}\" options:${4:nil}"
+  },
+  "focus": {
+    "prefix": "focus",
+    "description": "Lock Focus",
+    "body": [
+      "[self lockFocus];",
+      "$0",
+      "[self unlockFocus];"
+    ]
+  },
+  "pool": {
+    "prefix": "pool",
+    "description": "NSAutoreleasePool (pool)",
+    "body": [
+      "NSAutoreleasePool *pool = [NSAutoreleasePool new];",
+      "$0",
+      "[pool drain];"
+    ]
+  },
+  "alert": {
+    "prefix": "alert",
+    "description": "NSRunAlertPanel (alert)",
+    "body": [
+      "int choice = NSRunAlertPanel(@\"${1:Something important!}\", @\"${2:Something important just happend, and now I need to ask you, do you want to continue?}\", @\"${3:Continue}\", @\"${4:Cancel}\", nil);",
+      "if(choice == NSAlertDefaultReturn) // \"$3\"",
+      "{",
+      "\t$0;",
+      "\\}",
+      "else if(choice == NSAlertAlternateReturn) // \"$4\"",
+      "{",
+      "\t\t$0",
+      "\\}"
+    ]
+  },
+  "format": {
+    "prefix": "format",
+    "description": "NSString stringWithFormat (format)",
+    "body": "[NSString stringWithFormat:@\"$1\", $2]$0"
+  },
+  "getprefs": {
+    "prefix": "getprefs",
+    "description": "Read from defaults (getprefs)",
+    "body": "[[NSUserDefaults standardUserDefaults] objectForKey:${1:key}];"
+  },
+  "gsave": {
+    "prefix": "gsave",
+    "description": "Save and Restore Graphics Context (gsave)",
+    "body": [
+      "[NSGraphicsContext saveGraphicsState];",
+      "$0",
+      "[NSGraphicsContext restoreGraphicsState];",
+      ""
+    ]
+  },
+  "syn": {
+    "prefix": "syn",
+    "description": "Synthesize",
+    "body": "@synthesize ${1:property};"
+  },
+  "setprefs": {
+    "prefix": "setprefs",
+    "description": "Write to defaults (setprefs)",
+    "body": "[[NSUserDefaults standardUserDefaults] setObject:${1:object} forKey:${2:key}];"
+  }
+}

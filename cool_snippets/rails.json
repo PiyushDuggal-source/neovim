@@ -1,0 +1,886 @@
+{
+  "anaf": {
+    "prefix": "anaf",
+    "description": "accepts_nested_attributes_for",
+    "body": [
+      "accepts_nested_attributes_for :${1:association_name}\\${2:${3:, allow_destroy: true}${4:, reject_if: proc { |obj| ${5:obj.blank?} \\}\\}}",
+      ""
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "tcbi": {
+    "prefix": "tcbi",
+    "description": "Create binary column",
+    "body": [
+      "t.binary :${1:title}${2:, limit: ${3:2}.megabytes}",
+      "$0"
+    ]
+  },
+  "tcb": {
+    "prefix": "tcb",
+    "description": "Create boolean column",
+    "body": [
+      "t.boolean :${1:title}",
+      "$0"
+    ]
+  },
+  "clac": {
+    "prefix": "clac",
+    "description": "Create controller class",
+    "body": [
+      "class ${1:Model}Controller < ApplicationController",
+      "\tbefore_action :find_${2:model}",
+      "",
+      "\t$0",
+      "",
+      "\tprivate",
+      "\tdef find_$2",
+      "\t\t@$2 = ${3:$1}.find(params[:id]) if params[:id]",
+      "\tend",
+      "end"
+    ]
+  },
+  "tcda": {
+    "prefix": "tcda",
+    "description": "Create date column",
+    "body": [
+      "t.date :${1:title}",
+      "$0"
+    ]
+  },
+  "tcdt": {
+    "prefix": "tcdt",
+    "description": "Create datetime column",
+    "body": [
+      "t.datetime :${1:title}",
+      "$0"
+    ]
+  },
+  "tcd": {
+    "prefix": "tcd",
+    "description": "Create decimal column",
+    "body": [
+      "t.decimal :${1:title}${2:${3:, precision: ${4:10}}${5:, scale: ${6:2}}}",
+      "$0"
+    ]
+  },
+  "tcf": {
+    "prefix": "tcf",
+    "description": "Create float column",
+    "body": [
+      "t.float :${1:title}",
+      "$0"
+    ]
+  },
+  "clact": {
+    "prefix": "clact",
+    "description": "Create functional test class",
+    "body": [
+      "require 'test_helper'",
+      "",
+      "class ${1:Model}ControllerTest < ActionController::TestCase",
+      "\ttest$0",
+      "end",
+      ""
+    ]
+  },
+  "tci": {
+    "prefix": "tci",
+    "description": "Create integer column",
+    "body": [
+      "t.integer :${1:title}",
+      "$0"
+    ]
+  },
+  "tcl": {
+    "prefix": "tcl",
+    "description": "Create lock_version column",
+    "body": [
+      "t.integer :lock_version, null: false, default: 0",
+      "$0"
+    ]
+  },
+  "tcr": {
+    "prefix": "tcr",
+    "description": "Create references column",
+    "body": [
+      "t.references :${1:taggable}${2:, polymorphic: ${3:{ default: '${4:Photo}' \\}}}",
+      "$0"
+    ]
+  },
+  "tcs": {
+    "prefix": "tcs",
+    "description": "Create string column",
+    "body": [
+      "t.string :${1:title}",
+      "$0"
+    ]
+  },
+  "tct": {
+    "prefix": "tct",
+    "description": "Create text column",
+    "body": [
+      "t.text :${1:title}",
+      "$0"
+    ]
+  },
+  "tcti": {
+    "prefix": "tcti",
+    "description": "Create time column",
+    "body": [
+      "t.time :${1:title}",
+      "$0"
+    ]
+  },
+  "tcts": {
+    "prefix": "tcts",
+    "description": "Create timestamp column",
+    "body": [
+      "t.timestamp :${1:title}",
+      "$0"
+    ]
+  },
+  "tctss": {
+    "prefix": "tctss",
+    "description": "Create timestamps columns",
+    "body": [
+      "t.timestamps",
+      "$0"
+    ]
+  },
+  "mccc": {
+    "prefix": "mccc",
+    "description": "Migration Create Column Continue (mccc)",
+    "body": [
+      "t.column ${1:title}, :${2:string}",
+      "mccc$0"
+    ]
+  },
+  "mtab": {
+    "prefix": "mtab",
+    "description": "Migration Drop Create Table (mdct)",
+    "body": "drop_table :${1:table}${2: [press tab twice to generate create_table]}"
+  },
+  "mcol": {
+    "prefix": "mcol",
+    "description": "Migration Remove and Add Column (mrac)",
+    "body": "remove_column :${1:table}, :${2:column}${3: [press tab twice to generate add_column]}"
+  },
+  "rdb": {
+    "prefix": "rdb",
+    "description": "RAILS_DEFAULT_LOGGER.debug (rdb)",
+    "body": "RAILS_DEFAULT_LOGGER.debug \"${1:message}\"$0"
+  },
+  "tre": {
+    "prefix": "tre",
+    "description": "Table column(s) rename",
+    "body": [
+      "t.rename(:${1:old_column_name}, :${2:new_column_name})",
+      "$0"
+    ]
+  },
+  "art": {
+    "prefix": "art",
+    "description": "Test Assert Redirected To (art)",
+    "body": "assert_redirected_to ${2:action: \"${1:index}\"}"
+  },
+  "asre": {
+    "prefix": "asre",
+    "description": "Test Assert Response (are)",
+    "body": "assert_response :${1:success}, @response.body$0"
+  },
+  "aftc": {
+    "prefix": "aftc",
+    "description": "after_create",
+    "body": "after_create $0"
+  },
+  "aftd": {
+    "prefix": "aftd",
+    "description": "after_destroy",
+    "body": "after_destroy $0"
+  },
+  "afts": {
+    "prefix": "afts",
+    "description": "after_save",
+    "body": "after_save $0"
+  },
+  "aftu": {
+    "prefix": "aftu",
+    "description": "after_update",
+    "body": "after_update $0"
+  },
+  "aftv": {
+    "prefix": "aftv",
+    "description": "after_validation",
+    "body": "after_validation $0"
+  },
+  "aftvoc": {
+    "prefix": "aftvoc",
+    "description": "after_validation_on_create",
+    "body": "after_validation_on_create $0"
+  },
+  "aftvou": {
+    "prefix": "aftvou",
+    "description": "after_validation_on_update",
+    "body": "after_validation_on_update $0"
+  },
+  "asg": {
+    "prefix": "asg",
+    "description": "assert(var = assigns(:var))",
+    "body": [
+      "assert(${1:var} = assigns(:$1), \"Cannot find @$1\")",
+      "$0"
+    ]
+  },
+  "asd": {
+    "prefix": "asd",
+    "description": "assert_difference",
+    "body": [
+      "assert_difference \"${1:Model}.${2:count}\", ${3:1} do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "asnd": {
+    "prefix": "asnd",
+    "description": "assert_no_difference",
+    "body": [
+      "assert_no_difference \"${1:Model}.${2:count}\" do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "artnpp": {
+    "prefix": "artnpp",
+    "description": "assert_redirected_to (nested path plural)",
+    "body": "assert_redirected_to ${10:${2:parent}_${3:child}_path(${4:@}${5:$2})}"
+  },
+  "artnp": {
+    "prefix": "artnp",
+    "description": "assert_redirected_to (nested path)",
+    "body": "assert_redirected_to ${2:${12:parent}_${13:child}_path(${14:@}${15:$12}, ${16:@}${17:$13})}"
+  },
+  "artpp": {
+    "prefix": "artpp",
+    "description": "assert_redirected_to (path plural)",
+    "body": "assert_redirected_to ${10:${2:model}s_path}"
+  },
+  "artp": {
+    "prefix": "artp",
+    "description": "assert_redirected_to (path)",
+    "body": "assert_redirected_to ${2:${12:model}_path(${13:@}${14:$12})}"
+  },
+  "asrj": {
+    "prefix": "asrj",
+    "description": "assert_rjs",
+    "body": "assert_rjs :${1:replace}, ${2:\"${3:dom id}\"}"
+  },
+  "ass": {
+    "prefix": "ass",
+    "description": "assert_select",
+    "body": [
+      "assert_select '${1:path}'${2:, ${3:text}: ${4:'${5:inner_html}'}}${6: do",
+      "\t$0",
+      "end}"
+    ]
+  },
+  "befc": {
+    "prefix": "befc",
+    "description": "before_create",
+    "body": "before_create $0"
+  },
+  "befd": {
+    "prefix": "befd",
+    "description": "before_destroy",
+    "body": "before_destroy $0"
+  },
+  "befs": {
+    "prefix": "befs",
+    "description": "before_save",
+    "body": "before_save $0"
+  },
+  "befu": {
+    "prefix": "befu",
+    "description": "before_update",
+    "body": "before_update $0"
+  },
+  "befv": {
+    "prefix": "befv",
+    "description": "before_validation",
+    "body": "before_validation $0"
+  },
+  "befvoc": {
+    "prefix": "befvoc",
+    "description": "before_validation_on_create",
+    "body": "before_validation_on_create $0"
+  },
+  "befvou": {
+    "prefix": "befvou",
+    "description": "before_validation_on_update",
+    "body": "before_validation_on_update"
+  },
+  "crw": {
+    "prefix": "crw",
+    "description": "cattr_accessor",
+    "body": "cattr_accessor :${0:attr_names}"
+  },
+  "test": {
+    "prefix": "test",
+    "description": "test do..end",
+    "body": [
+      "test \"${1:something interesting}\" do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "deftg": {
+    "prefix": "deftg",
+    "description": "def get request",
+    "body": [
+      "def test_should_get_${1:action}",
+      "\t${2:@${3:model} = ${4:$3s}(:${5:fixture_name})",
+      "\t}get :$1${6:, id: @$3.to_param}",
+      "\tassert_response :success",
+      "\t$0",
+      "end"
+    ]
+  },
+  "deftp": {
+    "prefix": "deftp",
+    "description": "def post request",
+    "body": [
+      "def test_should_post_${1:action}",
+      "\t${3:@$2 = ${4:$2s}(:${5:fixture_name})",
+      "\t}post :$1${6:, id: @$2.to_param}, ${2:model}: { $0 \\}",
+      "\tassert_response :redirect",
+      "",
+      "end"
+    ]
+  },
+  "fina": {
+    "prefix": "fina",
+    "description": "find(:all)",
+    "body": "find(:all${1:, conditions: ['${2:${3:field} = ?}', ${5:true}]})"
+  },
+  "finf": {
+    "prefix": "finf",
+    "description": "find(:first)",
+    "body": "find(:first${1:, conditions: ['${2:${3:field} = ?}', ${5:true}]})"
+  },
+  "fini": {
+    "prefix": "fini",
+    "description": "find(id)",
+    "body": "find(${1:id})"
+  },
+  "fine": {
+    "prefix": "fine",
+    "description": "find_each",
+    "body": [
+      "find_each(\\${1conditions: {:${2:field}: ${3:true}\\}\\}) do |${4:\\${TM_CURRENT_WORD/(\\w+)\\./\\L$1/g\\}}|",
+      "\t$0",
+      "end"
+    ]
+  },
+  "finb": {
+    "prefix": "finb",
+    "description": "find_in_batches",
+    "body": [
+      "find_in_batches(\\${1conditions: {:${2:field}: ${3:true}\\}\\}) do |${4:\\${TM_CURRENT_WORD/(\\w+)\\./\\L$1/g\\}}s|",
+      "\t$4s.each do |$4|",
+      "\t\t$0",
+      "\tend",
+      "end"
+    ]
+  },
+  "habtm": {
+    "prefix": "habtm",
+    "description": "has_and_belongs_to_many (habtm)",
+    "body": "has_and_belongs_to_many :${1:object}${2:, join_table: \"${3:table_name}\", foreign_key: \"${4:$1_id}\"}"
+  },
+  "hm": {
+    "prefix": "hm",
+    "description": "has_many (hm)",
+    "body": "has_many :${1:object}s${2:, class_name: \"$1\", foreign_key: \"${4:reference}_id\"}"
+  },
+  "hmt": {
+    "prefix": "hmt",
+    "description": "has_many (through)",
+    "body": "has_many :${1:objects}, through: :${2:join_association}${3:, source: :${4:$2_table_foreign_key_to_$1_table}}"
+  },
+  "hmd": {
+    "prefix": "hmd",
+    "description": "has_many dependent: :destroy",
+    "body": "has_many :${1:object}s${2:, class_name: \"$1\", foreign_key: \"${4:reference}_id\"}, dependent: :destroy$0"
+  },
+  "logd": {
+    "prefix": "logd",
+    "description": "logger.debug",
+    "body": "${1:Rails.}logger.debug { \"${1:message}\" \\}$0"
+  },
+  "loge": {
+    "prefix": "loge",
+    "description": "logger.error",
+    "body": "logger.error { \"${1:message}\" \\}$0"
+  },
+  "logf": {
+    "prefix": "logf",
+    "description": "logger.fatal",
+    "body": "logger.fatal { \"${1:message}\" \\}$0"
+  },
+  "logi": {
+    "prefix": "logi",
+    "description": "logger.info",
+    "body": "logger.info { \"${1:message}\" \\}$0"
+  },
+  "logw": {
+    "prefix": "logw",
+    "description": "logger.warn",
+    "body": "logger.warn { \"${1:message}\" \\}$0"
+  },
+  "mp": {
+    "prefix": "mp",
+    "description": "map(&:sym_proc)",
+    "body": "map(&:${1:id})"
+  },
+  "mapca": {
+    "prefix": "mapca",
+    "description": "map.catch_all",
+    "body": [
+      "${1:map}.catch_all \"*${2:anything}\", controller: \"${3:default}\", action: \"${4:error}\"",
+      ""
+    ]
+  },
+  "map": {
+    "prefix": "map",
+    "description": "map.named_route",
+    "body": "${1:map}.${2:connect} '${3::controller/:action/:id}'"
+  },
+  "mapr": {
+    "prefix": "mapr",
+    "description": "map.resource",
+    "body": [
+      "${1:map}.resource :${2:resource}${10: do |${11:$2}|",
+      "\t$0",
+      "end}"
+    ]
+  },
+  "maprs": {
+    "prefix": "maprs",
+    "description": "map.resources",
+    "body": [
+      "${1:map}.resources :${2:resource}${10: do |${11:$2}|",
+      "\t$0",
+      "end}"
+    ]
+  },
+  "mapwo": {
+    "prefix": "mapwo",
+    "description": "map.with_options",
+    "body": [
+      "\\${1map\\}.with_options :${2:controller}: '${3:thing}' do |${4:$3}|",
+      "\t$0",
+      "end",
+      ""
+    ]
+  },
+  "mrw": {
+    "prefix": "mrw",
+    "description": "mattr_accessor",
+    "body": "mattr_accessor :${0:attr_names}"
+  },
+  "ncl": {
+    "prefix": "ncl",
+    "description": "named_scope lambda",
+    "body": [
+      "named_scope :name, lambda { |\\${1param\\}| { :conditions: ${3:['${4:${5:field} = ?}', ${6:$1}]} \\} \\}",
+      ""
+    ]
+  },
+  "nc": {
+    "prefix": "nc",
+    "description": "named_scope",
+    "body": [
+      "named_scope :name${1:, joins: :${2:table}}, conditions: ${3:['${4:${5:field} = ?}', ${6:true}]}",
+      ""
+    ]
+  },
+  "dscope": {
+    "prefix": "dscope",
+    "description": "default_scope",
+    "body": "default_scope ${1:order(${2:'${3:created_at DESC}'})}"
+  },
+  "flash": {
+    "prefix": "flash",
+    "description": "flash[...]",
+    "body": "flash[:${1:notice}] = \"${2:Successfully created...}\"$0"
+  },
+  "rea": {
+    "prefix": "rea",
+    "description": "redirect_to (action)",
+    "body": "redirect_to action: \"${1:index}\""
+  },
+  "reai": {
+    "prefix": "reai",
+    "description": "redirect_to (action, id)",
+    "body": "redirect_to action: \"${1:show}\", id: ${0:@item}"
+  },
+  "rec": {
+    "prefix": "rec",
+    "description": "redirect_to (controller)",
+    "body": "redirect_to controller: \"${1:items}\""
+  },
+  "reca": {
+    "prefix": "reca",
+    "description": "redirect_to (controller, action)",
+    "body": "redirect_to controller: \"${1:items}\", action: \"${2:list}\""
+  },
+  "recai": {
+    "prefix": "recai",
+    "description": "redirect_to (controller, action, id)",
+    "body": "redirect_to controller: \"${1:items}\", action: \"${2:show}\", id: ${0:@item}"
+  },
+  "renpp": {
+    "prefix": "renpp",
+    "description": "redirect_to (nested path plural)",
+    "body": "redirect_to(${2:${10:parent}_${11:child}_path(${12:@}${13:$10})})"
+  },
+  "renp": {
+    "prefix": "renp",
+    "description": "redirect_to (nested path)",
+    "body": "redirect_to(${2:${12:parent}_${13:child}_path(${14:@}${15:$12}, ${16:@}${17:$13})})"
+  },
+  "repp": {
+    "prefix": "repp",
+    "description": "redirect_to (path plural)",
+    "body": "redirect_to(${2:${10:model}s_path})"
+  },
+  "rep": {
+    "prefix": "rep",
+    "description": "redirect_to (path)",
+    "body": "redirect_to(${2:${12:model}_path(${13:@}${14:$12})})"
+  },
+  "reb": {
+    "prefix": "reb",
+    "description": "redirect_to :back",
+    "body": "redirect_to :back"
+  },
+  "ra": {
+    "prefix": "ra",
+    "description": "render (action)... (ra)",
+    "body": "render action: \"${1:action}\""
+  },
+  "ral": {
+    "prefix": "ral",
+    "description": "render (action,layout) (ral)",
+    "body": "render action: \"${1:action}\", layout: \"${2:layoutname}\""
+  },
+  "rf": {
+    "prefix": "rf",
+    "description": "render (file) (rf)",
+    "body": "render file: \"${1:filepath}\""
+  },
+  "rfu": {
+    "prefix": "rfu",
+    "description": "render (file,use_full_path) (rfu)",
+    "body": "render file: \"${1:filepath}\", use_full_path: ${2:false}"
+  },
+  "ri": {
+    "prefix": "ri",
+    "description": "render (inline) (ri)",
+    "body": "render inline: \"${1:<%= 'hello' %>}\""
+  },
+  "ril": {
+    "prefix": "ril",
+    "description": "render (inline,locals) (ril)",
+    "body": "render inline: \"${1:<%= 'hello' %>}\", locals { ${2::name}: \"${3:value}\"$4 \\}"
+  },
+  "rit": {
+    "prefix": "rit",
+    "description": "render (inline,type) (rit)",
+    "body": "render inline: \"${1:<%= 'hello' %>}\", type: ${2::rjson}"
+  },
+  "rl": {
+    "prefix": "rl",
+    "description": "render (layout) (rl)",
+    "body": "render layout: \"${1:layoutname}\""
+  },
+  "rn": {
+    "prefix": "rn",
+    "description": "render (nothing) (rn)",
+    "body": "render nothing: ${1:true}"
+  },
+  "rns": {
+    "prefix": "rns",
+    "description": "render (nothing,status) (rns)",
+    "body": "render nothing: ${1:true}, status: ${2:401}"
+  },
+  "rt": {
+    "prefix": "rt",
+    "description": "render (text) (rt)",
+    "body": "render text: \"${1:text to render...}\""
+  },
+  "rtl": {
+    "prefix": "rtl",
+    "description": "render (text,layout) (rtl)",
+    "body": "render text: \"${1:text to render...}\", layout: \"${2:layoutname}\""
+  },
+  "rtlt": {
+    "prefix": "rtlt",
+    "description": "render (text,layout => true) (rtlt)",
+    "body": "render text: \"${1:text to render...}\", layout: ${2:true}"
+  },
+  "rts": {
+    "prefix": "rts",
+    "description": "render (text,status) (rts)",
+    "body": "render text: \"${1:text to render...}\", status: ${2:401}"
+  },
+  "ru": {
+    "prefix": "ru",
+    "description": "render (update)",
+    "body": [
+      "render :update do |${2:page}|",
+      "\t$2.$0",
+      "end"
+    ]
+  },
+  "rest": {
+    "prefix": "rest",
+    "description": "respond_to",
+    "body": [
+      "respond_to do |wants|",
+      "\twants.${1:html}${2: { $0 \\}}",
+      "end"
+    ]
+  },
+  "t.": {
+    "prefix": "t.",
+    "description": "t.timestamps (tctss)",
+    "body": [
+      "t.timestamps",
+      "t.$0"
+    ]
+  },
+  "vaoif": {
+    "prefix": "vaoif",
+    "description": "validates_acceptance_of if",
+    "body": "validates_acceptance_of :${1:terms}${2:${3:, accept: \"${4:1}\"}${5:, message: \"${6:You must accept the terms of service}\"}}, if: proc { |obj| ${7:obj.condition?} \\}\\}"
+  },
+  "vao": {
+    "prefix": "vao",
+    "description": "validates_acceptance_of",
+    "body": "validates :${1:terms}${2:, acceptance: ${3:{ accept: \"${4:1}\"${5:, message: \"${6:You must accept the terms of service}\"}\\}} }"
+  },
+  "va": {
+    "prefix": "va",
+    "description": "validates_associated (va)",
+    "body": "validates_associated :${1:attribute}${2:, on: :${3:create}}"
+  },
+  "vaif": {
+    "prefix": "vaif",
+    "description": "validates_associated if (vaif)",
+    "body": "validates_associated :${1:attribute}${2:, on: :${3:create}, if: proc { |obj| ${5:obj.condition?} \\}}"
+  },
+  "vc": {
+    "prefix": "vc",
+    "description": "validates_confirmation_of (vc)",
+    "body": "validates_confirmation_of :${1:attribute}${2:, on: :${3:create}, message: \"${4:should match confirmation}\"}"
+  },
+  "vcif": {
+    "prefix": "vcif",
+    "description": "validates_confirmation_of if (vcif)",
+    "body": "validates_confirmation_of :${1:attribute}${2:, on: :${3:create}, message: \"${4:should match confirmation}\", if: proc { |obj| ${5:obj.condition?} \\}}"
+  },
+  "ve": {
+    "prefix": "ve",
+    "description": "validates_exclusion_of (ve)",
+    "body": "validates_exclusion_of :${1:attribute}${2:, in: ${3:%w( ${4:mov avi} )}, on: :${5:create}, message: \"${6:extension %s is not allowed}\"}"
+  },
+  "veif": {
+    "prefix": "veif",
+    "description": "validates_exclusion_of if (veif)",
+    "body": "validates_exclusion_of :${1:attribute}${2:, in: ${3:%w( ${4:mov avi} )}, on: :${5:create}, message: \"${6:extension %s is not allowed}\"}, if: proc { |obj| ${7:obj.condition?} \\}\\}"
+  },
+  "vfif": {
+    "prefix": "vfif",
+    "description": "validates_format_of if",
+    "body": "validates_format_of :${1:attribute}, with: /${2:^[${3:\\w\\d}]+\\$}/${4:, on: :${5:create}, message: \"${6:is invalid}\"}, if: proc { |obj| ${7:obj.condition?} \\}\\}"
+  },
+  "vf": {
+    "prefix": "vf",
+    "description": "validates_format_of",
+    "body": "validates_format_of :${1:attribute}, with: /${2:^[${3:\\w\\d}]+\\$}/${4:, on: :${5:create}, message: \"${6:is invalid}\"}"
+  },
+  "viif": {
+    "prefix": "viif",
+    "description": "validates_inclusion_of if",
+    "body": "validates_inclusion_of :${1:attribute}${2:, in: ${3:%w( ${4:mov avi} )}, on: :${5:create}, message: \"${6:extension %s is not included in the list}\"}, if: proc { |obj| ${7:obj.condition?} \\}\\}"
+  },
+  "vi": {
+    "prefix": "vi",
+    "description": "validates_inclusion_of",
+    "body": "validates_inclusion_of :${1:attribute}${2:, in: ${3:%w( ${4:mov avi} )}, on: :${5:create}, message: \"${6:extension %s is not included in the list}\"}"
+  },
+  "vl": {
+    "prefix": "vl",
+    "description": "validates_length_of (vl)",
+    "body": "validates_length_of :${1:attribute}, within: ${2:3..20}${3:, on: :${4:create}, message: \"${5:must be present}\"}"
+  },
+  "vlif": {
+    "prefix": "vlif",
+    "description": "validates_length_of if",
+    "body": "validates_length_of :${1:attribute}, within: ${2:3..20}${3:, on: :${4:create}, message: \"${5:must be present}\"}, if: proc { |obj| ${6:obj.condition?} \\}\\}"
+  },
+  "vnif": {
+    "prefix": "vnif",
+    "description": "validates_numericality_of if",
+    "body": "validates_numericality_of :${1:attribute}${2:, on: :${3:create}, message: \"${4:is not a number}\"}, if: proc { |obj| ${5:obj.condition?} \\}\\}"
+  },
+  "vn": {
+    "prefix": "vn",
+    "description": "validates_numericality_of",
+    "body": "validates_numericality_of :${1:attribute}${2:, on: :${3:create}, message: \"${4:is not a number}\"}"
+  },
+  "vp": {
+    "prefix": "vp",
+    "description": "validates_presence_of (vp)",
+    "body": "validates_presence_of :${1:attribute}${2:, on: :${3:create}, message: \"${4:can't be blank}\"}"
+  },
+  "vpif": {
+    "prefix": "vpif",
+    "description": "validates_presence_of if (vpif) 2",
+    "body": "validates_presence_of :${1:attribute}${2:, on: :${3:create}, message: \"${4:can't be blank}\"}, if: proc { |obj| ${5:obj.condition?} \\}\\}"
+  },
+  "vu": {
+    "prefix": "vu",
+    "description": "validates_uniqueness_of (vu)",
+    "body": "validates_uniqueness_of :${1:attribute}${2:, on: :${3:create}, message: \"${4:must be unique}\"}"
+  },
+  "vuif": {
+    "prefix": "vuif",
+    "description": "validates_uniqueness_of if (vuif)",
+    "body": "validates_uniqueness_of :${1:attribute}${2:, on: :${3:create}, message: \"${4:must be unique}\", if: proc { |obj| ${6:obj.condition?} \\}}"
+  },
+  "verify": {
+    "prefix": "verify",
+    "description": "verify -- redirect",
+    "body": [
+      "verify only: [:$1], session: :user, params: :id, redirect_to {:action: '${2:index}'\\}",
+      ""
+    ]
+  },
+  "wants": {
+    "prefix": "wants",
+    "description": "wants_format",
+    "body": "wants.${1:js|json|html}${2: { $0 \\}}"
+  },
+  "xdelete": {
+    "prefix": "xdelete",
+    "description": "xhr delete",
+    "body": "xhr :delete, :${1:destroy}, id: ${2:1}$0"
+  },
+  "xget": {
+    "prefix": "xget",
+    "description": "xhr get",
+    "body": "xhr :get, :${1:show}${2:, id: ${3:1}}$0"
+  },
+  "xpost": {
+    "prefix": "xpost",
+    "description": "xhr post",
+    "body": "xhr :post, :${1:create}, ${2:object}: { $3 \\}"
+  },
+  "xput": {
+    "prefix": "xput",
+    "description": "xhr put",
+    "body": "xhr :put, :${1:update}, id: ${2:1}, ${3:object}: { $4 \\}$0"
+  },
+  "col": {
+    "prefix": "col",
+    "description": "collection routes",
+    "body": [
+      "collection do",
+      "\t${1:get :${2:action}}",
+      "\t${3:put :${4:action}}",
+      "\t${5:post :${6:action}}",
+      "\t${7:delete :${8:action}}",
+      "end"
+    ]
+  },
+  "format": {
+    "prefix": "format",
+    "description": "format (respond_with)",
+    "body": "format.${1:html|xml|json|js|any} { $0 \\}"
+  },
+  "gem": {
+    "prefix": "gem",
+    "description": "gem",
+    "body": "gem '${1:name}'${2:${3:, \"${4:1.0}\"}${5:${6:, require: ${7:\"${8:$1}\"}}${9:, group: :${10:test}}}}"
+  },
+  "gemg": {
+    "prefix": "gemg",
+    "description": "gem :git",
+    "body": "gem '${1:paperclip}', git: \"${2:git://github.com/thoughtbot/paperclip.git}\"${3:, branch: \"${4:rails3}\"}"
+  },
+  "match": {
+    "prefix": "match",
+    "description": "match",
+    "body": "match '${1:${2::controller}${3:/${4::action}${5:/${6::id}${7:(.:format)}}}}'${8: '${9:$2}#${10:$4}'${11:, as: :${12:$10}}}"
+  },
+  "member": {
+    "prefix": "member",
+    "description": "member routes",
+    "body": [
+      "member do",
+      "\t${1:get :${2:action}}",
+      "\t${3:put :${4:action}}",
+      "\t${5:post :${6:action}}",
+      "\t${7:delete :${8:action}}",
+      "end"
+    ]
+  },
+  "res": {
+    "prefix": "res",
+    "description": "resources",
+    "body": [
+      "resources :${1:posts}${2: do",
+      "\t$3",
+      "end}"
+    ]
+  },
+  "scope": {
+    "prefix": "scope",
+    "description": "scope",
+    "body": "scope :${1:name}, { ${2:joins(:${3:table}).}where(${4:'${5:$3.${6:field}} = ?', ${7:'${8:value}'}}) \\}"
+  },
+  "scopel": {
+    "prefix": "scopel",
+    "description": "scope lambda",
+    "body": "scope :${1:name}, lambda { |${2:param}| ${3:where(${4::${5:field}: ${6:\"${7:value}\"}})} \\}"
+  },
+  "scopee": {
+    "prefix": "scopee",
+    "description": "scope with extension",
+    "body": [
+      "scope :${1:name}, { ${2:where(${3::${4:field}: ${5:'${6:value}'}})} \\} do",
+      "\tdef ${7:method_name}",
+      "\t\t$0",
+      "\tend",
+      "end"
+    ]
+  },
+  "sb": {
+    "prefix": "sb",
+    "description": "scoped_by",
+    "body": "scoped_by_${1:attribute}(${2:id})"
+  },
+  "setup": {
+    "prefix": "setup",
+    "description": "setup do..end",
+    "body": [
+      "setup do",
+      "\t$0",
+      "end"
+    ]
+  }
+}

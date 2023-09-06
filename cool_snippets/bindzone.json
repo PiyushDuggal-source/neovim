@@ -1,0 +1,7 @@
+{
+  "A": {
+    "prefix": "A",
+    "description": "Insert A Record",
+    "body": "${1:hostname}\tIN\t\tA\t${2:ip}"
+  }
+}

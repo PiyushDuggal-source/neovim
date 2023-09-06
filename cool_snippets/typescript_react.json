@@ -1,0 +1,16 @@
+{
+  "rfc": {
+    "prefix": "rfc",
+    "description": "react functional component",
+    "body": [
+      "import React, { FC \\} from \"react\"",
+      "",
+      "interface ${1:function_name}Props {${4:props_types}\\}",
+      "",
+      "export const ${1:function_name}: FC<${1:function_name}Props> = (${2:props}) => ${3:function_body}"
+    ],
+    "luasnip": {
+      "priority": -49
+    }
+  }
+}

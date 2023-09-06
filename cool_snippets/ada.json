@@ -1,0 +1,360 @@
+{
+  "wi": {
+    "prefix": "wi",
+    "description": "with",
+    "body": "with $1;$0",
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "ent": {
+    "prefix": "ent",
+    "description": "entry ... when",
+    "body": [
+      "entry $1($2) when $3 is",
+      "begin",
+      "\t$0",
+      "end $1;"
+    ]
+  },
+  "task": {
+    "prefix": "task",
+    "description": "task",
+    "body": [
+      "task $1 is",
+      "\tentry $0",
+      "end $1;"
+    ]
+  },
+  "taskb": {
+    "prefix": "taskb",
+    "description": "task body",
+    "body": [
+      "task body $1 is",
+      "\t$2",
+      "begin",
+      "\t$0",
+      "end $1;"
+    ]
+  },
+  "acc": {
+    "prefix": "acc",
+    "description": "accept",
+    "body": [
+      "accept $1($2) do",
+      "\t$0",
+      "end $1;"
+    ]
+  },
+  "prot": {
+    "prefix": "prot",
+    "description": "protected type",
+    "body": [
+      "protected type $1($2) is",
+      "\t$0",
+      "end $1;"
+    ]
+  },
+  "prob": {
+    "prefix": "prob",
+    "description": "protected body",
+    "body": [
+      "protected body $1 is",
+      "\t$2",
+      "begin",
+      "\t$0",
+      "end $1;"
+    ]
+  },
+  "gen": {
+    "prefix": "gen",
+    "description": "generic type",
+    "body": [
+      "generic",
+      "\ttype $1 is $2;$0"
+    ]
+  },
+  "ty": {
+    "prefix": "ty",
+    "description": "type",
+    "body": "type $1 is $2;$0"
+  },
+  "tyd": {
+    "prefix": "tyd",
+    "description": "type with default value",
+    "body": [
+      "type $1 is $2",
+      "\twith Default_Value => $3;$0"
+    ]
+  },
+  "subty": {
+    "prefix": "subty",
+    "description": "subtype",
+    "body": "subtype $1 is $2;$0"
+  },
+  "dec": {
+    "prefix": "dec",
+    "description": "declare block",
+    "body": [
+      "declare",
+      "\t$1",
+      "begin",
+      "\t$0",
+      "end;"
+    ]
+  },
+  "decn": {
+    "prefix": "decn",
+    "description": "declare named block",
+    "body": [
+      "$1:",
+      "declare",
+      "\t$2",
+      "begin",
+      "\t$0",
+      "end $1;"
+    ]
+  },
+  "ifex": {
+    "prefix": "ifex",
+    "description": "if expression",
+    "body": "if $1 then $2 else $0"
+  },
+  "casex": {
+    "prefix": "casex",
+    "description": "case expression",
+    "body": [
+      "case $1 is",
+      "\twhen $2 => $3,$0"
+    ]
+  },
+  "fora": {
+    "prefix": "fora",
+    "description": "for all",
+    "body": "for all $1 ${2:in} $3 => $0"
+  },
+  "fors": {
+    "prefix": "fors",
+    "description": "for some",
+    "body": "for some $1 ${2:in} $3 => $0"
+  },
+  "if": {
+    "prefix": "if",
+    "description": "if",
+    "body": [
+      "if $1 then",
+      "\t$0",
+      "end if;"
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "if ... else",
+    "body": [
+      "if $1 then",
+      "\t$2",
+      "else",
+      "\t$0",
+      "end if;"
+    ]
+  },
+  "el": {
+    "prefix": "el",
+    "description": "else",
+    "body": [
+      "else",
+      "\t$0"
+    ]
+  },
+  "eif": {
+    "prefix": "eif",
+    "description": "elsif",
+    "body": [
+      "elsif $1 then",
+      "\t$0"
+    ]
+  },
+  "wh": {
+    "prefix": "wh",
+    "description": "while",
+    "body": [
+      "while $1 loop",
+      "\t$0",
+      "end loop;"
+    ]
+  },
+  "nwh": {
+    "prefix": "nwh",
+    "description": "named while",
+    "body": [
+      "$1:",
+      "while $2 loop",
+      "\t$0",
+      "end loop $1;"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "for",
+    "body": [
+      "for ${1:I} in $2 loop",
+      "\t$0",
+      "end loop;"
+    ]
+  },
+  "fore": {
+    "prefix": "fore",
+    "description": "for each",
+    "body": [
+      "for $1 of $2 loop",
+      "\t$0",
+      "end loop;"
+    ]
+  },
+  "nfor": {
+    "prefix": "nfor",
+    "description": "named for",
+    "body": [
+      "$1:",
+      "for ${2:I} in $3 loop",
+      "\t$0",
+      "end loop $1;"
+    ]
+  },
+  "nfore": {
+    "prefix": "nfore",
+    "description": "named for each",
+    "body": [
+      "$1:",
+      "for $2 of $3 loop",
+      "\t$0",
+      "end loop $1;"
+    ]
+  },
+  "proc": {
+    "prefix": "proc",
+    "description": "procedure",
+    "body": [
+      "procedure $1($2) is",
+      "\t$3",
+      "begin",
+      "\t$0",
+      "end $1;"
+    ]
+  },
+  "procd": {
+    "prefix": "procd",
+    "description": "procedure declaration",
+    "body": "procedure $1;$0"
+  },
+  "fun": {
+    "prefix": "fun",
+    "description": "function",
+    "body": [
+      "function $1($2) return $3 is",
+      "\t$4",
+      "begin",
+      "\t$0",
+      "end $1;"
+    ]
+  },
+  "fune": {
+    "prefix": "fune",
+    "description": "expression function",
+    "body": [
+      "function $1 return $2 is",
+      "\t($3);$0"
+    ]
+  },
+  "fund": {
+    "prefix": "fund",
+    "description": "function declaration",
+    "body": "function $1 return $2;$0"
+  },
+  "ret": {
+    "prefix": "ret",
+    "description": "extended return",
+    "body": [
+      "return $1 do",
+      "\t$0",
+      "end return;"
+    ]
+  },
+  "rec": {
+    "prefix": "rec",
+    "description": "record",
+    "body": [
+      "record",
+      "\t$0",
+      "end record;"
+    ]
+  },
+  "case": {
+    "prefix": "case",
+    "description": "case",
+    "body": [
+      "case $1 is",
+      "\twhen $2 => $3;$0",
+      "end case;"
+    ]
+  },
+  "whe": {
+    "prefix": "whe",
+    "description": "when",
+    "body": "when $1 => $2;$0"
+  },
+  "wheo": {
+    "prefix": "wheo",
+    "description": "when others",
+    "body": "when others => $1;$0"
+  },
+  "lo": {
+    "prefix": "lo",
+    "description": "loop",
+    "body": [
+      "loop",
+      "\t$0",
+      "end loop;"
+    ]
+  },
+  "nlo": {
+    "prefix": "nlo",
+    "description": "named loop",
+    "body": [
+      "$1:",
+      "loop",
+      "\t$0",
+      "end loop $1;"
+    ]
+  },
+  "ex": {
+    "prefix": "ex",
+    "description": "exit when",
+    "body": "exit when $1;$0"
+  },
+  "put": {
+    "prefix": "put",
+    "description": "Ada.Text_IO.Put",
+    "body": "Ada.Text_IO.Put($1);$0"
+  },
+  "putl": {
+    "prefix": "putl",
+    "description": "Ada.Text_IO.Put_Line",
+    "body": "Ada.Text_IO.Put_Line($1);$0"
+  },
+  "get": {
+    "prefix": "get",
+    "description": "Ada.Text_IO.Get",
+    "body": "Ada.Text_IO.Get($1);$0"
+  },
+  "getl": {
+    "prefix": "getl",
+    "description": "Ada.Text_IO.Get_Line",
+    "body": "Ada.Text_IO.Get_Line($1);$0"
+  },
+  "newline": {
+    "prefix": "newline",
+    "description": "Ada.Text_IO.New_Line",
+    "body": "Ada.Text_IO.New_Line(${1:1});$0"
+  }
+}

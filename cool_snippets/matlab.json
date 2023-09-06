@@ -1,0 +1,17 @@
+{
+  "switch": {
+    "prefix": "switch",
+    "description": "switch ... otherwise",
+    "body": [
+      "switch ${1:n}",
+      "\tcase ${2:0}",
+      "\t\t$3${4:",
+      "\totherwise",
+      "\t\t$5}",
+      "end"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  }
+}

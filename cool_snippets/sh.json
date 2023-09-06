@@ -1,0 +1,46 @@
+{
+  "elif": {
+    "prefix": "elif",
+    "description": "elif .. (elif)",
+    "body": [
+      "elif ${2:[[ ${1:condition} ]]}; then",
+      "\t${0:$TM_SELECTED_TEXT}"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "for ... done (for)",
+    "body": [
+      "for (( i = 0; i < ${1:10}; i++ )); do",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "done"
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "description": "if ... then (if)",
+    "body": [
+      "if [[ ${1:condition} ]]; then",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "fi"
+    ]
+  },
+  "until": {
+    "prefix": "until",
+    "description": "until ... (done)",
+    "body": [
+      "until ${2:[[ ${1:condition} ]]}; do",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "done"
+    ]
+  },
+  "func": {
+    "prefix": "func",
+    "description": "function() {...}",
+    "body": [
+      "${1:function} () {",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "\\}"
+    ]
+  }
+}

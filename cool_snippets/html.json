@@ -1,0 +1,549 @@
+{
+  "doctype": {
+    "prefix": "doctype",
+    "description": "HTML - 5.0 (doctype)",
+    "body": [
+      "<!DOCTYPE html>",
+      ""
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "down": {
+    "prefix": "down",
+    "description": "Down (down)",
+    "body": "&#x2193;"
+  },
+  "enter": {
+    "prefix": "enter",
+    "description": "Enter (enter)",
+    "body": "&#x2305;"
+  },
+  "escape": {
+    "prefix": "escape",
+    "description": "Escape (escape)",
+    "body": "&#x238B;"
+  },
+  "left": {
+    "prefix": "left",
+    "description": "Left (left)",
+    "body": "&#x2190;"
+  },
+  "return": {
+    "prefix": "return",
+    "description": "Return (return)",
+    "body": "&#x21A9;"
+  },
+  "right": {
+    "prefix": "right",
+    "description": "Right (right)",
+    "body": "&#x2192;"
+  },
+  "shift": {
+    "prefix": "shift",
+    "description": "Shift (shift)",
+    "body": "&#x21E7;"
+  },
+  "tab": {
+    "prefix": "tab",
+    "description": "Tab (tab)",
+    "body": "&#x21E5;"
+  },
+  "up": {
+    "prefix": "up",
+    "description": "Up (up)",
+    "body": "&#x2191;"
+  },
+  "a": {
+    "prefix": "a",
+    "description": "Link",
+    "body": "<a href=\"${1:http://www.${2:url.com}}\"${3: target=\"_blank\"}>${4:Anchor Text}</a>"
+  },
+  "abbr": {
+    "prefix": "abbr",
+    "description": "<abbr>",
+    "body": "<abbr title=\"$2\">$1</abbr>"
+  },
+  "access": {
+    "prefix": "access",
+    "description": "accesskey global attribute",
+    "body": "accesskey=\"$1\""
+  },
+  "address": {
+    "prefix": "address",
+    "description": "<address>",
+    "body": "<address>$1</address>"
+  },
+  "article": {
+    "prefix": "article",
+    "description": "<article>",
+    "body": [
+      "<article>",
+      "\t${1:article content}",
+      "</article>"
+    ]
+  },
+  "aside": {
+    "prefix": "aside",
+    "description": "<aside>",
+    "body": [
+      "<aside>",
+      "\t${1:aside content}",
+      "</aside>"
+    ]
+  },
+  "b": {
+    "prefix": "b",
+    "description": "<b>",
+    "body": "<b>$1</b>"
+  },
+  "blockquote": {
+    "prefix": "blockquote",
+    "description": "<blockquote>",
+    "body": "<blockquote>$1</blockquote>"
+  },
+  "body": {
+    "prefix": "body",
+    "description": "<body>",
+    "body": [
+      "<body>",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "</body>"
+    ]
+  },
+  "br": {
+    "prefix": "br",
+    "description": "<br>",
+    "body": "<br>$1</br>"
+  },
+  "button": {
+    "prefix": "button",
+    "description": "<button>",
+    "body": "<button>$1</button>"
+  },
+  "caption": {
+    "prefix": "caption",
+    "description": "<caption>",
+    "body": "<caption>$1</caption>"
+  },
+  "cite": {
+    "prefix": "cite",
+    "description": "<cite>",
+    "body": "<cite>$1</cite>"
+  },
+  "class": {
+    "prefix": "class",
+    "description": "class global attribute",
+    "body": "class=\"$1\""
+  },
+  "code": {
+    "prefix": "code",
+    "description": "<code>",
+    "body": "<code>$1</code>"
+  },
+  "data": {
+    "prefix": "data",
+    "description": "<data>",
+    "body": "<data value=\"$2\">$1</data>"
+  },
+  "datalist": {
+    "prefix": "datalist",
+    "description": "<datalist>",
+    "body": [
+      "<datalist id=\"$1\" name=\"$2\">",
+      "\topt$3",
+      "</datalist>"
+    ]
+  },
+  "dd": {
+    "prefix": "dd",
+    "description": "<dd>",
+    "body": "<dd>$1</dd>"
+  },
+  "dfn": {
+    "prefix": "dfn",
+    "description": "<dfn>",
+    "body": "<dfn>$1</dfn>"
+  },
+  "div": {
+    "prefix": "div",
+    "description": "<div>",
+    "body": [
+      "<div>",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "</div>"
+    ]
+  },
+  "dl": {
+    "prefix": "dl",
+    "description": "<dl>",
+    "body": [
+      "<dl>",
+      "\t${1:Definition list}",
+      "</dl>"
+    ]
+  },
+  "dt": {
+    "prefix": "dt",
+    "description": "<dt>",
+    "body": "<dt>$1</dt>"
+  },
+  "em": {
+    "prefix": "em",
+    "description": "<em>",
+    "body": "<em>$1</em>"
+  },
+  "fig": {
+    "prefix": "fig",
+    "description": "<figure>",
+    "body": [
+      "<figure>",
+      "$1",
+      "<figcaption>$2</figcaption>",
+      "</figure>"
+    ]
+  },
+  "figcaption": {
+    "prefix": "figcaption",
+    "description": "<figcaption>",
+    "body": "<figcaption>$1</figcaption>"
+  },
+  "footer": {
+    "prefix": "footer",
+    "description": "<footer>",
+    "body": [
+      "<footer>",
+      "\t${1:footer content}",
+      "</footer>"
+    ]
+  },
+  "h1": {
+    "prefix": "h1",
+    "description": "HTML <h1>",
+    "body": "<h1>${0:$TM_SELECTED_TEXT}</h1>"
+  },
+  "h2": {
+    "prefix": "h2",
+    "description": "HTML <h2>",
+    "body": "<h2>${0:$TM_SELECTED_TEXT}</h2>"
+  },
+  "h3": {
+    "prefix": "h3",
+    "description": "HTML <h3>",
+    "body": "<h3>${0:$TM_SELECTED_TEXT}</h3>"
+  },
+  "h4": {
+    "prefix": "h4",
+    "description": "HTML <h4>",
+    "body": "<h4>${0:$TM_SELECTED_TEXT}</h4>"
+  },
+  "h5": {
+    "prefix": "h5",
+    "description": "HTML <h5>",
+    "body": "<h5>${0:$TM_SELECTED_TEXT}</h5>"
+  },
+  "h6": {
+    "prefix": "h6",
+    "description": "HTML <h6>",
+    "body": "<h6>${0:$TM_SELECTED_TEXT}</h6>"
+  },
+  "header": {
+    "prefix": "header",
+    "description": "<header>",
+    "body": [
+      "<header>",
+      "\t${1:header content}",
+      "</header>"
+    ]
+  },
+  "hr": {
+    "prefix": "hr",
+    "description": "<hr>",
+    "body": "<hr>"
+  },
+  "i": {
+    "prefix": "i",
+    "description": "<i>",
+    "body": "<i>$1</i>"
+  },
+  "id": {
+    "prefix": "id",
+    "description": "id global attribute",
+    "body": "id=\"$1\""
+  },
+  "img": {
+    "prefix": "img",
+    "description": "<img>",
+    "body": "<img src=\"$1\" alt=\"$2\">"
+  },
+  "kbd": {
+    "prefix": "kbd",
+    "description": "<kbd>",
+    "body": "<kbd>$1</kbd>"
+  },
+  "label": {
+    "prefix": "label",
+    "description": "<label>",
+    "body": "<label>$1</label>"
+  },
+  "legend": {
+    "prefix": "legend",
+    "description": "<legend>",
+    "body": "<legend>$1</legend>"
+  },
+  "li": {
+    "prefix": "li",
+    "description": "list item",
+    "body": "<li>${0:$TM_SELECTED_TEXT}</li>"
+  },
+  "mailto": {
+    "prefix": "mailto",
+    "description": "HTML <a mailto: >",
+    "body": "<a href=\"mailto:${1:joe@example.com}?subject=${2:feedback}\">${3:email me}</a>"
+  },
+  "tel": {
+    "prefix": "tel",
+    "description": "HTML <a tel: >",
+    "body": "<a href=\"tel:+${1:XX1234567890}\">${2:call me}</a>"
+  },
+  "main": {
+    "prefix": "main",
+    "description": "<main>",
+    "body": [
+      "<main>",
+      "\t${1:main content}",
+      "</main>"
+    ]
+  },
+  "mark": {
+    "prefix": "mark",
+    "description": "<mark>",
+    "body": "<mark>$1</mark>"
+  },
+  "meter": {
+    "prefix": "meter",
+    "description": "<meter>",
+    "body": "<meter>$1</meter>"
+  },
+  "nav": {
+    "prefix": "nav",
+    "description": "<nav>",
+    "body": [
+      "<nav>",
+      "\t${1:navigation links}",
+      "</nav>"
+    ]
+  },
+  "noscript": {
+    "prefix": "noscript",
+    "description": "<noscript>",
+    "body": "<noscript>$1</noscript>"
+  },
+  "ol": {
+    "prefix": "ol",
+    "description": "<ol>",
+    "body": [
+      "<ol>",
+      "\t<li>$1</li>",
+      "</ol>"
+    ]
+  },
+  "optgroup": {
+    "prefix": "optgroup",
+    "description": "<optgroup>",
+    "body": [
+      "<optgroup label=\"$1\">",
+      "\topt$2",
+      "</optgroup>"
+    ]
+  },
+  "output": {
+    "prefix": "output",
+    "description": "<output>",
+    "body": "<output for=\"$1\" name=\"$2\">$3</output>"
+  },
+  "option": {
+    "prefix": "option",
+    "description": "Option",
+    "body": "<option${1: value=\"${2:option}\"}>${3:$2}</option>"
+  },
+  "p": {
+    "prefix": "p",
+    "description": "paragraph",
+    "body": "<p>${0:$TM_SELECTED_TEXT}</p>"
+  },
+  "picture": {
+    "prefix": "picture",
+    "description": "<picture>",
+    "body": [
+      "<picture>",
+      "\t${1:image sources}",
+      "</picture>"
+    ]
+  },
+  "pre": {
+    "prefix": "pre",
+    "description": "<pre>",
+    "body": "<pre>$1</pre>"
+  },
+  "progress": {
+    "prefix": "progress",
+    "description": "<progress>",
+    "body": "<progress>$1</progress>"
+  },
+  "q": {
+    "prefix": "q",
+    "description": "<q>",
+    "body": "<q>$1</q>"
+  },
+  "s": {
+    "prefix": "s",
+    "description": "<s>",
+    "body": "<s>$1</s>"
+  },
+  "samp": {
+    "prefix": "samp",
+    "description": "<samp>",
+    "body": "<samp>$1</samp>"
+  },
+  "script": {
+    "prefix": "script",
+    "description": "HTML <script>",
+    "body": [
+      "<script charset=\"utf-8\">",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "</script>"
+    ]
+  },
+  "scriptsrc": {
+    "prefix": "scriptsrc",
+    "description": "HTML <script src...>",
+    "body": "<script src=\"$1\" charset=\"${3:utf-8}\"></script>"
+  },
+  "select": {
+    "prefix": "select",
+    "description": "Select Box",
+    "body": [
+      "<select name=\"${1:some_name}\" id=\"${2:$1}\"${3:${4: multiple}${5: size=\"${6:1}\"}}>",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "</select>"
+    ]
+  },
+  "small": {
+    "prefix": "small",
+    "description": "<small>",
+    "body": "<small>$1</small>"
+  },
+  "span": {
+    "prefix": "span",
+    "description": "<span>",
+    "body": "<span>${0:$TM_SELECTED_TEXT}</span>"
+  },
+  "strong": {
+    "prefix": "strong",
+    "description": "<strong>",
+    "body": "<strong>$1</strong>"
+  },
+  "style": {
+    "prefix": "style",
+    "description": "HTML <style>",
+    "body": [
+      "<style type=\"text/css\" media=\"screen\">",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "</style>"
+    ]
+  },
+  "sub": {
+    "prefix": "sub",
+    "description": "<sub>",
+    "body": "<sub>$1</sub>"
+  },
+  "sup": {
+    "prefix": "sup",
+    "description": "<sup>",
+    "body": "<sup>$1</sup>"
+  },
+  "table": {
+    "prefix": "table",
+    "description": "HTML <table>",
+    "body": [
+      "<table>",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "</table>"
+    ]
+  },
+  "tbody": {
+    "prefix": "tbody",
+    "description": "<tbody>",
+    "body": "<tbody>$1</tbody>"
+  },
+  "td": {
+    "prefix": "td",
+    "description": "table cell",
+    "body": "<td>${0:$TM_SELECTED_TEXT}</td>"
+  },
+  "template": {
+    "prefix": "template",
+    "description": "<template>",
+    "body": [
+      "<template id=\"$1\">",
+      "$2",
+      "</template>"
+    ]
+  },
+  "textarea": {
+    "prefix": "textarea",
+    "description": "HTML <textarea>",
+    "body": "<textarea name=\"${1:Name}\" rows=\"${2:8}\" cols=\"${3:40}\">$0</textarea>"
+  },
+  "tfoot": {
+    "prefix": "tfoot",
+    "description": "<tfoot>",
+    "body": "<tfoot>$1</tfoot>"
+  },
+  "th": {
+    "prefix": "th",
+    "description": "table header",
+    "body": "<th>${0:$TM_SELECTED_TEXT}</th>"
+  },
+  "thead": {
+    "prefix": "thead",
+    "description": "<thead>",
+    "body": "<thead>$1</thead>"
+  },
+  "time": {
+    "prefix": "time",
+    "description": "<time>",
+    "body": "<time datetime=\"$2\">$1</time>"
+  },
+  "tr": {
+    "prefix": "tr",
+    "description": "table row",
+    "body": "<tr>${0:$TM_SELECTED_TEXT}</tr>"
+  },
+  "ul": {
+    "prefix": "ul",
+    "description": "unordered list",
+    "body": [
+      "<ul>",
+      "\t${0:$TM_SELECTED_TEXT}",
+      "</ul>"
+    ]
+  },
+  "var": {
+    "prefix": "var",
+    "description": "<var>",
+    "body": "<var>$1</var>"
+  },
+  "viewport": {
+    "prefix": "viewport",
+    "description": "Responsive viewport meta",
+    "body": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+  },
+  "wbr": {
+    "prefix": "wbr",
+    "description": "<wbr>",
+    "body": "<wbr>$1</wbr>"
+  }
+}
