@@ -1,5 +1,3 @@
-## Please switch to `stable` branch
-
 # A Basic Stable IDE config for Neovim
 
 ```sh
