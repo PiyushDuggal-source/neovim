@@ -8,7 +8,19 @@ make CMAKE_BUILD_TYPE=Release
 sudo make install
 ```
 
-## Install the config
+## ⚠️ ⚠️  Run these commands first ⚠️ ⚠️
+
+#### For Ubuntu
+
+```sh
+sudo apt update && sudo apt upgrade && sudo apt install git xsel wl-clipboard cargo clang-format pip ripgrep npm lazygit
+sudo npm install -g neovim && sudo pip install black pynvim && sudo cargo install stylua
+
+```
+##### Nodejs for specific distros
+
+- [Here](https://github.com/nodesource/distributions)
+
 
 Make sure to remove or move your current `nvim` directories: ```~/.config/nvim``` ```~/.local/share/nvim```
 
@@ -16,21 +28,20 @@ Make sure to remove or move your current `nvim` directories: ```~/.config/nvim``
 git clone https://github.com/PiyushDuggal-source/neovim ~/.config/nvim
 ```
 
-## ⚠️ Switch to `stable` branch first!
 
 Run `nvim` and wait for the plugins to be installed
 
 **NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim)
 
-## Get healthy
+## Get health
 
 Open `nvim` and enter the following:
 
 ```
 :checkhealth
 ```
-check the report and download required packages.
 
+check the report and download required packages.
 
 You'll probably notice you don't have support for copy/paste also that python and node haven't been setup
 
@@ -39,35 +50,6 @@ So let's fix that
 First we'll fix copy/paste
 
 - On mac `pbcopy` should be builtin
-
-- On Ubuntu
-
-  ```sh
-  sudo apt install xsel # for X11
-  sudo apt install wl-clipboard # for wayland
-  ```
-
-Next we need to install python support (node is optional)
-
-- Neovim python support
-
-  ```sh
-  pip install pynvim
-  ```
-
-- Neovim node support
-
-  ```sh
-  npm i -g neovim
-  ```
-
-We will also need `ripgrep` for Telescope to work:
-
-- Ripgrep
-
-  ```sh
-  sudo apt install ripgrep
-  ```
 
 ---
 
@@ -138,6 +120,7 @@ Make sure the formatter or linter is installed and add it to this setup function
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim)
 - etc.
+
 ---
 
 > If debugging is the process of removing bug, then programming must be the process of putting them in.

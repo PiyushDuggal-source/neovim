@@ -100,7 +100,7 @@ require("mason-lspconfig").setup({
 		"cssmodules_ls",
 		"dockerls",
 		"eslint",
-		"marksman",
+		-- "marksman",
 		"sqlls",
 		"vuels",
 	},
