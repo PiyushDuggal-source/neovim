@@ -58,16 +58,16 @@ end
 --   }
 -- }
 
--- local icons = require "user.icons"
+local icons = require "user.icons"
 local diagnostics = {
   "diagnostics",
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn" },
   symbols = {
-    error = "%#SLError#" .. "" .. "%*" .. " ",
-    warn = "%#SLWarning#" .. "" .. "%*" .. " ",
-    -- error = "%#SLError#" .. icons.diagnostics.Error .. "%*" .. " ",
-    -- warn = "%#SLWarning#" .. icons.diagnostics.Warning .. "%*" .. " ",
+    -- error = "%#SLError#" .. "" .. "%*" .. " ",
+    -- warn = "%#SLWarning#" .. "" .. "%*" .. " ",
+    error = "%#SLError#" .. icons.diagnostics.Error .. "%*" .. " ",
+    warn = "%#SLWarning#" .. icons.diagnostics.Warning .. "%*" .. " ",
   },
   colored = false,
   update_in_insert = true,

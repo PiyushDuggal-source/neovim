@@ -4,6 +4,7 @@ if not present then
   return
 end
 
+local icons = require("user.icons")
 
 todo.setup {
   signs = true, -- show icons in the signs column
@@ -16,11 +17,16 @@ todo.setup {
       alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
       -- signs = false, -- configure signs for some keywords individually
     },
-    TODO = { icon = " ", color = "info" },
-    HACK = { icon = " ", color = "warning" },
-    WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-    PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-    NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+    -- TODO = { icon = " ", color = "info" },
+    -- HACK = { icon = " ", color = "warning" },
+    -- WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+    -- PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+    -- NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+    TODO = { icon = icons.ui.Check, color = "info" },
+    HACK = { icon = icons.ui.Fire, color = "warning" },
+    WARN = { icon = icons.diagnostics.Warning, color = "warning", alt = { "WARNING", "XXX" } },
+    PERF = { icon = icons.diagnostics.Information, alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+    NOTE = { icon = icons.diagnostics.Hint, color = "hint", alt = { "INFO" } },
   },
   merge_keywords = true, -- when true, custom keywords will be merged with the defaults
   -- highlighting of the line containing the todo comment

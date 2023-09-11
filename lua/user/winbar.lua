@@ -1,3 +1,5 @@
+local icons = require("user.icons")
+
 if vim.version().major > 7 then
   require("winbar").setup {
 
@@ -12,10 +14,15 @@ if vim.version().major > 7 then
       symbols = "",
     },
     icons = {
-      file_icon_default = "",
+      -- file_icon_default = "",
+      -- seperator = ">",
+      -- editor_state = "●",
+      -- lock_icon = "",
+
+      file_icon_default = icons.ui.File,
       seperator = ">",
-      editor_state = "●",
-      lock_icon = "",
+      editor_state = icons.ui.Pencil,
+      lock_icon = icons.ui.Lock,
     },
 
     exclude_filetype = {

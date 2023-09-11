@@ -3,16 +3,19 @@ if not status_ok then
   return
 end
 
+local icons = require "user.icons"
+
 local thingy = io.popen('echo "$(date +%a) $(date +%d) $(date +%b)" | tr -d "\n"')
 if thingy == nil then return end
 local date = thingy:read("*a")
 thingy:close()
 
-local datetime = os.date " %H:%M"
+local datetime = os.date " %H:%M"
+
 
 local hi_top_section = {
   type = "text",
-  val = "┌────────────   Today is " .. date .. " ────────────┐",
+  val = "┌──────────── ".. icons.ui.Calendar  .. " Today is " .. date .. " ────────────┐",
   opts = {
     position = "center",
     hl = "Include"
@@ -29,7 +32,7 @@ local hi_middle_section = {
 }
 local hi_bottom_section = {
   type = "text",
-  val = "└───══───══───══───  " .. datetime .. "  ───══───══───══────┘",
+  val = "└───══───══───══───  " .. icons.misc.Watch .. datetime .. "  ───══───══───══────┘",
   opts = {
     position = "center",
     hl = "Include"
@@ -49,16 +52,16 @@ dashboard.section.header.val = {
 }
 
 dashboard.section.buttons.val = {
-  dashboard.button("b", ' ' .. " Sessions", ":SLoad<CR>"),
+  dashboard.button("b", ' ' .. " Sessions", ":SLoad<CR>"),
   -- dashboard.button("T", ' ' .. " New Terminal", ":ToggleTerm size=40 dir=~/Piyush direction=horizontal<CR>"),
   dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
   dashboard.button("T", ' ' .. " New Terminal", ":!kitty<CR>"),
-  dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
+  dashboard.button("r", "󰄉 " .. " Recent files", ":Telescope oldfiles <CR>"),
   dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
   dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
   -- dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"),
   dashboard.button("c", " " .. " Neovim Config", ":e ~/.config/nvim/init.lua <CR>"),
-  dashboard.button("t", " " .. " Kitty Config", ":e ~/.config/kitty/kitty.conf <CR>"),
+  dashboard.button("t", icons.ui.Settings .. "  Kitty Config", ":e ~/.config/kitty/kitty.conf <CR>"),
   dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 }
 local function footer()
@@ -81,20 +84,20 @@ local function footer()
   local quote = table.concat(fortune(), "\n\n")
 
   local line = "                 ───══───══───══────"
- local plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
+  local plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
   -- local total_plugins = #vim.tbl_keys(packer_plugins)
   local plugins_text = "\n\n         Loaded "
-    .. "`"
-    .. plugins_count
-    .. "`"
-    .. " plugins"
-    .. "   v"
-    .. vim.version().major
-    .. "."
-    .. vim.version().minor
-    .. "."
-    .. vim.version().patch
-    .. "  "
+      .. "`"
+      .. plugins_count
+      .. "`"
+      .. " plugins"
+      .. "   v"
+      .. vim.version().major
+      .. "."
+      .. vim.version().minor
+      .. "."
+      .. vim.version().patch
+      .. "  "
 
   return line .. "\n" .. quote .. plugins_text
 end
