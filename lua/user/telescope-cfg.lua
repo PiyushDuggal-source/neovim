@@ -131,7 +131,7 @@ local options = {
     -- prompt_prefix = "   ",
     -- selection_caret = "  ",
     prompt_prefix = icons.ui.Search .. " ",
-    selection_caret = icons.ui.Forward .. " ",
+    selection_caret = icons.ui.ArrowRight .. " ",
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
@@ -146,7 +146,7 @@ local options = {
       vertical = {
         mirror = false,
       },
-      width = 0.87,
+      width = 0.80,
       height = 0.80,
       preview_cutoff = 120,
     },
