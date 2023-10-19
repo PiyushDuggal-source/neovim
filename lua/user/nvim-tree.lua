@@ -105,7 +105,8 @@ require("neo-tree").setup({
       padding = 1, -- extra padding on left hand side
       -- indent guides
       with_markers = true,
-      indent_marker = "│",
+      -- indent_marker = "│",
+      indent_marker = icons.ui.DottedLine,
       last_indent_marker = "└",
       highlight = "NeoTreeIndentMarker",
       -- expander config, needed for nesting files
@@ -115,11 +116,15 @@ require("neo-tree").setup({
       expander_highlight = "NeoTreeExpander",
     },
     icon = {
-      folder_closed = "",
-      folder_open = "",
+      -- folder_closed = "󰉋",
+      -- folder_open = "",
+      folder_closed = icons.ui.Folder,
+      folder_open = icons.ui.FolderOpen,
       -- folder_empty = "󰜌",
-      folder_empty = "",
+      -- folder_empty = "",
+      folder_empty = icons.ui.EmptyFolder,
       -- empty_open = "",
+      empty_open = icons.ui.EmptyFolderOpen,
       -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
       -- then these will never be used.
       default = "*",
@@ -137,8 +142,8 @@ require("neo-tree").setup({
     git_status = {
       symbols = {
         -- Change type
-        added     = icons.ui.Plus, -- or "✚", but this is redundant info if you use git_status_colors on the name
-        modified  = "",           -- or "", but this is redundant info if you use git_status_colors on the name
+        added     = icons.ui.Plus,  -- or "✚", but this is redundant info if you use git_status_colors on the name
+        modified  = "",             -- or "", but this is redundant info if you use git_status_colors on the name
         deleted   = icons.ui.Close, -- this can only be used in the git_status source
         -- renamed   = "󰁕",-- this can only be used in the git_status source
         renamed   = icons.git.FileRenamed,
