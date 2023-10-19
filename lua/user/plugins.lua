@@ -45,7 +45,7 @@ packer.init({
 return packer.startup(function(use)
   -- My plugins here
   use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
-  use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
+  use({ "nvim-lua/plenary.nvim" })  -- Useful lua functions used by lots of plugins
   use({ "nvim-lua/popup.nvim" })
   -- use({ "p00f/nvim-ts-rainbow" })
   use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
@@ -60,7 +60,7 @@ return packer.startup(function(use)
   use({ "akinsho/toggleterm.nvim" })
   use({ "ahmedkhalf/project.nvim" })
   use({ "lewis6991/impatient.nvim" })
-  use({ "lukas-reineke/indent-blankline.nvim" })
+  use({ "lukas-reineke/indent-blankline.nvim", commit='9637670896b68805430e2f72cf5d16be5b97a22a' })
   use("goolord/alpha-nvim")
 
   -- Colorschemesq
@@ -71,11 +71,11 @@ return packer.startup(function(use)
   })
 
   -- cmp plugins
-  use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
-  use({ "hrsh7th/cmp-buffer" }) -- buffer completions
-  use({ "hrsh7th/cmp-path" }) -- path completions
+  use({ "hrsh7th/nvim-cmp" })     -- The completion plugin
+  use({ "hrsh7th/cmp-buffer" })   -- buffer completions
+  use({ "hrsh7th/cmp-path" })     -- path completions
   use("David-Kunz/cmp-npm")
-  use("hrsh7th/cmp-cmdline") -- cmdline completions
+  use("hrsh7th/cmp-cmdline")      -- cmdline completions
   use("saadparwaiz1/cmp_luasnip") -- snippet completions
   use("hrsh7th/cmp-nvim-lsp")
   use({ "hrsh7th/cmp-nvim-lua", ft = { "lua" } })
@@ -86,11 +86,11 @@ return packer.startup(function(use)
   use({ "honza/vim-snippets" })
 
   -- snippets
-  use({ "L3MON4D3/LuaSnip" }) --snippet engine
+  use({ "L3MON4D3/LuaSnip" })             --snippet engine
   use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
   -- LSP
-  use({ "neovim/nvim-lspconfig" }) -- enable LSP
+  use({ "neovim/nvim-lspconfig" })           -- enable LSP
   use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
   use { "williamboman/mason.nvim",
     config = function()
@@ -149,14 +149,14 @@ return packer.startup(function(use)
   use { "abecodes/tabout.nvim",
     config = function()
       require('tabout').setup {
-        tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable
+        tabkey = '<Tab>',             -- key to trigger tabout, set to an empty string to disable
         backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
-        act_as_tab = true, -- shift content if tab out is not possible
-        act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
-        default_tab = '<C-t>', -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
-        default_shift_tab = '<C-d>', -- reverse shift default action,
-        enable_backwards = true, -- well ...
-        completion = true, -- if the tabkey is used in a completion pum
+        act_as_tab = true,            -- shift content if tab out is not possible
+        act_as_shift_tab = false,     -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
+        default_tab = '<C-t>',        -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
+        default_shift_tab = '<C-d>',  -- reverse shift default action,
+        enable_backwards = true,      -- well ...
+        completion = true,            -- if the tabkey is used in a completion pum
         tabouts = {
           { open = "'", close = "'" },
           { open = '"', close = '"' },
@@ -170,7 +170,7 @@ return packer.startup(function(use)
       }
     end,
     wants = { 'nvim-treesitter' }, -- or require if not used so far
-    after = { 'nvim-cmp' } -- if a completion plugin is using tabs load it before
+    after = { 'nvim-cmp' }         -- if a completion plugin is using tabs load it before
   }
 
   -- -- Color Shower
@@ -273,30 +273,30 @@ return packer.startup(function(use)
 
   -- Markdown
   -- install without yarn or npm
--- use({
---     "iamcco/markdown-preview.nvim",
---     run = function() vim.fn["mkdp#util#install"]() end,
--- })
+  -- use({
+  --     "iamcco/markdown-preview.nvim",
+  --     run = function() vim.fn["mkdp#util#install"]() end,
+  -- })
 
   -- Pets
   use({
-  "giusgad/pets.nvim",
-  requires = {
-    "edluffy/hologram.nvim",
-    "MunifTanjim/nui.nvim",
+    "giusgad/pets.nvim",
+    requires = {
+      "edluffy/hologram.nvim",
+      "MunifTanjim/nui.nvim",
+    }
+  })
+
+  use {
+    'Exafunction/codeium.vim',
+    config = function()
+      -- Change '<C-g>' here to any keycode you like.
+      -- vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+    end
   }
-})
 
   use {
-  'Exafunction/codeium.vim',
-    config = function ()
-    -- Change '<C-g>' here to any keycode you like.
-    -- vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
-  end
-}
-
-  use {
-  "nvim-neo-tree/neo-tree.nvim",
+    "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     requires = {
       "nvim-lua/plenary.nvim",
@@ -307,7 +307,10 @@ return packer.startup(function(use)
 
   -- use("github/copilot.vim")
 
-use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+  use ({ "wakatime/vim-wakatime" })
 
   -- DAP
   -- use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
