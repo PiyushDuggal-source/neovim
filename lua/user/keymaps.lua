@@ -25,6 +25,10 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 --Spliting window
 keymap("n", "<C-s>", ":vsplit<CR>gd", opts)
 
+-- for emoji
+vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal<cr>", opts)
+
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)

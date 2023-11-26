@@ -60,7 +60,7 @@ return packer.startup(function(use)
   use({ "akinsho/toggleterm.nvim" })
   use({ "ahmedkhalf/project.nvim" })
   use({ "lewis6991/impatient.nvim" })
-  use({ "lukas-reineke/indent-blankline.nvim", commit='9637670896b68805430e2f72cf5d16be5b97a22a' })
+  use({ "lukas-reineke/indent-blankline.nvim", commit = '9637670896b68805430e2f72cf5d16be5b97a22a' })
   use("goolord/alpha-nvim")
 
   -- Colorschemesq
@@ -90,14 +90,15 @@ return packer.startup(function(use)
   use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
   -- LSP
-  use({ "neovim/nvim-lspconfig" })           -- enable LSP
+  use({ "neovim/nvim-lspconfig" }) -- enable LSP
   -- use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
   use { "williamboman/mason.nvim",
     config = function()
       require "user.lsp.mason"
     end }
   use({ "williamboman/mason-lspconfig.nvim" })
-  use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
+  -- no need for null-ls, using lsp-config
+  -- use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
   use({ "RRethy/vim-illuminate" })
   use "lvimuser/lsp-inlayhints.nvim"
 
@@ -304,13 +305,28 @@ return packer.startup(function(use)
       "MunifTanjim/nui.nvim",
     }
   }
+  use "stevearc/dressing.nvim"
+  use({
+    "ziontee113/icon-picker.nvim",
+    config = function()
+      require("icon-picker").setup({
+        disable_legacy_commands = true
+      })
+    end,
+  })
 
   -- use("github/copilot.vim")
 
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    ft = { "markdown" },
+  })
+  -- use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 
-  use ({ "wakatime/vim-wakatime" })
+
+  use({ "wakatime/vim-wakatime" })
 
   -- DAP
   -- use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
