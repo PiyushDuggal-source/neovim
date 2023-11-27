@@ -38,105 +38,119 @@
 local on_attach = require("user.lsp.handlers").on_attach
 local capabilities = require("user.lsp.handlers").capabilities
 
-require("user.lsp.handlers").setup()
+-- require("user.lsp.handlers").setup()
 local typescript_setup, typescript = pcall(require, "typescript")
 if not typescript_setup then
   return
 end
+local coq = require("coq")
 
 local lspconfig = require("lspconfig")
+
 local servers = {
-	"cssls",
-	-- "emmet_ls",
-	"clangd",
-	-- "tailwindcss",
+  "cssls",
+  -- "emmet_ls",
+  "clangd",
+  -- "tailwindcss",
   "lua_ls",
-	"eslint",
+  "eslint",
   "pyright",
-	"html",
+  "html",
   "bashls",
   "cssmodules_ls",
-	"jsonls",
-	"yamlls",
+  "jsonls",
+  "yamlls",
   "tailwindcss",
-	-- "intelephense",
-	-- "dockerls",
+  -- "intelephense",
+  -- "dockerls",
 }
 local lspInlays = { "tsserver" }
 capabilities.textDocument.foldingRange = {
-	dynamicRegistration = false,
-	lineFoldingOnly = true,
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
 }
 for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup({
-		on_attach = on_attach,
-		capabilities = capabilities,
-		handlers = {
-			["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-				-- Disable virtual_text
-				virtual_text = false,
-			}),
-		},
-		settings = {
-			Lua = {
-				diagnostics = {
-					-- Get the language server to recognize the `vim` global
-					globals = { "vim" },
-				},
-			},
-		},
-	})
+  lspconfig[lsp].setup(
+    coq.lsp_ensure_capabilities(
+      {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        handlers = {
+          ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+            -- Disable virtual_text
+            virtual_text = false,
+          }),
+        },
+        settings = {
+          Lua = {
+            diagnostics = {
+              -- Get the language server to recognize the `vim` global
+              globals = { "vim" },
+            },
+          },
+        },
+      })
+  )
 end
 
 for _, lsp in ipairs(lspInlays) do
-	lspconfig[lsp].setup({
-		on_attach = function(client, bufnr)
-			on_attach(client, bufnr)
+  lspconfig[lsp].setup(
+    coq.lsp_ensure_capabilities(
 
-			require("lsp-inlayhints").on_attach(client, bufnr)
-		end,
+      {
+        on_attach = function(client, bufnr)
+          on_attach(client, bufnr)
 
-		handlers = {
-			["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-				-- Disable virtual_text
-				virtual_text = false,
-			}),
-		},
-		capabilities = capabilities,
-		settings = {
-			typescript = {
-				inlayHints = {
-					includeInlayParameterNameHints = "all",
-					includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-					includeInlayFunctionParameterTypeHints = true,
-					includeInlayVariableTypeHints = true,
-					includeInlayPropertyDeclarationTypeHints = true,
-					includeInlayFunctionLikeReturnTypeHints = true,
-					includeInlayEnumMemberValueHints = true,
-				},
-			},
-			javascript = {
-				inlayHints = {
-					includeInlayParameterNameHints = "all",
-					includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-					includeInlayFunctionParameterTypeHints = true,
-					includeInlayVariableTypeHints = true,
-					includeInlayPropertyDeclarationTypeHints = true,
-					includeInlayFunctionLikeReturnTypeHints = true,
-					includeInlayEnumMemberValueHints = true,
-				},
-			},
-		},
-	})
+          require("lsp-inlayhints").on_attach(client, bufnr)
+        end,
+
+        handlers = {
+          ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+            -- Disable virtual_text
+            virtual_text = false,
+          }),
+        },
+        capabilities = capabilities,
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+        },
+      })
+  )
 end
 
 
-typescript.setup({
-  server = {
-    capabilities = capabilities,
-    on_attach = on_attach,
-  },
-})
+typescript.setup(
+  coq.lsp_ensure_capabilities(
+
+    {
+      server = {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      },
+    }
+  )
+)
 
 -- lspconfig["emmet_ls"].setup({
 --   capabilities = capabilities,

@@ -79,9 +79,9 @@ return packer.startup(function(use)
   use("saadparwaiz1/cmp_luasnip") -- snippet completions
   use("hrsh7th/cmp-nvim-lsp")
   use({ "hrsh7th/cmp-nvim-lua", ft = { "lua" } })
-  -- use 'ms-jpq/coq_nvim'
-  -- use 'ms-jpq/coq.artifacts'
-  -- use 'ms-jpq/coq.thirdparty'
+  use 'ms-jpq/coq_nvim'
+  use 'ms-jpq/coq.artifacts'
+  use 'ms-jpq/coq.thirdparty'
   use({ "epilande/vim-react-snippets" })
   use({ "honza/vim-snippets" })
 
@@ -98,7 +98,7 @@ return packer.startup(function(use)
     end }
   use({ "williamboman/mason-lspconfig.nvim" })
   -- no need for null-ls, using lsp-config
-  -- use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
+  use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
   use({ "RRethy/vim-illuminate" })
   use "lvimuser/lsp-inlayhints.nvim"
 
