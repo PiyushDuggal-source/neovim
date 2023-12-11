@@ -12,9 +12,7 @@
 --     prompt_prefix = " ",
 --     selection_caret = " ",
 --     path_display = { "smart" },
---     file_ignore_patterns = { ".git/", "node_modules" },
---
---     layout_config = {
+--     file_ignore_patterns = { ".git/", "node_modules" }, layout_config = {
 --       preview_width = 0.7
 --     },
 --     mappings = {

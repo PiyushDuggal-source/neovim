@@ -243,4 +243,16 @@ lspconfig.lua_ls.setup({
   },
 })
 
+lspconfig.gopls.setup({
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
+})
+
 return M

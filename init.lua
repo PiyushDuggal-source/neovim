@@ -37,9 +37,9 @@ require("user.winbar")
 require("user.whichKey")
 -- require("user.import-cost")
 -- require("user.typescript")
-require("Comment").setup()
 -- require "user.tabout"
 require("scope").setup()
+require("user.comment")
 -- require "user.colorizer"
 -- vim.cmd(":COQnow --shut-up")
 -- require("pets").setup({})

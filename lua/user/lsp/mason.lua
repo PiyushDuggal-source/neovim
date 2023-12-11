@@ -1,11 +1,17 @@
 local servers = {
   "cssls",
   "html",
+  "clangd",
   "lua_ls",
   "tsserver",
+  "gopls",
+  -- "vue-language-server",
   "pyright",
   "bashls",
   "jsonls",
+  "cssls",
+  -- "intelephense",
+  "phpactor",
   -- "yamlls",
 }
 -- -- local coq = require "coq"
@@ -99,10 +105,13 @@ require("mason-lspconfig").setup({
     "cmake",
     "cssmodules_ls",
     "dockerls",
+    "phpactor",
+    "gopls",
+    -- "intelephense",
     "eslint",
     -- "marksman",
     "sqlls",
-    "vuels",
+    -- "vuels",
   },
   automatic_installation = true,
 })

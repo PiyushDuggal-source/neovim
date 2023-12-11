@@ -46,13 +46,13 @@ return packer.startup(function(use)
   -- My plugins here
   use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
   use({ "nvim-lua/plenary.nvim" })  -- Useful lua functions used by lots of plugins
-  use({ "nvim-lua/popup.nvim" })
+  -- use({ "nvim-lua/popup.nvim" })
   -- use({ "p00f/nvim-ts-rainbow" })
   use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
   use({ "numToStr/Comment.nvim" })
   use({ "JoosepAlviste/nvim-ts-context-commentstring" })
   use({ "kyazdani42/nvim-web-devicons" })
-  use({ "onsails/lspkind.nvim" })
+  -- use({ "onsails/lspkind.nvim" })
   use({ "kyazdani42/nvim-tree.lua" })
   use({ "akinsho/bufferline.nvim" })
   use({ "moll/vim-bbye" })
@@ -98,7 +98,7 @@ return packer.startup(function(use)
     end }
   use({ "williamboman/mason-lspconfig.nvim" })
   -- no need for null-ls, using lsp-config
-  -- use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
+  use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
   use({ "RRethy/vim-illuminate" })
   use "lvimuser/lsp-inlayhints.nvim"
 
