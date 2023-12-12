@@ -1,48 +1,11 @@
-require("user.options")
-require("user.plugins")
-require("user.keymaps")
-require("user.lsp")
-require("user.treesitter")
-require("user.cmp")
-require("user.autocommands")
-require("user.colorscheme")
-require("user.telescope-cfg")
-require("user.gitsigns")
-require("user.autopairs")
--- require("user.comment")
-require("user.nvim-tree")
-require("user.bufferline")
-require("user.lualine")
-require("user.toggleterm")
-require("user.project")
-require("user.impatient")
-require("user.illuminate")
-require("user.indentline")
-require("user.alpha")
-require("user.luasnip_setup")
--- require("user.copilot")
-require("user.codeium")
-require("user.commands")
--- require("user.modicator")
-require("user.navic")
-require("user.noice")
---require("user.notify")
--- require("user.research")
-require("user.todo-comments")
--- require("user.trouble")
-require("user.winbar")
--- require("user.shade")
--- require "user.dap"
--- require 'user.coqCmp'
-require("user.whichKey")
--- require("user.import-cost")
--- require("user.typescript")
--- require "user.tabout"
-require("scope").setup()
-require("user.comment")
--- require "user.colorizer"
--- vim.cmd(":COQnow --shut-up")
--- require("pets").setup({})
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
 vim.cmd([[:set laststatus=3]])
 vim.cmd([[colorscheme tokyonight-night]])
--- require("flirt").setup()
+
+-- Enable LazyVim auto format
+vim.g.autoformat = false
+vim.cmd[[imap <silent><script><expr> <M-i> codeium#Accept()]]
+vim.g.codeium_no_map_tab = true
+
+vim.g.luasnippets_path = vim.fn.stdpath("config") .. "/cool_snippets"
