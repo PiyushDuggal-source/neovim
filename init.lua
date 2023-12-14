@@ -7,5 +7,6 @@ vim.cmd([[colorscheme tokyonight-night]])
 vim.g.autoformat = false
 vim.cmd[[imap <silent><script><expr> <M-i> codeium#Accept()]]
 vim.g.codeium_no_map_tab = true
+vim.opt.wrap = true
 
 vim.g.luasnippets_path = vim.fn.stdpath("config") .. "/cool_snippets"

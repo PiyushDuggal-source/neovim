@@ -26,7 +26,7 @@ local options = {
 
 ls.config.set_config(options)
 -- require("luasnip.loaders.from_vscode").lazy_load()
-require("luasnip.loaders.from_vscode").lazy_load({ paths = "./cool_snippets" })
+-- require("luasnip.loaders.from_vscode").lazy_load({ paths = "./cool_snippets" })
 
 vim.api.nvim_create_autocmd("InsertLeave", {
 	callback = function()
@@ -76,6 +76,7 @@ ls.add_snippets("typescript", {
 	-- ),
 })
 require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/my-snippets/" } })
+
 local keymap = vim.keymap.set
 -- lua snip Keymaps
 keymap({ "i", "s" }, "<C-k>", function()
