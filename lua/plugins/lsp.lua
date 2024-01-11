@@ -4,7 +4,21 @@ return {
     diagnostics = {
       virtual_text = false
     },
-servers = { eslint = {} },
+
+    servers = {
+      eslint = {},
+      intelephense = {
+        filetypes = { "php", "blade" },
+        settings = {
+          intelephense = {
+            filetypes = { "php", "blade" },
+            files = {
+              associations = { "*.php", "*.blade.php" },   -- Associating .blade.php files as well
+              maxSize = 5000000, },
+          },
+        },
+      },
+    },
     setup = {
       eslint = function()
         require("lazyvim.util").lsp.on_attach(function(client)
