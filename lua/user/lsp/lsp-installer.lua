@@ -102,7 +102,7 @@ lspconfig.volar.setup {
       virtual_text = false,
     }),
   },
-  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
+  filetypes = { 'php' }
 }
 lspconfig.pyright.setup({
   on_attach = on_attach,
@@ -128,6 +128,7 @@ lspconfig.intelephense.setup {
       virtual_text = false,
     }),
   },
+  filetypes = { 'php' }
 }
 
 for _, lsp in ipairs(lspInlays) do
