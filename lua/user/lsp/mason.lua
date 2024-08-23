@@ -8,6 +8,7 @@ local servers = {
   -- "vue-language-server",
   "pyright",
   "bashls",
+  "gopls",
   "jsonls",
   "cssls",
   -- "intelephense",

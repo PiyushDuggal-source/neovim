@@ -337,6 +337,9 @@ return packer.startup(function(use)
 use { 'echasnovski/mini.indentscope', branch = 'stable' }
   use { 'tamton-aquib/flirt.nvim' }
 
+  -- conform for formatting
+  -- use { 'stevearc/conform.nvim' }
+
 
   use({ "mbbill/undotree" })
   -- Automatically set up your configuration after cloning packer.nvim

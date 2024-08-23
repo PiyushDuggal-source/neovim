@@ -58,6 +58,7 @@ local servers = {
   "bashls",
   "cssmodules_ls",
   "jsonls",
+  "gopls",
   "volar",
   "yamlls",
   -- "vuels",
@@ -118,18 +119,18 @@ lspconfig.pyright.setup({
   },
 })
 
-lspconfig.intelephense.setup {
-
-  on_attach = on_attach,
-  capabilities = capabilities,
-  handlers = {
-    ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-      -- Disable virtual_text
-      virtual_text = false,
-    }),
-  },
-  filetypes = { 'php' }
-}
+-- lspconfig.intelephense.setup {
+--
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   handlers = {
+--     ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+--       -- Disable virtual_text
+--       virtual_text = false,
+--     }),
+--   },
+--   filetypes = { 'php' }
+-- }
 
 for _, lsp in ipairs(lspInlays) do
   lspconfig[lsp].setup({
