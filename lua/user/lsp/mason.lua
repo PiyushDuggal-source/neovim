@@ -62,7 +62,7 @@ local servers = {
 local present, mason = pcall(require, "mason")
 
 if not present then
-  print('mason not found')
+	print("mason not found")
 	return
 end
 
@@ -114,7 +114,7 @@ require("mason-lspconfig").setup({
 		-- "marksman",
 		"sqlls",
 		-- "vuels",
-    "tailwindcss"
+		"tailwindcss",
 	},
 	automatic_installation = true,
 })
