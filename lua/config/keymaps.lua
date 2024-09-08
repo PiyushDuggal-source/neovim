@@ -36,3 +36,12 @@ keymap( "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", 
 keymap( "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
 keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 keymap('n', "<S-q>", "<cmd>lua require('mini.bufremove').delete()<cr>", opts)
+
+-- Close buffers
+keymap("n", "<S-q>", "<cmd>bdelete!<CR>", opts)
+
+
+-- This file is automatically loaded by lazyvim.config.init
+
+-- DO NOT USE `LazyVim.safe_keymap_set` IN YOUR OWN CONFIG!!
+-- use `vim.keymap.set` instead

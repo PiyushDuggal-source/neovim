@@ -5,8 +5,187 @@ vim.cmd([[colorscheme tokyonight-night]])
 
 -- Enable LazyVim auto format
 vim.g.autoformat = false
-vim.cmd[[imap <silent><script><expr> <M-i> codeium#Accept()]]
+vim.cmd [[imap <silent><script><expr> <M-i> codeium#Accept()]]
 vim.g.codeium_no_map_tab = true
 vim.opt.wrap = true
 
 vim.g.luasnippets_path = vim.fn.stdpath("config") .. "/cool_snippets"
+
+--
+-- local map = vim.keymap.del
+--
+-- -- better up/down
+-- map({ "n", "x" }, "j", { desc = "Down", expr = true, silent = true })
+-- map({ "n", "x" }, "<Down>", { desc = "Down", expr = true, silent = true })
+-- map({ "n", "x" }, "k", { desc = "Up", expr = true, silent = true })
+-- map({ "n", "x" }, "<Up>", { desc = "Up", expr = true, silent = true })
+--
+-- -- Move to window using the <ctrl> hjkl keys
+-- map("n", "<C-h>", { desc = "Go to Left Window", remap = true })
+-- map("n", "<C-j>", { desc = "Go to Lower Window", remap = true })
+-- map("n", "<C-k>", { desc = "Go to Upper Window", remap = true })
+-- map("n", "<C-l>", { desc = "Go to Right Window", remap = true })
+--
+-- -- Resize window using <ctrl> arrow keys
+-- map("n", "<C-Up>", { desc = "Increase Window Height" })
+-- map("n", "<C-Down>", { desc = "Decrease Window Height" })
+-- map("n", "<C-Left>",  { desc = "Decrease Window Width" })
+-- map("n", "<C-Right>",{ desc = "Increase Window Width" })
+--
+-- -- Move Lines
+-- map("n", "<A-j>", { desc = "Move Down" })
+-- map("n", "<A-k>", { desc = "Move Up" })
+-- map("i", "<A-j>",{ desc = "Move Down" })
+-- map("i", "<A-k>", { desc = "Move Up" })
+-- map("v", "<A-j>",{ desc = "Move Down" })
+-- map("v", "<A-k>", { desc = "Move Up" })
+--
+-- -- buffers
+-- map("n", "<S-h>", { desc = "Prev Buffer" })
+-- map("n", "<S-l>", { desc = "Next Buffer" })
+-- map("n", "[b", { desc = "Prev Buffer" })
+-- map("n", "]b", { desc = "Next Buffer" })
+-- map("n", "<leader>bb", { desc = "Switch to Other Buffer" })
+-- map("n", "<leader>`", { desc = "Switch to Other Buffer" })
+-- map("n", "<leader>bd", { desc = "Delete Buffer" })
+-- map("n", "<leader>bD", { desc = "Delete Buffer and Window" })
+--
+-- -- Clear search with <esc>
+-- map({ "i", "n" }, "<esc>", { desc = "Escape and Clear hlsearch" })
+--
+-- -- Clear search, diff update and redraw
+-- -- taken from runtime/lua/_editor.lua
+-- map(
+--   "n",
+--   "<leader>ur",
+--   { desc = "Redraw / Clear hlsearch / Diff Update" }
+-- )
+--
+-- -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+-- map("n", "n", { expr = true, desc = "Next Search Result" })
+-- map("x", "n", { expr = true, desc = "Next Search Result" })
+-- map("o", "n", { expr = true, desc = "Next Search Result" })
+-- map("n", "N", { expr = true, desc = "Prev Search Result" })
+-- map("x", "N", { expr = true, desc = "Prev Search Result" })
+-- map("o", "N", { expr = true, desc = "Prev Search Result" })
+--
+-- -- Add undo break-points
+-- map("i", ",")
+-- map("i", ".")
+-- map("i", ";")
+--
+-- -- save file
+-- map({ "i", "x", "n", "s" }, "<C-s>", { desc = "Save File" })
+--
+-- --keywordprg
+-- map("n", "<leader>K", { desc = "Keywordprg" })
+--
+-- -- better indenting
+-- map("v", "<")
+-- map("v", ">")
+--
+-- -- commenting
+-- map("n", "gco", { desc = "Add Comment Below" })
+-- map("n", "gcO", { desc = "Add Comment Above" })
+--
+-- -- lazy
+-- map("n", "<leader>l", { desc = "Lazy" })
+--
+-- -- new file
+-- map("n", "<leader>fn", { desc = "New File" })
+--
+-- map("n", "<leader>xl", { desc = "Location List" })
+-- map("n", "<leader>xq", { desc = "Quickfix List" })
+--
+-- map("n", "[q", { desc = "Previous Quickfix" })
+-- map("n", "]q",{ desc = "Next Quickfix" })
+--
+-- -- formatting
+-- map({ "n", "v" }, "<leader>cf",{ desc = "Format" })
+--
+-- -- diagnostic
+-- local diagnostic_goto = function(next, severity)
+--   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+--   severity = severity and vim.diagnostic.severity[severity] or nil
+--   return function()
+--     go({ severity = severity })
+--   end
+-- end
+-- map("n", "<leader>cd", { desc = "Line Diagnostics" })
+-- map("n", "]d", { desc = "Next Diagnostic" })
+-- map("n", "[d", { desc = "Prev Diagnostic" })
+-- map("n", "]e", { desc = "Next Error" })
+-- map("n", "[e", { desc = "Prev Error" })
+-- map("n", "]w",{ desc = "Next Warning" })
+-- map("n", "[w", { desc = "Prev Warning" })
+--
+-- -- stylua: ignore start
+--
+-- -- toggle options
+-- LazyVim.toggle.map("<leader>uf", LazyVim.toggle.format())
+-- LazyVim.toggle.map("<leader>uF", LazyVim.toggle.format(true))
+-- LazyVim.toggle.map("<leader>us", LazyVim.toggle("spell", { name = "Spelling" }))
+-- LazyVim.toggle.map("<leader>uw", LazyVim.toggle("wrap", { name = "Wrap" }))
+-- LazyVim.toggle.map("<leader>uL", LazyVim.toggle("relativenumber", { name = "Relative Number" }))
+-- LazyVim.toggle.map("<leader>ud", LazyVim.toggle.diagnostics)
+-- LazyVim.toggle.map("<leader>ul", LazyVim.toggle.number)
+-- LazyVim.toggle.map( "<leader>uc", LazyVim.toggle("conceallevel", { values = { 0, vim.o.conceallevel > 0 and vim.o.conceallevel or 2 } }))
+-- LazyVim.toggle.map("<leader>uT", LazyVim.toggle.treesitter)
+-- LazyVim.toggle.map("<leader>ub", LazyVim.toggle("background", { values = { "light", "dark" }, name = "Background" }))
+-- if vim.lsp.inlay_hint then
+--   LazyVim.toggle.map("<leader>uh", LazyVim.toggle.inlay_hints)
+-- end
+--
+-- -- lazygit
+-- map("n", "<leader>gg",  { desc = "Lazygit (Root Dir)" })
+-- map("n", "<leader>gG", { desc = "Lazygit (cwd)" })
+-- map("n", "<leader>gb", { desc = "Git Blame Line" })
+-- map("n", "<leader>gB",  { desc = "Git Browse" })
+--
+-- map("n", "<leader>gf",
+--   { desc = "Lazygit Current File History" })
+--
+-- map("n", "<leader>gl",
+--   { desc = "Lazygit Log (cwd)" })
+--
+-- -- quit
+-- map("n", "<leader>qq", { desc = "Quit All" })
+--
+-- -- highlights under cursor
+-- map("n", "<leader>ui" ,{ desc = "Inspect Pos" })
+-- map("n", "<leader>uI", { desc = "Inspect Tree" })
+--
+-- -- LazyVim Changelog
+-- map("n", "<leader>L", { desc = "LazyVim Changelog" })
+--
+-- -- floating terminal
+-- local lazyterm = function() LazyVim.terminal(nil, { cwd = LazyVim.root() }) end
+-- map("n", "<leader>ft", { desc = "Terminal (Root Dir)" })
+-- map("n", "<leader>fT", { desc = "Terminal (cwd)" })
+-- map("n", "<c-/>", { desc = "Terminal (Root Dir)" })
+-- map("n", "<c-_>", { desc = "which_key_ignore" })
+--
+-- -- Terminal Mappings
+-- map("t", "<esc><esc>", { desc = "Enter Normal Mode" })
+-- map("t", "<C-h>", { desc = "Go to Left Window" })
+-- map("t", "<C-j>", { desc = "Go to Lower Window" })
+-- map("t", "<C-k>", { desc = "Go to Upper Window" })
+-- map("t", "<C-l>", { desc = "Go to Right Window" })
+-- map("t", "<C-/>", { desc = "Hide Terminal" })
+-- map("t", "<c-_>", { desc = "which_key_ignore" })
+--
+-- -- windows
+-- map("n", "<leader>w", { desc = "Windows", remap = true })
+-- map("n", "<leader>-", { desc = "Split Window Below", remap = true })
+-- map("n", "<leader>|", { desc = "Split Window Right", remap = true })
+-- map("n", "<leader>wd", { desc = "Delete Window", remap = true })
+-- LazyVim.toggle.map("<leader>wm", LazyVim.toggle.maximize)
+--
+-- -- tabs
+-- map("n", "<leader><tab>l", { desc = "Last Tab" })
+-- map("n", "<leader><tab>o", { desc = "Close Other Tabs" })
+-- map("n", "<leader><tab>f", { desc = "First Tab" })
+-- map("n", "<leader><tab><tab>", { desc = "New Tab" })
+-- map("n", "<leader><tab>]", { desc = "Next Tab" })
+-- map("n", "<leader><tab>d", { desc = "Close Tab" })
+-- map("n", "<leader><tab>[", { desc = "Previous Tab" })
