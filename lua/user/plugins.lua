@@ -16,12 +16,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
+-- vim.cmd([[
+--   augroup packer_user_config
+--     autocmd!
+--     autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--   augroup end
+-- ]])
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -130,7 +130,7 @@ return packer.startup(function(use)
   })
 
   -- typescript
-  use("jose-elias-alvarez/typescript.nvim")
+  -- use("jose-elias-alvarez/typescript.nvim")
 
   -- -- Sessions
   use("mhinz/vim-startify")
@@ -227,7 +227,13 @@ return packer.startup(function(use)
   -- use("xiyaowong/nvim-transparent")
 
   -- code actions
-  use({ "weilbith/nvim-code-action-menu", cmd = "CodeActionMenu" })
+  use {
+    "aznhe21/actions-preview.nvim",
+    -- config = function()
+    --   vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
+    -- end,
+  }
+  -- use({ "weilbith/nvim-code-action-menu", cmd = "CodeActionMenu" })
 
   -- codi vim plugin - Like Quokkajs
   use({ "metakirby5/codi.vim", ft = { "javascript", "typescript" } })
@@ -298,7 +304,6 @@ return packer.startup(function(use)
 
   use {
     "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -332,9 +337,9 @@ return packer.startup(function(use)
   -- use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
   -- use { "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
   -- use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
-  
+
   -- for intent line animation
-use { 'echasnovski/mini.indentscope', branch = 'stable' }
+  use { 'echasnovski/mini.indentscope', branch = 'stable' }
   use { 'tamton-aquib/flirt.nvim' }
 
   -- conform for formatting

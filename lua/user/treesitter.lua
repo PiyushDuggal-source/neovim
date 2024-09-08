@@ -89,9 +89,6 @@ local options = {
   indent = {
     enable = true,
   },
-  autotag = {
-    enable = true,
-  }
 }
 
 treesitter.setup(options)

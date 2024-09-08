@@ -33,90 +33,88 @@
 --   server:setup(opts)
 -- end)
 
-
-
 local on_attach = require("user.lsp.handlers").on_attach
 local capabilities = require("user.lsp.handlers").capabilities
 
 require("user.lsp.handlers").setup()
 local typescript_setup, typescript = pcall(require, "typescript")
 if not typescript_setup then
-  return
+	return
 end
 
 local lspconfig = require("lspconfig")
 local servers = {
-  "cssls",
-  -- "emmet_ls",
-  "clangd",
-  "tailwindcss",
-  "lua_ls",
-  "eslint",
-  -- "gopls",
-  "pyright",
-  "html",
-  "bashls",
-  "cssmodules_ls",
-  "jsonls",
-  "gopls",
-  "volar",
-  "yamlls",
-  -- "vuels",
-  "tailwindcss",
-  "cssls",
-  -- "intelephense",
-  "phpactor",
-  -- "dockerls",
+	"cssls",
+	-- "emmet_ls",
+	"clangd",
+	"tailwindcss",
+	"lua_ls",
+	"eslint",
+	-- "gopls",
+	"pyright",
+	"html",
+	"bashls",
+	"cssmodules_ls",
+	"jsonls",
+	"gopls",
+	"volar",
+	"yamlls",
+	-- "vuels",
+	"tailwindcss",
+	"cssls",
+	-- "intelephense",
+	"phpactor",
+	-- "dockerls",
 }
 local lspInlays = { "tsserver" }
 capabilities.textDocument.foldingRange = {
-  dynamicRegistration = false,
-  lineFoldingOnly = true,
+	dynamicRegistration = false,
+	lineFoldingOnly = true,
 }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    handlers = {
-      ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-        -- Disable virtual_text
-        virtual_text = false,
-      }),
-    },
-    settings = {
-      Lua = {
-        diagnostics = {
-          -- Get the language server to recognize the `vim` global
-          globals = { "vim" },
-        },
-      },
-    },
-  })
+	lspconfig[lsp].setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+		handlers = {
+			["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+				-- Disable virtual_text
+				virtual_text = false,
+			}),
+		},
+		settings = {
+			Lua = {
+				diagnostics = {
+					-- Get the language server to recognize the `vim` global
+					globals = { "vim" },
+				},
+			},
+		},
+	})
 end
 
-lspconfig.volar.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  handlers = {
-    ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-      -- Disable virtual_text
-      virtual_text = false,
-    }),
-  },
-  filetypes = { 'php' }
-}
+lspconfig.volar.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	handlers = {
+		["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+			-- Disable virtual_text
+			virtual_text = false,
+		}),
+	},
+	filetypes = { "php" },
+})
 lspconfig.pyright.setup({
-  on_attach = on_attach,
-  settings = {
-    python = {
-      analysis = {
-        typeCheckingMode = "off",
-      },
-      files = {
-        "python"
-      }
-    },
-  },
+	on_attach = on_attach,
+	settings = {
+		python = {
+			analysis = {
+				typeCheckingMode = "off",
+			},
+			files = {
+				"python",
+			},
+		},
+	},
 })
 
 -- lspconfig.intelephense.setup {
@@ -133,52 +131,52 @@ lspconfig.pyright.setup({
 -- }
 
 for _, lsp in ipairs(lspInlays) do
-  lspconfig[lsp].setup({
-    on_attach = function(client, bufnr)
-      on_attach(client, bufnr)
+	lspconfig[lsp].setup({
+		on_attach = function(client, bufnr)
+			on_attach(client, bufnr)
 
-      require("lsp-inlayhints").on_attach(client, bufnr)
-    end,
+			require("lsp-inlayhints").on_attach(client, bufnr)
+		end,
 
-    handlers = {
-      ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-        -- Disable virtual_text
-        virtual_text = false,
-      }),
-    },
-    capabilities = capabilities,
-    settings = {
-      typescript = {
-        inlayHints = {
-          includeInlayParameterNameHints = "all",
-          includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-          includeInlayFunctionParameterTypeHints = true,
-          includeInlayVariableTypeHints = true,
-          includeInlayPropertyDeclarationTypeHints = true,
-          includeInlayFunctionLikeReturnTypeHints = true,
-          includeInlayEnumMemberValueHints = true,
-        },
-      },
-      javascript = {
-        inlayHints = {
-          includeInlayParameterNameHints = "all",
-          includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-          includeInlayFunctionParameterTypeHints = true,
-          includeInlayVariableTypeHints = true,
-          includeInlayPropertyDeclarationTypeHints = true,
-          includeInlayFunctionLikeReturnTypeHints = true,
-          includeInlayEnumMemberValueHints = true,
-        },
-      },
-    },
-  })
+		handlers = {
+			["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+				-- Disable virtual_text
+				virtual_text = false,
+			}),
+		},
+		capabilities = capabilities,
+		settings = {
+			typescript = {
+				inlayHints = {
+					includeInlayParameterNameHints = "all",
+					includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+					includeInlayFunctionParameterTypeHints = true,
+					includeInlayVariableTypeHints = true,
+					includeInlayPropertyDeclarationTypeHints = true,
+					includeInlayFunctionLikeReturnTypeHints = true,
+					includeInlayEnumMemberValueHints = true,
+				},
+			},
+			javascript = {
+				inlayHints = {
+					includeInlayParameterNameHints = "all",
+					includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+					includeInlayFunctionParameterTypeHints = true,
+					includeInlayVariableTypeHints = true,
+					includeInlayPropertyDeclarationTypeHints = true,
+					includeInlayFunctionLikeReturnTypeHints = true,
+					includeInlayEnumMemberValueHints = true,
+				},
+			},
+		},
+	})
 end
 
 typescript.setup({
-  server = {
-    capabilities = capabilities,
-    on_attach = on_attach,
-  },
+	server = {
+		capabilities = capabilities,
+		on_attach = on_attach,
+	},
 })
 
 -- lspconfig["emmet_ls"].setup({
