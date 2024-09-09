@@ -263,6 +263,8 @@ local servers = {
 	"html",
 	"bashls",
 	"cssmodules_ls",
+	"jdtls",
+
 	"jsonls",
 	-- "gopls",
 	-- "volar",

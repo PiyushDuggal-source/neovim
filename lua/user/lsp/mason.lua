@@ -8,6 +8,8 @@ local servers = {
 	-- "vue-language-server",
 	"pyright",
 	"bashls",
+
+  "jdtls",
 	"gopls",
 	"jsonls",
 	"cssls",
@@ -103,7 +105,8 @@ require("mason-lspconfig").setup({
 		"jsonls",
 		"lua_ls",
 		"pyright",
-		"tsserver",
+		-- "tsserver",
+    "jdtls",
 		"cmake",
 		"cssmodules_ls",
 		"dockerls",

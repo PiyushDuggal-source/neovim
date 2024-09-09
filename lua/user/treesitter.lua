@@ -55,6 +55,7 @@ local options = {
     "cmake",
     "json5",
     "gitignore",
+    "java",
     "go",
     "css",
     "vue",
