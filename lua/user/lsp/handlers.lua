@@ -263,7 +263,7 @@ local servers = {
 	"html",
 	"bashls",
 	"cssmodules_ls",
-	"jdtls",
+	-- "jdtls",
 
 	"jsonls",
 	-- "gopls",

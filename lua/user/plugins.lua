@@ -292,7 +292,7 @@ return packer.startup(function(use)
 	use({
 		"giusgad/pets.nvim",
 		requires = {
-			"edluffy/hologram.nvim",
+			"giusgad/hologram.nvim",
 			"MunifTanjim/nui.nvim",
 		},
 	})
