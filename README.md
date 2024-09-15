@@ -13,7 +13,7 @@ sudo make install
 #### For Ubuntu
 
 ```sh
-sudo apt update && sudo apt upgrade && sudo apt install git xsel wl-clipboard cargo clang-format pip ripgrep npm
+sudo apt update && sudo apt upgrade && sudo apt install git ripgrep xsel wl-clipboard cargo clang-format python3-pip npm
 sudo npm install -g neovim && sudo pip install black pynvim && sudo cargo install stylua
 ```
 

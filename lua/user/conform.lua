@@ -12,6 +12,7 @@ require("conform").setup({
     graphql = { "prettierd", "prettier" },
     md = { "prettierd", "prettier" },
     txt = { "prettierd", "prettier" },
+    sh = { "beautysh" },
   },
   formatters = {
     stylua = {
