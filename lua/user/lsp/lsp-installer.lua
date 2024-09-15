@@ -33,14 +33,14 @@
 --   server:setup(opts)
 -- end)
 
-local on_attach = require("user.lsp.handlers").on_attach
-local capabilities = require("user.lsp.handlers").capabilities
+-- local on_attach = require("user.lsp.handlers").on_attach
+-- local capabilities = require("user.lsp.handlers").capabilities
 
 require("user.lsp.handlers").setup()
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
-	return
-end
+-- local typescript_setup, typescript = pcall(require, "typescript")
+-- if not typescript_setup then
+-- 	return
+-- end
 
 -- local lspconfig = require("lspconfig")
 -- local servers = {
