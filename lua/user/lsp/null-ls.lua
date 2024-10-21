@@ -9,7 +9,9 @@ local formatting = null_ls.builtins.formatting
 -- local diagnostics = null_ls.builtins.diagnostics
 
 -- https://github.com/prettier-solidity/prettier-plugin-solidity
-null_ls.setup({
+
+local opts = {
+
   debug = false,
   sources = {
     -- formatting.prettier.with({
@@ -18,14 +20,26 @@ null_ls.setup({
     --     '--tab-width', '4' },
     --   filetypes = { "typescript", "typescriptreact", "javascript", "vue", "javascriptreact" },
     -- }),
-    formatting.prettierd,
+    formatting.prettier,
     formatting.black.with({ extra_args = { "--fast" } }),
     formatting.stylua,
     formatting.clang_format,
     null_ls.builtins.code_actions.eslint,
     -- formatting.google_java_format, diagnostics.flake8,
-  },
-})
+  }
+}
+
+if vim.fn.has "mac" == 1 then
+  table.insert(opts,
+    formatting.prettier
+  )
+else
+  table.insert(opts,
+    formatting.prettierd
+  )
+end
+
+null_ls.setup(opts)
 
 -- local present, null_ls = pcall(require, "null-ls")
 --
