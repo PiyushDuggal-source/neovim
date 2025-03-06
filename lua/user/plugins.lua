@@ -31,6 +31,7 @@ end
 --
 -- -- Have packer use a popup window
 packer.init({
+	ensure_dependencies = true,
 	display = {
 		open_fn = function()
 			return require("packer.util").float({ border = "rounded" })
@@ -70,8 +71,17 @@ return packer.startup(function(use)
 		as = "catppuccin",
 	})
 
+  -- Bootstrap
+
+  use({ "Jezda1337/cmp_bootstrap" })
+
 	-- cmp plugins
-	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			"Jezda1337/nvim-html-css",
+		},
+	}) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
 	use({ "hrsh7th/cmp-path" }) -- path completions
 	use("David-Kunz/cmp-npm")
@@ -347,7 +357,7 @@ return packer.startup(function(use)
 	use({ "tamton-aquib/flirt.nvim" })
 
 	-- conform for formatting
-	use { 'stevearc/conform.nvim' }
+	use({ "stevearc/conform.nvim" })
 
 	use({ "mbbill/undotree" })
 	-- Automatically set up your configuration after cloning packer.nvim

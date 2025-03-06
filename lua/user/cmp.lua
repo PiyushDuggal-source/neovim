@@ -148,23 +148,23 @@
 local present, cmp = pcall(require, "cmp")
 
 if not present then
-  return
+	return
 end
 
 require("luasnip/loaders/from_vscode").lazy_load({ path = { "./cool_snippets" } })
 vim.opt.completeopt = "menuone,noselect"
 
 local function border(hl_name)
-  return {
-    { "╭", hl_name },
-    { "─", hl_name },
-    { "╮", hl_name },
-    { "│", hl_name },
-    { "╯", hl_name },
-    { "─", hl_name },
-    { "╰", hl_name },
-    { "│", hl_name },
-  }
+	return {
+		{ "╭", hl_name },
+		{ "─", hl_name },
+		{ "╮", hl_name },
+		{ "│", hl_name },
+		{ "╯", hl_name },
+		{ "─", hl_name },
+		{ "╰", hl_name },
+		{ "│", hl_name },
+	}
 end
 
 local cmp_window = require("cmp.utils.window")
@@ -172,119 +172,134 @@ local icons = require("user.icons")
 
 cmp_window.info_ = cmp_window.info
 cmp_window.info = function(self)
-  local info = self:info_()
-  info.scrollable = false
-  return info
+	local info = self:info_()
+	info.scrollable = false
+	return info
 end
 
 local options = {
-  window = {
-    completion = {
-      border = border("CmpBorder"),
-      winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
-    },
-    documentation = {
-      border = border("CmpDocBorder"),
-    },
-  },
-  snippet = {
-    expand = function(args)
-      require("luasnip").lsp_expand(args.body)
-    end,
-  },
-  formatting = {
-    fields = { "kind", "abbr", "menu" },
-    format = function(entry, vim_item)
-      vim_item.kind = icons.kind[vim_item.kind]
-      vim_item.menu = ({
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[LSP_LUA]",
-        luasnip = "[Snippet]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-        emoji = "",
-      })[entry.source.name]
-      return vim_item
-    end
-  },
-  -- formatting = {
-  --   format = function(_, vim_item)
-  --     local icons = kind_icons
-  --     vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
-  --     return vim_item
-  --   end,
-  -- },
-  mapping = {
-    ["<C-p>"] = cmp.mapping.select_prev_item(),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
-    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.close(),
-    ["<CR>"] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = false,
-    }),
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif require("luasnip").expand_or_jumpable() then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif require("luasnip").jumpable(-1) then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
-  },
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "nvim_lua" },
-    { name = "npm", keyword_length = 4 },
-    { name = "path" },
-    { name = "buffer" },
-    --sources = {
-    --	{ name = "luasnip" },
-    --	{ name = "nvim_lsp" },
-    --	{ name = "buffer" },
-    --	{ name = "nvim_lua" },
-    --	{ name = "path" },
-  },
+	window = {
+		completion = {
+			border = border("CmpBorder"),
+			winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+		},
+		documentation = {
+			border = border("CmpDocBorder"),
+		},
+	},
+	snippet = {
+		expand = function(args)
+			require("luasnip").lsp_expand(args.body)
+		end,
+	},
+	formatting = {
+		fields = { "kind", "abbr", "menu" },
+		format = function(entry, vim_item)
+			vim_item.kind = icons.kind[vim_item.kind]
+			vim_item.menu = ({
+				nvim_lsp = "[LSP]",
+				nvim_lua = "[LSP_LUA]",
+				luasnip = "[Snippet]",
+				buffer = "[Buffer]",
+				path = "[Path]",
+				emoji = "",
+			})[entry.source.name]
+			return vim_item
+		end,
+	},
+	-- formatting = {
+	--   format = function(_, vim_item)
+	--     local icons = kind_icons
+	--     vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+	--     return vim_item
+	--   end,
+	-- },
+	mapping = {
+		["<C-p>"] = cmp.mapping.select_prev_item(),
+		["<C-n>"] = cmp.mapping.select_next_item(),
+		["<C-d>"] = cmp.mapping.scroll_docs(-4),
+		["<C-f>"] = cmp.mapping.scroll_docs(4),
+		["<C-Space>"] = cmp.mapping.complete(),
+		["<C-e>"] = cmp.mapping.close(),
+		["<CR>"] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = false,
+		}),
+		["<Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif require("luasnip").expand_or_jumpable() then
+				vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+			else
+				fallback()
+			end
+		end, {
+			"i",
+			"s",
+		}),
+		["<S-Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			elseif require("luasnip").jumpable(-1) then
+				vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+			else
+				fallback()
+			end
+		end, {
+			"i",
+			"s",
+		}),
+	},
+	sources = {
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+		{ name = "nvim_lua" },
+		{ name = "npm", keyword_length = 4 },
+		{ name = "path" },
+		{ name = "buffer" },
+		{
+			name = "html-css",
+			option = {
+				enable_on = { "html", "vue" }, -- html is enabled by default
+				notify = false,
+				documentation = {
+					auto_show = true, -- show documentation on select
+				},
+				-- add any external scss like one below
+				style_sheets = {
+					"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+					"https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css",
+				},
+			},
+		},
+		--sources = {
+		--	{ name = "luasnip" },
+		--	{ name = "nvim_lsp" },
+		--	{ name = "buffer" },
+		--	{ name = "nvim_lua" },
+		--	{ name = "path" },
+	},
 }
 
 cmp.setup.cmdline("/", {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = "buffer" },
-  },
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = "buffer" },
+	},
 })
 
 cmp.setup.cmdline(":", {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = "path" },
-  }, {
-    {
-      name = "cmdline",
-      option = {
-        ignore_cmds = { "Man", "!" },
-      },
-    },
-  }),
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = cmp.config.sources({
+		{ name = "path" },
+	}, {
+		{
+			name = "cmdline",
+			option = {
+				ignore_cmds = { "Man", "!" },
+			},
+		},
+	}),
 })
 require("cmp-npm").setup({})
 

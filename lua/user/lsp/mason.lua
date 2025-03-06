@@ -6,6 +6,9 @@ local servers = {
   "tsserver",
   -- "vue-language-server",
   "pyright",
+  "vuels",
+  "volar",
+  "astro",
   "bashls",
   "jdtls",
   "jsonls",
@@ -111,7 +114,9 @@ local mConf = {
     "cmake",
     "cssmodules_ls",
     "dockerls",
+    "volar",
     "phpactor",
+    "astro",
     -- "intelephense",
     "eslint",
     -- "marksman",
@@ -132,31 +137,27 @@ end
 
 require("mason-lspconfig").setup(mConf)
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-  return
-end
-local opts = {}
-
-for _, server in pairs(servers) do
-  -- WARN: Temp fix
-  if server == "tsserver" then
-    server = "ts_ls"
-  end
-  opts = {
-    on_attach = require("user.lsp.handlers").on_attach,
-    capabilities = require("user.lsp.handlers").capabilities,
-  }
-
-  server = vim.split(server, "@")[1]
-
-  local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server)
-  if require_ok then
-    opts = vim.tbl_deep_extend("force", conf_opts, opts)
-  end
-  -- lspconfig[server].setup(coq.lsp_ensure_capabilities(opts))
-  lspconfig[server].setup(opts)
-end
+-- local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
+-- if not lspconfig_status_ok then
+--   return
+-- end
+-- local opts = {}
+--
+-- for _, server in pairs(servers) do
+--   opts = {
+--     on_attach = require("user.lsp.handlers").on_attach,
+--     capabilities = require("user.lsp.handlers").capabilities,
+--   }
+--
+--   server = vim.split(server, "@")[1]
+--
+--   local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server)
+--   if require_ok then
+--     opts = vim.tbl_deep_extend("force", conf_opts, opts)
+--   end
+--   -- lspconfig[server].setup(coq.lsp_ensure_capabilities(opts))
+--   lspconfig[server].setup(opts)
+-- end
 --options = require("core.utils").load_override(options, "williamboman/mason.nvim")
 
 --vim.api.nvim_create_user_command("MasonInstallAll", function()

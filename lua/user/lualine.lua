@@ -144,7 +144,7 @@ lualine.setup({
 			--   -- show_percentage = true,
 			-- },
 			{
-				"datetime",
+				-- "datetime",
 				-- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
 				style = "%H:%M",
 			},
