@@ -1,7 +1,7 @@
 local servers = {
   "cssls",
   "html",
-  "clangd",
+  -- "clangd",
   "lua_ls",
   "tsserver",
   -- "vue-language-server",
@@ -103,7 +103,7 @@ local mConf = {
 
   ensure_installed = {
     "bashls",
-    "clangd",
+    -- "clangd",
     "cssls",
     "html",
     "jsonls",
