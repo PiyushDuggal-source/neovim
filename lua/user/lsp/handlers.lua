@@ -357,7 +357,7 @@ lspconfig.volar.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
   -- add filetypes for typescript, javascript and vue
-  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+  filetypes = { 'vue' },
   init_options = {
     vue = {
       -- disable hybrid mode
