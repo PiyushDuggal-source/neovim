@@ -368,4 +368,8 @@ return packer.startup(function(use)
 
 	-- Java
 	use("mfussenegger/nvim-jdtls")
+
+
+  -- Multiline
+  use("mg979/vim-visual-multi")
 end)
