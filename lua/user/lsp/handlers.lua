@@ -258,7 +258,7 @@ end
 
 
 if vim.fn.executable("clangd") == 1 then
-  lspconfig.gopls.setup({
+  lspconfig.clangd.setup({
     on_attach = M.on_attach,
     capabilities = M.capabilities,
     handlers = {
