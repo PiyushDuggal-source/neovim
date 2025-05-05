@@ -11,6 +11,7 @@ local servers = {
   "astro",
   "bashls",
   "jdtls",
+  "tailwindcss",
   "jsonls",
   "cssls",
   -- "intelephense",

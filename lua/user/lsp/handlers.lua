@@ -290,6 +290,7 @@ local servers = {
   -- "vuels",
   "volar",
   "yamlls",
+  "tailwindcss",
   "astro",
   "bashls",
   "jdtls",
