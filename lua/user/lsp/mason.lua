@@ -125,7 +125,9 @@ local mConf = {
     -- "vuels",
     "tailwindcss",
   },
-  automatic_installation = true,
+automatic_installation = {
+    enable = true
+}
 }
 
 

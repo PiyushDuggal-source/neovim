@@ -60,7 +60,6 @@ return packer.startup(function(use)
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "akinsho/toggleterm.nvim" })
 	use({ "ahmedkhalf/project.nvim" })
-	use({ "lewis6991/impatient.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim", commit = "9637670896b68805430e2f72cf5d16be5b97a22a" })
 	use("goolord/alpha-nvim")
 
@@ -108,9 +107,8 @@ return packer.startup(function(use)
 			require("user.lsp.mason")
 		end,
 	})
-	use({ "williamboman/mason-lspconfig.nvim" })
-	-- no need for null-ls, using lsp-config
-	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
+	use({ "williamboman/mason-lspconfig.nvim", commit="1a31f824b9cd5bc6f342fc29e9a53b60d74af245" })
+	use({ "mfussenegger/nvim-lint" }) -- for linters
 	use({ "RRethy/vim-illuminate" })
 	use("lvimuser/lsp-inlayhints.nvim")
 
