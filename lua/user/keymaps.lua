@@ -95,8 +95,8 @@ keymap("n", "<leader>u", vim.cmd.UndotreeToggle)
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Search
-keymap("n", "n", "nzzzv")
-keymap("n", "N", "Nzzzv")
+keymap("n", "n", "Nzzzv")
+keymap("n", "N", "nzzzv")
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
