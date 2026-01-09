@@ -335,14 +335,14 @@ local mappingsV3 = {
     "<cmd>Telescope lsp_workspace_diagnostics<cr>",
     desc = "Workspace Diagnostics",
   },
-  {
-    "<leader>lf",
-    function()
-      print("Key mapping triggered")
-      -- require('conform').format({ async = true })
-    end,
-    desc = "Format (Conform)",
-  },
+  -- {
+  --   "<leader>lf",
+  --   function()
+  --     print("Key mapping triggered")
+  --     -- require('conform').format({ async = true })
+  --   end,
+  --   desc = "Format (Conform)",
+  -- },
   -- {
   -- 	"<leader>lf",
   -- 	"<cmd>lua vim.lsp.buf.format({async = true})<cr>",
@@ -561,7 +561,8 @@ local mappings = {
       "<cmd>Telescope lsp_workspace_diagnostics<cr>",
       "Workspace Diagnostics",
     },
-    f = { "<cmd>lua vim.lsp.buf.format({async = true})<cr>", "Format" },
+    -- f = { "<cmd>lua vim.lsp.buf.format({async = true})<cr>", "Format" },
+    f = { "<cmd>lua require('conform').format({ async = true })<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Instaliler Info" },
     j = {

@@ -368,7 +368,7 @@ return packer.startup(function(use)
   use("mfussenegger/nvim-jdtls")
 
   -- null-ls
-  use("jose-elias-alvarez/null-ls.nvim")
+  -- use("jose-elias-alvarez/null-ls.nvim")
 
   -- Multiline
   use("mg979/vim-visual-multi")
