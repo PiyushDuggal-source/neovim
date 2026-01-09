@@ -23,7 +23,15 @@ require("conform").setup({
 		black = {
 			prepend_args = { "--fast" },
 		},
+		-- add 4 space intent in ts files
+		-- prettier = {
+		-- 	prepend_args = { "--tab-width", "4" },
+		-- },
+		-- typescriptreact = {
+		-- 	prepend_args = { "--tab-width", "4", "--print-width", "100" },
+		-- },
 	},
+  lsp_format= "prefer"
 	-- Set up format-on-save
 	-- format_on_save = { timeout_ms = 500, lsp_fallback = true },
 })
