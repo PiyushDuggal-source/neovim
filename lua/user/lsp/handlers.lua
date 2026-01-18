@@ -1,3 +1,7 @@
+-- Suppress lspconfig deprecation warnings (Neovim 0.11+)
+-- TODO: Migrate to vim.lsp.config when lspconfig v3.0 releases
+vim.g.lspconfig_do_not_warn = true
+
 -- local M = {}
 -- local navic = require("nvim-navic") M.setup = function()
 --   local signs = {
@@ -168,7 +172,7 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float({border= 'rounded' })<CR>", opts)
 	keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
 	keymap(bufnr, "n", "<leader>lf", "<cmd>lua require('conform').format({async = true})<cr>", opts)
@@ -235,7 +239,7 @@ lspconfig.lua_ls.setup({
 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
 				},
-				maxPreload = 100000,
+				maxPreload = 10000,
 				preloadFileSize = 10000,
 			},
 		},

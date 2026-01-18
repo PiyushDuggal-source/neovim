@@ -153,7 +153,7 @@ local mappingsV3 = {
   },
   {
     "<leader>FF",
-    "<cmd>Telescope live_grep theme=ivy<cr>",
+    "<cmd>Telescope live_grep <cr>",
     desc = "Find Text",
   },
   {
@@ -490,7 +490,7 @@ local mappings = {
   ["c"] = { "<cmd>lua require('actions-preview').code_actions()<CR>", "Code Action" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["P"] = { ":lua require('telescope').extensions.projects.projects()<CR>", "Projects" },
-  -- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  -- ["F"] = { "<cmd>Telescope live_grep <cr>", "Find Text" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({}))<cr>",
     "Find files",
@@ -498,13 +498,13 @@ local mappings = {
   -- f = {
   --   f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
   --     "Find files", },
-  --   F =  { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  --   F =  { "<cmd>Telescope live_grep <cr>", "Find Text" },
   -- },
   F = {
     name = "Find",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+    F = { "<cmd>Telescope live_grep <cr>", "Find Text" },
     f = { "<cmd>Telescope find_files<cr>", "Find files" },
     P = { "<cmd>Telescope projects<cr>", "Projects" },
     s = { "<cmd>Telescope grep_string<cr>", "Find String" },
