@@ -112,7 +112,7 @@ vim.g.lspconfig_do_not_warn = true
 
 local present, lspconfig = pcall(require, "lspconfig")
 
--- local navic = require("nvim-navic")
+local navic = require("nvim-navic")
 if not present then
 	return
 end
@@ -199,9 +199,9 @@ M.on_attach = function(client, bufnr)
 		client.server_capabilities.document_formatting = false
 		client.server_capabilities.document_range_formatting = false
 	end
-	-- if client.server_capabilities.documentSymbolProvider then
-	-- 	navic.attach(client, bufnr)
-	-- end
+	if client.server_capabilities.documentSymbolProvider then
+		navic.attach(client, bufnr)
+	end
 end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
