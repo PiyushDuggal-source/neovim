@@ -19,6 +19,15 @@ local icons = require("user.icons")
 
 vim.g.theme_switcher_loaded = true
 
+-- Lazy-load previewers to avoid upfront require cost
+local previewers = nil
+local function get_previewers()
+  if not previewers then
+    previewers = require("telescope.previewers")
+  end
+  return previewers
+end
+
 local options = {
   defaults = {
     vimgrep_arguments = {
@@ -32,6 +41,7 @@ local options = {
       "--hidden",
       "--glob", "!.git/",
       "--trim",
+      "--threads=4", -- Limit threads to prevent CPU spikes
     },
     
     prompt_prefix = icons.ui.Search .. " ",
@@ -40,6 +50,12 @@ local options = {
     initial_mode = "insert",
     selection_strategy = "reset",
     sorting_strategy = "ascending",
+    
+    -- Cache picker results for instant re-opening
+    cache_picker = {
+      num_pickers = 10,
+      limit_entries = 500,
+    },
     
     -- Floating window layout
     layout_strategy = "flex",
@@ -75,6 +91,14 @@ local options = {
       "%.jar",
       "target/",
       "vendor/",
+      -- "%.svg",
+      "%.png",
+      "%.jpg",
+      "%.jpeg",
+      "%.gif",
+      "%.woff",
+      "%.woff2",
+      "%.ttf",
     },
     
     path_display = { "truncate" },
@@ -85,10 +109,11 @@ local options = {
     color_devicons = true,
     set_env = { ["COLORTERM"] = "truecolor" },
     
-    file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-    grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-    qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-    buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+    -- Lazy-loaded previewers
+    file_previewer = function(...) return get_previewers().vim_buffer_cat.new(...) end,
+    grep_previewer = function(...) return get_previewers().vim_buffer_vimgrep.new(...) end,
+    qflist_previewer = function(...) return get_previewers().vim_buffer_qflist.new(...) end,
+    buffer_previewer_maker = function(...) return get_previewers().buffer_previewer_maker(...) end,
     
     mappings = {
       i = {
@@ -120,11 +145,23 @@ local options = {
       end,
     },
     grep_string = {
-      -- previewer enabled
+      debounce = 150,
+      additional_args = function()
+        return {
+          "--max-count=100",
+          "--max-columns=150",
+          "--max-columns-preview",
+        }
+      end,
     },
     find_files = {
       hidden = true,
-      find_command = { "fd", "--type", "f", "--strip-cwd-prefix", "--hidden", "--exclude", ".git" },
+      find_command = { 
+        "fd", "--type", "f", 
+        "--strip-cwd-prefix", 
+        "--hidden", 
+        "--exclude", ".git",
+      },
     },
     buffers = {
       show_all_buffers = true,

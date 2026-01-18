@@ -153,7 +153,7 @@ local mappingsV3 = {
   },
   {
     "<leader>FF",
-    "<cmd>Telescope live_grep <cr>",
+    "<cmd>Telescope live_grep<cr>",
     desc = "Find Text",
   },
   {
