@@ -78,9 +78,10 @@ local options = {
     },
     
     path_display = { "truncate" },
-    winblend = 0,
+    winblend = 8, -- Slight transparency for glass-like effect
     border = {},
-    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    -- Premium double-line border characters
+    borderchars = { "═", "║", "═", "║", "╔", "╗", "╝", "╚" },
     color_devicons = true,
     set_env = { ["COLORTERM"] = "truecolor" },
     

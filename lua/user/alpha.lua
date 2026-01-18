@@ -12,6 +12,15 @@ thingy:close()
 
 local datetime = os.date " %H:%M"
 
+-- Gradient highlights for dashboard header (top to bottom: cyan -> blue -> purple)
+vim.api.nvim_set_hl(0, "AlphaHeader1", { fg = "#88c0d0" })  -- Cyan
+vim.api.nvim_set_hl(0, "AlphaHeader2", { fg = "#81a1c1" })  -- Light blue
+vim.api.nvim_set_hl(0, "AlphaHeader3", { fg = "#5e81ac" })  -- Blue
+vim.api.nvim_set_hl(0, "AlphaHeader4", { fg = "#8b5cf6" })  -- Purple
+vim.api.nvim_set_hl(0, "AlphaHeader5", { fg = "#b48ead" })  -- Soft purple
+vim.api.nvim_set_hl(0, "AlphaButtons", { fg = "#a3be8c", bold = true })  -- Green for buttons
+vim.api.nvim_set_hl(0, "AlphaFooter", { fg = "#6b727f", italic = true }) -- Subtle gray for footer
+
 
 local hi_top_section = {
   type = "text",
@@ -260,8 +269,8 @@ end
 
 dashboard.section.footer.val = footer()
 dashboard.section.footer.opts.hl = "Type"
-dashboard.section.header.opts.hl = "Include"
-dashboard.section.buttons.opts.hl = "Keyword"
+dashboard.section.header.opts.hl = "AlphaHeader3"  -- Gradient header color
+dashboard.section.buttons.opts.hl = "AlphaButtons"  -- Green bold buttons
 dashboard.section.footer.opts = {
   position = "center",
   hl = "Include"

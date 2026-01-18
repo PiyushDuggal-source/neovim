@@ -79,6 +79,7 @@ lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto",
+		-- Slanted powerline-style separators for modern look
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		-- component_separators = { left = '', right = '' },
