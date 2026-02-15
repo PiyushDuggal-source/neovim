@@ -281,6 +281,32 @@ if vim.fn.executable("clangd") == 1 then
 	})
 end
 
+-- Register tsgo if it doesn't exist
+local configs = require("lspconfig.configs")
+if not configs.tsgo then
+	configs.tsgo = {
+		default_config = {
+			cmd = { "tsgo", "--lsp", "--stdio" },
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"javascript.jsx",
+				"typescript",
+				"typescriptreact",
+				"typescript.tsx",
+			},
+			root_dir = require("lspconfig.util").root_pattern(
+				"tsconfig.json",
+				"jsconfig.json",
+				"package.json",
+				".git",
+				"tsconfig.base.json"
+			),
+			settings = {},
+		},
+	}
+end
+
 local servers = {
 	"cssls",
 	"html",
@@ -303,7 +329,13 @@ local servers = {
 	-- "yamlls",
 }
 
-local lspInlays = { "ts_ls" }
+-- local lspInlays = { "ts_ls" }
+local lspInlays = {}
+if vim.g.use_tsgo then
+	table.insert(lspInlays, "tsgo")
+else
+	table.insert(lspInlays, "ts_ls")
+end
 
 M.capabilities.textDocument.foldingRange = {
 	dynamicRegistration = false,
@@ -339,20 +371,11 @@ for _, lsp in ipairs(servers) do
 		opts = vim.tbl_deep_extend("force", conf_opts, opts)
 	end
 
-	lspconfig[lsp].setup(opts)
+	-- Skip setting up ts_ls if we're using tsgo
+	if not (vim.g.use_tsgo and lsp == "ts_ls") then
+		lspconfig[lsp].setup(opts)
+	end
 end
-
--- lspconfig.volar.setup({
---   on_attach = M.on_attach,
---   capabilities = M.capabilities,
---   handlers = {
---     ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
---       -- Disable virtual_text
---       virtual_text = false,
---     }),
---   },
---   filetypes = { "php" },
--- })
 
 -- Volar (Vue Language Server)
 lspconfig.volar.setup({
@@ -427,7 +450,7 @@ lspconfig.pyright.setup({
 -- }
 
 for _, lsp in ipairs(lspInlays) do
-	lspconfig[lsp].setup({
+	local ts_opts = {
 		on_attach = function(client, bufnr)
 			M.on_attach(client, bufnr)
 
@@ -443,7 +466,10 @@ for _, lsp in ipairs(lspInlays) do
 			}),
 		},
 		capabilities = M.capabilities,
-		settings = {
+	}
+
+	if lsp == "ts_ls" then
+		ts_opts.settings = {
 			typescript = {
 				inlayHints = {
 					includeInlayParameterNameHints = "all",
@@ -466,8 +492,10 @@ for _, lsp in ipairs(lspInlays) do
 					includeInlayEnumMemberValueHints = true,
 				},
 			},
-		},
-	})
+		}
+	end
+
+	lspconfig[lsp].setup(ts_opts)
 end
 
 return M

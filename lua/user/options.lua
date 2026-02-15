@@ -39,6 +39,7 @@ vim.opt.shortmess:append("c")                  -- hide all the completion messag
 vim.opt.whichwrap:append("<,>,[,],h,l")        -- keys allowed to move to the previous/next line when the beginning/end of line is reached
 vim.opt.iskeyword:append("-")                  -- treats words with `-` as single words
 vim.g.skip_ts_context_commentstring_module = true
+vim.g.use_tsgo = false -- Toggle between tsgo and ts_ls
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 global.luasnippets_path = vim.fn.stdpath("config") .. "/cool_snippets"
