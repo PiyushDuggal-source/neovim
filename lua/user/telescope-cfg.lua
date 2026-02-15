@@ -19,6 +19,14 @@ local icons = require("user.icons")
 
 vim.g.theme_switcher_loaded = true
 
+-- Show line numbers in Telescope preview
+vim.api.nvim_create_autocmd("User", {
+  pattern = "TelescopePreviewerLoaded",
+  callback = function()
+    vim.wo.number = true
+  end,
+})
+
 -- Lazy-load previewers to avoid upfront require cost
 local previewers = nil
 local function get_previewers()
